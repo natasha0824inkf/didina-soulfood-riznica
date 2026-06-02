@@ -23,7 +23,7 @@ body {
     transition: background-color 0.3s, color 0.3s; /* Smooth transition for dark mode */
 }
 
-/* Dark mode styles (these definitions remain as they were in the original style.css) */
+/* Dark mode styles */
 body.dark-mode {
     background-color: var(--dm-bg-dark);
     color: var(--dm-text-light);
@@ -52,7 +52,26 @@ body.dark-mode h1, body.dark-mode h2, body.dark-mode h3 {
     color: var(--text-espresso);
 }
 
-/* Removed .controls and related styles for language/dark mode toggles as per user request */
+.header .controls {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.header .controls select, .header .controls button {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+    font-family: sans-serif;
+}
+
+body.dark-mode .header .controls select, body.dark-mode .header .controls button {
+    background-color: var(--dm-card-bg);
+    color: var(--dm-text-light);
+    border-color: #555;
+}
 
 .recipe-grid {
     display: grid;
@@ -146,6 +165,11 @@ h1 {
 body.dark-mode .author-comment-box {
     background-color: var(--dm-card-bg);
 }
+.author-comment-title {
+    color: var(--note-purple);
+    font-weight: bold;
+    font-family: sans-serif;
+}
 @media (min-width: 600px) {
     .recipe-body-grid {
         display: grid;
@@ -170,4 +194,34 @@ body.dark-mode .energy-footer {
 }
 
 .energy-footer strong { color: var(--note-purple); }
-/* Removed .social-links styles as per user request */
+.social-links a {
+    color: var(--text-espresso);
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 1.2em;
+}
+
+body.dark-mode .social-links a {
+    color: var(--dm-text-light);
+}
+
+.social-links a:hover {
+    opacity: 0.7;
+}
+
+.language-selector {
+    display: flex;
+    gap: 5px;
+}
+
+.language-selector img {
+    width: 24px;
+    height: 16px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.language-selector img.active {
+    border-color: var(--accent-yellow);
+}
