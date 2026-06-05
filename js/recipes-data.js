@@ -23,6 +23,7 @@ const recipes = [
       "Tostiraj kratko na tiganju i posluži uz sveži krastavac."
     ],
     note: "",
+    image: "assets/images/image1.png",
     category: "Jutarnji recepti"
   },
   {
@@ -49,6 +50,7 @@ const recipes = [
       "Preko svega dodaj tahini, med ili bez slađivača."
     ],
     note: "",
+    image: "assets/images/image24.png",
     category: "Osvežavajući recepti"
   },
   {
@@ -72,6 +74,7 @@ const recipes = [
       "Uživaj u malim trenucima slatke lakoće i zahvalnosti."
     ],
     note: "",
+    image: "assets/images/image32.png",
     category: "Recepti uz kafu"
   },
   {
@@ -98,6 +101,7 @@ const recipes = [
       "Uživaj uz prepečen tost, pita hleb ili čak bez ičega — kao low carb početak dana."
     ],
     note: "",
+    image: "assets/images/image2.png",
     category: "Jutarnji recepti"
   },
   {
@@ -124,6 +128,7 @@ const recipes = [
       "Posluži toplo, uz prepečen hleb ili kuvani krompir."
     ],
     note: "",
+    image: "assets/images/image13.png",
     category: "Recepti kada ne znam šta da kuvam"
   },
   {
@@ -153,6 +158,7 @@ const recipes = [
       "Izvadi, pusti da se ohlade, pa prebaci u činiju ili teglu sa poklopcem."
     ],
     note: "",
+    image: "assets/images/image28.png",
     category: "Recepti uz kafu"
   },
   {
@@ -176,6 +182,7 @@ const recipes = [
       "Iseci na male rolnice i posluži kao zalogaj uz čaj, kafu ili čašu biljnog mleka."
     ],
     note: "",
+    image: "assets/images/image39.png",
     category: "Recepti uz kafu"
   },
   {
@@ -201,6 +208,7 @@ const recipes = [
       "Lagano promešaj ili jedi slojevito — tvoj dan, tvoja pravila."
     ],
     note: "",
+    image: "assets/images/image21.png",
     category: "Osvežavajući recepti"
   },
   {
@@ -227,6 +235,7 @@ const recipes = [
       "Dodaj štapić cimeta ako želiš romantičan efekat."
     ],
     note: "",
+    image: "assets/images/image33.png",
     category: "Recepti uz kafu"
   },
   {
@@ -257,6 +266,7 @@ const recipes = [
       "Ohladi, naseci, uživaj."
     ],
     note: "",
+    image: "assets/images/image25.png",
     category: "Recepti uz kafu"
   },
   {
@@ -305,6 +315,7 @@ const recipes = [
       "Serviraj uz svežu salatu i čašu dobrog vina."
     ],
     note: "",
+    image: "assets/images/image6.png",
     category: "Recepti kada ne znam šta da kuvam"
   },
   {
@@ -338,6 +349,7 @@ const recipes = [
       "Kao prilog možeš skuvati basmati pirinč ili istostirati jednu kukuruznu tortilju."
     ],
     note: "",
+    image: "assets/images/image7.png",
     category: "Recepti kada ne znam šta da kuvam"
   },
   {
@@ -366,6 +378,7 @@ const recipes = [
       "Uključi rernu i peci na 180°C oko 30 minuta."
     ],
     note: "",
+    image: "assets/images/image8.png",
     category: "Recepti kada ne znam šta da kuvam"
   },
   {
@@ -393,6 +406,7 @@ const recipes = [
       "Peci u prethodno zagrejanoj rerni na 220°C oko 30–35 minuta bez ventilatora, dok ne zamiriše i ne dobije zlatnu koricu."
     ],
     note: "",
+    image: "assets/images/image26.png",
     category: "Recepti koji mirišu iz rerne"
   }
 ];

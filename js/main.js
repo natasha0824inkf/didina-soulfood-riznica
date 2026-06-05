@@ -145,9 +145,12 @@ function refreshCardFavBtn(number) {
 function createRecipeCardHTML(recipe) {
   const cat = getCategoryInfo(recipe.category);
   const fav = isFavorite(recipe.number);
+  const thumbContent = recipe.image
+    ? `<img src="${recipe.image}" alt="${recipe.title}" class="card-img" loading="lazy">`
+    : `<span class="card-emoji">${cat.emoji}</span>`;
   return `<article class="recipe-card" data-recipe-number="${recipe.number}" tabindex="0" role="button" aria-label="${recipe.title}">
-    <div class="recipe-card-thumb cat-thumb-${cat.cls}">
-      <span class="card-emoji">${cat.emoji}</span>
+    <div class="recipe-card-thumb cat-thumb-${cat.cls}${recipe.image ? ' has-img' : ''}">
+      ${thumbContent}
     </div>
     <div class="recipe-card-body">
       <div class="recipe-card-category cat-color-${cat.cls}">${t(cat.label_key)}</div>
