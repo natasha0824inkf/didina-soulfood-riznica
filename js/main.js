@@ -368,11 +368,20 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // Contact form
+  // Contact form — opens mail client with form data
   const form = document.getElementById('contactForm');
   if (form) {
     form.addEventListener('submit', function(e) {
       e.preventDefault();
+      const name    = document.getElementById('contactName').value.trim();
+      const email   = document.getElementById('contactEmail').value.trim();
+      const message = document.getElementById('contactMessage').value.trim();
+      const subject = encodeURIComponent('Poruka sa sajta — ' + name);
+      const body    = encodeURIComponent(
+        'Ime: ' + name + '\nEmail: ' + email + '\n\nPoruka:\n' + message
+      );
+      window.location.href =
+        'mailto:d.stamenkovic@yahoo.com?subject=' + subject + '&body=' + body;
       const success = document.getElementById('formSuccess');
       if (success) {
         success.textContent = t('contact_success');
