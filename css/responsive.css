@@ -1,0 +1,74 @@
+/* ---- TABLET (≤ 900px) ---- */
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+    position: absolute; top: 68px; left: 0; right: 0;
+    background: var(--warm-white);
+    border-top: 1px solid var(--border); border-bottom: 2px solid var(--border);
+    flex-direction: column;
+    padding: .75rem 1rem; gap: .15rem;
+    box-shadow: var(--shadow-md);
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: .65rem .85rem; width: 100%; }
+
+  .hamburger { display: flex; }
+
+  .categories-grid { grid-template-columns: repeat(3, 1fr); }
+
+  .hero { padding: 4rem 1.5rem; }
+}
+
+/* ---- MOBILE (≤ 640px) ---- */
+@media (max-width: 640px) {
+  .recipe-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+
+  .categories-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .nav-logo-main { font-size: 1.05rem; }
+  .nav-right { gap: .5rem; }
+
+  .favorites-btn .favorites-btn-label { display: none; }
+
+  .lang-btn { padding: .2rem .45rem; font-size: .74rem; }
+
+  .hero h1 { font-size: 1.75rem; }
+  .hero-subtitle { font-size: .92rem; }
+  .hero-cta { padding: .78rem 2rem; font-size: .98rem; }
+
+  .modal { border-radius: var(--r-md); max-height: 96vh; }
+  .modal-header { padding: 1.4rem 1.4rem 1.1rem; }
+  .modal-body   { padding: 1.25rem 1.4rem 1.75rem; }
+
+  .favorites-panel { width: 100%; right: -100%; }
+  .favorites-panel.open { right: 0; }
+
+  .filter-btn { font-size: .78rem; padding: .32rem .75rem; }
+
+  .about-block { padding: 1.5rem; }
+  .values-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .contact-form { padding: 1.5rem; }
+
+  .section { padding: 2.5rem 0; }
+
+  .site-footer { padding: 2rem 1.5rem; margin-top: 2.5rem; }
+}
+
+/* ---- SMALL MOBILE (≤ 380px) ---- */
+@media (max-width: 380px) {
+  .recipe-grid { grid-template-columns: 1fr; }
+  .categories-grid { grid-template-columns: 1fr 1fr; }
+  .values-grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 1.5rem; }
+}
+
+/* ---- PRINT ---- */
+@media print {
+  .site-header, .site-footer, .favorites-panel,
+  .modal-overlay, .fav-toggle, .favorites-btn,
+  .lang-switcher, .hamburger { display: none !important; }
+  body { background: #fff; color: #000; }
+}

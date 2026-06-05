@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O meni – Didina SoulFood Riznica</title>
+  <meta name="description" content="Upoznajte Didinu — kuvaricu iz ljubavi koja veruje da dobra hrana ne mora biti komplikovana.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <nav class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo-main">Didina SoulFood</span>
+      <span class="nav-logo-sub">Riznica recepata</span>
+    </a>
+
+    <button class="hamburger" id="hamburger" aria-label="Meni" aria-expanded="false">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html"   data-i18n="nav_home">Početna</a></li>
+      <li><a href="recipes.html" data-i18n="nav_recipes">Recepti</a></li>
+      <li><a href="about.html"   data-i18n="nav_about">O meni</a></li>
+      <li><a href="contact.html" data-i18n="nav_contact">Kontakt</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="sr">SR</button>
+        <button class="lang-btn"        data-lang="de">DE</button>
+        <button class="lang-btn"        data-lang="en">EN</button>
+      </div>
+      <button class="favorites-btn">
+        🤍 <span class="favorites-btn-label" data-i18n="nav_favorites">Omiljeni</span>
+        <span class="fav-count">0</span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero page-hero-about">
+  <h1 data-i18n="about_title">O Didini</h1>
+  <p data-i18n="about_subtitle">Kuvarica iz ljubavi, ne iz obaveze</p>
+</section>
+
+<!-- ABOUT CONTENT -->
+<main class="section">
+  <div class="container">
+    <div class="about-content">
+
+      <div class="about-block">
+        <h3>👋 <span data-i18n="about_title">O Didini</span></h3>
+        <p data-i18n="about_p1">Zdravo! Ja sam Didina — mama, kuvarica iz ljubavi i vernica da dobra hrana ne mora biti komplikovana. Ova riznica je moja lična kolekcija recepata koji su mi doneli radost, smirenje i energiju kroz godine.</p>
+        <p data-i18n="about_p2">Svaki recept ovde nosi mali komad moje duše. Nisam profesionalni kuvar — samo neko ko voli da hrani ljude koje voli, i ko je naučio da je najlepše jelo ono napravljeno s pažnjom.</p>
+        <p data-i18n="about_p3">Verujem da hrana može biti lek, ritual i ljubav istovremeno. Da jednostavni sastojci, kada se sretnu s pravim namerama, mogu da stvore nešto posebno.</p>
+      </div>
+
+      <div class="about-block">
+        <h3>🌿 <span data-i18n="about_philosophy">Moja filozofija kuvanja</span></h3>
+        <div class="values-grid">
+          <div class="value-item">
+            <div class="value-emoji">✨</div>
+            <div class="value-title" data-i18n="about_val1_title">Jednostavnost</div>
+            <div class="value-desc"  data-i18n="about_val1_desc">Recepti koji ne zahtevaju sat vremena ni specijalne sastojke</div>
+          </div>
+          <div class="value-item">
+            <div class="value-emoji">💛</div>
+            <div class="value-title" data-i18n="about_val2_title">Iskrenost</div>
+            <div class="value-desc"  data-i18n="about_val2_desc">Svako jelo ima priču i to je ono što ga čini posebnim</div>
+          </div>
+          <div class="value-item">
+            <div class="value-emoji">🌱</div>
+            <div class="value-title" data-i18n="about_val3_title">Briga o telu</div>
+            <div class="value-desc"  data-i18n="about_val3_desc">Hrana koja hrani i telo i dušu, bez krivice</div>
+          </div>
+          <div class="value-item">
+            <div class="value-emoji">🎶</div>
+            <div class="value-title" data-i18n="about_val4_title">Radost</div>
+            <div class="value-desc"  data-i18n="about_val4_desc">Kuvanje kao meditacija, a ne obaveza</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-block" style="text-align:center">
+        <p style="font-size:1.1rem;font-style:italic;color:var(--text-mid);margin-bottom:1.5rem">
+          „Hrana je ljubav vidljiva golim okom."
+        </p>
+        <a href="recipes.html" class="hero-cta" style="background:var(--coral);color:#fff;font-size:.95rem;padding:.75rem 2rem;display:inline-block" data-i18n="all_recipes">Svi recepti</a>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-logo">Didina SoulFood Riznica</div>
+    <p class="footer-tagline" data-i18n="footer_text">Napravljeno s ljubavlju za sve koji veruju da je hrana jezik duše.</p>
+    <div class="footer-divider"></div>
+    <nav class="footer-nav">
+      <a href="index.html"   data-i18n="nav_home">Početna</a>
+      <a href="recipes.html" data-i18n="nav_recipes">Recepti</a>
+      <a href="about.html"   data-i18n="nav_about">O meni</a>
+      <a href="contact.html" data-i18n="nav_contact">Kontakt</a>
+    </nav>
+    <p class="footer-copy">© 2025 Didina SoulFood Riznica. <span data-i18n="footer_rights">Sva prava zadržana.</span></p>
+  </div>
+</footer>
+
+<!-- FAVORITES PANEL -->
+<aside class="favorites-panel" id="favoritesPanel">
+  <div class="favorites-panel-header">
+    <span class="favorites-panel-title" data-i18n="favorites_title">Moji omiljeni recepti</span>
+    <button class="close-favorites-btn" id="closeFavPanel">×</button>
+  </div>
+  <div class="favorites-list" id="favoritesList"></div>
+</aside>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal" tabindex="-1">
+    <div class="modal-header">
+      <button class="modal-close" id="closeModal" aria-label="Zatvori">×</button>
+      <div class="modal-category-badge" id="modalCategory"></div>
+      <h2 class="modal-title" id="modalTitle"></h2>
+      <p class="modal-subtitle" id="modalSubtitle"></p>
+      <div class="modal-meta-item" id="modalTime"></div>
+    </div>
+    <div class="modal-body">
+      <blockquote class="modal-comment" id="modalComment" hidden></blockquote>
+      <h3 class="modal-section-title" data-i18n="ingredients">Sastojci</h3>
+      <ul class="ingredients-list" id="modalIngredients"></ul>
+      <h3 class="modal-section-title" data-i18n="instructions">Priprema</h3>
+      <ol class="instructions-list" id="modalInstructions"></ol>
+      <button class="modal-fav-btn" id="modalFavBtn">🤍 <span data-i18n="add_favorite">Dodaj u omiljene</span></button>
+    </div>
+  </div>
+</div>
+
+<script src="js/translations.js"></script>
+<script src="js/recipes-data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

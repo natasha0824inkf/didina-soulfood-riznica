@@ -1,269 +1,169 @@
 <!DOCTYPE html>
 <html lang="sr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Didina SoulFood Riznica - Početna</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Didina SoulFood Riznica</title>
+  <meta name="description" content="Jednostavni recepti s dušom — za ljude koji vole hranu koja ih voli nazad.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-    <div class="recipe-container">
-        <header class="header">
-            <h1>Didina SoulFood Riznica</h1>
-            <!-- Removed language selector and dark mode toggle controls -->
-        </header>
 
-        <h2>Svi Recepti</h2>
-        <div class="recipe-grid">
+<!-- HEADER -->
+<header class="site-header">
+  <nav class="nav-container">
+    <a href="index.html" class="nav-logo" aria-label="Didina SoulFood Riznica">
+      <span class="nav-logo-main">Didina SoulFood</span>
+      <span class="nav-logo-sub">Riznica recepata</span>
+    </a>
 
-            <a href="web/recept_05.html" class="recipe-card"> <!-- Link to recept files in web/ -->
-                <img src="assets/images/image5.png" alt="Limunada sa nanom i đumbirom">
-                <div class="recipe-card-content">
-                    <h3>Limunada sa nanom i đumbirom</h3>
-                    <p>Prava eksplozija svežine za buđenje energije.</p>
-                    <div class="meta-info">
-                        <span>🍹 OSVEŽAVAJUĆI RECEPTI</span>
-                        <span>⏱️ 5 min</span>
-                    </div>
-                </div>
-            </a>
+    <button class="hamburger" id="hamburger" aria-label="Meni" aria-expanded="false">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
 
-            <a href="web/recept_06.html" class="recipe-card"> <!-- Link to recept files in web/ -->
-                <img src="assets/images/image6.png" alt="Kajgana sa spanaćem i fetom">
-                <div class="recipe-card-content">
-                    <h3>Kajgana sa spanaćem i fetom</h3>
-                    <p>Kremasti i hranljivi doručak pun proteina.</p>
-                    <div class="meta-info">
-                        <span>🧾 JUTARNJI RECEPTI</span>
-                        <span>⏱️ 10 min</span>
-                    </div>
-                </div>
-            </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html"   data-i18n="nav_home">Početna</a></li>
+      <li><a href="recipes.html" data-i18n="nav_recipes">Recepti</a></li>
+      <li><a href="about.html"   data-i18n="nav_about">O meni</a></li>
+      <li><a href="contact.html" data-i18n="nav_contact">Kontakt</a></li>
+    </ul>
 
-            <a href="web/recept_07.html" class="recipe-card"> <!-- Link to recept files in web/ -->
-                <img src="assets/images/image7.png" alt="Letnji đuveč na brzinu">
-                <div class="recipe-card-content">
-                    <h3>Letnji đuveč na brzinu</h3>
-                    <p>Svo šarenilo bašte u jednoj toploj šerpi.</p>
-                    <div class="meta-info">
-                        <span>🍲 KADA NE ZNAM ŠTA DA KUVAM</span>
-                        <span>⏱️ 25 min</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="web/recept_08.html" class="recipe-card"> <!-- Link to recept files in web/ -->
-                <img src="assets/images/image8.png" alt="Keksići od ovsa i banana">
-                <div class="recipe-card-content">
-                    <h3>Keksići od ovsa i banana</h3>
-                    <p>Slatki i hrskavi zalogaji bez trunke šećera.</p>
-                    <div class="meta-info">
-                        <span>☕ RECEPTI UZ KAFU</span>
-                        <span>⏱️ 15 min</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="web/recept_09.html" class="recipe-card"> <!-- Link to recept files in web/ -->
-                <img src="assets/images/image9.png" alt="Domaća jafa u čaši">
-                <div class="recipe-card-content">
-                    <h3>Domaća jafa u čaši</h3>
-                    <p>Osvežavajući spoj narandže i tamne čokolade.</p>
-                    <div class="meta-info">
-                        <span>☕ RECEPTI UZ KAFU</span>
-                        <span>⏱️ 10 min</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="web/recept_10.html" class="recipe-card"> <!-- Link to recept files in web/ -->
-                <img src="assets/images/image10.png" alt="Hladni ledeni čaj od hibiskusa">
-                <div class="recipe-card-content">
-                    <h3>Hladni ledeni čaj od hibiskusa</h3>
-                    <p>Rubinski crveni napitak koji gasi žeđ.</p>
-                    <div class="meta-info">
-                        <span>🍹 OSVEŽAVAJUĆI RECEPTI</span>
-                        <span>⏱️ 5 min</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="web/recept_11.html" class="recipe-card"> <!-- Link to recept files in web/ -->
-                <img src="assets/images/image11.png" alt="Brzi kolač sa višnjama">
-                <div class="recipe-card-content">
-                    <h3>Brzi kolač sa višnjama</h3>
-                    <p>Vazdušasto testo sa kiselkastim kapljicama voća.</p>
-                    <div class="meta-info">
-                        <span>☕ RECEPTI UZ KAFU</span>
-                        <span>⏱️ 30 min</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="web/recept_12.html" class="recipe-card"> <!-- Link to recept files in web/ -->
-                <img src="assets/images/image12.png" alt="Energetske bombice sa lešnikom">
-                <div class="recipe-card-content">
-                    <h3>Energetske bombice sa lešnikom</h3>
-                    <p>Koncentrisana snaga koštunjavog voća.</p>
-                    <div class="meta-info">
-                        <span>☕ RECEPTI UZ KAFU</span>
-                        <span>⏱️ 10 min</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="web/recept_13.html" class="recipe-card"> <!-- Link to recept files in web/ -->
-                <img src="assets/images/image13.png" alt="Čokoladni puding od čije">
-                <div class="recipe-card-content">
-                    <h3>Čokoladni puding od čije</h3>
-                    <p>Kremasti desert koji se 'kuva' sam u frižideru.</p>
-                    <div class="meta-info">
-                        <span>☕ RECEPTI UZ KAFU</span>
-                        <span>⏱️ 5 min</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="web/recept_14.html" class="recipe-card"> <!-- Link to recept files in web/ -->
-                <img src="assets/images/image14.png" alt="Ovsena kaša sa jabukama i cimetom">
-                <div class="recipe-card-content">
-                    <h3>Ovsena kaša sa jabukama i cimetom</h3>
-                    <p>Topla jesenja čarolija u vašoj činiji.</p>
-                    <div class="meta-info">
-                        <span>🧾 JUTARNJI RECEPTI</span>
-                        <span>⏱️ 10 min</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="web/recept_15.html" class="recipe-card"> <!-- Link to recept files in web/ -->
-                <img src="assets/images/image15.png" alt="Didin lagani pileći gulaš">
-                <div class="recipe-card-content">
-                    <h3>Didin lagani pileći gulaš</h3>
-                    <p>Gusto i bogato jelo koje greje dušu.</p>
-                    <div class="meta-info">
-                        <span>🍲 KADA NE ZNAM ŠTA DA KUVAM</span>
-                        <span>⏱️ 40 min</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="web/recept_16.html" class="recipe-card"> <!-- Link to recept files in web/ -->
-                <img src="assets/images/image16.png" alt="Brza pasta od tri sastojka">
-                <div class="recipe-card-content">
-                    <h3>Brza pasta od tri sastojka</h3>
-                    <p>Spoj maslinovog ulja, belog luka i čerija.</p>
-                    <div class="meta-info">
-                        <span>🍲 KADA NE ZNAM ŠTA DA KUVAM</span>
-                        <span>⏱️ 12 min</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="web/recept_17.html" class="recipe-card"> <!-- Link to recept files in web/ -->
-                <img src="assets/images/image17.png" alt="Prolećna obrok-salata sa leblebijom">
-                <div class="recipe-card-content">
-                    <h3>Prolećna obrok-salata sa leblebijom</h3>
-                    <p>Sveže, hrskavo i neverovatno sito povrće.</p>
-                    <div class="meta-info">
-                        <span>🍲 KADA NE ZNAM ŠTA DA KUVAM</span>
-                        <span>⏱️ 10 min</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="web/recept_18.html" class="recipe-card"> <!-- Link to recept files in web/ -->
-                <img src="assets/images/image18.png" alt="Detox zeleni jutarnji smuti">
-                <div class="recipe-card-content">
-                    <h3>Detox zeleni jutarnji smuti</h3>
-                    <p>Tečni kiseonik za vaše ćelije.</p>
-                    <div class="meta-info">
-                        <span>🍹 OSVEŽAVAJUĆI RECEPTI</span>
-                        <span>⏱️ 5 min</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="web/recept_19.html" class="recipe-card"> <!-- Link to recept files in web/ -->
-                <img src="assets/images/image19.png" alt="Zapečeni prokelj sa parmezanom">
-                <div class="recipe-card-content">
-                    <h3>Zapečeni prokelj sa parmezanom</h3>
-                    <p>Hrskave zelene kuglice sa bogatim ukusom.</p>
-                    <div class="meta-info">
-                        <span>🥧 RECEPTI KOJI MIRIŠU IZ RERNE</span>
-                        <span>⏱️ 25 min</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="web/recept_20.html" class="recipe-card"> <!-- Link to recept files in web/ -->
-                <img src="assets/images/image20.png" alt="Brza proja sa heljdinim brašnom">
-                <div class="recipe-card-content">
-                    <h3>Brza proja sa heljdinim brašnom</h3>
-                    <p>Vrući zalogaji sa bogatim ukusom domaćeg sira.</p>
-                    <div class="meta-info">
-                        <span>🥧 RECEPTI KOJI MIRIŠU IZ RERNE</span>
-                        <span>⏱️ 30 min</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="web/recept_21.html" class="recipe-card"> <!-- Link to recept files in web/ -->
-                <img src="assets/images/image21.png" alt="Mirisni tart sa šumskim voćem">
-                <div class="recipe-card-content">
-                    <h3>Mirisni tart sa šumskim voćem</h3>
-                    <p>Prhko testo sa eksplozijom kiselkastih bobica.</p>
-                    <div class="meta-info">
-                        <span>🥧 RECEPTI KOJI MIRIŠU IZ RERNE</span>
-                        <span>⏱️ 35 min</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="web/recept_22.html" class="recipe-card"> <!-- Link to recept files in web/ -->
-                <img src="assets/images/image22.png" alt="Domaći hleb sa semenkama">
-                <div class="recipe-card-content">
-                    <h3>Domaći hleb sa semenkama</h3>
-                    <p>Pravi, teški integralni hleb koji ima dušu.</p>
-                    <div class="meta-info">
-                        <span>🥧 RECEPTI KOJI MIRIŠU IZ RERNE</span>
-                        <span>⏱️ 50 min</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="web/recept_23.html" class="recipe-card"> <!-- Link to recept files in web/ -->
-                <img src="assets/images/image23.png" alt="Kremasti domaći humus sa susamom">
-                <div class="recipe-card-content">
-                    <h3>Kremasti domaći humus sa susamom</h3>
-                    <p>Glazura od leblebija, maslinovog ulja i tahinija.</p>
-                    <div class="meta-info">
-                        <span>🥣 RECEPTI KOJI SE MAŽU</span>
-                        <span>⏱️ 10 min</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="web/recept_24.html" class="recipe-card"> <!-- Link to recept files in web/ -->
-                <img src="assets/images/image24.png" alt="Mediteranska pašteta od maslina">
-                <div class="recipe-card-content">
-                    <h3>Mediteranska pašteta od maslina</h3>
-                    <p>Bogat i slan namaz pun mirisa mora.</p>
-                    <div class="meta-info">
-                        <span>🥣 RECEPTI KOJI SE MAŽU</span>
-                        <span>⏱️ 5 min</span>
-                    </div>
-                </div>
-            </a>
-
-        </div>
-
-        <footer class="energy-footer">
-            <p><strong>💫 Energija jela:</strong> Pronađite inspiraciju za svaki dan!</p>
-            <!-- Removed social links as per user request -->
-        </footer>
+    <div class="nav-right">
+      <div class="lang-switcher" role="group" aria-label="Izbor jezika">
+        <button class="lang-btn active" data-lang="sr">SR</button>
+        <button class="lang-btn"        data-lang="de">DE</button>
+        <button class="lang-btn"        data-lang="en">EN</button>
+      </div>
+      <button class="favorites-btn" aria-label="Omiljeni recepti">
+        🤍 <span class="favorites-btn-label" data-i18n="nav_favorites">Omiljeni</span>
+        <span class="fav-count" aria-live="polite">0</span>
+      </button>
     </div>
+  </nav>
+</header>
 
-    <!-- Removed dark mode JavaScript as per user request -->
+<!-- HERO -->
+<section class="hero" aria-label="Naslovna sekcija">
+  <div class="hero-content">
+    <h1 data-i18n="hero_title">Didina SoulFood Riznica</h1>
+    <p class="hero-subtitle" data-i18n="hero_subtitle">Jednostavni recepti s dušom — za ljude koji vole hranu koja ih voli nazad.</p>
+    <a href="recipes.html" class="hero-cta" data-i18n="hero_cta">Istraži recepte</a>
+  </div>
+</section>
+
+<!-- FEATURED RECIPES -->
+<section class="section" aria-labelledby="featured-heading">
+  <div class="container">
+    <div class="section-title">
+      <h2 id="featured-heading" data-i18n="featured_title">Izdvojeni recepti</h2>
+    </div>
+    <div class="recipe-grid" id="featuredGrid"></div>
+    <div style="text-align:center;margin-top:2rem">
+      <a href="recipes.html" class="hero-cta" style="background:var(--coral);color:#fff;font-size:.95rem;padding:.75rem 2rem" data-i18n="all_recipes">Svi recepti</a>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="section" style="background:var(--warm-white)" aria-labelledby="categories-heading">
+  <div class="container">
+    <div class="section-title">
+      <h2 id="categories-heading" data-i18n="categories_title">Kategorije recepata</h2>
+    </div>
+    <div class="categories-grid" id="categoriesGrid"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-logo">Didina SoulFood Riznica</div>
+    <p class="footer-tagline" data-i18n="footer_text">Napravljeno s ljubavlju za sve koji veruju da je hrana jezik duše.</p>
+    <div class="footer-divider"></div>
+    <nav class="footer-nav" aria-label="Footer navigacija">
+      <a href="index.html"   data-i18n="nav_home">Početna</a>
+      <a href="recipes.html" data-i18n="nav_recipes">Recepti</a>
+      <a href="about.html"   data-i18n="nav_about">O meni</a>
+      <a href="contact.html" data-i18n="nav_contact">Kontakt</a>
+    </nav>
+    <p class="footer-copy">© 2025 Didina SoulFood Riznica. <span data-i18n="footer_rights">Sva prava zadržana.</span></p>
+  </div>
+</footer>
+
+<!-- FAVORITES PANEL -->
+<aside class="favorites-panel" id="favoritesPanel" aria-label="Omiljeni recepti">
+  <div class="favorites-panel-header">
+    <span class="favorites-panel-title" data-i18n="favorites_title">Moji omiljeni recepti</span>
+    <button class="close-favorites-btn" id="closeFavPanel" aria-label="Zatvori">×</button>
+  </div>
+  <div class="favorites-list" id="favoritesList"></div>
+</aside>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal" tabindex="-1">
+    <div class="modal-header">
+      <button class="modal-close" id="closeModal" aria-label="Zatvori recept">×</button>
+      <div class="modal-category-badge" id="modalCategory"></div>
+      <h2 class="modal-title" id="modalTitle"></h2>
+      <p class="modal-subtitle" id="modalSubtitle"></p>
+      <div class="modal-meta-item" id="modalTime"></div>
+    </div>
+    <div class="modal-body">
+      <blockquote class="modal-comment" id="modalComment" hidden></blockquote>
+      <h3 class="modal-section-title" data-i18n="ingredients">Sastojci</h3>
+      <ul class="ingredients-list" id="modalIngredients"></ul>
+      <h3 class="modal-section-title" data-i18n="instructions">Priprema</h3>
+      <ol class="instructions-list" id="modalInstructions"></ol>
+      <button class="modal-fav-btn" id="modalFavBtn">🤍 <span data-i18n="add_favorite">Dodaj u omiljene</span></button>
+    </div>
+  </div>
+</div>
+
+<script src="js/translations.js"></script>
+<script src="js/recipes-data.js"></script>
+<script src="js/main.js"></script>
+<script>
+  // Render featured recipes (first 6)
+  document.addEventListener('DOMContentLoaded', function () {
+    const grid = document.getElementById('featuredGrid');
+    if (grid && typeof recipes !== 'undefined') {
+      grid.innerHTML = recipes.slice(0, 6).map(r => createRecipeCardHTML(r)).join('');
+      grid.querySelectorAll('.recipe-card').forEach(card => {
+        card.addEventListener('click', function (e) {
+          if (!e.target.classList.contains('fav-toggle')) openModal(this.dataset.recipeNumber);
+        });
+      });
+      grid.querySelectorAll('.fav-toggle').forEach(btn => {
+        btn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          const num = this.dataset.recipeFav;
+          toggleFavorite(num);
+          this.textContent = isFavorite(num) ? '❤️' : '🤍';
+          renderFavoritesPanel();
+        });
+      });
+    }
+
+    // Render categories
+    const catGrid = document.getElementById('categoriesGrid');
+    if (catGrid) {
+      const cats = [...new Set(recipes.map(r => r.category))];
+      const classMap = { morning: 'cat-card-morning', refreshing: 'cat-card-refreshing', coffee: 'cat-card-coffee', dunno: 'cat-card-dunno', oven: 'cat-card-oven' };
+      catGrid.innerHTML = cats.map(cat => {
+        const info = getCategoryInfo(cat);
+        const count = recipes.filter(r => r.category === cat).length;
+        return `<a href="recipes.html#${info.cls}" class="category-card ${classMap[info.cls] || ''}" data-filter="${cat}">
+          <div class="category-card-emoji">${info.emoji}</div>
+          <div class="category-card-name">${cat}</div>
+          <div class="category-card-count">${count} recepata</div>
+        </a>`;
+      }).join('');
+    }
+  });
+</script>
 </body>
 </html>
