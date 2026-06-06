@@ -219,7 +219,7 @@ ul,ol { list-style: none; }
     url('../assets/images/header-pattern.svg') repeat,
     radial-gradient(ellipse at 25% 60%, rgba(216,161,74,.10) 0%, transparent 55%),
     radial-gradient(ellipse at 78% 15%, rgba(148,168,138,.07) 0%, transparent 50%);
-  background-size: 320px 80px, auto, auto;
+  background-size: 320px 160px, auto, auto;
 }
 .hero::after {
   content: '';
@@ -373,7 +373,7 @@ ul,ol { list-style: none; }
   content: '';
   position: absolute; inset: 0;
   background: url('../assets/images/header-pattern.svg') repeat;
-  background-size: 320px 80px;
+  background-size: 320px 160px;
   opacity: .45;
   pointer-events: none;
 }
