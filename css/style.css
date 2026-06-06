@@ -143,13 +143,13 @@ ul,ol { list-style: none; }
   display: flex; align-items: center; gap: .25rem;
 }
 .nav-links a {
-  padding: .4rem .85rem; border-radius: var(--r-sm);
-  font-size: .9rem; color: rgba(247,241,231,.80);
+  padding: .4rem .85rem;
+  font-size: .9rem; color: rgba(247,241,231,.72);
   transition: all var(--ease);
+  border-bottom: 2px solid transparent;
 }
-.nav-links a:hover, .nav-links a.active {
-  color: #F7F1E7; background: rgba(0,0,0,.20);
-}
+.nav-links a:hover  { color: #F7F1E7; border-bottom-color: rgba(216,161,74,.55); }
+.nav-links a.active { color: #D8A14A; border-bottom-color: #D8A14A; font-weight: 600; }
 .nav-right { display: flex; align-items: center; gap: .75rem; }
 
 /* Language switcher */
