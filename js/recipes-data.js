@@ -787,7 +787,7 @@ const recipes = [
       ]
     },
     note: "",
-    image: "assets/images/image45.png",
+    image: "assets/images/image9.png",
     category: "Jutarnji recepti"
   },
   {
