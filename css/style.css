@@ -198,7 +198,16 @@ ul,ol { list-style: none; }
   background: radial-gradient(ellipse at 25% 60%, rgba(255,220,200,.12) 0%, transparent 55%),
               radial-gradient(ellipse at 78% 15%, rgba(180,255,240,.08) 0%, transparent 50%);
 }
-.hero-content { position: relative; max-width: 700px; margin: 0 auto; }
+.hero::after {
+  content: '';
+  position: absolute; right: -2%; bottom: -8%; width: 52%; height: 115%;
+  background: url('assets/images/image40.png') center/contain no-repeat;
+  opacity: .11;
+  filter: grayscale(100%) sepia(30%) contrast(.75) brightness(1.5);
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+.hero-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
 .hero h1 {
   color: #fff; font-size: clamp(2rem,5vw,3.4rem);
   margin-bottom: 1rem; text-shadow: 0 2px 6px rgba(0,0,0,.2);
@@ -335,13 +344,25 @@ ul,ol { list-style: none; }
 
 /* ---- PAGE HERO (inner pages) ---- */
 .page-hero {
-  padding: 3.5rem 2rem; text-align: center;
+  padding: 3.5rem 2rem; text-align: center; position: relative; overflow: hidden;
 }
-.page-hero h1 { color: #fff; }
-.page-hero p  { color: rgba(255,255,255,.85); font-style: italic; font-size: 1.05rem; margin-top: .6rem; }
+.page-hero::after {
+  content: '';
+  position: absolute; right: -3%; bottom: -12%; width: 48%; height: 130%;
+  opacity: .10;
+  filter: grayscale(100%) sepia(25%) contrast(.8) brightness(1.6);
+  mix-blend-mode: screen;
+  pointer-events: none;
+  background-size: contain; background-repeat: no-repeat; background-position: center;
+}
+.page-hero h1 { color: #fff; position: relative; z-index: 1; }
+.page-hero p  { color: rgba(255,255,255,.85); font-style: italic; font-size: 1.05rem; margin-top: .6rem; position: relative; z-index: 1; }
 .page-hero-recipes  { background: linear-gradient(140deg,#C4472C,#9A3220 55%,#0F5749); }
+.page-hero-recipes::after  { background-image: url('assets/images/image41.png'); }
 .page-hero-about    { background: linear-gradient(140deg,#0F5749,#1A7A6C 55%,#C4472C); }
+.page-hero-about::after    { background-image: url('assets/images/image42.png'); }
 .page-hero-contact  { background: linear-gradient(140deg,#9A3220,#C4472C 60%,#7A2818); }
+.page-hero-contact::after  { background-image: url('assets/images/image43.png'); }
 
 /* ---- MODAL ---- */
 .modal-overlay {
