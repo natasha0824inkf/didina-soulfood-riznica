@@ -42,7 +42,7 @@ const translations = {
 
     about_title: 'O Didi',
     about_subtitle: 'Kuvarica iz ljubavi, ne iz obaveze',
-    about_p1: 'Zovem se Didi. Volim da kuvam, ali još više volim da pripremam hranu koja hrani dušu, greje srce i smeška se iznutra. Ova riznica nije nastala preko noći — nego kroz mnoga nedeljna jutra, tihe večeri uz šolju čaja, osmehe iz rerne i poneki eksperiment koji se nikad više nije ponovio.',
+    about_p1: 'Zovem se Didi. Volim da kuvam, ali još više volim da pripremam hranu koja hrani dušu, greje srce i smeška se iznutra. Ova riznica nije nastala preko noći — nego kroz mnoga nedeljna jutra, tihe večeri uz šolju čaja, mirise iz rerne i poneki eksperiment koji se nikad više nije ponovio.',
     about_p2: 'Ovi recepti nisu samo za stomak — oni su za dane kad ti treba mir, za brza jutra, trenutke uz kafu ili kad ne znaš šta da pojedeš. Ovde nećeš naći komplikovane korake. Samo stvarne zalogaje — inspirisane sportom, jogom, letom, morem i onom večitom potrebom da svemu dodam šaku oraha.',
     about_p3: 'Ovo nije kuvar iz studija nego iz života. Sve je poteklo iz moje kuhinje i lične kreativnosti. Uživajte u čitanju i isprobavanju!',
     about_philosophy: 'Moja filozofija kuvanja',
@@ -68,6 +68,16 @@ const translations = {
 
     footer_text: 'Napravljeno s ljubavlju za sve koji veruju da je hrana jezik duše.',
     footer_rights: 'Sva prava zadržana.',
+
+    share_recipe: 'Podeli recept',
+    newsletter_title: 'Ostanite u toku',
+    newsletter_desc: 'Novi recepti, sezonske ideje i vesti — direktno u inbox.',
+    newsletter_placeholder: 'Vaša email adresa',
+    newsletter_btn: 'Prijavi se',
+    book_coming: 'Uskoro',
+    book_title: 'Didina SoulFood Riznica — knjiga',
+    book_desc: 'Svi ovi recepti, i još mnogo toga, uskoro u štampanom obliku. Prijavite se za newsletter da budete prvi koji saznaju.',
+    about_story: 'Moja priča',
   },
 
   de: {
@@ -139,6 +149,16 @@ const translations = {
 
     footer_text: 'Mit Liebe gemacht — für alle, die glauben, dass Essen die Sprache der Seele ist.',
     footer_rights: 'Alle Rechte vorbehalten.',
+
+    share_recipe: 'Rezept teilen',
+    newsletter_title: 'Bleib dabei',
+    newsletter_desc: 'Neue Rezepte, saisonale Ideen und Neuigkeiten — direkt ins Postfach.',
+    newsletter_placeholder: 'Deine E-Mail-Adresse',
+    newsletter_btn: 'Anmelden',
+    book_coming: 'Demnächst',
+    book_title: 'Didis SoulFood-Schatzkammer — das Buch',
+    book_desc: 'All diese Rezepte und noch viele mehr — bald auch gedruckt. Meld dich für den Newsletter an, um als Erste davon zu erfahren.',
+    about_story: 'Meine Geschichte',
   },
 
   en: {
@@ -210,5 +230,15 @@ const translations = {
 
     footer_text: 'Made with love, for everyone who believes food is the language of the soul.',
     footer_rights: 'All rights reserved.',
+
+    share_recipe: 'Share recipe',
+    newsletter_title: 'Stay in the loop',
+    newsletter_desc: 'New recipes, seasonal ideas and news — straight to your inbox.',
+    newsletter_placeholder: 'Your email address',
+    newsletter_btn: 'Subscribe',
+    book_coming: 'Coming soon',
+    book_title: "Didi's SoulFood Treasury — the book",
+    book_desc: 'All these recipes and many more, soon in print. Subscribe to the newsletter to be the first to know.',
+    about_story: 'My story',
   }
 };

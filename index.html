@@ -7,6 +7,7 @@
   <meta name="description" content="Jednostavni recepti s dušom — za ljude koji vole hranu koja ih voli za uzvrat.">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <script>if(localStorage.getItem('didina-theme')==='dark'||(!localStorage.getItem('didina-theme')&&window.matchMedia('(prefers-color-scheme:dark)').matches))document.documentElement.classList.add('dark-mode');</script>
 </head>
 <body>
 
@@ -37,6 +38,7 @@
         <button class="lang-btn"        data-lang="de">DE</button>
         <button class="lang-btn"        data-lang="en">EN</button>
       </div>
+      <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
       <button class="favorites-btn" aria-label="Omiljeni recepti">
         🤍 <span class="favorites-btn-label" data-i18n="nav_favorites">Omiljeni</span>
         <span class="fav-count" aria-live="polite">0</span>
@@ -63,6 +65,26 @@
     <div class="recipe-grid" id="featuredGrid"></div>
     <div style="text-align:center;margin-top:2rem">
       <a href="recipes.html" class="hero-cta" style="background:var(--coral);color:#fff;font-size:.95rem;padding:.75rem 2rem" data-i18n="all_recipes">Svi recepti</a>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK BANNER + NEWSLETTER -->
+<section class="section">
+  <div class="container">
+    <div class="book-banner">
+      <div class="book-banner-emoji">📖</div>
+      <div class="book-banner-badge" data-i18n="book_coming">Uskoro</div>
+      <h3 data-i18n="book_title">Didina SoulFood Riznica — knjiga</h3>
+      <p data-i18n="book_desc">Svi ovi recepti, i još mnogo toga, uskoro u štampanom obliku. Prijavite se za newsletter da budete prvi koji saznaju.</p>
+    </div>
+    <div class="newsletter-section">
+      <h3 data-i18n="newsletter_title">Ostanite u toku</h3>
+      <p data-i18n="newsletter_desc">Novi recepti, sezonske ideje i vesti — direktno u inbox.</p>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" class="newsletter-input" data-i18n-placeholder="newsletter_placeholder" placeholder="Vaša email adresa" required>
+        <button type="submit" class="newsletter-btn" data-i18n="newsletter_btn">Prijavi se</button>
+      </form>
     </div>
   </div>
 </section>
@@ -99,7 +121,7 @@
         Blog &amp; Riznica
       </a>
     </div>
-    <p class="footer-copy">© 2026 Didina SoulFood Riznica. <span data-i18n="footer_rights">Sva prava zadržana.</span></p>
+    <p class="footer-copy">© 2026 Dragana Stamenković – Didi · Didina SoulFood Riznica. <span data-i18n="footer_rights">Sva prava zadržana.</span></p>
     <div class="footer-powered">
       Powered by
       <a href="https://github.com/natasha0824inkf" target="_blank" rel="noopener">
@@ -136,6 +158,7 @@
       <h3 class="modal-section-title" data-i18n="instructions">Priprema</h3>
       <ol class="instructions-list" id="modalInstructions"></ol>
       <button class="modal-fav-btn" id="modalFavBtn">🤍 <span data-i18n="add_favorite">Dodaj u omiljene</span></button>
+      <button class="modal-share-btn" id="modalShareBtn">↗ <span data-i18n="share_recipe">Podeli recept</span></button>
     </div>
   </div>
 </div>

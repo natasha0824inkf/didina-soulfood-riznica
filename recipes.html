@@ -7,6 +7,7 @@
   <meta name="description" content="Svi recepti — pretraži, filtriraj po kategoriji i sačuvaj omiljene.">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <script>if(localStorage.getItem('didina-theme')==='dark'||(!localStorage.getItem('didina-theme')&&window.matchMedia('(prefers-color-scheme:dark)').matches))document.documentElement.classList.add('dark-mode');</script>
 </head>
 <body>
 
@@ -37,6 +38,7 @@
         <button class="lang-btn"        data-lang="de">DE</button>
         <button class="lang-btn"        data-lang="en">EN</button>
       </div>
+      <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
       <button class="favorites-btn">
         🤍 <span class="favorites-btn-label" data-i18n="nav_favorites">Omiljeni</span>
         <span class="fav-count">0</span>
@@ -102,7 +104,7 @@
         Blog &amp; Riznica
       </a>
     </div>
-    <p class="footer-copy">© 2026 Didina SoulFood Riznica. <span data-i18n="footer_rights">Sva prava zadržana.</span></p>
+    <p class="footer-copy">© 2026 Dragana Stamenković – Didi · Didina SoulFood Riznica. <span data-i18n="footer_rights">Sva prava zadržana.</span></p>
     <div class="footer-powered">
       Powered by
       <a href="https://github.com/natasha0824inkf" target="_blank" rel="noopener">
@@ -139,6 +141,7 @@
       <h3 class="modal-section-title" data-i18n="instructions">Priprema</h3>
       <ol class="instructions-list" id="modalInstructions"></ol>
       <button class="modal-fav-btn" id="modalFavBtn">🤍 <span data-i18n="add_favorite">Dodaj u omiljene</span></button>
+      <button class="modal-share-btn" id="modalShareBtn">↗ <span data-i18n="share_recipe">Podeli recept</span></button>
     </div>
   </div>
 </div>

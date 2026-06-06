@@ -6,6 +6,20 @@ function t(key) {
          (translations['sr'] && translations['sr'][key]) || key;
 }
 
+// Resolve a translatable string field from recipe data
+function tr(field) {
+  if (!field && field !== 0) return '';
+  if (typeof field === 'string') return field;
+  return field[currentLang] || field.sr || '';
+}
+
+// Resolve a translatable array field from recipe data
+function trArr(field) {
+  if (!field) return [];
+  if (Array.isArray(field)) return field;
+  return field[currentLang] || field.sr || [];
+}
+
 function setLanguage(lang) {
   currentLang = lang;
   localStorage.setItem('didina-lang', lang);
@@ -32,6 +46,40 @@ function setLanguage(lang) {
   if (typeof renderRecipes === 'function') renderRecipes();
   if (typeof renderFeaturedGrid === 'function') renderFeaturedGrid();
   if (typeof renderCategoriesGrid === 'function') renderCategoriesGrid();
+
+  // Refresh open modal content in new language
+  if (activeRecipe && document.getElementById('modalOverlay')?.classList.contains('open')) {
+    populateModal(activeRecipe);
+  }
+}
+
+// ---- THEME TOGGLE ----
+function initTheme() {
+  const saved = localStorage.getItem('didina-theme');
+  const sys   = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const dark  = saved === 'dark' || (!saved && sys);
+  document.documentElement.classList.toggle('dark-mode', dark);
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    if (!localStorage.getItem('didina-theme')) {
+      document.documentElement.classList.toggle('dark-mode', e.matches);
+      updateThemeButton();
+    }
+  });
+}
+
+function toggleTheme() {
+  const isDark = document.documentElement.classList.toggle('dark-mode');
+  localStorage.setItem('didina-theme', isDark ? 'dark' : 'light');
+  updateThemeButton();
+}
+
+function updateThemeButton() {
+  const isDark = document.documentElement.classList.contains('dark-mode');
+  document.querySelectorAll('.theme-toggle').forEach(btn => {
+    btn.textContent = isDark ? '☀️' : '🌙';
+    btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+  });
 }
 
 // ---- CATEGORY INFO ----
@@ -112,7 +160,7 @@ function renderFavoritesPanel() {
     return `<div class="fav-item" data-open-recipe="${recipe.number}">
       <div class="fav-item-emoji cat-thumb-${cat.cls}">${cat.emoji}</div>
       <div class="fav-item-info">
-        <div class="fav-item-title">${recipe.title}</div>
+        <div class="fav-item-title">${tr(recipe.title)}</div>
         <div class="fav-item-cat">${t(cat.label_key)}</div>
       </div>
       <button class="fav-item-remove" data-remove-fav="${recipe.number}" aria-label="${t('remove_favorite')}">×</button>
@@ -147,19 +195,22 @@ function refreshCardFavBtn(number) {
 function createRecipeCardHTML(recipe) {
   const cat = getCategoryInfo(recipe.category);
   const fav = isFavorite(recipe.number);
+  const title = tr(recipe.title);
+  const subtitle = tr(recipe.subtitle);
+  const time = tr(recipe.prep_time);
   const thumbContent = recipe.image
-    ? `<img src="${recipe.image}" alt="${recipe.title}" class="card-img" loading="lazy">`
+    ? `<img src="${recipe.image}" alt="${title}" class="card-img" loading="lazy">`
     : `<span class="card-emoji">${cat.emoji}</span>`;
-  return `<article class="recipe-card" data-recipe-number="${recipe.number}" tabindex="0" role="button" aria-label="${recipe.title}">
+  return `<article class="recipe-card" data-recipe-number="${recipe.number}" tabindex="0" role="button" aria-label="${title}">
     <div class="recipe-card-thumb cat-thumb-${cat.cls}${recipe.image ? ' has-img' : ''}">
       ${thumbContent}
     </div>
     <div class="recipe-card-body">
       <div class="recipe-card-category cat-color-${cat.cls}">${t(cat.label_key)}</div>
-      <h3 class="recipe-card-title">${recipe.title}</h3>
-      <p class="recipe-card-subtitle">${recipe.subtitle}</p>
+      <h3 class="recipe-card-title">${title}</h3>
+      <p class="recipe-card-subtitle">${subtitle}</p>
       <div class="recipe-card-footer">
-        <span class="recipe-card-time">⏱ ${recipe.prep_time}</span>
+        <span class="recipe-card-time">⏱ ${time}</span>
         <button class="fav-toggle" data-recipe-fav="${recipe.number}" title="${t(fav ? 'remove_favorite' : 'add_favorite')}">${fav ? '❤️' : '🤍'}</button>
       </div>
     </div>
@@ -169,6 +220,41 @@ function createRecipeCardHTML(recipe) {
 // ---- MODAL ----
 let activeRecipe = null;
 
+function populateModal(recipe) {
+  const overlay = document.getElementById('modalOverlay');
+  if (!overlay) return;
+  const cat = getCategoryInfo(recipe.category);
+  const fav = isFavorite(recipe.number);
+
+  overlay.querySelector('#modalCategory').innerHTML = `${cat.emoji} <span>${t(cat.label_key)}</span>`;
+  overlay.querySelector('#modalTitle').textContent    = tr(recipe.title);
+  overlay.querySelector('#modalSubtitle').textContent = tr(recipe.subtitle);
+  overlay.querySelector('#modalTime').textContent     = `⏱ ${tr(recipe.prep_time)}`;
+
+  const commentEl = overlay.querySelector('#modalComment');
+  const comment   = tr(recipe.author_comment);
+  if (comment) { commentEl.textContent = `„${comment}"`; commentEl.hidden = false; }
+  else          { commentEl.hidden = true; }
+
+  overlay.querySelector('#modalIngredients').innerHTML =
+    trArr(recipe.ingredients).map(ing => `<li>${ing}</li>`).join('');
+
+  overlay.querySelector('#modalInstructions').innerHTML =
+    trArr(recipe.instructions).map((step, i) =>
+      `<li><span class="step-number">${i + 1}</span><span>${step}</span></li>`
+    ).join('');
+
+  overlay.querySelector('.modal-section-title[data-i18n="ingredients"]').textContent = t('ingredients');
+  overlay.querySelector('.modal-section-title[data-i18n="instructions"]').textContent = t('instructions');
+
+  const favBtn = overlay.querySelector('#modalFavBtn');
+  favBtn.className = `modal-fav-btn${fav ? ' favorited' : ''}`;
+  favBtn.innerHTML = `${fav ? '❤️' : '🤍'} <span>${t(fav ? 'remove_favorite' : 'add_favorite')}</span>`;
+
+  const shareBtn = overlay.querySelector('#modalShareBtn');
+  if (shareBtn) shareBtn.innerHTML = `↗ <span>${t('share_recipe')}</span>`;
+}
+
 function openModal(number) {
   const recipe = recipes.find(r => r.number === number);
   if (!recipe) return;
@@ -177,37 +263,7 @@ function openModal(number) {
   const overlay = document.getElementById('modalOverlay');
   if (!overlay) return;
 
-  const cat = getCategoryInfo(recipe.category);
-  const fav = isFavorite(recipe.number);
-
-  overlay.querySelector('#modalCategory').innerHTML = `${cat.emoji} <span>${t(cat.label_key)}</span>`;
-  overlay.querySelector('#modalTitle').textContent = recipe.title;
-  overlay.querySelector('#modalSubtitle').textContent = recipe.subtitle;
-  overlay.querySelector('#modalTime').textContent = `⏱ ${recipe.prep_time}`;
-
-  const commentEl = overlay.querySelector('#modalComment');
-  if (recipe.author_comment) {
-    commentEl.textContent = `„${recipe.author_comment}"`;
-    commentEl.hidden = false;
-  } else {
-    commentEl.hidden = true;
-  }
-
-  overlay.querySelector('#modalIngredients').innerHTML =
-    recipe.ingredients.map(ing => `<li>${ing}</li>`).join('');
-
-  overlay.querySelector('#modalInstructions').innerHTML =
-    recipe.instructions.map((step, i) =>
-      `<li><span class="step-number">${i + 1}</span><span>${step}</span></li>`
-    ).join('');
-
-  const favBtn = overlay.querySelector('#modalFavBtn');
-  favBtn.className = `modal-fav-btn${fav ? ' favorited' : ''}`;
-  favBtn.innerHTML = `${fav ? '❤️' : '🤍'} <span>${t(fav ? 'remove_favorite' : 'add_favorite')}</span>`;
-
-  overlay.querySelector('.modal-section-title[data-i18n="ingredients"]').textContent = t('ingredients');
-  overlay.querySelector('.modal-section-title[data-i18n="instructions"]').textContent = t('instructions');
-
+  populateModal(recipe);
   overlay.classList.add('open');
   document.body.style.overflow = 'hidden';
   overlay.querySelector('.modal').focus();
@@ -221,7 +277,7 @@ function closeModal() {
 
 function toggleModalFavorite() {
   if (!activeRecipe) return;
-  const added = toggleFavorite(activeRecipe.number);
+  const added  = toggleFavorite(activeRecipe.number);
   const favBtn = document.getElementById('modalFavBtn');
   if (favBtn) {
     favBtn.className = `modal-fav-btn${added ? ' favorited' : ''}`;
@@ -231,20 +287,33 @@ function toggleModalFavorite() {
   renderFavoritesPanel();
 }
 
+function shareRecipe() {
+  if (!activeRecipe) return;
+  const title = tr(activeRecipe.title);
+  const text  = tr(activeRecipe.subtitle);
+  if (navigator.share) {
+    navigator.share({ title, text, url: window.location.href }).catch(() => {});
+  } else {
+    navigator.clipboard?.writeText(window.location.href).then(() => {
+      const btn = document.getElementById('modalShareBtn');
+      if (btn) { const orig = btn.innerHTML; btn.textContent = '✓ Copied!'; setTimeout(() => { btn.innerHTML = orig; }, 2000); }
+    });
+  }
+}
+
 // ---- RECIPES PAGE ----
 let activeFilter = 'all';
-let searchQuery = '';
+let searchQuery  = '';
 
 function renderFilterButtons() {
   const container = document.getElementById('filterButtons');
   if (!container) return;
 
   const categories = [...new Set(recipes.map(r => r.category))];
-  const allLabel = t('filter_all');
-
-  container.innerHTML = `<button class="filter-btn${activeFilter === 'all' ? ' active' : ''}" data-filter="all">${allLabel}</button>` +
+  container.innerHTML =
+    `<button class="filter-btn${activeFilter === 'all' ? ' active' : ''}" data-filter="all">${t('filter_all')}</button>` +
     categories.map(cat => {
-      const info = getCategoryInfo(cat);
+      const info  = getCategoryInfo(cat);
       const label = t(info.label_key);
       return `<button class="filter-btn${activeFilter === cat ? ' active' : ''}" data-filter="${cat}">${info.emoji} ${label}</button>`;
     }).join('');
@@ -264,18 +333,15 @@ function renderRecipes() {
 
   const filtered = recipes.filter(recipe => {
     const matchCat = activeFilter === 'all' || recipe.category === activeFilter;
-    const q = searchQuery.toLowerCase();
-    const matchSearch = !q ||
-      recipe.title.toLowerCase().includes(q) ||
-      recipe.subtitle.toLowerCase().includes(q) ||
-      recipe.category.toLowerCase().includes(q);
+    const q        = searchQuery.toLowerCase();
+    const title    = tr(recipe.title).toLowerCase();
+    const sub      = tr(recipe.subtitle).toLowerCase();
+    const matchSearch = !q || title.includes(q) || sub.includes(q) || recipe.category.toLowerCase().includes(q);
     return matchCat && matchSearch;
   });
 
   const infoEl = document.getElementById('resultsInfo');
-  if (infoEl) {
-    infoEl.textContent = `${filtered.length} ${t('results_count')}`;
-  }
+  if (infoEl) infoEl.textContent = `${filtered.length} ${t('results_count')}`;
 
   if (filtered.length === 0) {
     grid.innerHTML = `<div class="no-results" style="grid-column:1/-1">
@@ -289,9 +355,7 @@ function renderRecipes() {
 
   grid.querySelectorAll('.recipe-card').forEach(card => {
     card.addEventListener('click', function(e) {
-      if (!e.target.classList.contains('fav-toggle')) {
-        openModal(this.dataset.recipeNumber);
-      }
+      if (!e.target.classList.contains('fav-toggle')) openModal(this.dataset.recipeNumber);
     });
     card.addEventListener('keydown', function(e) {
       if (e.key === 'Enter' || e.key === ' ') openModal(this.dataset.recipeNumber);
@@ -326,6 +390,7 @@ function renderFeaturedGrid() {
       const num = this.dataset.recipeFav;
       toggleFavorite(num);
       this.textContent = isFavorite(num) ? '❤️' : '🤍';
+      this.title = t(isFavorite(num) ? 'remove_favorite' : 'add_favorite');
       renderFavoritesPanel();
     });
   });
@@ -337,7 +402,7 @@ function renderCategoriesGrid() {
   const cats = [...new Set(recipes.map(r => r.category))];
   const classMap = { morning: 'cat-card-morning', refreshing: 'cat-card-refreshing', coffee: 'cat-card-coffee', dunno: 'cat-card-dunno', oven: 'cat-card-oven' };
   catGrid.innerHTML = cats.map(cat => {
-    const info = getCategoryInfo(cat);
+    const info  = getCategoryInfo(cat);
     const count = recipes.filter(r => r.category === cat).length;
     return `<a href="recipes.html" class="category-card ${classMap[info.cls] || ''}" data-filter="${cat}">
       <div class="category-card-emoji">${info.emoji}</div>
@@ -349,6 +414,13 @@ function renderCategoriesGrid() {
 
 // ---- INIT ----
 document.addEventListener('DOMContentLoaded', function () {
+  // Theme
+  initTheme();
+  document.querySelectorAll('.theme-toggle').forEach(btn => {
+    btn.addEventListener('click', toggleTheme);
+  });
+  updateThemeButton();
+
   // Language switcher
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
@@ -358,7 +430,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Hamburger
   const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('navLinks');
+  const navLinks  = document.getElementById('navLinks');
   if (hamburger && navLinks) {
     hamburger.addEventListener('click', () => {
       const isOpen = navLinks.classList.toggle('open');
@@ -381,12 +453,13 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelector('.favorites-btn')?.addEventListener('click', openFavoritesPanel);
   document.getElementById('closeFavPanel')?.addEventListener('click', closeFavoritesPanel);
 
-  // Modal close
+  // Modal
   document.getElementById('modalOverlay')?.addEventListener('click', function(e) {
     if (e.target === this) closeModal();
   });
   document.getElementById('closeModal')?.addEventListener('click', closeModal);
   document.getElementById('modalFavBtn')?.addEventListener('click', toggleModalFavorite);
+  document.getElementById('modalShareBtn')?.addEventListener('click', shareRecipe);
 
   // Escape key
   document.addEventListener('keydown', e => {
@@ -394,14 +467,13 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // Homepage grids
-  if (document.getElementById('featuredGrid')) renderFeaturedGrid();
-  if (document.getElementById('categoriesGrid')) renderCategoriesGrid();
+  if (document.getElementById('featuredGrid'))    renderFeaturedGrid();
+  if (document.getElementById('categoriesGrid'))  renderCategoriesGrid();
 
   // Recipes page
   if (document.getElementById('recipeGrid')) {
     renderFilterButtons();
     renderRecipes();
-
     const searchInput = document.getElementById('searchInput');
     if (searchInput) {
       searchInput.addEventListener('input', function() {
@@ -411,7 +483,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // Contact form — opens mail client with form data
+  // Contact form
   const form = document.getElementById('contactForm');
   if (form) {
     form.addEventListener('submit', function(e) {
@@ -420,17 +492,31 @@ document.addEventListener('DOMContentLoaded', function () {
       const email   = document.getElementById('contactEmail').value.trim();
       const message = document.getElementById('contactMessage').value.trim();
       const subject = encodeURIComponent('Poruka sa sajta — ' + name);
-      const body    = encodeURIComponent(
-        'Ime: ' + name + '\nEmail: ' + email + '\n\nPoruka:\n' + message
-      );
-      window.location.href =
-        'mailto:d.stamenkovic@yahoo.com?subject=' + subject + '&body=' + body;
+      const body    = encodeURIComponent('Ime: ' + name + '\nEmail: ' + email + '\n\nPoruka:\n' + message);
+      window.location.href = 'mailto:d.stamenkovic@yahoo.com?subject=' + subject + '&body=' + body;
       const success = document.getElementById('formSuccess');
       if (success) {
         success.textContent = t('contact_success');
         success.classList.add('show');
         form.reset();
         setTimeout(() => success.classList.remove('show'), 6000);
+      }
+    });
+  }
+
+  // Newsletter form
+  const nlForm = document.getElementById('newsletterForm');
+  if (nlForm) {
+    nlForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const emailEl = this.querySelector('.newsletter-input');
+      if (emailEl?.value) {
+        const subject = encodeURIComponent('Newsletter prijava');
+        const body    = encodeURIComponent('Nova prijava za newsletter: ' + emailEl.value);
+        window.location.href = 'mailto:d.stamenkovic@yahoo.com?subject=' + subject + '&body=' + body;
+        emailEl.value = '';
+        const btn = this.querySelector('.newsletter-btn');
+        if (btn) { btn.textContent = '✓'; setTimeout(() => { btn.textContent = t('newsletter_btn'); }, 2500); }
       }
     });
   }

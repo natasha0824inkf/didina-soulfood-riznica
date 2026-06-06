@@ -23,64 +23,66 @@
   --ease:  .25s ease;
 }
 
-/* ---- DARK MODE ---- */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --coral:       #E04C34;
-    --coral-light: #F07258;
-    --coral-dark:  #B83825;
-    --coral-bg:    #2A1008;
-    --teal:        #28A896;
-    --teal-light:  #4EC4B0;
-    --teal-dark:   #1A7E70;
-    --teal-bg:     #071C18;
-    --cream:       #130C08;
-    --warm-white:  #1C1410;
-    --text-dark:   #F2E6DE;
-    --text-mid:    #C0967E;
-    --text-light:  #8A6050;
-    --border:      #301C14;
-    --shadow-sm:   0 2px 12px rgba(0,0,0,.35);
-    --shadow-md:   0 6px 30px rgba(0,0,0,.50);
-    --shadow-lg:   0 16px 56px rgba(0,0,0,.65);
-  }
-
-  body { background: var(--cream); }
-
-  .site-header { background: #1C1410; border-bottom-color: var(--coral-dark); }
-
-  .hero {
-    background: linear-gradient(140deg, #6A1E10 0%, #8A2C18 38%, #083A30 80%, #041E18 100%);
-  }
-  .page-hero-recipes { background: linear-gradient(140deg, #8A2C18, #6A1E10 55%, #041E18); }
-  .page-hero-about   { background: linear-gradient(140deg, #041E18, #083A30 55%, #8A2C18); }
-  .page-hero-contact { background: linear-gradient(140deg, #6A1E10, #8A2C18 60%, #501408); }
-
-  .cat-card-morning    { background: linear-gradient(140deg, #A04830, #6A1E10); }
-  .cat-card-refreshing { background: linear-gradient(140deg, #1A8070, #041E18); }
-  .cat-card-coffee     { background: linear-gradient(140deg, #906030, #3A2010); }
-  .cat-card-dunno      { background: linear-gradient(140deg, #A07030, #6A3808); }
-  .cat-card-oven       { background: linear-gradient(140deg, #B04870, #601030); }
-
-  .recipe-card          { background: #1C1410; border-color: var(--border); }
-  .search-filter-bar    { background: #1C1410; border-color: var(--border); }
-  .search-input         { background: #130C08; color: var(--text-dark); border-color: var(--border); }
-  .about-block          { background: #1C1410; border-color: var(--border); }
-  .contact-form         { background: #1C1410; border-color: var(--border); }
-  .form-input,
-  .form-textarea        { background: #130C08; color: var(--text-dark); border-color: var(--border); }
-  .modal                { background: #1C1410; }
-  .modal-header         { border-bottom-color: var(--border); }
-  .modal-close          { background: #130C08; border-color: var(--border); color: var(--text-dark); }
-  .favorites-panel      { background: #1C1410; border-left-color: var(--border); }
-  .fav-item             { border-bottom-color: var(--border); }
-  .value-item           { background: #130C08; border-color: var(--border); }
-  .filter-btn           { background: #1C1410; border-color: var(--border); color: var(--text-mid); }
-  .lang-switcher        { background: #130C08; border-color: var(--border); }
-  .favorites-btn        { background: var(--teal-bg); border-color: var(--teal-dark); }
-  .contact-social-notion { background: #2A2018; }
-  .form-success         { background: var(--teal-bg); border-color: var(--teal-dark); color: var(--teal-light); }
+/* ---- DARK MODE (class-based — set by JS, follows system or manual toggle) ---- */
+html.dark-mode {
+  --coral:       #E04C34;
+  --coral-light: #F07258;
+  --coral-dark:  #B83825;
+  --coral-bg:    #2A1008;
+  --teal:        #28A896;
+  --teal-light:  #4EC4B0;
+  --teal-dark:   #1A7E70;
+  --teal-bg:     #071C18;
+  --cream:       #130C08;
+  --warm-white:  #1C1410;
+  --text-dark:   #F2E6DE;
+  --text-mid:    #D4A88A;
+  --text-light:  #A07060;
+  --border:      #3A1E14;
+  --shadow-sm:   0 2px 12px rgba(0,0,0,.35);
+  --shadow-md:   0 6px 30px rgba(0,0,0,.50);
+  --shadow-lg:   0 16px 56px rgba(0,0,0,.65);
 }
+
+html.dark-mode .site-header { background: #1C1410; border-bottom-color: var(--coral-dark); }
+
+html.dark-mode .hero {
+  background: linear-gradient(140deg, #6A1E10 0%, #8A2C18 38%, #083A30 80%, #041E18 100%);
+}
+html.dark-mode .page-hero-recipes { background: linear-gradient(140deg, #8A2C18, #6A1E10 55%, #041E18); }
+html.dark-mode .page-hero-about   { background: linear-gradient(140deg, #041E18, #083A30 55%, #8A2C18); }
+html.dark-mode .page-hero-contact { background: linear-gradient(140deg, #6A1E10, #8A2C18 60%, #501408); }
+
+html.dark-mode .cat-card-morning    { background: linear-gradient(140deg, #A04830, #6A1E10); }
+html.dark-mode .cat-card-refreshing { background: linear-gradient(140deg, #1A8070, #041E18); }
+html.dark-mode .cat-card-coffee     { background: linear-gradient(140deg, #906030, #3A2010); }
+html.dark-mode .cat-card-dunno      { background: linear-gradient(140deg, #A07030, #6A3808); }
+html.dark-mode .cat-card-oven       { background: linear-gradient(140deg, #B04870, #601030); }
+
+html.dark-mode .recipe-card          { background: #1C1410; border-color: var(--border); }
+html.dark-mode .search-filter-bar    { background: #1C1410; border-color: var(--border); }
+html.dark-mode .search-input         { background: #130C08; color: var(--text-dark); border-color: var(--border); }
+html.dark-mode .about-block          { background: #1C1410; border-color: var(--border); }
+html.dark-mode .contact-form         { background: #1C1410; border-color: var(--border); }
+html.dark-mode .form-input,
+html.dark-mode .form-textarea        { background: #130C08; color: var(--text-dark); border-color: var(--border); }
+html.dark-mode .modal                { background: #1C1410; }
+html.dark-mode .modal-header         { border-bottom-color: var(--border); }
+html.dark-mode .modal-close          { background: #130C08; border-color: var(--border); color: var(--text-dark); }
+html.dark-mode .favorites-panel      { background: #1C1410; border-left-color: var(--border); }
+html.dark-mode .fav-item             { border-bottom-color: var(--border); }
+html.dark-mode .value-item           { background: #130C08; border-color: var(--border); }
+html.dark-mode .filter-btn           { background: #1C1410; border-color: var(--border); color: var(--text-dark); }
+html.dark-mode .lang-switcher        { background: #130C08; border-color: var(--border); }
+html.dark-mode .favorites-btn        { background: var(--teal-bg); border-color: var(--teal-dark); }
+html.dark-mode .contact-social-notion { background: #2A2018; }
+html.dark-mode .form-success         { background: var(--teal-bg); border-color: var(--teal-dark); color: var(--teal-light); }
+/* Footer keeps a true-dark background regardless of theme */
+html.dark-mode .site-footer          { background: #0D0806; }
+html.dark-mode .newsletter-section   { background: #1A0E0A; border-color: var(--border); }
+html.dark-mode .newsletter-input     { background: #130C08; color: var(--text-dark); border-color: var(--border); }
+html.dark-mode .book-banner          { background: linear-gradient(135deg, #2A1008, #041E18); border-color: var(--coral-dark); }
+html.dark-mode .theme-toggle         { background: #130C08; border-color: var(--border); color: var(--text-dark); }
 
 /* ---- RESET ---- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -605,3 +607,78 @@ ul,ol { list-style: none; }
   gap: .3rem; transition: color var(--ease); text-decoration: none;
 }
 .footer-powered a:hover { color: rgba(255,255,255,.75); }
+
+/* ---- THEME TOGGLE ---- */
+.theme-toggle {
+  background: var(--warm-white);
+  border: 1.5px solid var(--border);
+  border-radius: 50%;
+  width: 36px; height: 36px;
+  cursor: pointer; font-size: 1rem; line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+  transition: all var(--ease); flex-shrink: 0;
+}
+.theme-toggle:hover { border-color: var(--coral); transform: rotate(20deg); }
+
+/* ---- SHARE BUTTON ---- */
+.modal-share-btn {
+  background: none; border: 1.5px solid var(--border);
+  border-radius: 50px; padding: .45rem 1.1rem;
+  color: var(--text-mid); font-size: .82rem; cursor: pointer;
+  display: inline-flex; align-items: center; gap: .4rem;
+  transition: all var(--ease); margin-top: .6rem;
+}
+.modal-share-btn:hover { border-color: var(--teal); color: var(--teal); }
+
+/* ---- BOOK BANNER ---- */
+.book-banner {
+  background: linear-gradient(135deg, var(--coral-bg), var(--teal-bg));
+  border: 1.5px solid var(--coral);
+  border-radius: var(--r-lg);
+  padding: 2rem 2.5rem;
+  text-align: center;
+  margin: 0 auto 3rem;
+  max-width: 680px;
+}
+.book-banner-emoji { font-size: 2.2rem; margin-bottom: .6rem; }
+.book-banner h3    { color: var(--coral); margin-bottom: .4rem; }
+.book-banner p     { color: var(--text-mid); font-size: .95rem; }
+.book-banner-badge {
+  display: inline-block; background: var(--coral); color: #fff;
+  font-size: .72rem; font-weight: 700; letter-spacing: .08em;
+  text-transform: uppercase; padding: .25rem .75rem; border-radius: 50px;
+  margin-bottom: .75rem;
+}
+
+/* ---- NEWSLETTER ---- */
+.newsletter-section {
+  background: var(--warm-white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 2rem 2.5rem;
+  text-align: center;
+  max-width: 540px;
+  margin: 0 auto 3rem;
+}
+.newsletter-section h3 { color: var(--coral); margin-bottom: .3rem; }
+.newsletter-section p  { font-size: .9rem; margin-bottom: 1.1rem; }
+.newsletter-form {
+  display: flex; gap: .6rem; flex-wrap: wrap; justify-content: center;
+}
+.newsletter-input {
+  flex: 1; min-width: 200px;
+  padding: .65rem 1rem; border-radius: 50px;
+  border: 1.5px solid var(--border);
+  background: var(--cream); color: var(--text-dark);
+  font-family: inherit; font-size: .9rem;
+  outline: none; transition: border-color var(--ease);
+}
+.newsletter-input:focus { border-color: var(--coral); }
+.newsletter-btn {
+  background: var(--coral); color: #fff;
+  border: none; border-radius: 50px;
+  padding: .65rem 1.5rem; cursor: pointer;
+  font-family: inherit; font-size: .9rem; font-weight: 600;
+  transition: background var(--ease);
+}
+.newsletter-btn:hover { background: var(--coral-dark); }
