@@ -52,7 +52,7 @@ html.dark-mode {
   --shadow-lg:   0 16px 56px rgba(0,0,0,.70);
 }
 
-html.dark-mode .site-header { background: #1A1208 url('../assets/images/header-pattern.svg') repeat; background-size: 320px 68px; border-bottom-color: var(--coral-light); }
+html.dark-mode .site-header { background: #1A1208; border-bottom-color: var(--coral-light); }
 
 html.dark-mode .hero {
   background: linear-gradient(140deg, #3A2010 0%, #4A2E18 38%, #2A1E0E 80%, #1A1008 100%);
@@ -125,8 +125,7 @@ ul,ol { list-style: none; }
 
 /* ---- HEADER & NAV ---- */
 .site-header {
-  background: #6B4F3A url('../assets/images/header-pattern.svg') repeat;
-  background-size: 320px 68px;
+  background: #6B4F3A;
   border-bottom: 2px solid #D8A14A;
   position: sticky; top: 0; z-index: 100;
   box-shadow: 0 2px 12px rgba(42,26,14,.25);
