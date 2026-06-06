@@ -86,7 +86,7 @@ html.dark-mode .favorites-btn        { background: var(--teal-bg); border-color:
 html.dark-mode .contact-social-notion { background: #2A2010; }
 html.dark-mode .form-success         { background: var(--teal-bg); border-color: var(--teal-dark); color: var(--teal-light); }
 /* Footer keeps a true-dark background regardless of theme */
-html.dark-mode .site-footer          { background: #100A04; }
+html.dark-mode .site-footer          { background: #2A1608; }
 html.dark-mode .newsletter-section   { background: #180E24; border-color: var(--plum-dark); box-shadow: 0 4px 24px rgba(122,88,144,.15); }
 html.dark-mode .newsletter-section h3 { color: var(--plum-light); }
 html.dark-mode .newsletter-input     { background: #120A1E; color: var(--text-dark); border-color: var(--plum-dark); }
@@ -619,7 +619,7 @@ ul,ol { list-style: none; }
 
 /* ---- FOOTER ---- */
 .site-footer {
-  background: var(--text-dark); color: rgba(255,255,255,.65);
+  background: #4A2E14; color: rgba(255,255,255,.72);
   padding: 2.75rem 1.5rem; margin-top: 4rem; text-align: center;
 }
 .footer-content { max-width: 700px; margin: 0 auto; }
