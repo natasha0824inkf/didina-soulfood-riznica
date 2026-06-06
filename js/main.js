@@ -32,9 +32,9 @@ function setLanguage(lang) {
     const key = el.dataset.i18n;
     const val = t(key);
     if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-      el.placeholder = val;
+      if (el.placeholder !== val) el.placeholder = val;
     } else {
-      el.textContent = val;
+      if (el.textContent !== val) el.textContent = val;
     }
   });
 

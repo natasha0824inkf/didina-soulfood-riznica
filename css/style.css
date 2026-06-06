@@ -146,7 +146,6 @@ ul,ol { list-style: none; }
 .nav-links a {
   padding: .4rem .85rem;
   font-size: .9rem; color: rgba(247,241,231,.72);
-  transition: all var(--ease);
   border-bottom: 2px solid transparent;
 }
 .nav-links a:hover  { color: #F7F1E7; border-bottom-color: rgba(216,161,74,.55); }
