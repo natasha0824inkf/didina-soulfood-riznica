@@ -55,11 +55,11 @@ html.dark-mode {
 html.dark-mode .site-header { background: #1A1208; border-bottom-color: var(--coral-light); }
 
 html.dark-mode .hero {
-  background: linear-gradient(140deg, #3A2010 0%, #4A2E18 38%, #2A1E0E 80%, #1A1008 100%);
+  background: linear-gradient(140deg, #180C04 0%, #221008 45%, #120804 100%);
 }
-html.dark-mode .page-hero-recipes { background: linear-gradient(140deg, #3A2010, #2A1A08 55%, #1A1008); }
-html.dark-mode .page-hero-about   { background: linear-gradient(140deg, #2A1A08, #3A2010 55%, #4A2E18); }
-html.dark-mode .page-hero-contact { background: linear-gradient(140deg, #3A2010, #4A2E18 60%, #2A1808); }
+html.dark-mode .page-hero-recipes { background: linear-gradient(140deg, #180C04, #221008 55%, #120804); }
+html.dark-mode .page-hero-about   { background: linear-gradient(140deg, #120804, #180C04 55%, #221008); }
+html.dark-mode .page-hero-contact { background: linear-gradient(140deg, #221008, #180C04 60%, #0E0602); }
 
 html.dark-mode .cat-card-morning    { background: linear-gradient(140deg, #C07838, #5A2E08); box-shadow: 0 6px 22px rgba(192,120,56,.22); }
 html.dark-mode .cat-card-refreshing { background: linear-gradient(140deg, #5DA840, #1E4010); box-shadow: 0 6px 22px rgba(93,168,64,.28); }
@@ -209,35 +209,29 @@ ul,ol { list-style: none; }
 
 /* ---- HERO ---- */
 .hero {
-  background: linear-gradient(140deg, #6B4F3A 0%, #7A5A40 40%, #5A4030 80%, #4A3020 100%);
+  background: linear-gradient(140deg, #2A1608 0%, #3A2010 45%, #221008 100%);
   padding: 5.5rem 2rem; text-align: center; position: relative; overflow: hidden;
 }
 .hero::before {
   content: '';
   position: absolute; inset: 0;
-  background:
-    url('../assets/images/header-pattern.svg') repeat,
-    radial-gradient(ellipse at 25% 60%, rgba(216,161,74,.10) 0%, transparent 55%),
-    radial-gradient(ellipse at 78% 15%, rgba(148,168,138,.07) 0%, transparent 50%);
-  background-size: 320px 160px, auto, auto;
-}
-.hero::after {
-  content: '';
-  position: absolute; right: -2%; bottom: -8%; width: 52%; height: 115%;
-  background: url('../assets/images/image40.png') center/contain no-repeat;
-  opacity: .14;
-  filter: grayscale(100%) sepia(55%) contrast(.60) brightness(2.2);
-  mix-blend-mode: screen;
+  background: url('../assets/images/header-pattern.svg') repeat;
+  background-size: 320px 240px;
+  opacity: .55;
   pointer-events: none;
 }
 .hero-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
 .hero h1 {
-  color: #fff; font-size: clamp(2rem,5vw,3.4rem);
-  margin-bottom: 1rem; text-shadow: 0 2px 6px rgba(0,0,0,.2);
+  font-family: 'Dancing Script', cursive;
+  color: #F0A830; font-size: clamp(2.8rem,7vw,4.8rem);
+  font-weight: 700; margin-bottom: .75rem;
+  text-shadow: 0 2px 12px rgba(0,0,0,.35);
+  line-height: 1.1;
 }
 .hero-subtitle {
-  color: rgba(255,255,255,.88); font-size: clamp(.95rem,2vw,1.25rem);
-  margin-bottom: 2.25rem; font-style: italic;
+  color: rgba(240,210,160,.82); font-size: clamp(.85rem,1.8vw,1.1rem);
+  margin-bottom: 2.25rem; letter-spacing: .12em; text-transform: uppercase;
+  font-style: normal;
 }
 .hero-cta {
   display: inline-block; padding: .9rem 2.5rem;
@@ -373,27 +367,20 @@ ul,ol { list-style: none; }
   content: '';
   position: absolute; inset: 0;
   background: url('../assets/images/header-pattern.svg') repeat;
-  background-size: 320px 160px;
-  opacity: .45;
+  background-size: 320px 240px;
+  opacity: .55;
   pointer-events: none;
 }
-.page-hero::after {
-  content: '';
-  position: absolute; right: -3%; bottom: -12%; width: 48%; height: 130%;
-  opacity: .13;
-  filter: grayscale(100%) sepia(55%) contrast(.60) brightness(2.2);
-  mix-blend-mode: screen;
-  pointer-events: none;
-  background-size: contain; background-repeat: no-repeat; background-position: center;
+.page-hero h1 {
+  font-family: 'Dancing Script', cursive;
+  color: #F0A830; font-size: clamp(2.4rem,6vw,4rem);
+  font-weight: 700; position: relative; z-index: 1;
+  text-shadow: 0 2px 12px rgba(0,0,0,.35); line-height: 1.1;
 }
-.page-hero h1 { color: #F7F1E7; position: relative; z-index: 1; }
-.page-hero p  { color: rgba(247,241,231,.82); font-style: italic; font-size: 1.05rem; margin-top: .6rem; position: relative; z-index: 1; }
-.page-hero-recipes  { background: linear-gradient(140deg,#6B4F3A,#7A5A40 55%,#5A4030); }
-.page-hero-recipes::after  { background-image: url('../assets/images/image41.png'); }
-.page-hero-about    { background: linear-gradient(140deg,#5A4030,#6B4F3A 55%,#7A5A40); }
-.page-hero-about::after    { background-image: url('../assets/images/image42.png'); }
-.page-hero-contact  { background: linear-gradient(140deg,#7A5A40,#6B4F3A 60%,#5A3820); }
-.page-hero-contact::after  { background-image: url('../assets/images/image43.png'); }
+.page-hero p  { color: rgba(240,210,160,.80); font-size: 1rem; margin-top: .6rem; position: relative; z-index: 1; letter-spacing: .1em; text-transform: uppercase; }
+.page-hero-recipes  { background: linear-gradient(140deg,#2A1608,#3A2010 55%,#221008); }
+.page-hero-about    { background: linear-gradient(140deg,#221008,#2A1608 55%,#3A2010); }
+.page-hero-contact  { background: linear-gradient(140deg,#3A2010,#2A1608 60%,#1A0C04); }
 
 /* ---- MODAL ---- */
 .modal-overlay {
