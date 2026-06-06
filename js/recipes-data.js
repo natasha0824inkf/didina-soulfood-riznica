@@ -787,7 +787,7 @@ const recipes = [
       ]
     },
     note: "",
-    image: "assets/images/image9.png",
+    image: "assets/images/image3.png",
     category: "Jutarnji recepti"
   },
   {
@@ -1223,6 +1223,7 @@ const recipes = [
       en: ["Finely grate the cucumber, salt it and leave for 5 minutes, then squeeze out well.", "In a bowl, mix yogurt, squeezed cucumber, garlic and olive oil.", "Add herbs, salt, pepper and lemon juice.", "Stir and refrigerate for at least 20 minutes before serving.", "Serve with bread, vegetables or as a side with meat."]
     },
     note: "",
+    image: "assets/images/image23.png",
     category: "Osvežavajući recepti"
   },
   {
@@ -1278,6 +1279,7 @@ const recipes = [
       en: ["Preheat the oven to 200°C.", "Place the salmon fillet on a piece of foil.", "Drizzle with olive oil, season and layer lemon slices and herbs on top.", "Seal the foil tightly — like a little parcel.", "Bake for 18–20 minutes.", "Open the foil carefully — the steam is hot.", "Serve with cooked rice, potatoes or a green salad."]
     },
     note: "",
+    image: "assets/images/image17.png",
     category: "Recepti kada ne znam šta da kuvam"
   },
   {
@@ -1305,6 +1307,7 @@ const recipes = [
       en: ["Preheat the oven to 180°C and prepare a muffin tin.", "In one bowl, mix the dry ingredients: flour, baking powder, bicarb, cinnamon, salt.", "In another bowl, beat the eggs with honey and oil, then add the milk.", "Combine wet and dry ingredients — don't overmix, lumpy is fine.", "Gently fold in the grated apple and raisins.", "Fill the muffin tin (2/3 full per hole).", "Bake for 22–25 minutes. Check with a toothpick."]
     },
     note: "",
+    image: "assets/images/image30.png",
     category: "Recepti koji mirišu iz rerne"
   },
   {
