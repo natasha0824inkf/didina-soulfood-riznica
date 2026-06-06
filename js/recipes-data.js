@@ -787,7 +787,7 @@ const recipes = [
       ]
     },
     note: "",
-    image: "assets/images/image3.png",
+    image: "assets/images/image45.png",
     category: "Jutarnji recepti"
   },
   {
@@ -1139,7 +1139,7 @@ const recipes = [
       en: ["Put the eggs in boiling water and cook for exactly 6–7 minutes for a soft yolk.", "Meanwhile, toast the bread.", "Mash the avocado with a fork with a little salt, pepper and lemon juice.", "Spread the avocado on the toast.", "Cool the eggs in cold water, peel and halve.", "Arrange on toast, sprinkle with chilli and serve immediately."]
     },
     note: "",
-    image: "assets/images/image5.png",
+    image: "assets/images/image43.png",
     category: "Jutarnji recepti"
   },
   {
@@ -1167,7 +1167,7 @@ const recipes = [
       en: ["Put all ingredients in a blender.", "Blend on maximum speed for about 60 seconds until smooth.", "Taste and add a little honey or more lemon if needed.", "Serve immediately — fresh and cold."]
     },
     note: "",
-    image: "assets/images/image9.png",
+    image: "assets/images/image15.png",
     category: "Osvežavajući recepti"
   },
   {
@@ -1195,7 +1195,7 @@ const recipes = [
       en: ["Cut the watermelon into large cubes and arrange on a plate.", "Crumble the feta on top.", "Add the mint leaves — whole or roughly torn.", "Drizzle with a little olive oil.", "Sprinkle with black pepper and balsamic if you like.", "Serve immediately, while everything is cold and fresh."]
     },
     note: "",
-    image: "assets/images/image10.png",
+    image: "assets/images/image22.png",
     category: "Osvežavajući recepti"
   },
   {
@@ -1250,7 +1250,7 @@ const recipes = [
       en: ["In a jar or container with a lid, mix oats, milk, yogurt, chia seeds and honey.", "Stir well, cover and leave in the fridge overnight.", "In the morning, add the grated or diced apple and cinnamon.", "Top with nuts and enjoy cold — straight from the jar."]
     },
     note: "",
-    image: "assets/images/image11.png",
+    image: "assets/images/image31.png",
     category: "Recepti uz kafu"
   },
   {
@@ -1332,7 +1332,7 @@ const recipes = [
       en: ["Preheat the oven to 210°C.", "Cut all vegetables into similar-sized larger pieces — so they roast evenly.", "Arrange on a tray, drizzle with olive oil and season well.", "Toss so everything is evenly coated.", "Roast for 35–40 minutes, tossing once halfway through.", "Serve with rice, quinoa, bread or just as it is."]
     },
     note: "",
-    image: "assets/images/image26.png",
+    image: "assets/images/image44.png",
     category: "Recepti koji mirišu iz rerne"
   }
 ];
