@@ -78,6 +78,7 @@ const translations = {
     book_title: 'Didina SoulFood Riznica — knjiga',
     book_desc: 'Svi ovi recepti, i još mnogo toga, uskoro u štampanom obliku. Prijavite se za newsletter da budete prvi koji saznaju.',
     about_story: 'Moja priča',
+    didi_motto: '„Ne brojite kalorije, brojite vaše osmehe i korake."',
   },
 
   de: {
@@ -159,6 +160,7 @@ const translations = {
     book_title: 'Didis SoulFood-Schatzkammer — das Buch',
     book_desc: 'All diese Rezepte und noch viele mehr — bald auch gedruckt. Meld dich für den Newsletter an, um als Erste davon zu erfahren.',
     about_story: 'Meine Geschichte',
+    didi_motto: '„Zählt keine Kalorien — zählt eure Lächeln und Schritte."',
   },
 
   en: {
@@ -240,5 +242,6 @@ const translations = {
     book_title: "Didi's SoulFood Treasury — the book",
     book_desc: 'All these recipes and many more, soon in print. Subscribe to the newsletter to be the first to know.',
     about_story: 'My story',
+    didi_motto: '"Don\'t count calories — count your smiles and steps."',
   }
 };
