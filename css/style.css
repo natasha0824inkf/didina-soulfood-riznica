@@ -617,28 +617,38 @@ ul,ol { list-style: none; }
 /* ---- FOOTER SOCIAL LINKS ---- */
 .footer-social {
   display: flex; justify-content: center; align-items: center;
-  gap: 1rem; margin-bottom: 1.25rem; flex-wrap: wrap;
+  gap: 1rem; margin-bottom: 1.4rem; flex-wrap: wrap;
 }
 .footer-social-link {
-  display: inline-flex; align-items: center; gap: .45rem;
-  padding: .45rem 1.1rem; border-radius: 50px;
-  font-size: .82rem; font-weight: 600; letter-spacing: .02em;
-  text-decoration: none; transition: all var(--ease);
-  border: 1.5px solid rgba(255,255,255,.2);
-  color: rgba(255,255,255,.8);
+  display: inline-flex; align-items: center; gap: .5rem;
+  padding: .62rem 1.5rem; border-radius: 50px;
+  font-size: .88rem; font-weight: 700; letter-spacing: .03em;
+  text-decoration: none; border: 2px solid transparent;
+  transition: transform .22s ease, box-shadow .22s ease, filter .22s ease;
 }
-.footer-social-link:hover { border-color: var(--coral-light); color: var(--coral-light); transform: translateY(-2px); }
+.footer-social-link[href*="instagram"] {
+  background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(220,39,67,.35);
+}
+.footer-social-link[href*="notion"] {
+  background: #EFE6D6;
+  color: #2A1A0E;
+  box-shadow: 0 4px 20px rgba(0,0,0,.25);
+}
+.footer-social-link:hover { transform: translateY(-3px); filter: brightness(1.12); box-shadow: 0 8px 28px rgba(0,0,0,.35); }
 .footer-social-link svg { flex-shrink: 0; }
 
 .footer-powered {
-  margin-top: 1.1rem; font-size: .72rem; color: rgba(255,255,255,.25);
-  display: flex; align-items: center; justify-content: center; gap: .35rem;
+  margin-top: 1.25rem; font-size: .8rem; color: rgba(255,255,255,.4);
+  display: flex; align-items: center; justify-content: center; gap: .4rem;
 }
 .footer-powered a {
-  color: rgba(255,255,255,.4); display: inline-flex; align-items: center;
-  gap: .3rem; transition: color var(--ease); text-decoration: none;
+  color: rgba(255,255,255,.80); display: inline-flex; align-items: center;
+  gap: .32rem; transition: color var(--ease); text-decoration: none;
+  font-weight: 600; letter-spacing: .02em;
 }
-.footer-powered a:hover { color: rgba(255,255,255,.75); }
+.footer-powered a:hover { color: var(--coral-light); }
 
 /* ---- THEME TOGGLE ---- */
 .theme-toggle {
