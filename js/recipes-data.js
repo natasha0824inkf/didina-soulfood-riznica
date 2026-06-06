@@ -1,7 +1,7 @@
 const recipes = [
   {
     number: "1",
-    title: { sr: "Nedeljni „wrap"", de: "Der Sonntags-Wrap", en: "Sunday Wrap" },
+    title: { sr: 'Nedeljni „wrap"', de: "Der Sonntags-Wrap", en: "Sunday Wrap" },
     subtitle: {
       sr: "Topao, proteinski i pun života — savršen za lagani doručak ili brzi obrok nakon treniga.",
       de: "Warm, proteinreich und voller Leben — perfekt für ein leichtes Frühstück oder einen schnellen Snack nach dem Training.",
@@ -441,7 +441,7 @@ const recipes = [
   {
     number: "9",
     title: {
-      sr: "„Lažne" čoko rolnice",
+      sr: '„Lažne" čoko rolnice',
       de: "Falsche Schoko-Röllchen",
       en: "\"Fake\" Choco Rolls"
     },
@@ -940,7 +940,7 @@ const recipes = [
   {
     number: "17",
     title: {
-      sr: "„Žive" lazanje",
+      sr: '„Žive" lazanje',
       de: "\"Lebendige\" Lasagne",
       en: "\"Live\" Lasagne"
     },
