@@ -414,6 +414,11 @@ function renderCategoriesGrid() {
 
 // ---- INIT ----
 document.addEventListener('DOMContentLoaded', function () {
+  // Enable transitions after first paint so there's no flash on load
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    document.documentElement.classList.add('ready');
+  }));
+
   // Theme
   initTheme();
   document.querySelectorAll('.theme-toggle').forEach(btn => {

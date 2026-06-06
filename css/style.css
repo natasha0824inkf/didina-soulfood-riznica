@@ -93,6 +93,7 @@ html.dark-mode .newsletter-input     { background: #120A1E; color: var(--text-da
 html.dark-mode .book-banner          { background: linear-gradient(135deg, #1E1228, #120A1E); border-color: var(--plum-dark); box-shadow: 0 4px 24px rgba(122,88,144,.18); }
 
 /* ---- RESET ---- */
+html:not(.ready) *, html:not(.ready) *::before, html:not(.ready) *::after { transition: none !important; }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
