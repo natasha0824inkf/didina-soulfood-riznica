@@ -1,92 +1,150 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="320" height="160" viewBox="0 0 320 160">
-  <g stroke="#D8A14A" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.28">
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="240" viewBox="0 0 320 240">
+  <g stroke="#D8A14A" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.32">
 
-    <!-- TOP ROW — staggered heights, left-to-right -->
+    <!-- ═══ ROW 1 (y ≈ 35) ═══ -->
 
-    <!-- Fork (22, 38) -->
-    <g transform="translate(22,38)">
-      <line x1="-4" y1="-18" x2="-4" y2="-8"/>
-      <line x1="0" y1="-18" x2="0" y2="-8"/>
-      <line x1="4" y1="-18" x2="4" y2="-8"/>
-      <path d="M-4,-8 Q0,-3 4,-8"/>
-      <line x1="0" y1="-3" x2="0" y2="18"/>
+    <!-- Fork -->
+    <g transform="translate(18,35)">
+      <line x1="-4" y1="-16" x2="-4" y2="-7"/><line x1="0" y1="-16" x2="0" y2="-7"/><line x1="4" y1="-16" x2="4" y2="-7"/>
+      <path d="M-4,-7 Q0,-2 4,-7"/><line x1="0" y1="-2" x2="0" y2="16"/>
     </g>
 
-    <!-- Coffee cup (90, 24) -->
-    <g transform="translate(90,24)">
-      <path d="M-11,-1 L-11,-13 Q-11,-17 -7,-17 L7,-17 Q11,-17 11,-13 L11,-1 Q11,3 0,3 Q-11,3 -11,-1 Z"/>
-      <path d="M11,-9 Q16,-9 16,-5 Q16,-1 11,-1"/>
-      <path d="M-12,5 Q0,9 12,5"/>
-      <path d="M-2,-19 Q0,-23 -2,-27"/>
-      <path d="M3,-19 Q5,-23 3,-27"/>
+    <!-- Coffee cup -->
+    <g transform="translate(62,28)">
+      <path d="M-10,0 L-10,-11 Q-10,-15 -6,-15 L6,-15 Q10,-15 10,-11 L10,0 Q10,4 0,4 Q-10,4 -10,0 Z"/>
+      <path d="M10,-8 Q15,-8 15,-4 Q15,0 10,0"/>
+      <path d="M-2,-17 Q0,-21 -2,-25"/><path d="M3,-17 Q5,-21 3,-25"/>
     </g>
 
-    <!-- Wheat (162, 52) -->
-    <g transform="translate(162,52)">
-      <line x1="0" y1="-28" x2="0" y2="22"/>
-      <path d="M0,-20 C-9,-25 -12,-16 -2,-14"/>
-      <path d="M0,-11 C9,-16 12,-7 2,-5"/>
-      <path d="M0,-2 C-9,-7 -12,2 -2,4"/>
-      <path d="M0,7 C9,2 12,11 2,13"/>
+    <!-- Star -->
+    <g transform="translate(108,38)">
+      <line x1="-6" y1="0" x2="6" y2="0"/><line x1="0" y1="-6" x2="0" y2="6"/>
+      <line x1="-4" y1="-4" x2="4" y2="4"/><line x1="4" y1="-4" x2="-4" y2="4"/>
     </g>
 
-    <!-- Star (232, 30) -->
-    <g transform="translate(232,30)">
-      <line x1="-7" y1="0" x2="7" y2="0"/>
-      <line x1="0" y1="-7" x2="0" y2="7"/>
-      <line x1="-5" y1="-5" x2="5" y2="5"/>
-      <line x1="5" y1="-5" x2="-5" y2="5"/>
+    <!-- Wheat -->
+    <g transform="translate(148,42)">
+      <line x1="0" y1="-26" x2="0" y2="20"/>
+      <path d="M0,-18 C-8,-23 -11,-14 -2,-12"/><path d="M0,-10 C8,-15 11,-6 2,-4"/>
+      <path d="M0,-2 C-8,-7 -11,2 -2,4"/><path d="M0,6 C8,1 11,10 2,12"/>
     </g>
 
-    <!-- Spoon (290, 44) rotate(-18) -->
-    <g transform="translate(290,44) rotate(-18)">
-      <ellipse cx="0" cy="-15" rx="6" ry="8"/>
-      <line x1="0" y1="-7" x2="0" y2="17"/>
+    <!-- Herb/leaf rotated -->
+    <g transform="translate(192,30) rotate(20)">
+      <path d="M0,12 C-9,-2 -9,-18 0,-22 C9,-18 9,-2 0,12 Z"/>
+      <line x1="0" y1="12" x2="0" y2="-22"/>
+      <path d="M0,-7 L-5,-13"/><path d="M0,-7 L5,-13"/>
     </g>
 
-    <!-- BOTTOM ROW — offset ~half-tile right, different icons -->
-
-    <!-- Herb/leaf (52, 124) -->
-    <g transform="translate(52,124)">
-      <path d="M0,13 C-10,-2 -10,-19 0,-23 C10,-19 10,-2 0,13 Z"/>
-      <line x1="0" y1="13" x2="0" y2="-23"/>
-      <path d="M0,-8 L-5,-13"/>
-      <path d="M0,-8 L5,-13"/>
+    <!-- Spoon -->
+    <g transform="translate(238,35) rotate(-22)">
+      <ellipse cx="0" cy="-14" rx="5" ry="7"/>
+      <line x1="0" y1="-7" x2="0" y2="16"/>
     </g>
 
-    <!-- Star (122, 110) -->
-    <g transform="translate(122,110)">
-      <line x1="-7" y1="0" x2="7" y2="0"/>
-      <line x1="0" y1="-7" x2="0" y2="7"/>
-      <line x1="-5" y1="-5" x2="5" y2="5"/>
-      <line x1="5" y1="-5" x2="-5" y2="5"/>
+    <!-- Pot -->
+    <g transform="translate(282,40)">
+      <path d="M-8,8 L-9,-2 Q-9,-7 0,-7 Q9,-7 9,-2 L8,8 Q8,11 0,11 Q-8,11 -8,8 Z"/>
+      <path d="M-6,-7 Q-6,-12 0,-12 Q6,-12 6,-7"/>
+      <circle cx="0" cy="-13" r="2" fill="#D8A14A" opacity="0.32" stroke="none"/>
+      <path d="M-9,-1 Q-12,-1 -12,2 Q-12,6 -9,6"/>
+      <path d="M9,-1 Q12,-1 12,2 Q12,6 9,6"/>
     </g>
 
-    <!-- Pot (196, 134) -->
-    <g transform="translate(196,134)">
-      <path d="M-8,9 L-10,-2 Q-10,-8 0,-8 Q10,-8 10,-2 L8,9 Q8,12 0,12 Q-8,12 -8,9 Z"/>
-      <path d="M-7,-8 Q-7,-13 0,-13 Q7,-13 7,-8"/>
-      <circle cx="0" cy="-14" r="2" fill="#D8A14A" opacity="0.28" stroke="none"/>
-      <path d="M-10,-1 Q-13,-1 -13,3 Q-13,6 -10,6"/>
-      <path d="M10,-1 Q13,-1 13,3 Q13,6 10,6"/>
+    <!-- ═══ ROW 2 (y ≈ 115, offset ~45px right) ═══ -->
+
+    <!-- Star small -->
+    <g transform="translate(38,108)">
+      <line x1="-5" y1="0" x2="5" y2="0"/><line x1="0" y1="-5" x2="0" y2="5"/>
+      <line x1="-3" y1="-3" x2="3" y2="3"/><line x1="3" y1="-3" x2="-3" y2="3"/>
     </g>
 
-    <!-- Fork (260, 118) rotate(12) -->
-    <g transform="translate(260,118) rotate(12)">
-      <line x1="-4" y1="-18" x2="-4" y2="-8"/>
-      <line x1="0" y1="-18" x2="0" y2="-8"/>
-      <line x1="4" y1="-18" x2="4" y2="-8"/>
-      <path d="M-4,-8 Q0,-3 4,-8"/>
-      <line x1="0" y1="-3" x2="0" y2="18"/>
+    <!-- Wheat -->
+    <g transform="translate(78,120)">
+      <line x1="0" y1="-24" x2="0" y2="18"/>
+      <path d="M0,-16 C-8,-21 -10,-13 -2,-11"/><path d="M0,-8 C8,-13 10,-5 2,-3"/>
+      <path d="M0,0 C-8,-5 -10,4 -2,6"/><path d="M0,8 C8,3 10,12 2,14"/>
     </g>
 
-    <!-- Wheat (308, 128) -->
-    <g transform="translate(308,128)">
-      <line x1="0" y1="-26" x2="0" y2="22"/>
-      <path d="M0,-18 C-9,-23 -11,-14 -2,-12"/>
-      <path d="M0,-9 C9,-14 11,-5 2,-3"/>
-      <path d="M0,0 C-9,-5 -11,4 -2,6"/>
-      <path d="M0,9 C9,4 11,13 2,15"/>
+    <!-- Fork rotated -->
+    <g transform="translate(122,112) rotate(15)">
+      <line x1="-4" y1="-16" x2="-4" y2="-7"/><line x1="0" y1="-16" x2="0" y2="-7"/><line x1="4" y1="-16" x2="4" y2="-7"/>
+      <path d="M-4,-7 Q0,-2 4,-7"/><line x1="0" y1="-2" x2="0" y2="16"/>
+    </g>
+
+    <!-- Coffee cup -->
+    <g transform="translate(168,118)">
+      <path d="M-10,0 L-10,-11 Q-10,-15 -6,-15 L6,-15 Q10,-15 10,-11 L10,0 Q10,4 0,4 Q-10,4 -10,0 Z"/>
+      <path d="M10,-8 Q15,-8 15,-4 Q15,0 10,0"/>
+      <path d="M-12,6 Q0,10 12,6"/>
+    </g>
+
+    <!-- Leaf -->
+    <g transform="translate(214,110)">
+      <path d="M0,12 C-9,-2 -9,-18 0,-22 C9,-18 9,-2 0,12 Z"/>
+      <line x1="0" y1="12" x2="0" y2="-22"/>
+      <path d="M0,-7 L-4,-12"/><path d="M0,-7 L4,-12"/>
+    </g>
+
+    <!-- Spoon -->
+    <g transform="translate(258,115)">
+      <ellipse cx="0" cy="-14" rx="5" ry="7"/>
+      <line x1="0" y1="-7" x2="0" y2="16"/>
+    </g>
+
+    <!-- Star -->
+    <g transform="translate(300,122)">
+      <line x1="-6" y1="0" x2="6" y2="0"/><line x1="0" y1="-6" x2="0" y2="6"/>
+      <line x1="-4" y1="-4" x2="4" y2="4"/><line x1="4" y1="-4" x2="-4" y2="4"/>
+    </g>
+
+    <!-- ═══ ROW 3 (y ≈ 200, offset ~22px right) ═══ -->
+
+    <!-- Leaf -->
+    <g transform="translate(22,200) rotate(-10)">
+      <path d="M0,12 C-9,-2 -9,-18 0,-22 C9,-18 9,-2 0,12 Z"/>
+      <line x1="0" y1="12" x2="0" y2="-22"/>
+      <path d="M0,-7 L-4,-12"/><path d="M0,-7 L4,-12"/>
+    </g>
+
+    <!-- Pot small -->
+    <g transform="translate(68,205)">
+      <path d="M-7,7 L-8,-2 Q-8,-6 0,-6 Q8,-6 8,-2 L7,7 Q7,10 0,10 Q-7,10 -7,7 Z"/>
+      <path d="M-5,-6 Q-5,-11 0,-11 Q5,-11 5,-6"/>
+      <path d="M-8,0 Q-11,0 -11,3 Q-11,6 -8,6"/>
+      <path d="M8,0 Q11,0 11,3 Q11,6 8,6"/>
+    </g>
+
+    <!-- Star -->
+    <g transform="translate(112,196)">
+      <line x1="-6" y1="0" x2="6" y2="0"/><line x1="0" y1="-6" x2="0" y2="6"/>
+      <line x1="-4" y1="-4" x2="4" y2="4"/><line x1="4" y1="-4" x2="-4" y2="4"/>
+    </g>
+
+    <!-- Wheat -->
+    <g transform="translate(155,208)">
+      <line x1="0" y1="-22" x2="0" y2="18"/>
+      <path d="M0,-14 C-7,-18 -9,-11 -2,-9"/><path d="M0,-6 C7,-10 9,-3 2,-1"/>
+      <path d="M0,2 C-7,-2 -9,7 -2,9"/><path d="M0,10 C7,5 9,14 2,16"/>
+    </g>
+
+    <!-- Coffee cup -->
+    <g transform="translate(200,200)">
+      <path d="M-10,0 L-10,-11 Q-10,-15 -6,-15 L6,-15 Q10,-15 10,-11 L10,0 Q10,4 0,4 Q-10,4 -10,0 Z"/>
+      <path d="M10,-8 Q15,-8 15,-4 Q15,0 10,0"/>
+      <path d="M-2,-17 Q0,-21 -2,-24"/><path d="M3,-17 Q5,-21 3,-24"/>
+    </g>
+
+    <!-- Fork -->
+    <g transform="translate(248,205)">
+      <line x1="-4" y1="-16" x2="-4" y2="-7"/><line x1="0" y1="-16" x2="0" y2="-7"/><line x1="4" y1="-16" x2="4" y2="-7"/>
+      <path d="M-4,-7 Q0,-2 4,-7"/><line x1="0" y1="-2" x2="0" y2="16"/>
+    </g>
+
+    <!-- Spoon rotated -->
+    <g transform="translate(290,198) rotate(18)">
+      <ellipse cx="0" cy="-14" rx="5" ry="7"/>
+      <line x1="0" y1="-7" x2="0" y2="16"/>
     </g>
 
   </g>
