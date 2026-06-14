@@ -216,7 +216,7 @@ ul,ol { list-style: none; }
   content: '';
   position: absolute; inset: 0;
   background: url('../assets/images/header-pattern.svg') repeat;
-  background-size: 320px 240px;
+  background-size: 480px 320px;
   opacity: .55;
   pointer-events: none;
 }
@@ -367,7 +367,7 @@ ul,ol { list-style: none; }
   content: '';
   position: absolute; inset: 0;
   background: url('../assets/images/header-pattern.svg') repeat;
-  background-size: 320px 240px;
+  background-size: 480px 320px;
   opacity: .55;
   pointer-events: none;
 }
@@ -610,7 +610,7 @@ ul,ol { list-style: none; }
   padding: 2.75rem 1.5rem; margin-top: 4rem; text-align: center;
 }
 .footer-content { max-width: 700px; margin: 0 auto; }
-.footer-logo    { font-size: 1.2rem; color: var(--coral-light); font-weight: bold; margin-bottom: .65rem; }
+.footer-logo    { font-family: 'Dancing Script', cursive; font-size: 2rem; font-weight: 700; color: #F0A830; margin-bottom: .5rem; line-height: 1.1; }
 .footer-tagline { font-style: italic; font-size: .9rem; color: rgba(255,255,255,.45); margin-bottom: 1.4rem; }
 .footer-nav {
   display: flex; justify-content: center; flex-wrap: wrap; gap: 1.25rem;
