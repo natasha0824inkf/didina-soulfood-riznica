@@ -22,7 +22,7 @@ jobs:
 
       - name: Run Notion sync
         env:
-          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_TOKEN: ${{ secrets.NOTIONTOKENN }}
           NOTION_DB_ID: ${{ secrets.NOTION_DB_ID }}
         run: python scripts/notion_sync.py
 
