@@ -103,7 +103,7 @@ function getCategoryInfo(category) {
   return CATEGORY_MAP[key] || { emoji: '🍽️', cls: 'morning', label_key: 'cat_morning' };
 }
 
-// ---- FAVORITES ----
+// ---- FAVORITES (localStorage + URL hash for persistence) ----
 function getFavorites() {
   try { return JSON.parse(localStorage.getItem('didina-favorites') || '[]'); }
   catch { return []; }
@@ -111,8 +111,27 @@ function getFavorites() {
 
 function saveFavorites(favs) {
   localStorage.setItem('didina-favorites', JSON.stringify(favs));
+  // Encode in URL hash so bookmarking/sharing preserves favorites
+  if (favs.length > 0) {
+    history.replaceState(null, '', '#favs=' + favs.join(','));
+  } else {
+    history.replaceState(null, '', window.location.pathname + window.location.search);
+  }
   updateFavCount();
 }
+
+function loadFavoritesFromHash() {
+  const hash = window.location.hash;
+  const match = hash.match(/favs=([^&]+)/);
+  if (match) {
+    const fromHash = match[1].split(',').filter(Boolean);
+    if (fromHash.length) {
+      localStorage.setItem('didina-favorites', JSON.stringify(fromHash));
+    }
+  }
+}
+
+loadFavoritesFromHash();
 
 function isFavorite(number) {
   return getFavorites().includes(number);
@@ -318,16 +337,47 @@ function toggleModalFavorite() {
 
 function shareRecipe() {
   if (!activeRecipe) return;
-  const title = tr(activeRecipe.title);
-  const text  = tr(activeRecipe.subtitle);
-  if (navigator.share) {
-    navigator.share({ title, text, url: window.location.href }).catch(() => {});
-  } else {
-    navigator.clipboard?.writeText(window.location.href).then(() => {
-      const btn = document.getElementById('modalShareBtn');
-      if (btn) { const orig = btn.innerHTML; btn.textContent = '✓ Copied!'; setTimeout(() => { btn.innerHTML = orig; }, 2000); }
+  const title   = tr(activeRecipe.title);
+  const pageUrl = window.location.href;
+  const waText  = encodeURIComponent(title + ' — ' + pageUrl);
+  const waUrl   = 'https://wa.me/?text=' + waText;
+
+  // Remove any existing share panel
+  const existing = document.getElementById('sharePanel');
+  if (existing) { existing.remove(); return; }
+
+  const panel = document.createElement('div');
+  panel.id = 'sharePanel';
+  panel.className = 'share-panel';
+  panel.innerHTML = `
+    <a href="${waUrl}" target="_blank" rel="noopener" class="share-option share-wa">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.849L.057 23.5a.5.5 0 0 0 .612.612l5.652-1.471A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.688-.526-5.207-1.438l-.374-.223-3.355.873.893-3.355-.245-.386A9.943 9.943 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+      WhatsApp
+    </a>
+    <button class="share-option share-copy" id="shareCopyBtn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+      Kopiraj link
+    </button>
+  `;
+
+  const shareBtn = document.getElementById('modalShareBtn');
+  shareBtn.parentNode.insertBefore(panel, shareBtn.nextSibling);
+
+  panel.querySelector('#shareCopyBtn').addEventListener('click', () => {
+    navigator.clipboard?.writeText(pageUrl).then(() => {
+      const btn = panel.querySelector('#shareCopyBtn');
+      btn.textContent = '✓ Kopirano!';
+      setTimeout(() => panel.remove(), 1800);
     });
-  }
+  });
+
+  // Close on outside click
+  setTimeout(() => document.addEventListener('click', function close(e) {
+    if (!panel.contains(e.target) && e.target.id !== 'modalShareBtn') {
+      panel.remove();
+      document.removeEventListener('click', close);
+    }
+  }), 0);
 }
 
 // ---- RECIPES PAGE ----
@@ -527,41 +577,21 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // Contact form
+  // Contact form — FormSubmit handles delivery; show success banner if returned with ?sent=1
   const form = document.getElementById('contactForm');
   if (form) {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name    = document.getElementById('contactName').value.trim();
-      const email   = document.getElementById('contactEmail').value.trim();
-      const message = document.getElementById('contactMessage').value.trim();
-      const subject = encodeURIComponent('Poruka sa sajta — ' + name);
-      const body    = encodeURIComponent('Ime: ' + name + '\nEmail: ' + email + '\n\nPoruka:\n' + message);
-      window.location.href = 'mailto:d.stamenkovic@yahoo.com?subject=' + subject + '&body=' + body;
+    if (new URLSearchParams(window.location.search).get('sent') === '1') {
       const success = document.getElementById('formSuccess');
       if (success) {
         success.textContent = t('contact_success');
         success.classList.add('show');
-        form.reset();
-        setTimeout(() => success.classList.remove('show'), 6000);
       }
-    });
+    }
   }
 
-  // Newsletter form
-  const nlForm = document.getElementById('newsletterForm');
-  if (nlForm) {
-    nlForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const emailEl = this.querySelector('.newsletter-input');
-      if (emailEl?.value) {
-        const subject = encodeURIComponent('Newsletter prijava');
-        const body    = encodeURIComponent('Nova prijava za newsletter: ' + emailEl.value);
-        window.location.href = 'mailto:d.stamenkovic@yahoo.com?subject=' + subject + '&body=' + body;
-        emailEl.value = '';
-        const btn = this.querySelector('.newsletter-btn');
-        if (btn) { btn.textContent = '✓'; setTimeout(() => { btn.textContent = t('newsletter_btn'); }, 2500); }
-      }
-    });
+  // Newsletter form — submits via FormSubmit to Gmail; show success if returned with ?subscribed=1
+  if (new URLSearchParams(window.location.search).get('subscribed') === '1') {
+    const btn = document.querySelector('.newsletter-btn');
+    if (btn) btn.textContent = '✓ ' + t('newsletter_btn');
   }
 });

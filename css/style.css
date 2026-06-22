@@ -619,7 +619,13 @@ ul,ol { list-style: none; }
   margin-bottom: 1.4rem;
 }
 .footer-nav a { color: rgba(255,255,255,.6); font-size: .88rem; transition: color var(--ease); }
-.footer-nav a:hover { color: var(--coral-light); }
+.footer-nav a:hover, .footer-nav a.active { color: var(--coral-light); }
+
+/* ---- PRIVACY PAGE ---- */
+.privacy-wrap { max-width: 740px; margin: 0 auto; padding: 0 1rem 3rem; }
+.privacy-block { margin-bottom: 2rem; }
+.privacy-block h2 { font-size: 1.05rem; font-weight: 700; color: var(--text-dark); margin-bottom: .5rem; }
+.privacy-block p { color: var(--text-mid); line-height: 1.75; font-size: .95rem; }
 .footer-divider { width: 36px; height: 2px; background: var(--coral); margin: 0 auto 1.25rem; border-radius: 2px; }
 .footer-copy    { font-size: .78rem; color: rgba(255,255,255,.35); }
 
@@ -681,6 +687,22 @@ ul,ol { list-style: none; }
   transition: all var(--ease); margin-top: .6rem;
 }
 .modal-share-btn:hover { border-color: var(--teal); color: var(--teal); }
+
+/* ---- SHARE PANEL ---- */
+.share-panel {
+  display: flex; gap: .5rem; flex-wrap: wrap;
+  margin-top: .5rem;
+  animation: fadeIn .15s ease;
+}
+.share-option {
+  display: inline-flex; align-items: center; gap: .4rem;
+  padding: .4rem .9rem; border-radius: 50px; font-size: .82rem;
+  cursor: pointer; text-decoration: none; border: none;
+  transition: opacity .15s;
+}
+.share-option:hover { opacity: .85; }
+.share-wa   { background: #25D366; color: #fff; }
+.share-copy { background: var(--border); color: var(--text-mid); }
 
 /* ---- MODAL HERO IMAGE ---- */
 .modal-hero-image {
@@ -767,6 +789,12 @@ ul,ol { list-style: none; }
   transition: background var(--ease);
 }
 .newsletter-btn:hover { background: var(--coral-dark); }
+.newsletter-gdpr {
+  width: 100%; display: flex; align-items: flex-start; gap: .5rem;
+  font-size: .8rem; color: var(--text-mid); cursor: pointer; text-align: left;
+  justify-content: center;
+}
+.newsletter-gdpr input[type="checkbox"] { margin-top: 2px; flex-shrink: 0; accent-color: var(--coral); }
 
 /* ---- BLOG ---- */
 .blog-grid {
