@@ -8,8 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=2bf78caf176c23acfcf0e611327852b64dc91e4d">
-  <link rel="stylesheet" href="css/responsive.css?v=2bf78caf176c23acfcf0e611327852b64dc91e4d">
+  <link rel="stylesheet" href="css/style.css?v=e8e21630444a2e49ee4dce83e067185251e089ed">
+  <link rel="stylesheet" href="css/responsive.css?v=e8e21630444a2e49ee4dce83e067185251e089ed">
   <script>if(localStorage.getItem('didina-theme')==='dark'||(!localStorage.getItem('didina-theme')&&window.matchMedia('(prefers-color-scheme:dark)').matches))document.documentElement.classList.add('dark-mode');</script>
   <style>.site-header{background:#6B4F3A;border-bottom:2px solid #D8A14A;position:sticky;top:0;z-index:100}.nav-links a{color:rgba(247,241,231,.72);border-bottom:2px solid transparent}.nav-links a.active{color:#D8A14A;border-bottom-color:#D8A14A;font-weight:600}html.dark-mode .site-header{background:#1A1208}</style>
 </head>
@@ -19,7 +19,7 @@
 <header class="site-header">
   <nav class="nav-container">
     <a href="index.html" class="nav-logo" aria-label="Didina SoulFood Riznica">
-      <img src="assets/images/logo.svg?v=2bf78caf176c23acfcf0e611327852b64dc91e4d" alt="" class="nav-logo-img" aria-hidden="true">
+      <img src="assets/images/logo.svg?v=e8e21630444a2e49ee4dce83e067185251e089ed" alt="" class="nav-logo-img" aria-hidden="true">
       <span class="nav-logo-main">Didina SoulFood Riznica</span>
     </a>
 
@@ -86,15 +86,15 @@
     <div class="newsletter-section">
       <h3 data-i18n="newsletter_title">Ostanite u toku</h3>
       <p data-i18n="newsletter_desc">Novi recepti, sezonske ideje i vesti — direktno u inbox.</p>
-      <!-- Replace action URL with Brevo embed URL after signing up at brevo.com -->
       <form class="newsletter-form" id="newsletterForm"
-            action="BREVO_FORM_ACTION_URL_HERE"
-            method="POST"
-            data-brevo-pending="true">
-        <input type="email" class="newsletter-input" name="EMAIL"
+            action="https://formsubmit.co/stamenkovic116@gmail.com"
+            method="POST">
+        <input type="hidden" name="_subject" value="Nova prijava za newsletter — Didina SoulFood">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="basic">
+        <input type="text" name="_honey" style="display:none">
+        <input type="email" class="newsletter-input" name="email"
                data-i18n-placeholder="newsletter_placeholder" placeholder="Vaša email adresa" required>
-        <input type="hidden" name="email_address_check" value="">
-        <input type="hidden" name="locale" value="sr">
         <button type="submit" class="newsletter-btn" data-i18n="newsletter_btn">Prijavi se</button>
       </form>
     </div>
@@ -184,8 +184,8 @@
   </div>
 </div>
 
-<script src="js/translations.js?v=2bf78caf176c23acfcf0e611327852b64dc91e4d"></script>
-<script src="js/recipes-data.js?v=2bf78caf176c23acfcf0e611327852b64dc91e4d"></script>
-<script src="js/main.js?v=2bf78caf176c23acfcf0e611327852b64dc91e4d"></script>
+<script src="js/translations.js?v=e8e21630444a2e49ee4dce83e067185251e089ed"></script>
+<script src="js/recipes-data.js?v=e8e21630444a2e49ee4dce83e067185251e089ed"></script>
+<script src="js/main.js?v=e8e21630444a2e49ee4dce83e067185251e089ed"></script>
 </body>
 </html>
