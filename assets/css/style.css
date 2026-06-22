@@ -1,0 +1,173 @@
+:root {
+    --bg-cream: #FDFBF7;
+    --text-espresso: #23211F;
+    --tag-green: #607A66;
+    --accent-yellow: #E5A93C;
+    --note-purple: #8C7AA6;
+    --box-purple-bg: #F3EFF7;
+
+    /* Dark Mode Variables */
+    --dm-bg-dark: #282c34;
+    --dm-text-light: #fdfbf7;
+    --dm-card-bg: #3a4049;
+}
+
+/* Base styles */
+body {
+    background-color: var(--bg-cream);
+    color: var(--text-espresso);
+    font-family: "New York", "Iowan Old Style", "Merriweather", "Georgia", serif;
+    line-height: 1.6;
+    padding: 20px;
+    margin: 0;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for dark mode */
+}
+
+/* Dark mode styles (these definitions remain as they were in the original style.css) */
+body.dark-mode {
+    background-color: var(--dm-bg-dark);
+    color: var(--dm-text-light);
+}
+
+body.dark-mode .recipe-card, body.dark-mode .author-comment-box {
+    background-color: var(--dm-card-bg);
+    color: var(--dm-text-light);
+}
+
+body.dark-mode h1, body.dark-mode h2, body.dark-mode h3 {
+    color: var(--dm-text-light);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 40px;
+}
+
+.header h1 {
+    margin: 0;
+    color: var(--text-espresso);
+}
+
+/* Removed .controls and related styles for language/dark mode toggles as per user request */
+
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.recipe-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.recipe-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.recipe-card-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.recipe-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--text-espresso);
+    font-size: 1.3rem;
+}
+
+.recipe-card p {
+    font-size: 0.9rem;
+    color: #6F6C69;
+    flex-grow: 1;
+}
+
+.recipe-card .meta-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 15px;
+}
+
+.recipe-container {
+    max-width: 750px;
+    margin: 40px auto;
+}
+h1 {
+    font-size: 2.2rem;
+    border-bottom: 3px solid var(--accent-yellow);
+    padding-bottom: 12px;
+    margin-bottom: 5px;
+}
+.recipe-subtitle {
+    font-style: italic;
+    color: #6F6C69;
+    font-size: 1.1rem;
+}
+.meta-row {
+    display: flex;
+    justify-content: space-between;
+    font-family: sans-serif;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.category-tag { color: var(--tag-green); }
+.author-comment-box {
+    background-color: var(--box-purple-bg);
+    border-left: 4px solid var(--note-purple);
+    padding: 18px;
+    margin: 25px 0;
+    border-radius: 4px;
+}
+body.dark-mode .author-comment-box {
+    background-color: var(--dm-card-bg);
+}
+@media (min-width: 600px) {
+    .recipe-body-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 40px;
+    }
+}
+.ingredients-list h3 { color: var(--tag-green); }
+.energy-footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px dashed #D9D2C5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+body.dark-mode .energy-footer {
+    border-color: #555;
+}
+
+.energy-footer strong { color: var(--note-purple); }
+/* Removed .social-links styles as per user request */
