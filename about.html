@@ -159,16 +159,23 @@
       <div class="modal-category-badge" id="modalCategory"></div>
       <h2 class="modal-title" id="modalTitle"></h2>
       <p class="modal-subtitle" id="modalSubtitle"></p>
-      <div class="modal-meta-item" id="modalTime"></div>
     </div>
+    <div id="modalHeroImage" class="modal-hero-image" hidden></div>
     <div class="modal-body">
+      <div class="modal-meta-item" id="modalTime"></div>
       <blockquote class="modal-comment" id="modalComment" hidden></blockquote>
       <h3 class="modal-section-title" data-i18n="ingredients">Sastojci</h3>
       <ul class="ingredients-list" id="modalIngredients"></ul>
       <h3 class="modal-section-title" data-i18n="instructions">Priprema</h3>
       <ol class="instructions-list" id="modalInstructions"></ol>
-      <button class="modal-fav-btn" id="modalFavBtn">🤍 <span data-i18n="add_favorite">Dodaj u omiljene</span></button>
-      <button class="modal-share-btn" id="modalShareBtn">↗ <span data-i18n="share_recipe">Podeli recept</span></button>
+      <div class="modal-actions">
+        <button class="modal-fav-btn" id="modalFavBtn">🤍 <span data-i18n="add_favorite">Dodaj u omiljene</span></button>
+        <button class="modal-share-btn" id="modalShareBtn">↗ <span data-i18n="share_recipe">Podeli recept</span></button>
+      </div>
+      <div class="modal-nav">
+        <button class="modal-nav-btn" id="modalPrevBtn">← <span data-i18n="prev_recipe">Prethodni</span></button>
+        <button class="modal-nav-btn" id="modalNextBtn"><span data-i18n="next_recipe">Sledeći</span> →</button>
+      </div>
     </div>
   </div>
 </div>
