@@ -344,11 +344,11 @@ for r in recipes:
     prep_html = f'<p><span class="prep-time">&#9202; Vreme pripreme: {esc(prep)}</span></p>' if prep else ''
 
     body = f"""
-<p class="recipe-number">Recept #{num}</p>
 <h2 class="recipe-title">{esc(title_sr)}</h2>
+<p class="recipe-number">Recept #{num}</p>
 <p class="recipe-subtitle">{esc(subtitle)}</p>
-{img_html}
 {prep_html}
+{img_html}
 {comment_html}
 <h3 class="section-heading">Sastojci</h3>
 {ingr_html}
