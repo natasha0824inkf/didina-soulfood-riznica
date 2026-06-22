@@ -5,7 +5,9 @@ import json
 import subprocess
 import os
 import sys
+import io
 from ebooklib import epub
+from PIL import Image
 
 REPO = '/home/user/didina-soulfood-riznica'
 IMAGES_DIR = os.path.join(REPO, 'assets', 'images')
@@ -129,9 +131,10 @@ h2.recipe-title {
   font-size: 0.95em;
 }
 .recipe-image {
-  width: 100%;
-  max-width: 100%;
-  margin: 0.8em 0;
+  width: auto;
+  max-width: 90%;
+  max-height: 12em;
+  margin: 0.6em auto;
   border-radius: 6px;
   display: block;
 }
@@ -206,6 +209,15 @@ def page(title, body_html):
 {body_html}
 </body>
 </html>"""
+
+def resize_image(path, max_w=400, max_h=220):
+    with Image.open(path) as img:
+        if img.mode not in ('RGB', 'L'):
+            img = img.convert('RGB')
+        img.thumbnail((max_w, max_h), Image.LANCZOS)
+        buf = io.BytesIO()
+        img.save(buf, format='JPEG', quality=78, optimize=True)
+        return buf.getvalue(), 'image/jpeg'
 
 def esc(s):
     if not s:
@@ -307,16 +319,13 @@ for r in recipes:
     note      = r.get('note', '') or ''
     img_path  = r.get('image', '')
 
-    # Image
+    # Image — resize physically so it fits on page with text above it
     img_html = ''
     if img_path:
         full_img = os.path.join(REPO, img_path)
         if os.path.exists(full_img):
-            ext = img_path.rsplit('.', 1)[-1].lower()
-            media_type = 'image/jpeg' if ext in ('jpg', 'jpeg') else 'image/png'
-            img_filename = f'images/recipe_{num}.{ext}'
-            with open(full_img, 'rb') as f:
-                img_data = f.read()
+            img_data, media_type = resize_image(full_img)
+            img_filename = f'images/recipe_{num}.jpg'
             epub_img = epub.EpubItem(
                 uid=f'img_{num}',
                 file_name=img_filename,
