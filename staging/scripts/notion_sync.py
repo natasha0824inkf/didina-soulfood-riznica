@@ -9,8 +9,8 @@ import requests
 from datetime import datetime
 from pathlib import Path
 
-NOTION_TOKEN = os.environ["NOTION_TOKEN"]
-NOTION_DB_ID = os.environ["NOTION_DB_ID"]
+NOTION_TOKEN = os.environ["NOTION_TOKEN"].strip()
+NOTION_DB_ID = os.environ["NOTION_DB_ID"].strip()
 REPO_ROOT = Path(__file__).parent.parent
 
 HEADERS = {
