@@ -42,6 +42,10 @@ function setLanguage(lang) {
     el.placeholder = t(el.dataset.i18nPlaceholder);
   });
 
+  document.querySelectorAll('[data-lang-content]').forEach(el => {
+    el.hidden = el.dataset.langContent !== lang;
+  });
+
   if (typeof renderFilterButtons === 'function') renderFilterButtons();
   if (typeof renderRecipes === 'function') renderRecipes();
   if (typeof renderFeaturedGrid === 'function') renderFeaturedGrid();
