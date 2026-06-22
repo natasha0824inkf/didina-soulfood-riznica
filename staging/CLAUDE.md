@@ -5,7 +5,11 @@
 | Repo | Owner | Role |
 |------|-------|------|
 | `natasha0824inkf/didina-soulfood-riznica` | Natasha | **Staging** — active development, feature branches, PRs |
-| `DRAGANA_USERNAME/didina-soulfood-riznica` | Dragana | **Preprod / Production** — receives every push to `main` via dual remote |
+| `didina-soulfood/riznica` | Dragana (org) | **Preprod / Production** — receives every push to `main` via dual remote |
+
+**URLs:**
+- Staging: `https://natasha0824inkf.github.io/didina-soulfood-riznica`
+- Production: `https://didina-soulfood.github.io/riznica`
 
 ## Branch strategy
 
@@ -21,12 +25,20 @@ Every `git push` goes to both remotes simultaneously:
 ```
 git push
   └──► natasha0824inkf/didina-soulfood-riznica  (staging)
-  └──► DRAGANA_USERNAME/didina-soulfood-riznica  (preprod/prod)
+  └──► didina-soulfood/riznica                  (production)
 ```
 
 To set up the dual remote (one-time, per machine):
 ```bash
-git remote set-url --add origin https://github.com/DRAGANA_USERNAME/didina-soulfood-riznica.git
+git remote set-url --add origin https://github.com/didina-soulfood/riznica.git
+```
+
+Verify:
+```bash
+git remote -v
+# origin  https://github.com/natasha0824inkf/didina-soulfood-riznica.git (fetch)
+# origin  https://github.com/natasha0824inkf/didina-soulfood-riznica.git (push)
+# origin  https://github.com/didina-soulfood/riznica.git (push)
 ```
 
 ## Pull / sync
@@ -36,7 +48,7 @@ Pull always comes from natasha's repo (fetch origin = natasha's):
 git pull origin main
 ```
 
-Dragana's repo is push-only — never pull from it.
+`didina-soulfood/riznica` is push-only — never pull from it.
 
 ## Language
 
@@ -53,6 +65,7 @@ All HTML files reference JS and CSS with `?v=N` — increment N when deploying b
 
 ## Pending setup (see issue #41)
 
-- [ ] Replace `DRAGANA_USERNAME` above with her actual GitHub username
-- [ ] Add second push remote locally after her account is created
-- [ ] (Later) Migrate to GitHub Org `didinasoulfoodriznica`
+- [ ] Create `riznica` repo inside `didina-soulfood` org (public, enable Pages on `main`)
+- [ ] Add second push remote locally: `git remote set-url --add origin https://github.com/didina-soulfood/riznica.git`
+- [ ] Do an initial push to populate the prod repo
+- [ ] Verify `https://didina-soulfood.github.io/riznica` loads correctly
