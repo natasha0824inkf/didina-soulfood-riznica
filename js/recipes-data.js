@@ -69,7 +69,7 @@ const recipes = [
       ]
     },
     note: "",
-    image: "assets/images/image1.png",
+    image: "assets/images/nedeljni-wrap.png",
     category: "Jutarnji recepti"
   },
   {
@@ -127,7 +127,7 @@ const recipes = [
       ]
     },
     note: "",
-    image: "assets/images/image24.png",
+    image: "assets/images/jaka-vocna-salata.png",
     category: "Osvežavajući recepti"
   },
   {
@@ -195,7 +195,7 @@ const recipes = [
       ]
     },
     note: "",
-    image: "assets/images/image32.png",
+    image: "assets/images/mali-coko-zalogaji.png",
     category: "Recepti uz kafu"
   },
   {
@@ -272,7 +272,7 @@ const recipes = [
       ]
     },
     note: "",
-    image: "assets/images/image2.png",
+    image: "assets/images/tople-leblebije.png",
     category: "Jutarnji recepti"
   },
   {
@@ -349,7 +349,7 @@ const recipes = [
       ]
     },
     note: "",
-    image: "assets/images/image13.png",
+    image: "assets/images/mini-pice-od-patlidzana.png",
     category: "Recepti kada ne znam šta da kuvam"
   },
   {
@@ -375,33 +375,30 @@ const recipes = [
         "200–300 g integralnog brašna",
         "1 kašičica cimeta",
         "Prstohvat kardamoma",
-        "Šaka suvog grožđa",
-        "Šaka suvih brusnica",
+        "2 šake suvog grožđa",
         "Šaka seckanih oraha",
-        "1 puna supena kašika meda (ili više za veću količinu)",
-        "Oko 50 ml ulja (po osećaju)",
+        "2 pune supene kašike meda",
+        "Oko 50 ml ulja",
         "Malo biljnog mleka (samo ako je smesa previše suva)"
       ],
       de: [
         "200–300 g Vollkornmehl",
         "1 TL Zimt",
         "Eine Prise Kardamom",
-        "Eine Handvoll Rosinen",
-        "Eine Handvoll getrocknete Cranberries",
+        "2 Handvoll Rosinen",
         "Eine Handvoll gehackte Walnüsse",
-        "1 gehäufter EL Honig (mehr für eine größere Menge)",
-        "Ca. 50 ml Öl (nach Gefühl)",
+        "2 gehäufte EL Honig",
+        "Ca. 50 ml Öl",
         "Etwas Pflanzenmilch (nur wenn der Teig zu trocken ist)"
       ],
       en: [
         "200–300 g wholegrain flour",
         "1 tsp cinnamon",
         "A pinch of cardamom",
-        "A handful of raisins",
-        "A handful of dried cranberries",
+        "2 handfuls of raisins",
         "A handful of chopped walnuts",
-        "1 heaped tbsp honey (more for a larger batch)",
-        "Around 50 ml oil (by feel)",
+        "2 heaped tbsp honey",
+        "Around 50 ml oil",
         "A little plant milk (only if the mixture is too dry)"
       ]
     },
@@ -435,7 +432,7 @@ const recipes = [
       ]
     },
     note: "",
-    image: "assets/images/image28.png",
+    image: "assets/images/spori-medenjaci.jpeg",
     category: "Recepti uz kafu"
   },
   {
@@ -503,20 +500,20 @@ const recipes = [
       ]
     },
     note: "",
-    image: "assets/images/image39.png",
+    image: "assets/images/lazne-coko-rolnice.png",
     category: "Recepti uz kafu"
   },
   {
     number: "10",
     title: {
-      sr: "Tunin bowl za pun stomak i bistru glavu",
-      de: "Thunfisch-Bowl für vollen Bauch und klaren Kopf",
-      en: "Tuna Bowl for a Full Stomach & a Clear Head"
+      sr: "Tuna bowl",
+      de: "Tuna-Bowl",
+      en: "Tuna Bowl"
     },
     subtitle: {
-      sr: "Bowl koji ti pokaže da balans može biti i jednostavan.",
-      de: "Eine Bowl, die zeigt: Balance kann einfach sein.",
-      en: "A bowl that shows you balance can be simple."
+      sr: "Tuna obrok za pun stomak i bistru glavu",
+      de: "Tuna-Mahlzeit für einen vollen Magen und einen klaren Kopf",
+      en: "Tuna meal for a full stomach and a clear head"
     },
     author_comment: {
       sr: "Ovaj bowl je nastao u jednoj od onih večeri kad nisam imala snage da kuvam, ali sam znala da moje telo ipak zaslužuje pažnju posle dugog radnog dana. Sve je bilo tu — u frižideru, a onda u činiji.",
@@ -577,7 +574,7 @@ const recipes = [
       ]
     },
     note: "",
-    image: "assets/images/image21.png",
+    image: "assets/images/tunin-bowl.png",
     category: "Osvežavajući recepti"
   },
   {
@@ -654,7 +651,7 @@ const recipes = [
       ]
     },
     note: "",
-    image: "assets/images/image33.png",
+    image: "assets/images/kremasti-sutlijash.png",
     category: "Recepti uz kafu"
   },
   {
@@ -725,7 +722,7 @@ const recipes = [
       ]
     },
     note: "",
-    image: "assets/images/image25.png",
+    image: "assets/images/banana-hleb.png",
     category: "Recepti uz kafu"
   },
   {
@@ -787,7 +784,7 @@ const recipes = [
       ]
     },
     note: "",
-    image: "assets/images/image3.png",
+    image: "assets/images/kajsija-bowl.png",
     category: "Jutarnji recepti"
   },
   {
@@ -852,7 +849,7 @@ const recipes = [
       ]
     },
     note: "",
-    image: "assets/images/image6.png",
+    image: "assets/images/cureci-stejk.png",
     category: "Recepti kada ne znam šta da kuvam"
   },
   {
@@ -935,7 +932,7 @@ const recipes = [
       ]
     },
     note: "",
-    image: "assets/images/image7.png",
+    image: "assets/images/kokos-curry.png",
     category: "Recepti kada ne znam šta da kuvam"
   },
   {
@@ -1012,7 +1009,7 @@ const recipes = [
       ]
     },
     note: "",
-    image: "assets/images/image8.png",
+    image: "assets/images/zive-lazanje.png",
     category: "Recepti kada ne znam šta da kuvam"
   },
   {
@@ -1083,7 +1080,7 @@ const recipes = [
       ]
     },
     note: "",
-    image: "assets/images/image26.png",
+    image: "assets/images/integralni-hleb.png",
     category: "Recepti koji mirišu iz rerne"
   },
   {
@@ -1111,12 +1108,12 @@ const recipes = [
       en: ["Put the oats and milk in a small pot over medium heat.", "Stir until the porridge thickens — about 3–4 minutes.", "Remove from heat and mash the banana directly into the porridge.", "Add honey and cinnamon and stir.", "Top with nuts or seeds and serve warm."]
     },
     note: "",
-    image: "assets/images/image4.png",
+    image: "assets/images/ovsena-kasa-sa-bananom.png",
     category: "Jutarnji recepti"
   },
   {
     number: "27",
-    title: { sr: "Meko jaje sa avokadom i tostom", de: "Weiches Ei mit Avocado und Toast", en: "Soft Egg with Avocado & Toast" },
+    title: { sr: "Rovito kuvano jaje sa avokadom i tostom", de: "Wachsweiches Ei mit Avocado und Toast", en: "Soft-Boiled Egg with Avocado & Toast" },
     subtitle: {
       sr: "Dva minuta pažnje za sebe ujutru — i dan počinje kako treba.",
       de: "Zwei Minuten Fürsorge für dich am Morgen — und der Tag beginnt richtig.",
@@ -1139,7 +1136,7 @@ const recipes = [
       en: ["Put the eggs in boiling water and cook for exactly 6–7 minutes for a soft yolk.", "Meanwhile, toast the bread.", "Mash the avocado with a fork with a little salt, pepper and lemon juice.", "Spread the avocado on the toast.", "Cool the eggs in cold water, peel and halve.", "Arrange on toast, sprinkle with chilli and serve immediately."]
     },
     note: "",
-    image: "assets/images/image43.png",
+    image: "assets/images/rovito-jaje.png",
     category: "Jutarnji recepti"
   },
   {
@@ -1167,35 +1164,35 @@ const recipes = [
       en: ["Put all ingredients in a blender.", "Blend on maximum speed for about 60 seconds until smooth.", "Taste and add a little honey or more lemon if needed.", "Serve immediately — fresh and cold."]
     },
     note: "",
-    image: "assets/images/image15.png",
+    image: "assets/images/zeleni-smoothie.png",
     category: "Osvežavajući recepti"
   },
   {
     number: "29",
-    title: { sr: "Lubenica salata sa fetom i nanom", de: "Wassermelonensalat mit Feta und Minze", en: "Watermelon Salad with Feta & Mint" },
+    title: { sr: "Nesvakidašnja salata sa cveklom", de: "Besonderer Rote-Bete-Salat", en: "Unusual Beetroot Salad" },
     subtitle: {
-      sr: "Letnja kombinacija koja zvuči čudno a deluje kao da je uvek ovako trebalo biti.",
-      de: "Eine Sommerkombination, die seltsam klingt, aber sich anfühlt, als wäre sie schon immer so gewesen.",
-      en: "A summer combination that sounds strange but feels like it was always meant to be."
+      sr: "Obojena svežina na tanjiru.",
+      de: "Bunte Frische auf dem Teller.",
+      en: "Colourful freshness on a plate."
     },
     author_comment: {
-      sr: "Ovo je jelo za vrući julski dan, uz muziku i čašu hladne vode. Ne treba ti ništa više.",
-      de: "Das ist ein Gericht für einen heißen Julitag, mit Musik und einem Glas kaltem Wasser. Mehr brauchst du nicht.",
-      en: "This is a dish for a hot July day, with music and a glass of cold water. You don't need anything more."
+      sr: "Jelo koje otvara srce i budi osmeh — kao užina, prilog ili lagana večera, iz bilo kog razloga.",
+      de: "Ein Gericht, das das Herz öffnet und ein Lächeln weckt — als Snack, Beilage oder leichtes Abendessen.",
+      en: "A dish that opens the heart and brings a smile — as a snack, side or light dinner."
     },
-    prep_time: { sr: "10 minuta", de: "10 Min.", en: "10 minutes" },
+    prep_time: { sr: "20 minuta", de: "20 Min.", en: "20 minutes" },
     ingredients: {
-      sr: ["¼ lubenice, isečene na kocke", "100 g feta sira, izmrvljenog", "Šaka svežih listova nane", "Malo maslinovog ulja", "Crni biber po ukusu", "Opciono: kap balzamičnog sirćeta ili soka od limete"],
-      de: ["¼ Wassermelone, in Würfel geschnitten", "100 g Feta, zerbröckelt", "Eine Handvoll frische Minzblätter", "Etwas Olivenöl", "Schwarzer Pfeffer nach Geschmack", "Optional: ein Tropfen Balsamico oder Limettensaft"],
-      en: ["¼ watermelon, cut into cubes", "100 g feta, crumbled", "A handful of fresh mint leaves", "A little olive oil", "Black pepper to taste", "Optional: a drop of balsamic vinegar or lime juice"]
+      sr: ["3 kuvane cvekle", "2 šargarepe", "1 zelena paprika", "2 mlada luka", "Konzerva meksičke mešavine (kukuruz, crveni pasulj, crvena paprika)", "Maslinovo ulje", "Balzamiko sirće", "So i biber po ukusu"],
+      de: ["3 gekochte Rote Beten", "2 Karotten", "1 grüne Paprika", "2 Frühlingszwiebeln", "1 Dose mexikanische Mischung (Mais, rote Bohnen, rote Paprika)", "Olivenöl", "Balsamico-Essig", "Salz und Pfeffer nach Geschmack"],
+      en: ["3 cooked beetroots", "2 carrots", "1 green pepper", "2 spring onions", "1 tin Mexican mix (sweetcorn, red kidney beans, red pepper)", "Olive oil", "Balsamic vinegar", "Salt and pepper to taste"]
     },
     instructions: {
-      sr: ["Lubenicu iseci na krupne kocke i rasporedi po tanjiru.", "Izmrvi feta sir odozgo.", "Dodaj listove nane — cele ili grubo natrgane.", "Prelij sa malo maslinovog ulja.", "Pospi crnim biberom i po želji balzamičnim sirćetom.", "Serviraj odmah, dok je sve hladno i svežo."],
-      de: ["Wassermelone in grobe Würfel schneiden und auf einem Teller anrichten.", "Feta darüber zerbröckeln.", "Minzblätter hinzufügen — ganz oder grob zerrissen.", "Mit etwas Olivenöl beträufeln.", "Mit schwarzem Pfeffer und nach Belieben Balsamico bestreuen.", "Sofort servieren, solange alles kalt und frisch ist."],
-      en: ["Cut the watermelon into large cubes and arrange on a plate.", "Crumble the feta on top.", "Add the mint leaves — whole or roughly torn.", "Drizzle with a little olive oil.", "Sprinkle with black pepper and balsamic if you like.", "Serve immediately, while everything is cold and fresh."]
+      sr: ["Kuvanu cveklu iseci na kockice.", "Dodaj seckanu papriku, šargarepu i mladi luk.", "Umešaj kukuruz i pasulj.", "Začini maslinovim uljem, balzamiko sirćetom, solju i biberom.", "Dobro promešaj i posluži rashlađeno."],
+      de: ["Die gekochten Roten Beten in Würfel schneiden.", "Paprika, Karotte und Frühlingszwiebeln gehackt dazugeben.", "Mais und Bohnen unterrühren.", "Mit Olivenöl, Balsamico, Salz und Pfeffer würzen.", "Gut umrühren und gekühlt servieren."],
+      en: ["Cut the cooked beetroot into cubes.", "Add the chopped pepper, carrot and spring onion.", "Stir in the corn and beans.", "Season with olive oil, balsamic vinegar, salt and pepper.", "Mix well and serve chilled."]
     },
-    note: "",
-    image: "assets/images/image22.png",
+    note: "Ostavi u frižideru da se dobro prohladi. Još je bolje ako uspeš da sačekaš do sutra.",
+    image: "assets/images/salata-sa-cveklom.png",
     category: "Osvežavajući recepti"
   },
   {
@@ -1223,63 +1220,63 @@ const recipes = [
       en: ["Finely grate the cucumber, salt it and leave for 5 minutes, then squeeze out well.", "In a bowl, mix yogurt, squeezed cucumber, garlic and olive oil.", "Add herbs, salt, pepper and lemon juice.", "Stir and refrigerate for at least 20 minutes before serving.", "Serve with bread, vegetables or as a side with meat."]
     },
     note: "",
-    image: "assets/images/image23.png",
+    image: "assets/images/tzatziki.png",
     category: "Osvežavajući recepti"
   },
   {
     number: "31",
-    title: { sr: "Overnight oats sa jabukama i cimetom", de: "Overnight Oats mit Apfel und Zimt", en: "Overnight Oats with Apple & Cinnamon" },
+    title: { sr: "Puding od vanile sa bademom i malinama", de: "Vanillepudding mit Mandeln und Himbeeren", en: "Vanilla Pudding with Almonds & Raspberries" },
     subtitle: {
-      sr: "Pripremi uveče, a jutro ćeš imati doručak koji te čeka u frižideru.",
-      de: "Abends vorbereiten, und morgen wartet dein Frühstück im Kühlschrank.",
-      en: "Prepare the evening before, and in the morning your breakfast is waiting in the fridge."
+      sr: "Lagani kremasti užitak sa voćnom svežinom.",
+      de: "Leichte cremige Verwöhnung mit fruchtiger Frische.",
+      en: "A light, creamy treat with fruity freshness."
     },
     author_comment: {
-      sr: "Za ljude koji ujutru nemaju vremena. Ili volju. Otvoriš frižider i već si sita pre nego što si i stigla da pomisliš da si gladna.",
-      de: "Für Menschen, die morgens keine Zeit haben. Oder keine Lust. Kühlschrank öffnen — und schon bist du satt, bevor du überhaupt daran gedacht hast, hungrig zu sein.",
-      en: "For people who have no time in the morning. Or no will. Open the fridge and you're fed before you've even thought about being hungry."
+      sr: "Jednostavan, brz i divno mirisan desert! Ovo je tvoj slatki predah posle dugog dana. 💛",
+      de: "Einfach, schnell und herrlich duftend! Das ist deine süße Pause nach einem langen Tag. 💛",
+      en: "Simple, quick and wonderfully fragrant! This is your sweet break after a long day. 💛"
     },
-    prep_time: { sr: "5 minuta + noć u frižideru", de: "5 Min. + über Nacht im Kühlschrank", en: "5 minutes + overnight in the fridge" },
+    prep_time: { sr: "15 minuta", de: "15 Min.", en: "15 minutes" },
     ingredients: {
-      sr: ["½ šolje zobenih pahuljica", "½ šolje biljnog mleka", "½ šolje grčkog jogurta", "1 kašika čia semenki", "1 kašičica meda", "½ jabuke, narendane ili naseckane", "Prstohvat cimeta", "Šaka oraha ili badema"],
-      de: ["½ Tasse Haferflocken", "½ Tasse Pflanzenmilch", "½ Tasse griechischer Joghurt", "1 EL Chiasamen", "1 TL Honig", "½ Apfel, gerieben oder gewürfelt", "Eine Prise Zimt", "Eine Handvoll Walnüsse oder Mandeln"],
-      en: ["½ cup oat flakes", "½ cup plant milk", "½ cup Greek yogurt", "1 tbsp chia seeds", "1 tsp honey", "½ apple, grated or diced", "A pinch of cinnamon", "A handful of walnuts or almonds"]
+      sr: ["1 kesica pudinga od vanile", "500 ml bademovog mleka", "3–4 kašike kokosovih pahuljica", "2 kašike šećera ili zaslađivača po želji", "Šaka svežih malina", "Šaka badema"],
+      de: ["1 Päckchen Vanillepuddingpulver", "500 ml Mandelmilch", "3–4 EL Kokosflocken", "2 EL Zucker oder Süßungsmittel nach Wunsch", "Eine Handvoll frische Himbeeren", "Eine Handvoll Mandeln"],
+      en: ["1 sachet vanilla pudding powder", "500 ml almond milk", "3–4 tbsp desiccated coconut", "2 tbsp sugar or sweetener to taste", "A handful of fresh raspberries", "A handful of almonds"]
     },
     instructions: {
-      sr: ["U teglici ili posudici sa poklopcem pomešaj zobene pahuljice, mleko, jogurt, čia semenke i med.", "Dobro promešaj, pokrij i ostavi u frižideru do jutra.", "Ujutru dodaj narendanu ili naseckanu jabuku i cimet.", "Pospi orašastim plodovima i uživaj hladno — direktno iz tegle."],
-      de: ["In einem Glas oder einer Dose mit Deckel Haferflocken, Milch, Joghurt, Chiasamen und Honig vermischen.", "Gut umrühren, abdecken und über Nacht im Kühlschrank lassen.", "Morgens geriebenen oder gewürfelten Apfel und Zimt hinzufügen.", "Mit Nüssen bestreuen und kalt genießen — direkt aus dem Glas."],
-      en: ["In a jar or container with a lid, mix oats, milk, yogurt, chia seeds and honey.", "Stir well, cover and leave in the fridge overnight.", "In the morning, add the grated or diced apple and cinnamon.", "Top with nuts and enjoy cold — straight from the jar."]
+      sr: ["Sipaj 400 ml bademovog mleka u šerpu i stavi da provri.", "U preostalih 100 ml mleka umuti puding i šećer.", "Kada mleko počne da vri, dodaj razmućeni puding i kuvaj uz stalno mešanje dok se ne zgusne.", "Pred kraj dodaj kokosove pahuljice i dobro sjedini.", "Skloni sa vatre i sipaj puding u činije ili čaše.", "Ohladi ga i pre služenja ukrasi svežim malinama i bademima."],
+      de: ["400 ml Mandelmilch in einen Topf geben und aufkochen lassen.", "In den restlichen 100 ml Milch Puddingpulver und Zucker verquirlen.", "Wenn die Milch kocht, die Puddingmischung dazugeben und unter ständigem Rühren köcheln lassen, bis er eindickt.", "Gegen Ende die Kokosflocken einrühren und gut vermengen.", "Vom Herd nehmen und den Pudding in Schüsseln oder Gläser füllen.", "Abkühlen lassen und vor dem Servieren mit frischen Himbeeren und Mandeln garnieren."],
+      en: ["Pour 400 ml of the almond milk into a pan and bring to the boil.", "Whisk the pudding powder and sugar into the remaining 100 ml milk.", "When the milk starts to boil, add the pudding mixture and cook, stirring constantly, until thickened.", "Near the end, stir in the coconut and combine well.", "Remove from the heat and pour into bowls or glasses.", "Chill and top with fresh raspberries and almonds before serving."]
     },
-    note: "",
-    image: "assets/images/image31.png",
+    note: "Ako želiš još kremastiju teksturu, dodaj malo kokosovog mleka uz bademovo.",
+    image: "assets/images/puding-od-vanile.png",
     category: "Recepti uz kafu"
   },
   {
     number: "32",
-    title: { sr: "Losos u foliji sa limunom i začinskim biljem", de: "Lachs in Folie mit Zitrone und Kräutern", en: "Foil-Baked Salmon with Lemon & Herbs" },
+    title: { sr: "Pasta sa zelenim pestom i lososom", de: "Pasta mit grünem Pesto und Lachs", en: "Pasta with Green Pesto & Salmon" },
     subtitle: {
-      sr: "Pet minuta pripreme, dvadeset minuta čekanja — i večera koja izgleda kao da si se jako potrudila.",
-      de: "Fünf Minuten Vorbereitung, zwanzig Minuten warten — und ein Abendessen, das aussieht, als hättest du dich sehr angestrengt.",
-      en: "Five minutes of prep, twenty minutes of waiting — and a dinner that looks like you tried very hard."
+      sr: "Zanimljiva pasta koja spaja zeleni pesto i nežni losos u brzom i hranljivom obroku.",
+      de: "Eine spannende Pasta, die grünes Pesto und zarten Lachs in einer schnellen, nahrhaften Mahlzeit vereint.",
+      en: "An interesting pasta that brings green pesto and delicate salmon together in a quick, nourishing meal."
     },
     author_comment: {
-      sr: "Rerna radi za tebe. Zatvoriš foliju, odeš da se tuširuješ, i kad se vratiš — večera je gotova.",
-      de: "Der Ofen arbeitet für dich. Folie zufalten, duschen gehen, und wenn du zurückkommst — das Abendessen ist fertig.",
-      en: "The oven does the work for you. Fold the foil, go take a shower, and when you come back — dinner is done."
+      sr: "Kad pogledam u frižider i vidim lososa i teglu pesta — znam da večera može biti gotova za 20 minuta i da će biti stvarno dobra.",
+      de: "Wenn ich in den Kühlschrank schaue und Lachs und ein Glas Pesto sehe, weiß ich: Das Abendessen ist in 20 Minuten fertig — und wird wirklich gut.",
+      en: "When I look in the fridge and see salmon and a jar of pesto, I know dinner can be ready in 20 minutes and will be really good."
     },
-    prep_time: { sr: "5 minuta + 20 minuta pečenja", de: "5 Min. + 20 Min. im Ofen", en: "5 minutes + 20 minutes baking" },
+    prep_time: { sr: "20 minuta", de: "20 Min.", en: "20 minutes" },
     ingredients: {
-      sr: ["1–2 fileta lososa", "½ limuna, isečenog na kolutiće", "Grančica svežeg timijana ili kopra", "1 kašika maslinovog ulja", "So, beli biber, beli luk u prahu", "Opciono: kašika kapara ili par maslina"],
-      de: ["1–2 Lachsfilets", "½ Zitrone, in Scheiben", "Ein Zweig frischer Thymian oder Dill", "1 EL Olivenöl", "Salz, weißer Pfeffer, Knoblauchpulver", "Optional: 1 EL Kapern oder einige Oliven"],
-      en: ["1–2 salmon fillets", "½ lemon, sliced", "A sprig of fresh thyme or dill", "1 tbsp olive oil", "Salt, white pepper, garlic powder", "Optional: 1 tbsp capers or a few olives"]
+      sr: ["200 g paste (penne, fusilli ili šta imaš)", "200 g fileta lososa", "2–3 kašike zelenog pesta", "1 kašika maslinovog ulja", "1 mali čen belog luka, sitno naseckan", "Nekoliko kapi limunovog soka", "So i biber po ukusu", "Šaka rukole ili svežeg bosiljka"],
+      de: ["200 g Pasta (Penne, Fusilli oder was du hast)", "200 g Lachsfilet", "2–3 EL grünes Pesto", "1 EL Olivenöl", "1 kleine Knoblauchzehe, fein gehackt", "Einige Tropfen Zitronensaft", "Salz und Pfeffer nach Geschmack", "Eine Handvoll Rucola oder frischer Basilikum"],
+      en: ["200 g pasta (penne, fusilli or whatever you have)", "200 g salmon fillet", "2–3 tbsp green pesto", "1 tbsp olive oil", "1 small garlic clove, finely chopped", "A few drops of lemon juice", "Salt and pepper to taste", "A handful of rocket or fresh basil"]
     },
     instructions: {
-      sr: ["Zagrej rernu na 200°C.", "Na komad aluminijumske folije stavi file lososa.", "Prelij maslinovim uljem, začini i posloži kolutiće limuna i bilje odozgo.", "Zatvori foliju čvrsto — kao mali paket.", "Peci 18–20 minuta.", "Otvori foliju pažljivo — para je vruća.", "Serviraj uz kuvani pirinač, kuvani krompir ili zelenu salatu."],
-      de: ["Ofen auf 200°C vorheizen.", "Das Lachsfilet auf ein Stück Alufolie legen.", "Mit Olivenöl beträufeln, würzen und Zitronenscheiben und Kräuter darauflegen.", "Die Folie fest verschließen — wie ein kleines Päckchen.", "18–20 Minuten backen.", "Folie vorsichtig öffnen — der Dampf ist heiß.", "Mit gekochtem Reis, Kartoffeln oder grünem Salat servieren."],
-      en: ["Preheat the oven to 200°C.", "Place the salmon fillet on a piece of foil.", "Drizzle with olive oil, season and layer lemon slices and herbs on top.", "Seal the foil tightly — like a little parcel.", "Bake for 18–20 minutes.", "Open the foil carefully — the steam is hot.", "Serve with cooked rice, potatoes or a green salad."]
+      sr: ["Skuvaj pastu al dente prema uputstvima na pakovanju.", "Na maslinovom ulju proprži sitno naseckan beli luk minut-dva.", "Dodaj filete lososa i peci dok ne postane neproziran, oko 5–7 minuta. Rasparčaj ga viljuškom.", "Dodaj kuvanu pastu i pesto, promešaj sve zajedno.", "Dodaj nekoliko kapi limunovog soka, so i biber po ukusu.", "Serviraj sa šakom rukole ili svežeg bosiljka odozgo."],
+      de: ["Pasta al dente nach Packungsanweisung kochen.", "Fein gehackten Knoblauch in Olivenöl ein bis zwei Minuten anschwitzen.", "Lachsfilet hinzufügen und ca. 5–7 Minuten braten, bis er undurchsichtig ist. Mit einer Gabel zerteilen.", "Gekochte Pasta und Pesto hinzufügen, alles gut vermischen.", "Einige Tropfen Zitronensaft, Salz und Pfeffer abschmecken.", "Mit Rucola oder frischem Basilikum garniert servieren."],
+      en: ["Cook the pasta al dente according to packet instructions.", "Sauté the finely chopped garlic in olive oil for a minute or two.", "Add the salmon fillet and cook until opaque, about 5–7 minutes. Break it up with a fork.", "Add the cooked pasta and pesto, toss everything together.", "Add a few drops of lemon juice, salt and pepper to taste.", "Serve topped with a handful of rocket or fresh basil."]
     },
     note: "",
-    image: "assets/images/image17.png",
+    image: "assets/images/pasta-sa-zelenim-pestom.png",
     category: "Recepti kada ne znam šta da kuvam"
   },
   {
@@ -1307,35 +1304,35 @@ const recipes = [
       en: ["Preheat the oven to 180°C and prepare a muffin tin.", "In one bowl, mix the dry ingredients: flour, baking powder, bicarb, cinnamon, salt.", "In another bowl, beat the eggs with honey and oil, then add the milk.", "Combine wet and dry ingredients — don't overmix, lumpy is fine.", "Gently fold in the grated apple and raisins.", "Fill the muffin tin (2/3 full per hole).", "Bake for 22–25 minutes. Check with a toothpick."]
     },
     note: "",
-    image: "assets/images/image30.png",
+    image: "assets/images/muffini-sa-jabukom.png",
     category: "Recepti koji mirišu iz rerne"
   },
   {
     number: "34",
-    title: { sr: "Pečeno povrće iz rerne", de: "Ofengemüse", en: "Roasted Oven Vegetables" },
+    title: { sr: "Ukusni prokelj iz rerne", de: "Leckerer Rosenkohl aus dem Ofen", en: "Delicious Oven-Roasted Brussels Sprouts" },
     subtitle: {
-      sr: "Sve u pleh, ulje, začini, rerna — i jedna od najlepših večera koje postoje.",
-      de: "Alles auf das Blech, Öl, Gewürze, Ofen — und eines der schönsten Abendessen überhaupt.",
-      en: "Everything on the tray, oil, spices, oven — and one of the most satisfying dinners there is."
+      sr: "Dovoljan je samo jedan sastojak i malo kreativnosti pa da i najskromnije povrće postane zvezdica.",
+      de: "Es braucht nur eine Zutat und ein bisschen Kreativität, damit selbst das bescheidenste Gemüse zum Star wird.",
+      en: "All it takes is one ingredient and a little creativity to turn the most humble vegetable into a star."
     },
     author_comment: {
-      sr: "Ovo je moja najmirnija kuhinja. Isečeš povrće, pospeš uljem i začinima i ostaviš rernu da radi. Za to vreme čitaš, šetaš ili se samo odmoriš.",
-      de: "Das ist meine ruhigste Küche. Gemüse schneiden, mit Öl und Gewürzen bestreuen und den Ofen arbeiten lassen. In der Zeit liest du, gehst spazieren oder ruhst dich einfach aus.",
-      en: "This is my most peaceful cooking. Chop the vegetables, drizzle with oil and spices and let the oven do the work. In the meantime you read, take a walk or just rest."
+      sr: "Prokelj je povrće koje mnogi zaobilaze, a ja sam ga otkrila kasno — i sad ga pravim svake nedelje. Iz rerne postaje karamelizovan, hrskav i potpuno drugačiji od kuvanog.",
+      de: "Rosenkohl ist ein Gemüse, das viele meiden — ich habe ihn spät entdeckt und mache ihn jetzt jede Woche. Aus dem Ofen wird er karamellisiert, knusprig und ganz anders als gekocht.",
+      en: "Brussels sprouts are a vegetable many people avoid, but I discovered them late and now make them every week. From the oven they come out caramelised, crispy and completely different from boiled."
     },
-    prep_time: { sr: "10 minuta + 35–40 minuta pečenja", de: "10 Min. + 35–40 Min. backen", en: "10 minutes + 35–40 minutes roasting" },
+    prep_time: { sr: "5 minuta + 25–30 minuta pečenja", de: "5 Min. + 25–30 Min. im Ofen", en: "5 minutes + 25–30 minutes roasting" },
     ingredients: {
-      sr: ["1 tikvica", "1 crvena paprika", "1 žuta paprika", "1 šargarepa", "½ crnog luka", "Cherry paradajz (šaka)", "2–3 kašike maslinovog ulja", "So, biber, origano, kurkuma", "Po želji: čen belog luka, list lovora"],
-      de: ["1 Zucchini", "1 rote Paprika", "1 gelbe Paprika", "1 Karotte", "½ Zwiebel", "Kirschtomaten (eine Handvoll)", "2–3 EL Olivenöl", "Salz, Pfeffer, Oregano, Kurkuma", "Optional: Knoblauchzehe, Lorbeerblatt"],
-      en: ["1 courgette", "1 red pepper", "1 yellow pepper", "1 carrot", "½ onion", "Cherry tomatoes (a handful)", "2–3 tbsp olive oil", "Salt, pepper, oregano, turmeric", "Optional: garlic clove, bay leaf"]
+      sr: ["10-ak glavica prokelja", "Malo maslinovog ulja", "So po ukusu", "Aleva paprika po ukusu"],
+      de: ["Ca. 10 Rosenkohlröschen", "Etwas Olivenöl", "Salz nach Geschmack", "Paprikapulver nach Geschmack"],
+      en: ["Around 10 Brussels sprouts", "A little olive oil", "Salt to taste", "Paprika to taste"]
     },
     instructions: {
-      sr: ["Zagrej rernu na 210°C.", "Sve povrće iseci na krupnije komade sličnih dimenzija — da se ravnomerno peče.", "Poređaj u pleh, prelij maslinovim uljem i dobro začini.", "Promešaj da sve bude ravnomerno obloženo začinima.", "Peci 35–40 minuta, promešaj jednom na pola pečenja.", "Serviraj uz pirinač, kvinoju, hleb ili jednostavno ovako."],
-      de: ["Ofen auf 210°C vorheizen.", "Alles Gemüse in größere, ähnlich große Stücke schneiden — damit es gleichmäßig gart.", "Auf dem Blech verteilen, mit Olivenöl beträufeln und gut würzen.", "Umrühren, damit alles gleichmäßig beschichtet ist.", "35–40 Minuten rösten, einmal in der Mitte wenden.", "Mit Reis, Quinoa, Brot oder einfach so servieren."],
-      en: ["Preheat the oven to 210°C.", "Cut all vegetables into similar-sized larger pieces — so they roast evenly.", "Arrange on a tray, drizzle with olive oil and season well.", "Toss so everything is evenly coated.", "Roast for 35–40 minutes, tossing once halfway through.", "Serve with rice, quinoa, bread or just as it is."]
+      sr: ["Zagrej rernu na 200°C.", "Operi proklje, ukloni spoljne listove i preseči ih na pola.", "Posloži ih na pleh presečenom stranom prema dole.", "Prelij maslinovim uljem i dobro začini solju i alevom paprikom.", "Peci 25–30 minuta dok ivice ne porumene i postanu hrskave.", "Serviraj toplo — kao prilog ili samostalan obrok."],
+      de: ["Ofen auf 200°C vorheizen.", "Rosenkohl waschen, äußere Blätter entfernen und halbieren.", "Mit der Schnittfläche nach unten auf das Blech legen.", "Mit Olivenöl beträufeln und großzügig mit Salz und Paprika würzen.", "25–30 Minuten backen, bis die Ränder goldbraun und knusprig sind.", "Warm servieren — als Beilage oder eigenständiges Gericht."],
+      en: ["Preheat the oven to 200°C.", "Wash the sprouts, remove outer leaves and cut in half.", "Place cut-side down on a baking tray.", "Drizzle with olive oil and season generously with salt and paprika.", "Roast for 25–30 minutes until the edges are golden and crispy.", "Serve warm — as a side dish or a meal on its own."]
     },
     note: "",
-    image: "assets/images/image44.png",
+    image: "assets/images/prokelj-iz-rerne.png",
     category: "Recepti koji mirišu iz rerne"
   }
 ];
