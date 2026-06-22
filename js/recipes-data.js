@@ -511,9 +511,9 @@ const recipes = [
       en: "Tuna Bowl"
     },
     subtitle: {
-      sr: "Tunin obrok za pun stomak i bistru glavu",
-      de: "Tunas Mahlzeit für einen vollen Magen und einen klaren Kopf",
-      en: "Tuna's meal for a full stomach and a clear head"
+      sr: "Tuna obrok za pun stomak i bistru glavu",
+      de: "Tuna-Mahlzeit für einen vollen Magen und einen klaren Kopf",
+      en: "Tuna meal for a full stomach and a clear head"
     },
     author_comment: {
       sr: "Ovaj bowl je nastao u jednoj od onih večeri kad nisam imala snage da kuvam, ali sam znala da moje telo ipak zaslužuje pažnju posle dugog radnog dana. Sve je bilo tu — u frižideru, a onda u činiji.",
