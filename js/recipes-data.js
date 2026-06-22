@@ -69,7 +69,7 @@ const recipes = [
       ]
     },
     note: "",
-    image: "assets/images/image1.png",
+    image: "assets/images/nedeljni-wrap.png",
     category: "Jutarnji recepti"
   },
   {
@@ -127,7 +127,7 @@ const recipes = [
       ]
     },
     note: "",
-    image: "assets/images/image24.png",
+    image: "assets/images/jaka-vocna-salata.png",
     category: "Osvežavajući recepti"
   },
   {
@@ -195,7 +195,7 @@ const recipes = [
       ]
     },
     note: "",
-    image: "assets/images/image32.png",
+    image: "assets/images/mali-coko-zalogaji.png",
     category: "Recepti uz kafu"
   },
   {
@@ -272,7 +272,7 @@ const recipes = [
       ]
     },
     note: "",
-    image: "assets/images/image2.png",
+    image: "assets/images/tople-leblebije.png",
     category: "Jutarnji recepti"
   },
   {
@@ -349,7 +349,7 @@ const recipes = [
       ]
     },
     note: "",
-    image: "assets/images/image13.png",
+    image: "assets/images/mini-pice-od-patlidzana.png",
     category: "Recepti kada ne znam šta da kuvam"
   },
   {
@@ -435,7 +435,7 @@ const recipes = [
       ]
     },
     note: "",
-    image: "assets/images/image28.png",
+    image: "assets/images/spori-medenjaci.png",
     category: "Recepti uz kafu"
   },
   {
@@ -503,7 +503,7 @@ const recipes = [
       ]
     },
     note: "",
-    image: "assets/images/image39.png",
+    image: "assets/images/lazne-coko-rolnice.png",
     category: "Recepti uz kafu"
   },
   {
@@ -577,7 +577,7 @@ const recipes = [
       ]
     },
     note: "",
-    image: "assets/images/image21.png",
+    image: "assets/images/tunin-bowl.png",
     category: "Osvežavajući recepti"
   },
   {
@@ -654,7 +654,7 @@ const recipes = [
       ]
     },
     note: "",
-    image: "assets/images/image33.png",
+    image: "assets/images/kremasti-sutlijash.png",
     category: "Recepti uz kafu"
   },
   {
@@ -725,7 +725,7 @@ const recipes = [
       ]
     },
     note: "",
-    image: "assets/images/image25.png",
+    image: "assets/images/banana-hleb.png",
     category: "Recepti uz kafu"
   },
   {
@@ -787,7 +787,7 @@ const recipes = [
       ]
     },
     note: "",
-    image: "assets/images/image3.png",
+    image: "assets/images/kajsija-bowl.png",
     category: "Jutarnji recepti"
   },
   {
@@ -852,7 +852,7 @@ const recipes = [
       ]
     },
     note: "",
-    image: "assets/images/image6.png",
+    image: "assets/images/cureci-stejk.png",
     category: "Recepti kada ne znam šta da kuvam"
   },
   {
@@ -935,7 +935,7 @@ const recipes = [
       ]
     },
     note: "",
-    image: "assets/images/image7.png",
+    image: "assets/images/kokos-curry.png",
     category: "Recepti kada ne znam šta da kuvam"
   },
   {
@@ -1012,7 +1012,7 @@ const recipes = [
       ]
     },
     note: "",
-    image: "assets/images/image8.png",
+    image: "assets/images/zive-lazanje.png",
     category: "Recepti kada ne znam šta da kuvam"
   },
   {
@@ -1083,7 +1083,7 @@ const recipes = [
       ]
     },
     note: "",
-    image: "assets/images/image26.png",
+    image: "assets/images/integralni-hleb.png",
     category: "Recepti koji mirišu iz rerne"
   },
   {
@@ -1111,7 +1111,7 @@ const recipes = [
       en: ["Put the oats and milk in a small pot over medium heat.", "Stir until the porridge thickens — about 3–4 minutes.", "Remove from heat and mash the banana directly into the porridge.", "Add honey and cinnamon and stir.", "Top with nuts or seeds and serve warm."]
     },
     note: "",
-    image: "assets/images/image4.png",
+    image: "assets/images/ovsena-kasa-sa-bananom.png",
     category: "Jutarnji recepti"
   },
   {
@@ -1139,7 +1139,7 @@ const recipes = [
       en: ["Put the eggs in boiling water and cook for exactly 6–7 minutes for a soft yolk.", "Meanwhile, toast the bread.", "Mash the avocado with a fork with a little salt, pepper and lemon juice.", "Spread the avocado on the toast.", "Cool the eggs in cold water, peel and halve.", "Arrange on toast, sprinkle with chilli and serve immediately."]
     },
     note: "",
-    image: "assets/images/image43.png",
+    image: "assets/images/jaje-sa-avokadom.png",
     category: "Jutarnji recepti"
   },
   {
@@ -1167,7 +1167,7 @@ const recipes = [
       en: ["Put all ingredients in a blender.", "Blend on maximum speed for about 60 seconds until smooth.", "Taste and add a little honey or more lemon if needed.", "Serve immediately — fresh and cold."]
     },
     note: "",
-    image: "assets/images/image15.png",
+    image: "assets/images/zeleni-smoothie.png",
     category: "Osvežavajući recepti"
   },
   {
@@ -1195,7 +1195,7 @@ const recipes = [
       en: ["Cut the watermelon into large cubes and arrange on a plate.", "Crumble the feta on top.", "Add the mint leaves — whole or roughly torn.", "Drizzle with a little olive oil.", "Sprinkle with black pepper and balsamic if you like.", "Serve immediately, while everything is cold and fresh."]
     },
     note: "",
-    image: "assets/images/image22.png",
+    image: "assets/images/lubenica-salata.png",
     category: "Osvežavajući recepti"
   },
   {
@@ -1223,7 +1223,7 @@ const recipes = [
       en: ["Finely grate the cucumber, salt it and leave for 5 minutes, then squeeze out well.", "In a bowl, mix yogurt, squeezed cucumber, garlic and olive oil.", "Add herbs, salt, pepper and lemon juice.", "Stir and refrigerate for at least 20 minutes before serving.", "Serve with bread, vegetables or as a side with meat."]
     },
     note: "",
-    image: "assets/images/image23.png",
+    image: "assets/images/tzatziki.png",
     category: "Osvežavajući recepti"
   },
   {
@@ -1251,7 +1251,7 @@ const recipes = [
       en: ["In a jar or container with a lid, mix oats, milk, yogurt, chia seeds and honey.", "Stir well, cover and leave in the fridge overnight.", "In the morning, add the grated or diced apple and cinnamon.", "Top with nuts and enjoy cold — straight from the jar."]
     },
     note: "",
-    image: "assets/images/image31.png",
+    image: "assets/images/overnight-oats.png",
     category: "Recepti uz kafu"
   },
   {
@@ -1279,7 +1279,7 @@ const recipes = [
       en: ["Preheat the oven to 200°C.", "Place the salmon fillet on a piece of foil.", "Drizzle with olive oil, season and layer lemon slices and herbs on top.", "Seal the foil tightly — like a little parcel.", "Bake for 18–20 minutes.", "Open the foil carefully — the steam is hot.", "Serve with cooked rice, potatoes or a green salad."]
     },
     note: "",
-    image: "assets/images/image17.png",
+    image: "assets/images/losos-u-foliji.png",
     category: "Recepti kada ne znam šta da kuvam"
   },
   {
@@ -1307,7 +1307,7 @@ const recipes = [
       en: ["Preheat the oven to 180°C and prepare a muffin tin.", "In one bowl, mix the dry ingredients: flour, baking powder, bicarb, cinnamon, salt.", "In another bowl, beat the eggs with honey and oil, then add the milk.", "Combine wet and dry ingredients — don't overmix, lumpy is fine.", "Gently fold in the grated apple and raisins.", "Fill the muffin tin (2/3 full per hole).", "Bake for 22–25 minutes. Check with a toothpick."]
     },
     note: "",
-    image: "assets/images/image30.png",
+    image: "assets/images/muffini-sa-jabukom.png",
     category: "Recepti koji mirišu iz rerne"
   },
   {
@@ -1335,7 +1335,7 @@ const recipes = [
       en: ["Preheat the oven to 210°C.", "Cut all vegetables into similar-sized larger pieces — so they roast evenly.", "Arrange on a tray, drizzle with olive oil and season well.", "Toss so everything is evenly coated.", "Roast for 35–40 minutes, tossing once halfway through.", "Serve with rice, quinoa, bread or just as it is."]
     },
     note: "",
-    image: "assets/images/image44.png",
+    image: "assets/images/peceno-povrce.png",
     category: "Recepti koji mirišu iz rerne"
   }
 ];
