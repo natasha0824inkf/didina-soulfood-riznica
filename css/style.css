@@ -138,7 +138,7 @@ ul,ol { list-style: none; }
   height: 68px; gap: 1rem;
 }
 .nav-logo { display: flex; flex-direction: row; align-items: center; gap: .55rem; line-height: 1.15; }
-.nav-logo-img  { height: 40px; width: 40px; border-radius: 50%; flex-shrink: 0; }
+.nav-logo-img  { height: 32px; width: 32px; flex-shrink: 0; }
 .nav-logo-main { font-size: 1.15rem; font-weight: bold; color: #F7F1E7; letter-spacing: -.02em; }
 .nav-links {
   display: flex; align-items: center; gap: .25rem;
