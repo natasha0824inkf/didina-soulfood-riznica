@@ -9,8 +9,8 @@ import requests
 from datetime import datetime
 from pathlib import Path
 
-NOTION_TOKEN = os.environ["NOTION_TOKEN"].strip()
-NOTION_DB_ID = os.environ["NOTION_DB_ID"].strip()
+NOTION_TOKEN = re.sub(r'\s', '', os.environ["NOTION_TOKEN"])
+NOTION_DB_ID = re.sub(r'\s', '', os.environ["NOTION_DB_ID"])
 REPO_ROOT = Path(__file__).parent.parent
 
 HEADERS = {
@@ -147,11 +147,13 @@ def get_page_blocks(page_id):
 
 def query_database():
     url = f"https://api.notion.com/v1/databases/{NOTION_DB_ID}/query"
-    payload = {"filter": {"property": "Status", "select": {"equals": "Published"}}}
+    payload = {"filter": {"property": "Status", "status": {"equals": "Published"}}}
     pages = []
     while True:
         res = requests.post(url, headers=HEADERS, json=payload)
-        res.raise_for_status()
+        if not res.ok:
+            print(f"Notion API error {res.status_code}: {res.text}", file=sys.stderr)
+            res.raise_for_status()
         data = res.json()
         pages.extend(data["results"])
         if data.get("has_more") and data.get("next_cursor"):
@@ -223,7 +225,7 @@ def render_post(slug, versions):
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/responsive.css">
-  <script>if(localStorage.getItem('didina-theme')==='dark'||(!localStorage.getItem('didina-theme')&&window.matchMedia('(prefers-color-scheme:dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+  <script>if(localStorage.getItem(\'didina-theme\')==\'dark\'||(!localStorage.getItem(\'didina-theme\')&&window.matchMedia(\'(prefers-color-scheme:dark)\').matches))document.documentElement.classList.add(\'dark-mode\');</script>
   <style>.site-header{{background:#6B4F3A;border-bottom:2px solid #D8A14A;position:sticky;top:0;z-index:100}}.nav-links a{{color:rgba(247,241,231,.72);border-bottom:2px solid transparent}}.nav-links a.active{{color:#D8A14A;border-bottom-color:#D8A14A;font-weight:600}}html.dark-mode .site-header{{background:#1A1208}}</style>
 </head>
 <body>
@@ -428,6 +430,7 @@ def update_blog_listing(cards_html):
     blog_path = REPO_ROOT / "blog.html"
     content = blog_path.read_text(encoding="utf-8")
 
+    # Replace everything between <div class="blog-grid"> and </div> (the grid)
     new_grid = f'    <div class="blog-grid">\n{cards_html}\n\n    </div>'
     content = re.sub(
         r'<div class="blog-grid">.*?</div>',
@@ -443,6 +446,7 @@ def main():
     pages = query_database()
     print(f"Found {len(pages)} published entries")
 
+    # Group by slug
     posts = {}
     for page in pages:
         slug = get_prop(page, "Slug", "text")
@@ -466,8 +470,10 @@ def main():
         print("No valid posts to sync.")
         return
 
+    # Sort by date descending (newest first)
     sorted_posts = sorted(posts.items(), key=lambda x: x[1]["date"] or "", reverse=True)
 
+    # Generate post HTML files
     blog_dir = REPO_ROOT / "blog"
     blog_dir.mkdir(exist_ok=True)
     cards = []
@@ -483,6 +489,7 @@ def main():
 
         cards.append(render_card(slug, versions, date_raw))
 
+    # Update blog.html listing
     cards_html = "\n".join(cards)
     update_blog_listing(cards_html)
     print("  Updated: blog.html")
