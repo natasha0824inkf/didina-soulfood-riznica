@@ -6,7 +6,7 @@ const translations = {
     nav_contact: 'Kontakt',
     nav_favorites: 'Omiljeni',
 
-    hero_title: 'Kuhinja sa dušom',
+    hero_title: 'Didina kuhinja sa dušom',
     hero_subtitle: 'Jednostavni recepti sa dušom — za ljude koji vole hranu koja ih voli za uzvrat.',
     hero_cta: 'Istraži recepte',
     hero_scroll: 'Otkrij više',
