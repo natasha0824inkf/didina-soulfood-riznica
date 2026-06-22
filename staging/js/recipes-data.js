@@ -375,33 +375,30 @@ const recipes = [
         "200–300 g integralnog brašna",
         "1 kašičica cimeta",
         "Prstohvat kardamoma",
-        "Šaka suvog grožđa",
-        "Šaka suvih brusnica",
+        "2 šake suvog grožđa",
         "Šaka seckanih oraha",
-        "1 puna supena kašika meda (ili više za veću količinu)",
-        "Oko 50 ml ulja (po osećaju)",
+        "2 pune supene kašike meda",
+        "Oko 50 ml ulja",
         "Malo biljnog mleka (samo ako je smesa previše suva)"
       ],
       de: [
         "200–300 g Vollkornmehl",
         "1 TL Zimt",
         "Eine Prise Kardamom",
-        "Eine Handvoll Rosinen",
-        "Eine Handvoll getrocknete Cranberries",
+        "2 Handvoll Rosinen",
         "Eine Handvoll gehackte Walnüsse",
-        "1 gehäufter EL Honig (mehr für eine größere Menge)",
-        "Ca. 50 ml Öl (nach Gefühl)",
+        "2 gehäufte EL Honig",
+        "Ca. 50 ml Öl",
         "Etwas Pflanzenmilch (nur wenn der Teig zu trocken ist)"
       ],
       en: [
         "200–300 g wholegrain flour",
         "1 tsp cinnamon",
         "A pinch of cardamom",
-        "A handful of raisins",
-        "A handful of dried cranberries",
+        "2 handfuls of raisins",
         "A handful of chopped walnuts",
-        "1 heaped tbsp honey (more for a larger batch)",
-        "Around 50 ml oil (by feel)",
+        "2 heaped tbsp honey",
+        "Around 50 ml oil",
         "A little plant milk (only if the mixture is too dry)"
       ]
     },
@@ -435,7 +432,7 @@ const recipes = [
       ]
     },
     note: "",
-    image: "assets/images/spori-medenjaci.png",
+    image: "assets/images/spori-medenjaci.jpeg",
     category: "Recepti uz kafu"
   },
   {
@@ -1116,7 +1113,7 @@ const recipes = [
   },
   {
     number: "27",
-    title: { sr: "Meko jaje sa avokadom i tostom", de: "Weiches Ei mit Avocado und Toast", en: "Soft Egg with Avocado & Toast" },
+    title: { sr: "Rovito kuvano jaje sa avokadom i tostom", de: "Wachsweiches Ei mit Avocado und Toast", en: "Soft-Boiled Egg with Avocado & Toast" },
     subtitle: {
       sr: "Dva minuta pažnje za sebe ujutru — i dan počinje kako treba.",
       de: "Zwei Minuten Fürsorge für dich am Morgen — und der Tag beginnt richtig.",
@@ -1139,7 +1136,7 @@ const recipes = [
       en: ["Put the eggs in boiling water and cook for exactly 6–7 minutes for a soft yolk.", "Meanwhile, toast the bread.", "Mash the avocado with a fork with a little salt, pepper and lemon juice.", "Spread the avocado on the toast.", "Cool the eggs in cold water, peel and halve.", "Arrange on toast, sprinkle with chilli and serve immediately."]
     },
     note: "",
-    image: "assets/images/jaje-sa-avokadom.png",
+    image: "assets/images/rovito-jaje.png",
     category: "Jutarnji recepti"
   },
   {
@@ -1172,30 +1169,30 @@ const recipes = [
   },
   {
     number: "29",
-    title: { sr: "Lubenica salata sa fetom i nanom", de: "Wassermelonensalat mit Feta und Minze", en: "Watermelon Salad with Feta & Mint" },
+    title: { sr: "Nesvakidašnja salata sa cveklom", de: "Besonderer Rote-Bete-Salat", en: "Unusual Beetroot Salad" },
     subtitle: {
-      sr: "Letnja kombinacija koja zvuči čudno a deluje kao da je uvek ovako trebalo biti.",
-      de: "Eine Sommerkombination, die seltsam klingt, aber sich anfühlt, als wäre sie schon immer so gewesen.",
-      en: "A summer combination that sounds strange but feels like it was always meant to be."
+      sr: "Obojena svežina na tanjiru.",
+      de: "Bunte Frische auf dem Teller.",
+      en: "Colourful freshness on a plate."
     },
     author_comment: {
-      sr: "Ovo je jelo za vrući julski dan, uz muziku i čašu hladne vode. Ne treba ti ništa više.",
-      de: "Das ist ein Gericht für einen heißen Julitag, mit Musik und einem Glas kaltem Wasser. Mehr brauchst du nicht.",
-      en: "This is a dish for a hot July day, with music and a glass of cold water. You don't need anything more."
+      sr: "Jelo koje otvara srce i budi osmeh — kao užina, prilog ili lagana večera, iz bilo kog razloga.",
+      de: "Ein Gericht, das das Herz öffnet und ein Lächeln weckt — als Snack, Beilage oder leichtes Abendessen.",
+      en: "A dish that opens the heart and brings a smile — as a snack, side or light dinner."
     },
-    prep_time: { sr: "10 minuta", de: "10 Min.", en: "10 minutes" },
+    prep_time: { sr: "20 minuta", de: "20 Min.", en: "20 minutes" },
     ingredients: {
-      sr: ["¼ lubenice, isečene na kocke", "100 g feta sira, izmrvljenog", "Šaka svežih listova nane", "Malo maslinovog ulja", "Crni biber po ukusu", "Opciono: kap balzamičnog sirćeta ili soka od limete"],
-      de: ["¼ Wassermelone, in Würfel geschnitten", "100 g Feta, zerbröckelt", "Eine Handvoll frische Minzblätter", "Etwas Olivenöl", "Schwarzer Pfeffer nach Geschmack", "Optional: ein Tropfen Balsamico oder Limettensaft"],
-      en: ["¼ watermelon, cut into cubes", "100 g feta, crumbled", "A handful of fresh mint leaves", "A little olive oil", "Black pepper to taste", "Optional: a drop of balsamic vinegar or lime juice"]
+      sr: ["3 kuvane cvekle", "2 šargarepe", "1 zelena paprika", "2 mlada luka", "Konzerva meksičke mešavine (kukuruz, crveni pasulj, crvena paprika)", "Maslinovo ulje", "Balzamiko sirće", "So i biber po ukusu"],
+      de: ["3 gekochte Rote Beten", "2 Karotten", "1 grüne Paprika", "2 Frühlingszwiebeln", "1 Dose mexikanische Mischung (Mais, rote Bohnen, rote Paprika)", "Olivenöl", "Balsamico-Essig", "Salz und Pfeffer nach Geschmack"],
+      en: ["3 cooked beetroots", "2 carrots", "1 green pepper", "2 spring onions", "1 tin Mexican mix (sweetcorn, red kidney beans, red pepper)", "Olive oil", "Balsamic vinegar", "Salt and pepper to taste"]
     },
     instructions: {
-      sr: ["Lubenicu iseci na krupne kocke i rasporedi po tanjiru.", "Izmrvi feta sir odozgo.", "Dodaj listove nane — cele ili grubo natrgane.", "Prelij sa malo maslinovog ulja.", "Pospi crnim biberom i po želji balzamičnim sirćetom.", "Serviraj odmah, dok je sve hladno i svežo."],
-      de: ["Wassermelone in grobe Würfel schneiden und auf einem Teller anrichten.", "Feta darüber zerbröckeln.", "Minzblätter hinzufügen — ganz oder grob zerrissen.", "Mit etwas Olivenöl beträufeln.", "Mit schwarzem Pfeffer und nach Belieben Balsamico bestreuen.", "Sofort servieren, solange alles kalt und frisch ist."],
-      en: ["Cut the watermelon into large cubes and arrange on a plate.", "Crumble the feta on top.", "Add the mint leaves — whole or roughly torn.", "Drizzle with a little olive oil.", "Sprinkle with black pepper and balsamic if you like.", "Serve immediately, while everything is cold and fresh."]
+      sr: ["Kuvanu cveklu iseci na kockice.", "Dodaj seckanu papriku, šargarepu i mladi luk.", "Umešaj kukuruz i pasulj.", "Začini maslinovim uljem, balzamiko sirćetom, solju i biberom.", "Dobro promešaj i posluži rashlađeno."],
+      de: ["Die gekochten Roten Beten in Würfel schneiden.", "Paprika, Karotte und Frühlingszwiebeln gehackt dazugeben.", "Mais und Bohnen unterrühren.", "Mit Olivenöl, Balsamico, Salz und Pfeffer würzen.", "Gut umrühren und gekühlt servieren."],
+      en: ["Cut the cooked beetroot into cubes.", "Add the chopped pepper, carrot and spring onion.", "Stir in the corn and beans.", "Season with olive oil, balsamic vinegar, salt and pepper.", "Mix well and serve chilled."]
     },
-    note: "",
-    image: "assets/images/lubenica-salata.png",
+    note: "Ostavi u frižideru da se dobro prohladi. Još je bolje ako uspeš da sačekaš do sutra.",
+    image: "assets/images/salata-sa-cveklom.png",
     category: "Osvežavajući recepti"
   },
   {
@@ -1228,30 +1225,30 @@ const recipes = [
   },
   {
     number: "31",
-    title: { sr: "Overnight oats sa jabukama i cimetom", de: "Overnight Oats mit Apfel und Zimt", en: "Overnight Oats with Apple & Cinnamon" },
+    title: { sr: "Puding od vanile sa bademom i malinama", de: "Vanillepudding mit Mandeln und Himbeeren", en: "Vanilla Pudding with Almonds & Raspberries" },
     subtitle: {
-      sr: "Pripremi uveče, a jutro ćeš imati doručak koji te čeka u frižideru.",
-      de: "Abends vorbereiten, und morgen wartet dein Frühstück im Kühlschrank.",
-      en: "Prepare the evening before, and in the morning your breakfast is waiting in the fridge."
+      sr: "Lagani kremasti užitak sa voćnom svežinom.",
+      de: "Leichte cremige Verwöhnung mit fruchtiger Frische.",
+      en: "A light, creamy treat with fruity freshness."
     },
     author_comment: {
-      sr: "Za ljude koji ujutru nemaju vremena. Ili volju. Otvoriš frižider i već si sita pre nego što si i stigla da pomisliš da si gladna.",
-      de: "Für Menschen, die morgens keine Zeit haben. Oder keine Lust. Kühlschrank öffnen — und schon bist du satt, bevor du überhaupt daran gedacht hast, hungrig zu sein.",
-      en: "For people who have no time in the morning. Or no will. Open the fridge and you're fed before you've even thought about being hungry."
+      sr: "Jednostavan, brz i divno mirisan desert! Ovo je tvoj slatki predah posle dugog dana. 💛",
+      de: "Einfach, schnell und herrlich duftend! Das ist deine süße Pause nach einem langen Tag. 💛",
+      en: "Simple, quick and wonderfully fragrant! This is your sweet break after a long day. 💛"
     },
-    prep_time: { sr: "5 minuta + noć u frižideru", de: "5 Min. + über Nacht im Kühlschrank", en: "5 minutes + overnight in the fridge" },
+    prep_time: { sr: "15 minuta", de: "15 Min.", en: "15 minutes" },
     ingredients: {
-      sr: ["½ šolje zobenih pahuljica", "½ šolje biljnog mleka", "½ šolje grčkog jogurta", "1 kašika čia semenki", "1 kašičica meda", "½ jabuke, narendane ili naseckane", "Prstohvat cimeta", "Šaka oraha ili badema"],
-      de: ["½ Tasse Haferflocken", "½ Tasse Pflanzenmilch", "½ Tasse griechischer Joghurt", "1 EL Chiasamen", "1 TL Honig", "½ Apfel, gerieben oder gewürfelt", "Eine Prise Zimt", "Eine Handvoll Walnüsse oder Mandeln"],
-      en: ["½ cup oat flakes", "½ cup plant milk", "½ cup Greek yogurt", "1 tbsp chia seeds", "1 tsp honey", "½ apple, grated or diced", "A pinch of cinnamon", "A handful of walnuts or almonds"]
+      sr: ["1 kesica pudinga od vanile", "500 ml bademovog mleka", "3–4 kašike kokosovih pahuljica", "2 kašike šećera ili zaslađivača po želji", "Šaka svežih malina", "Šaka badema"],
+      de: ["1 Päckchen Vanillepuddingpulver", "500 ml Mandelmilch", "3–4 EL Kokosflocken", "2 EL Zucker oder Süßungsmittel nach Wunsch", "Eine Handvoll frische Himbeeren", "Eine Handvoll Mandeln"],
+      en: ["1 sachet vanilla pudding powder", "500 ml almond milk", "3–4 tbsp desiccated coconut", "2 tbsp sugar or sweetener to taste", "A handful of fresh raspberries", "A handful of almonds"]
     },
     instructions: {
-      sr: ["U teglici ili posudici sa poklopcem pomešaj zobene pahuljice, mleko, jogurt, čia semenke i med.", "Dobro promešaj, pokrij i ostavi u frižideru do jutra.", "Ujutru dodaj narendanu ili naseckanu jabuku i cimet.", "Pospi orašastim plodovima i uživaj hladno — direktno iz tegle."],
-      de: ["In einem Glas oder einer Dose mit Deckel Haferflocken, Milch, Joghurt, Chiasamen und Honig vermischen.", "Gut umrühren, abdecken und über Nacht im Kühlschrank lassen.", "Morgens geriebenen oder gewürfelten Apfel und Zimt hinzufügen.", "Mit Nüssen bestreuen und kalt genießen — direkt aus dem Glas."],
-      en: ["In a jar or container with a lid, mix oats, milk, yogurt, chia seeds and honey.", "Stir well, cover and leave in the fridge overnight.", "In the morning, add the grated or diced apple and cinnamon.", "Top with nuts and enjoy cold — straight from the jar."]
+      sr: ["Sipaj 400 ml bademovog mleka u šerpu i stavi da provri.", "U preostalih 100 ml mleka umuti puding i šećer.", "Kada mleko počne da vri, dodaj razmućeni puding i kuvaj uz stalno mešanje dok se ne zgusne.", "Pred kraj dodaj kokosove pahuljice i dobro sjedini.", "Skloni sa vatre i sipaj puding u činije ili čaše.", "Ohladi ga i pre služenja ukrasi svežim malinama i bademima."],
+      de: ["400 ml Mandelmilch in einen Topf geben und aufkochen lassen.", "In den restlichen 100 ml Milch Puddingpulver und Zucker verquirlen.", "Wenn die Milch kocht, die Puddingmischung dazugeben und unter ständigem Rühren köcheln lassen, bis er eindickt.", "Gegen Ende die Kokosflocken einrühren und gut vermengen.", "Vom Herd nehmen und den Pudding in Schüsseln oder Gläser füllen.", "Abkühlen lassen und vor dem Servieren mit frischen Himbeeren und Mandeln garnieren."],
+      en: ["Pour 400 ml of the almond milk into a pan and bring to the boil.", "Whisk the pudding powder and sugar into the remaining 100 ml milk.", "When the milk starts to boil, add the pudding mixture and cook, stirring constantly, until thickened.", "Near the end, stir in the coconut and combine well.", "Remove from the heat and pour into bowls or glasses.", "Chill and top with fresh raspberries and almonds before serving."]
     },
-    note: "",
-    image: "assets/images/overnight-oats.png",
+    note: "Ako želiš još kremastiju teksturu, dodaj malo kokosovog mleka uz bademovo.",
+    image: "assets/images/puding-od-vanile.png",
     category: "Recepti uz kafu"
   },
   {
