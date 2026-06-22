@@ -1141,31 +1141,31 @@ const recipes = [
   },
   {
     number: "28",
-    title: { sr: "Zeleni smoothie koji zapravo volim", de: "Der grüne Smoothie, den ich wirklich mag", en: "The Green Smoothie I Actually Love" },
+    title: { sr: "Krem supica od tikvica", de: "Cremige Zucchinisuppe", en: "Creamy Zucchini Soup" },
     subtitle: {
-      sr: "Nije gorko, nije teško — samo sveže, zeleno i baš taman slatko.",
-      de: "Nicht bitter, nicht schwer — einfach frisch, grün und genau süß genug.",
-      en: "Not bitter, not heavy — just fresh, green and exactly sweet enough."
+      sr: "Nežna, mirisna i lako svarljiva.",
+      de: "Zart, aromatisch und leicht verdaulich.",
+      en: "Delicate, fragrant and easy on the stomach."
     },
     author_comment: {
-      sr: "Godinama nisam volela zelene smoothije. Onda sam pronašla pravu kombinaciju — i sad ga pravim skoro svaki dan.",
-      de: "Jahrelang mochte ich keine grünen Smoothies. Dann fand ich die richtige Kombination — und jetzt mache ich ihn fast jeden Tag.",
-      en: "For years I didn't like green smoothies. Then I found the right combination — and now I make it almost every day."
+      sr: "Ovo je supa koja greje stomak i čisti misli — jednostavna, blaga i mekana kao prvi gutljaj topline posle hladnog dana.",
+      de: "Das ist eine Suppe, die den Bauch wärmt und den Kopf klarmacht — einfach, mild und weich wie der erste Schluck Wärme nach einem kalten Tag.",
+      en: "This is a soup that warms your stomach and clears your head — simple, gentle and soft like the first sip of warmth after a cold day."
     },
-    prep_time: { sr: "5 minuta", de: "5 Min.", en: "5 minutes" },
+    prep_time: { sr: "30 minuta", de: "30 Min.", en: "30 minutes" },
     ingredients: {
-      sr: ["1 šaka svežeg spanaća ili blitve", "1 zamrznuta banana", "½ mango (svež ili zamrznut)", "1 šolja kokosovog mleka ili biljnog mleka", "Parčence svežeg đumbira", "Sok od ½ limete ili limuna", "Kocke leda (opciono)"],
-      de: ["1 Handvoll frischer Spinat oder Mangold", "1 gefrorene Banane", "½ Mango (frisch oder gefroren)", "1 Tasse Kokosmilch oder Pflanzenmilch", "Ein Stück frischer Ingwer", "Saft einer ½ Limette oder Zitrone", "Eiswürfel (optional)"],
-      en: ["1 handful fresh spinach or chard", "1 frozen banana", "½ mango (fresh or frozen)", "1 cup coconut milk or plant milk", "A piece of fresh ginger", "Juice of ½ lime or lemon", "Ice cubes (optional)"]
+      sr: ["2 srednje tikvice", "1 manji krompir", "1 mala glavica crnog luka", "1 čen belog luka", "1 kašika maslinovog ulja", "So i biber", "Malo svežeg peršuna ili mirođije", "Oko 600 ml vode ili povrtnog bujona", "Šaka semenki suncokreta za serviranje"],
+      de: ["2 mittelgroße Zucchini", "1 kleine Kartoffel", "1 kleine Zwiebel", "1 Knoblauchzehe", "1 EL Olivenöl", "Salz und Pfeffer", "Etwas frische Petersilie oder Dill", "Ca. 600 ml Wasser oder Gemüsebrühe", "Eine Handvoll Sonnenblumenkerne zum Servieren"],
+      en: ["2 medium zucchini", "1 small potato", "1 small onion", "1 garlic clove", "1 tbsp olive oil", "Salt and pepper", "A little fresh parsley or dill", "Around 600 ml water or vegetable stock", "A handful of sunflower seeds for serving"]
     },
     instructions: {
-      sr: ["Sve sastojke stavi u blender.", "Mešaj na maksimalnoj brzini oko 60 sekundi dok ne bude glatko.", "Probaj i po potrebi dodaj malo meda ili više limuna.", "Seri odmah — dok je svež i hladan."],
-      de: ["Alle Zutaten in den Mixer geben.", "Auf maximaler Stufe etwa 60 Sekunden mixen, bis alles glatt ist.", "Probieren und nach Belieben etwas Honig oder mehr Zitrone hinzufügen.", "Sofort servieren — frisch und kalt."],
-      en: ["Put all ingredients in a blender.", "Blend on maximum speed for about 60 seconds until smooth.", "Taste and add a little honey or more lemon if needed.", "Serve immediately — fresh and cold."]
+      sr: ["Na maslinovom ulju kratko proprži sitno seckan crni i beli luk.", "Dodaj tikvice isečene na kolutove i krompir isečen na kockice, pa sve lepo promešaj.", "Nalij toliko vode ili bujona da povrće bude pokriveno, posoli i pobiberi.", "Kuvaj oko 15 minuta dok sve ne omekša.", "Štapnim mikserom ili u blenderu izmiksaj sve do glatke kremaste supe.", "Dodaj malo seckanog peršuna po ukusu.", "Pre serviranja pospi semenkim suncokreta za prijatnu hrskavost."],
+      de: ["Fein gehackte Zwiebel und Knoblauch in Olivenöl kurz anschwitzen.", "Zucchini in Scheiben und Kartoffel in Würfel schneiden, hinzufügen und gut umrühren.", "Mit Wasser oder Brühe aufgießen bis das Gemüse bedeckt ist, salzen und pfeffern.", "Ca. 15 Minuten kochen bis alles weich ist.", "Mit einem Stabmixer oder im Standmixer zu einer glatten Cremesuppe pürieren.", "Nach Geschmack etwas frische Petersilie einrühren.", "Vor dem Servieren mit Sonnenblumenkernen für angenehme Knusprigkeit bestreuen."],
+      en: ["Sauté the finely chopped onion and garlic in olive oil briefly.", "Add the zucchini in slices and potato in cubes, stir everything together.", "Add enough water or stock to cover the vegetables, season with salt and pepper.", "Cook for about 15 minutes until everything is soft.", "Blend with a stick blender or in a blender until smooth and creamy.", "Stir in a little fresh parsley to taste.", "Before serving, sprinkle with sunflower seeds for a pleasant crunch."]
     },
-    note: "",
-    image: "assets/images/zeleni-smoothie.png",
-    category: "Osvežavajući recepti"
+    note: "Ako želiš još kremastiju strukturu, dodaj mali komadić putera ili kašiku biljne pavlake nakon miksanja. Odlično se slaže i sa pečenim bundevinim semenkama.",
+    image: "assets/images/krem-supa-od-tikvica.png",
+    category: "Recepti kada ne znam šta da kuvam"
   },
   {
     number: "29",
