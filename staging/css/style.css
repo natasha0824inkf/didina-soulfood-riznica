@@ -772,6 +772,8 @@ ul,ol { list-style: none; }
 .blog-post-meta  { display: flex; gap: 1.25rem; font-size: .82rem; color: var(--text-light); margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
 .blog-post-body  { font-size: 1.05rem; line-height: 1.9; color: var(--text-mid); }
 .blog-post-body p { margin-bottom: 1.4rem; }
+.blog-post-body ul, .blog-post-body ol { margin: 0 0 1.4rem 1.4rem; padding: 0; }
+.blog-post-body li { margin-bottom: .6rem; }
 .blog-post-body h2 { font-family: 'Dancing Script', cursive; font-size: 1.6rem; color: var(--text-dark); margin: 2rem 0 .75rem; }
 .blog-post-share { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; align-items: center; gap: 1rem; }
 .blog-post-share span { font-size: .85rem; color: var(--text-light); }
