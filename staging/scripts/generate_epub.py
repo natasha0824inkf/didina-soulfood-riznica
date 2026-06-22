@@ -299,6 +299,12 @@ for r in recipes:
         f'</p>\n'
     )
 
+toc_html_items += (
+    '<p class="toc-item">'
+    '<span class="toc-number" style="color:#c4976a;">&#9733;</span>'
+    '<a href="bonus.xhtml">Bonus recept &#8211; Ukusni prokelj iz rerne</a>'
+    '</p>\n'
+)
 toc_page_body = f'<h2 class="toc-title">Sadr&#382;aj</h2>\n{toc_html_items}'
 toc_ch = epub.EpubHtml(title='Sadržaj', file_name='toc_page.xhtml', lang='sr')
 toc_ch.content = page('Sadržaj', toc_page_body).encode('utf-8')
