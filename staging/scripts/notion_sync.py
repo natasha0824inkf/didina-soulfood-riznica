@@ -4,6 +4,7 @@
 import os
 import re
 import sys
+import html
 import json
 import requests
 from datetime import datetime
@@ -197,16 +198,26 @@ def render_post(slug, versions):
 
     meta_desc = first_paragraph(sr_body)
 
+    # Escape values used in HTML attributes and JSON-LD
+    sr_title_h  = html.escape(sr_title)
+    de_title_h  = html.escape(de_title)
+    en_title_h  = html.escape(en_title)
+    meta_desc_h = html.escape(meta_desc)
+    sr_title_j  = json.dumps(sr_title)
+    author_j    = json.dumps("Didi – Dragana Stamenković")
+    pub_j       = json.dumps(date_raw)
+    org_j       = json.dumps("Didina SoulFood Riznica")
+
     return f'''<!DOCTYPE html>
 <html lang="sr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{sr_title} – Didina SoulFood Riznica</title>
-  <meta name="description" content="{meta_desc}">
+  <title>{sr_title_h} – Didina SoulFood Riznica</title>
+  <meta name="description" content="{meta_desc_h}">
   <meta name="author" content="Didi – Dragana Stamenković">
-  <meta property="og:title" content="{sr_title} – Didina SoulFood Riznica">
-  <meta property="og:description" content="{meta_desc}">
+  <meta property="og:title" content="{sr_title_h} – Didina SoulFood Riznica">
+  <meta property="og:description" content="{meta_desc_h}">
   <meta property="og:type" content="article">
   <meta property="article:published_time" content="{date_raw}">
   <meta property="article:author" content="Didi">
@@ -214,10 +225,10 @@ def render_post(slug, versions):
   {{
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": "{sr_title}",
-    "author": {{ "@type": "Person", "name": "Didi – Dragana Stamenković" }},
-    "datePublished": "{date_raw}",
-    "publisher": {{ "@type": "Organization", "name": "Didina SoulFood Riznica" }}
+    "headline": {sr_title_j},
+    "author": {{ "@type": "Person", "name": {author_j} }},
+    "datePublished": {pub_j},
+    "publisher": {{ "@type": "Organization", "name": {org_j} }}
   }}
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -430,11 +441,16 @@ def update_blog_listing(cards_html):
     blog_path = REPO_ROOT / "blog.html"
     content = blog_path.read_text(encoding="utf-8")
 
-    # Replace everything between <div class="blog-grid"> and </div> (the grid)
-    new_grid = f'    <div class="blog-grid">\n{cards_html}\n\n    </div>'
+    new_block = (
+        '    <!-- BLOG_GRID_START -->\n'
+        '    <div class="blog-grid">\n'
+        f'{cards_html}\n\n'
+        '    </div>\n'
+        '    <!-- BLOG_GRID_END -->'
+    )
     content = re.sub(
-        r'<div class="blog-grid">.*?</div>',
-        new_grid,
+        r'<!-- BLOG_GRID_START -->.*?<!-- BLOG_GRID_END -->',
+        new_block,
         content,
         flags=re.DOTALL
     )
