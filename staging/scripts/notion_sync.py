@@ -9,8 +9,8 @@ import requests
 from datetime import datetime
 from pathlib import Path
 
-NOTION_TOKEN = os.environ["NOTION_TOKEN"].strip()
-NOTION_DB_ID = os.environ["NOTION_DB_ID"].strip()
+NOTION_TOKEN = re.sub(r'\s', '', os.environ["NOTION_TOKEN"])
+NOTION_DB_ID = re.sub(r'\s', '', os.environ["NOTION_DB_ID"])
 REPO_ROOT = Path(__file__).parent.parent
 
 HEADERS = {
@@ -147,11 +147,13 @@ def get_page_blocks(page_id):
 
 def query_database():
     url = f"https://api.notion.com/v1/databases/{NOTION_DB_ID}/query"
-    payload = {"filter": {"property": "Status", "select": {"equals": "Published"}}}
+    payload = {"filter": {"property": "Status", "status": {"equals": "Published"}}}
     pages = []
     while True:
         res = requests.post(url, headers=HEADERS, json=payload)
-        res.raise_for_status()
+        if not res.ok:
+            print(f"Notion API error {res.status_code}: {res.text}", file=sys.stderr)
+            res.raise_for_status()
         data = res.json()
         pages.extend(data["results"])
         if data.get("has_more") and data.get("next_cursor"):
