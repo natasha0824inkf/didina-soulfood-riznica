@@ -8,8 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=52163412efc7aad4617b3202acae2389947aea05">
-  <link rel="stylesheet" href="css/responsive.css?v=52163412efc7aad4617b3202acae2389947aea05">
+  <link rel="stylesheet" href="css/style.css?v=f2752fe9e2f121b93c125cfd5b0f464005a3189c">
+  <link rel="stylesheet" href="css/responsive.css?v=f2752fe9e2f121b93c125cfd5b0f464005a3189c">
   <script>if(localStorage.getItem('didina-theme')==='dark'||(!localStorage.getItem('didina-theme')&&window.matchMedia('(prefers-color-scheme:dark)').matches))document.documentElement.classList.add('dark-mode');</script>
   <style>.site-header{background:#6B4F3A;border-bottom:2px solid #D8A14A;position:sticky;top:0;z-index:100}.nav-links a{color:rgba(247,241,231,.72);border-bottom:2px solid transparent}.nav-links a.active{color:#D8A14A;border-bottom-color:#D8A14A;font-weight:600}html.dark-mode .site-header{background:#1A1208}</style>
 </head>
@@ -18,7 +18,7 @@
 <header class="site-header">
   <nav class="nav-container">
     <a href="index.html" class="nav-logo" aria-label="Didina SoulFood Riznica">
-      <img src="assets/images/logo.svg?v=52163412efc7aad4617b3202acae2389947aea05" alt="" class="nav-logo-img" aria-hidden="true">
+      <img src="assets/images/logo.svg?v=f2752fe9e2f121b93c125cfd5b0f464005a3189c" alt="" class="nav-logo-img" aria-hidden="true">
       <span class="nav-logo-main">Didina SoulFood Riznica</span>
     </a>
     <button class="hamburger" id="hamburger" aria-label="Meni" aria-expanded="false">
@@ -130,22 +130,29 @@
       <div class="modal-category-badge" id="modalCategory"></div>
       <h2 class="modal-title" id="modalTitle"></h2>
       <p class="modal-subtitle" id="modalSubtitle"></p>
-      <div class="modal-meta-item" id="modalTime"></div>
     </div>
+    <div id="modalHeroImage" class="modal-hero-image" hidden></div>
     <div class="modal-body">
+      <div class="modal-meta-item" id="modalTime"></div>
       <blockquote class="modal-comment" id="modalComment" hidden></blockquote>
       <h3 class="modal-section-title" data-i18n="ingredients">Sastojci</h3>
       <ul class="ingredients-list" id="modalIngredients"></ul>
       <h3 class="modal-section-title" data-i18n="instructions">Priprema</h3>
       <ol class="instructions-list" id="modalInstructions"></ol>
-      <button class="modal-fav-btn" id="modalFavBtn">🤍 <span data-i18n="add_favorite">Dodaj u omiljene</span></button>
-      <button class="modal-share-btn" id="modalShareBtn">↗ <span data-i18n="share_recipe">Podeli recept</span></button>
+      <div class="modal-actions">
+        <button class="modal-fav-btn" id="modalFavBtn">🤍 <span data-i18n="add_favorite">Dodaj u omiljene</span></button>
+        <button class="modal-share-btn" id="modalShareBtn">↗ <span data-i18n="share_recipe">Podeli recept</span></button>
+      </div>
+      <div class="modal-nav">
+        <button class="modal-nav-btn" id="modalPrevBtn">← <span data-i18n="prev_recipe">Prethodni</span></button>
+        <button class="modal-nav-btn" id="modalNextBtn"><span data-i18n="next_recipe">Sledeći</span> →</button>
+      </div>
     </div>
   </div>
 </div>
 
-<script src="js/translations.js?v=52163412efc7aad4617b3202acae2389947aea05"></script>
-<script src="js/recipes-data.js?v=52163412efc7aad4617b3202acae2389947aea05"></script>
-<script src="js/main.js?v=52163412efc7aad4617b3202acae2389947aea05"></script>
+<script src="js/translations.js?v=f2752fe9e2f121b93c125cfd5b0f464005a3189c"></script>
+<script src="js/recipes-data.js?v=f2752fe9e2f121b93c125cfd5b0f464005a3189c"></script>
+<script src="js/main.js?v=f2752fe9e2f121b93c125cfd5b0f464005a3189c"></script>
 </body>
 </html>
