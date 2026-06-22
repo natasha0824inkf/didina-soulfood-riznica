@@ -15,6 +15,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Cache-bust CSS and JS
+        run: |
+          SHA="${{ github.sha }}"
+          for f in *.html; do
+            sed -i "s|href=\"css/\([^\"]*\.css\)\"|href=\"css/\1?v=${SHA}\"|g" "$f"
+            sed -i "s|src=\"js/\([^\"]*\.js\)\"|src=\"js/\1?v=${SHA}\"|g" "$f"
+          done
       - uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -27,6 +34,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Cache-bust CSS and JS
+        run: |
+          SHA="${{ github.sha }}"
+          for f in *.html; do
+            sed -i "s|href=\"css/\([^\"]*\.css\)\"|href=\"css/\1?v=${SHA}\"|g" "$f"
+            sed -i "s|src=\"js/\([^\"]*\.js\)\"|src=\"js/\1?v=${SHA}\"|g" "$f"
+          done
       - uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
