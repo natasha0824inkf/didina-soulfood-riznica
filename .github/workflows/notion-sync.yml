@@ -1,0 +1,36 @@
+name: Sync from Notion
+
+on:
+  schedule:
+    - cron: '0 * * * *'   # every hour
+  workflow_dispatch:        # manual trigger
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run Notion sync
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DB_ID: ${{ secrets.NOTION_DB_ID }}
+        run: python scripts/notion_sync.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add blog/ blog.html
+          git diff --cached --quiet && echo "Nothing to commit" && exit 0
+          git commit -m "chore: sync blog posts from Notion"
+          git push origin main
