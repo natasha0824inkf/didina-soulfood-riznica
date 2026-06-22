@@ -1251,30 +1251,30 @@ const recipes = [
   },
   {
     number: "33",
-    title: { sr: "Muffini sa jabukom i cimetom", de: "Apfel-Zimt-Muffins", en: "Apple & Cinnamon Muffins" },
+    title: { sr: "Jafa bez brašna", de: "Jaffa-Kuchen ohne Mehl", en: "Flourless Jaffa Cake" },
     subtitle: {
-      sr: "Kad ti cela kuća zamirise na jesen — za 30 minuta.",
-      de: "Wenn dein ganzes Zuhause nach Herbst duftet — in 30 Minuten.",
-      en: "When your whole home smells of autumn — in 30 minutes."
+      sr: "Sočan, zdrav i prefinjen — obogaćen crnom čokoladom.",
+      de: "Saftig, gesund und raffiniert — bereichert mit dunkler Schokolade.",
+      en: "Moist, healthy and refined — enriched with dark chocolate."
     },
     author_comment: {
-      sr: "Integralni, bez puno šećera i puni jabuke. Jedem ih za doručak, uz kafu, ili kao večernji zalogaj kad mi treba nešto toplo i domaće.",
-      de: "Vollkorn, wenig Zucker, voller Apfel. Ich esse sie zum Frühstück, zum Kaffee oder als Abendsnack, wenn ich etwas Warmes und Heimeliges brauche.",
-      en: "Wholegrain, low sugar and full of apple. I eat them for breakfast, with coffee or as an evening snack when I need something warm and homemade."
+      sr: "Prava mala riznica ukusa i hranljivih sastojaka u samo jednom parčetu. Bez brašna, ali pun voća i lešnika — deluje lagano, a opet dovoljno bogato, vraća energiju i širi dobro raspoloženje.",
+      de: "Eine wahre kleine Schatzkiste an Geschmack und Nährstoffen in nur einem Stück. Ohne Mehl, aber voller Früchte und Haselnüsse — wirkt leicht und ist dennoch reichhaltig genug, um Energie zurückzugeben.",
+      en: "A real little treasure trove of flavour and nutrients in just one slice. Flourless, but full of fruit and hazelnuts — feels light yet rich enough to restore your energy and lift your mood."
     },
-    prep_time: { sr: "10 minuta + 25 minuta pečenja", de: "10 Min. + 25 Min. backen", en: "10 minutes + 25 minutes baking" },
+    prep_time: { sr: "10 minuta + 40 minuta pečenja", de: "10 Min. + 40 Min. backen", en: "10 minutes + 40 minutes baking" },
     ingredients: {
-      sr: ["200 g integralnog brašna", "1 kašičica praška za pecivo", "½ kašičice sode bikarbone", "1 kašičica cimeta", "Prstohvat soli", "2 jaja", "3 kašike meda ili šećera od trske", "50 ml ulja", "½ šolje biljnog mleka", "2 jabuke, oljuštene i narendane", "Šaka suvih grožđica (opciono)"],
-      de: ["200 g Vollkornmehl", "1 TL Backpulver", "½ TL Natron", "1 TL Zimt", "Eine Prise Salz", "2 Eier", "3 EL Honig oder Rohrzucker", "50 ml Öl", "½ Tasse Pflanzenmilch", "2 Äpfel, geschält und gerieben", "Eine Handvoll Rosinen (optional)"],
-      en: ["200 g wholegrain flour", "1 tsp baking powder", "½ tsp bicarbonate of soda", "1 tsp cinnamon", "A pinch of salt", "2 eggs", "3 tbsp honey or cane sugar", "50 ml oil", "½ cup plant milk", "2 apples, peeled and grated", "A handful of raisins (optional)"]
+      sr: ["4 šargarepe srednje veličine", "1 kiselkasta jabuka", "50 g otopljenog putera", "200 g mlevenih lešnika", "1 kašika šećera ili meda", "Rendana kora jedne narandže i sok od pola narandže", "1 kašičica cimeta i prstohvat soli", "100 g mlečne ili crne čokolade", "Malo biljnog mleka (za glazuru)"],
+      de: ["4 mittelgroße Karotten", "1 säuerlicher Apfel", "50 g geschmolzene Butter", "200 g gemahlene Haselnüsse", "1 EL Zucker oder Honig", "Abrieb einer Orange und Saft einer halben Orange", "1 TL Zimt und eine Prise Salz", "100 g Milch- oder Zartbitterschokolade", "Etwas Pflanzenmilch (für die Glasur)"],
+      en: ["4 medium carrots", "1 tart apple", "50 g melted butter", "200 g ground hazelnuts", "1 tbsp sugar or honey", "Zest of one orange and juice of half an orange", "1 tsp cinnamon and a pinch of salt", "100 g milk or dark chocolate", "A little plant milk (for the glaze)"]
     },
     instructions: {
-      sr: ["Zagrej rernu na 180°C i pripremi kalup za muffine.", "U jednoj činiji pomešaj suve sastojke: brašno, prašak, sodu, cimet, so.", "U drugoj činiji umuti jaja sa medom i uljem, pa dodaj mleko.", "Pomešaj mokre i suve sastojke — ne preterano, u redu je ako je malo grudvasto.", "Dodaj narendanu jabuku i grožđice i lagano umešaj.", "Sipaj smesu u kalup za muffine (napuni 2/3 svake šupljine).", "Peci 22–25 minuta. Proveri čačkalicom."],
-      de: ["Ofen auf 180°C vorheizen und Muffinform vorbereiten.", "In einer Schüssel die trockenen Zutaten mischen: Mehl, Backpulver, Natron, Zimt, Salz.", "In einer anderen Schüssel Eier mit Honig und Öl verquirlen, dann Milch hinzufügen.", "Feuchte und trockene Zutaten vermischen — nicht zu stark, es darf etwas klumpig sein.", "Geriebenen Apfel und Rosinen vorsichtig unterheben.", "Teig in die Muffinformen füllen (je 2/3 voll).", "22–25 Minuten backen. Mit einem Zahnstocher prüfen."],
-      en: ["Preheat the oven to 180°C and prepare a muffin tin.", "In one bowl, mix the dry ingredients: flour, baking powder, bicarb, cinnamon, salt.", "In another bowl, beat the eggs with honey and oil, then add the milk.", "Combine wet and dry ingredients — don't overmix, lumpy is fine.", "Gently fold in the grated apple and raisins.", "Fill the muffin tin (2/3 full per hole).", "Bake for 22–25 minutes. Check with a toothpick."]
+      sr: ["Operi i izrendaj šargarepe i jabuku, lepo promešaj.", "Postepeno dodaj mlevene lešnike, puter i med, lagano mešajući kašikom da se smesa ujednači.", "Dodaj narandžinu koru, sok, cimet i so.", "Sipaj u podmazan kalup i peci na 180°C oko 40 minuta.", "Pri kraju pečenja otopi čokoladu sa malo biljnog mleka i prelij preko toplog kolača."],
+      de: ["Karotten und Apfel waschen, reiben und gut vermischen.", "Nach und nach gemahlene Haselnüsse, Butter und Honig hinzufügen, mit einem Löffel sanft rühren bis die Masse gleichmäßig ist.", "Orangenabrieb, Saft, Zimt und Salz hinzufügen.", "In eine gefettete Form füllen und bei 180°C ca. 40 Minuten backen.", "Gegen Ende der Backzeit Schokolade mit etwas Pflanzenmilch schmelzen und über den warmen Kuchen gießen."],
+      en: ["Wash and grate the carrots and apple, mix well.", "Gradually add the ground hazelnuts, butter and honey, stirring gently with a spoon until the mixture is even.", "Add the orange zest, juice, cinnamon and salt.", "Pour into a greased tin and bake at 180°C for about 40 minutes.", "Near the end of baking, melt the chocolate with a little plant milk and pour over the warm cake."]
     },
-    note: "",
-    image: "assets/images/muffini-sa-jabukom.png",
+    note: "Kolač se mrvi u toku sečenja baš zato što nema brašna. Ako želiš kompaktniji kolač, dodaj malo mlevenih ovsenih pahuljica da povežu smesu.",
+    image: "assets/images/jafa-bez-brasna.png",
     category: "Recepti koji mirišu iz rerne"
   },
   {
