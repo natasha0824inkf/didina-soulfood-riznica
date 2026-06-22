@@ -728,63 +728,33 @@ const recipes = [
   {
     number: "14",
     title: {
-      sr: "Sunčani kajsija bowl",
-      de: "Sonnige Aprikosen-Bowl",
-      en: "Sunny Apricot Bowl"
+      sr: "Slani doručak sa lanom, jogurtom i povrćem",
+      de: "Salziges Frühstück mit Leinsamen, Joghurt und Gemüse",
+      en: "Savoury Breakfast with Flaxseed, Yogurt & Vegetables"
     },
     subtitle: {
-      sr: "Idealni lagani doručak koji se pravi za 5 minuta, drži sitom i ne opterećuje stomak.",
-      de: "Das ideale leichte Frühstück — in 5 Minuten fertig, sättigend und nicht schwer.",
-      en: "The ideal light breakfast, ready in 5 minutes — keeps you full without weighing you down."
+      sr: "Hrskava i osvežavajuća kombinacija za dobar početak dana.",
+      de: "Eine knackige und erfrischende Kombination für einen guten Tagesstart.",
+      en: "A crunchy, refreshing combination for a great start to the day."
     },
     author_comment: {
-      sr: "Samo pomešaj, prelij i ukrasi svežim kajsijama — i savršeni bowl ti se već smeška.",
-      de: "Einfach vermischen, begießen und mit frischen Aprikosen dekorieren — und die perfekte Bowl lächelt dich schon an.",
-      en: "Just mix, pour and top with fresh apricots — and the perfect bowl is already smiling at you."
+      sr: "Navikli smo na slatke varijante jogurta sa semenkama, ali evo dokaza da slano može biti još bolje!",
+      de: "Wir sind süße Joghurt-Varianten mit Samen gewohnt — aber hier ist der Beweis, dass salzig noch besser sein kann!",
+      en: "We're used to sweet yogurt-and-seed bowls, but here's proof that savoury can be even better!"
     },
-    prep_time: { sr: "3–5 minuta", de: "3–5 Min.", en: "3–5 minutes" },
+    prep_time: { sr: "5–10 minuta", de: "5–10 Min.", en: "5–10 minutes" },
     ingredients: {
-      sr: [
-        "1 kašika mlevenog lana", "1 kašika semenki suncokreta",
-        "1 čaša grčkog jogurta", "1 kašičica maca praha (opciono)",
-        "nekoliko svežih kajsija, očišćenih i presečenih",
-        "1 kašičica domaćeg meda (za prelivanje)"
-      ],
-      de: [
-        "1 EL gemahlener Leinsamen", "1 EL Sonnenblumenkerne",
-        "1 Tasse griechischer Joghurt", "1 TL Macapulver (optional)",
-        "Ein paar frische Aprikosen, entkernt und halbiert",
-        "1 TL hausgemachter Honig (zum Beträufeln)"
-      ],
-      en: [
-        "1 tbsp ground flaxseed", "1 tbsp sunflower seeds",
-        "1 cup Greek yogurt", "1 tsp maca powder (optional)",
-        "A few fresh apricots, pitted and halved",
-        "1 tsp honey (for drizzling)"
-      ]
+      sr: ["1 kašika sveže samlevenog lana", "200 ml grčkog jogurta", "2 rotkvice", "1 mladi luk", "1 kašika pečenih semenki bundeve", "Prstohvat soli"],
+      de: ["1 EL frisch gemahlener Leinsamen", "200 ml griechischer Joghurt", "2 Radieschen", "1 Frühlingszwiebel", "1 EL geröstete Kürbiskerne", "Eine Prise Salz"],
+      en: ["1 tbsp freshly ground flaxseed", "200 ml Greek yogurt", "2 radishes", "1 spring onion", "1 tbsp toasted pumpkin seeds", "A pinch of salt"]
     },
     instructions: {
-      sr: [
-        "U činiji pomešaj lan, suncokret, maca prah i jogurt.",
-        "Sve lagano izmešaj dok se ne sjedini.",
-        "Prelij medom i ukrasi polutkama kajsije.",
-        "Uživaj odmah, po mogućnosti na suncu ili uz omiljenu muziku!"
-      ],
-      de: [
-        "Leinsamen, Sonnenblumenkerne, Macapulver und Joghurt in einer Schüssel vermischen.",
-        "Vorsichtig rühren, bis alles verbunden ist.",
-        "Mit Honig beträufeln und mit Aprikosenhälften dekorieren.",
-        "Sofort genießen — am besten in der Sonne oder bei deiner Lieblingsmusik!"
-      ],
-      en: [
-        "In a bowl, mix flaxseed, sunflower seeds, maca powder and yogurt.",
-        "Stir gently until combined.",
-        "Drizzle with honey and top with apricot halves.",
-        "Enjoy straight away — ideally in the sun or with your favourite music!"
-      ]
+      sr: ["U posudu sipaj jogurt i umešaj samleveni lan.", "Rotkvice naseckaj na tanke kolutove, a mladi luk na sitne kolutiće.", "Dodaj povrće u činiju, pospi pečenim semenkama bundeve i malo posoli.", "Promešaj lagano i posluži odmah, dok je povrće hrskavo."],
+      de: ["Joghurt in eine Schüssel geben und den Leinsamen einrühren.", "Radieschen in dünne Scheiben und Frühlingszwiebel in feine Ringe schneiden.", "Gemüse in die Schüssel geben, mit gerösteten Kürbiskernen bestreuen und leicht salzen.", "Sanft umrühren und sofort servieren, solange das Gemüse noch knackig ist."],
+      en: ["Pour the yogurt into a bowl and stir in the ground flaxseed.", "Slice the radishes into thin rounds and the spring onion into small rings.", "Add the vegetables to the bowl, sprinkle with toasted pumpkin seeds and a little salt.", "Stir gently and serve immediately while the vegetables are still crunchy."]
     },
-    note: "",
-    image: "assets/images/kajsija-bowl.png",
+    note: "Ako želiš još više ukusa, možeš dodati i par listića peršuna ili sveže nane.",
+    image: "assets/images/slani-dorucak.png",
     category: "Jutarnji recepti"
   },
   {
@@ -1085,30 +1055,30 @@ const recipes = [
   },
   {
     number: "26",
-    title: { sr: "Kremasta ovsena kaša sa bananom", de: "Cremiger Haferbrei mit Banane", en: "Creamy Banana Oat Porridge" },
+    title: { sr: "Kinoa kaša sa borovnicama", de: "Quinoa-Porridge mit Blaubeeren", en: "Quinoa Porridge with Blueberries" },
     subtitle: {
-      sr: "Topao, sitan i pun energije — savršen start koji se pravi za 5 minuta.",
-      de: "Warm, sättigend und voller Energie — ein perfekter Start in 5 Minuten.",
-      en: "Warm, filling and full of energy — the perfect start, ready in 5 minutes."
+      sr: "Zdravlje i vedrina koji mirišu na novi početak.",
+      de: "Gesundheit und Heiterkeit, die nach einem neuen Anfang duften.",
+      en: "Health and brightness that smell like a new beginning."
     },
     author_comment: {
-      sr: "Moj svakodnevni doručak. Menjam što mi padne na pamet — ponekad dodajem orehe, ponekad malo kakaa, a ponekad samo jedem ovako i budem zahvalna.",
-      de: "Mein tägliches Frühstück. Ich ändere es nach Lust und Laune — manchmal Nüsse, manchmal Kakao, manchmal esse ich es einfach so und bin dankbar.",
-      en: "My everyday breakfast. I change it up on a whim — sometimes nuts, sometimes cocoa, sometimes I just eat it as is and feel grateful."
+      sr: "Ovo je doručak uz osećaj zahvalnosti. Pojedi ga u tišini pre nego što dan postane bučan.",
+      de: "Das ist ein Frühstück mit einem Gefühl der Dankbarkeit. Iss es in der Stille, bevor der Tag laut wird.",
+      en: "This is a breakfast with a feeling of gratitude. Eat it in the quiet before the day gets loud."
     },
-    prep_time: { sr: "5–7 minuta", de: "5–7 Min.", en: "5–7 minutes" },
+    prep_time: { sr: "10 minuta", de: "10 Min.", en: "10 minutes" },
     ingredients: {
-      sr: ["½ šolje zobenih pahuljica", "1 šolja biljnog mleka (ili vode)", "1 zrela banana", "1 kašičica meda ili datuljinog sirupa", "Prstohvat cimeta", "Šaka oraha, badema ili semenki", "Po želji: kašika kikiriki putera ili tahinija"],
-      de: ["½ Tasse Haferflocken", "1 Tasse Pflanzenmilch (oder Wasser)", "1 reife Banane", "1 TL Honig oder Dattelsüße", "Eine Prise Zimt", "Eine Handvoll Nüsse, Mandeln oder Samen", "Optional: 1 EL Erdnussbutter oder Tahini"],
-      en: ["½ cup oat flakes", "1 cup plant milk (or water)", "1 ripe banana", "1 tsp honey or date syrup", "A pinch of cinnamon", "A handful of nuts, almonds or seeds", "Optional: 1 tbsp peanut butter or tahini"]
+      sr: ["4 kašike kinoa pahuljica", "200 ml bademovog mleka", "1 banana (iseckana)", "Šaka smrznutih ili svežih borovnica", "Šaka pečenog neslanog kikirikija", "1 kašičica meda (po želji)", "1 kašičica cimeta"],
+      de: ["4 EL Quinoa-Flocken", "200 ml Mandelmilch", "1 Banane (in Scheiben)", "Eine Handvoll gefrorene oder frische Blaubeeren", "Eine Handvoll geröstete, ungesalzene Erdnüsse", "1 TL Honig (nach Belieben)", "1 TL Zimt"],
+      en: ["4 tbsp quinoa flakes", "200 ml almond milk", "1 banana (sliced)", "A handful of frozen or fresh blueberries", "A handful of roasted, unsalted peanuts", "1 tsp honey (optional)", "1 tsp cinnamon"]
     },
     instructions: {
-      sr: ["Zobene pahuljice stavi u šerpicu sa mlekom i uključi srednju vatru.", "Meša dok se kaš ne zgusne — oko 3–4 minuta.", "Skloni s vatre i izgnječi bananu viljuškom direktno u kaš.", "Dodaj med, cimet i promiješaj.", "Pospi orašastim plodovima ili semenkama i posluži toplo."],
-      de: ["Haferflocken mit Milch in einen kleinen Topf geben und bei mittlerer Hitze erwärmen.", "Rühren, bis der Brei cremig wird — etwa 3–4 Minuten.", "Vom Herd nehmen und die Banane direkt in den Brei zerdrücken.", "Honig und Zimt hinzufügen und umrühren.", "Mit Nüssen oder Samen bestreuen und warm servieren."],
-      en: ["Put the oats and milk in a small pot over medium heat.", "Stir until the porridge thickens — about 3–4 minutes.", "Remove from heat and mash the banana directly into the porridge.", "Add honey and cinnamon and stir.", "Top with nuts or seeds and serve warm."]
+      sr: ["U manjoj šerpici zagrej bademovo mleko i dodaj kinoa pahuljice.", "Pusti da lagano krčkaju 5–6 minuta uz povremeno mešanje.", "Dodaj izgnječenu bananu i cimet, pa kuvaj još minut-dva.", "Umešaj borovnice dok je kaša još topla.", "Pospi kikirikijem i po želji zasladi medom."],
+      de: ["Mandelmilch in einem kleinen Topf erwärmen und Quinoa-Flocken hinzufügen.", "5–6 Minuten sanft köcheln lassen, gelegentlich umrühren.", "Zerdrückte Banane und Zimt hinzufügen und noch 1–2 Minuten kochen.", "Blaubeeren einrühren, solange der Brei noch warm ist.", "Mit Erdnüssen bestreuen und nach Belieben mit Honig süßen."],
+      en: ["Warm the almond milk in a small pot and add the quinoa flakes.", "Let simmer gently for 5–6 minutes, stirring occasionally.", "Add the mashed banana and cinnamon and cook for another minute or two.", "Stir in the blueberries while the porridge is still warm.", "Top with peanuts and sweeten with honey if you like."]
     },
     note: "",
-    image: "assets/images/ovsena-kasa-sa-bananom.png",
+    image: "assets/images/kinoa-kasa-sa-borovnicama.png",
     category: "Jutarnji recepti"
   },
   {
@@ -1197,30 +1167,30 @@ const recipes = [
   },
   {
     number: "30",
-    title: { sr: "Tzatziki sos za sve prilike", de: "Tzatziki für alle Gelegenheiten", en: "Tzatziki for Every Occasion" },
+    title: { sr: "Brokoli sa pinjolima", de: "Brokkoli mit Pinienkernen", en: "Broccoli with Pine Nuts" },
     subtitle: {
-      sr: "Napraviti ga je 10 minuta, a može uz sve — hleb, povrće, meso, riba.",
-      de: "10 Minuten zum Machen, und passt zu allem — Brot, Gemüse, Fleisch, Fisch.",
-      en: "10 minutes to make, and goes with everything — bread, vegetables, meat, fish."
+      sr: "Zeleno jelo koje vraća ravnotežu.",
+      de: "Ein grünes Gericht, das das Gleichgewicht wiederherstellt.",
+      en: "A green dish that restores balance."
     },
     author_comment: {
-      sr: "Ovo je sos koji koristim za sve. Kad ne znam šta da jedem, pokrenem krastavac i jogurt i odjednom imam jelo.",
-      de: "Das ist die Sauce, die ich für alles verwende. Wenn ich nicht weiß, was ich essen will, greife ich zu Gurke und Joghurt — und schon habe ich ein Gericht.",
-      en: "This is the sauce I use for everything. When I don't know what to eat, I reach for cucumber and yogurt — and suddenly I have a meal."
+      sr: "Idealan recept za dane kada ti je potrebno nešto lagano, ali super hranljivo.",
+      de: "Das ideale Rezept für Tage, an denen du etwas Leichtes, aber super Nahrhaftes brauchst.",
+      en: "The ideal recipe for days when you need something light but super nourishing."
     },
-    prep_time: { sr: "10 minuta + hlađenje", de: "10 Min. + Kühlen", en: "10 minutes + chilling" },
+    prep_time: { sr: "20 minuta", de: "20 Min.", en: "20 minutes" },
     ingredients: {
-      sr: ["1 čaša grčkog jogurta", "½ krastavca, rendanog i iscedenog", "1–2 čena belog luka, sitno seckanog", "1 kašika maslinovog ulja", "Malo svežeg kopra ili nane", "So i beli biber po ukusu", "Kap limunovog soka"],
-      de: ["1 Tasse griechischer Joghurt", "½ Gurke, gerieben und ausgedrückt", "1–2 Knoblauchzehen, fein gehackt", "1 EL Olivenöl", "Etwas frischer Dill oder Minze", "Salz und weißer Pfeffer nach Geschmack", "Ein Spritzer Zitronensaft"],
-      en: ["1 cup Greek yogurt", "½ cucumber, grated and squeezed", "1–2 garlic cloves, finely chopped", "1 tbsp olive oil", "A little fresh dill or mint", "Salt and white pepper to taste", "A squeeze of lemon juice"]
+      sr: ["200 g brokolija", "2 kašike grčkog jogurta", "1 kašika maslinovog ulja", "1 kašika pinjola", "Sok od pola limuna", "Prstohvat soli"],
+      de: ["200 g Brokkoli", "2 EL griechischer Joghurt", "1 EL Olivenöl", "1 EL Pinienkerne", "Saft einer halben Zitrone", "Eine Prise Salz"],
+      en: ["200 g broccoli", "2 tbsp Greek yogurt", "1 tbsp olive oil", "1 tbsp pine nuts", "Juice of half a lemon", "A pinch of salt"]
     },
     instructions: {
-      sr: ["Krastavac narendaj na sitno rende, posoli i ostavi 5 minuta, pa dobro iscedi rukama.", "U činiji pomešaj jogurt, iscedeni krastavac, beli luk i maslinovo ulje.", "Dodaj bilje, so, biber i limunov sok.", "Promešaj i stavi u frižider na bar 20 minuta pre serviranja.", "Posluži uz hleb, povrće ili kao prilog uz meso."],
-      de: ["Gurke fein reiben, salzen und 5 Minuten stehen lassen, dann gut ausdrücken.", "In einer Schüssel Joghurt, ausgedrückte Gurke, Knoblauch und Olivenöl vermischen.", "Kräuter, Salz, Pfeffer und Zitronensaft hinzufügen.", "Umrühren und mindestens 20 Minuten vor dem Servieren kühlen.", "Mit Brot, Gemüse oder als Beilage zu Fleisch servieren."],
-      en: ["Finely grate the cucumber, salt it and leave for 5 minutes, then squeeze out well.", "In a bowl, mix yogurt, squeezed cucumber, garlic and olive oil.", "Add herbs, salt, pepper and lemon juice.", "Stir and refrigerate for at least 20 minutes before serving.", "Serve with bread, vegetables or as a side with meat."]
+      sr: ["Brokoli podeli na manje cvetiće i kuvaj samo 3–4 minuta u ključaloj vodi dok blago ne omekša.", "Odmah prebaci u hladnu vodu kako bi sačuvao boju i svežinu.", "U manjoj činiji sjedini grčki jogurt, limunov sok, maslinovo ulje i so. Promešaj dok se ne dobije glatka krema.", "Posloži brokoli na tanjir, prelij kremom i pospi pinjolima."],
+      de: ["Brokkoli in kleinere Röschen teilen und nur 3–4 Minuten in kochendem Wasser blanchieren.", "Sofort in kaltes Wasser geben, um Farbe und Frische zu erhalten.", "In einer kleinen Schüssel griechischen Joghurt, Zitronensaft, Olivenöl und Salz zu einer glatten Creme verrühren.", "Brokkoli auf einem Teller anrichten, mit der Creme übergießen und mit Pinienkernen bestreuen."],
+      en: ["Divide the broccoli into small florets and blanch for just 3–4 minutes in boiling water until slightly tender.", "Immediately transfer to cold water to preserve the colour and freshness.", "In a small bowl, combine Greek yogurt, lemon juice, olive oil and salt into a smooth cream.", "Arrange the broccoli on a plate, drizzle with the cream and scatter pine nuts on top."]
     },
     note: "",
-    image: "assets/images/tzatziki.png",
+    image: "assets/images/brokoli-sa-pinjolima.png",
     category: "Osvežavajući recepti"
   },
   {
