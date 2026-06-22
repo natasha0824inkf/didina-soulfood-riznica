@@ -2,6 +2,7 @@ const translations = {
   sr: {
     nav_home: 'Početna',
     nav_recipes: 'Recepti',
+    nav_blog: 'Blog',
     nav_about: 'O meni',
     nav_contact: 'Kontakt',
     nav_favorites: 'Omiljeni',
@@ -79,11 +80,20 @@ const translations = {
     book_desc: 'Svi ovi recepti, i još mnogo toga, uskoro u štampanom obliku. Prijavite se za newsletter da budete prvi koji saznaju.',
     about_story: 'Moja priča',
     didi_motto: '„Ne brojite kalorije, brojite vaše osmehe i korake."',
+
+    blog_title: 'Blog',
+    blog_subtitle: 'Priče iz kuhinje',
+    blog_read_more: 'Čitaj dalje',
+    blog_back: 'Nazad na blog',
+    blog_published: 'Objavljeno',
+    blog_by: 'Piše',
+    blog_empty: 'Uskoro novi tekstovi.',
   },
 
   de: {
     nav_home: 'Startseite',
     nav_recipes: 'Rezepte',
+    nav_blog: 'Blog',
     nav_about: 'Über mich',
     nav_contact: 'Kontakt',
     nav_favorites: 'Favoriten',
@@ -161,11 +171,20 @@ const translations = {
     book_desc: 'All diese Rezepte und noch viele mehr — bald auch gedruckt. Meld dich für den Newsletter an, um als Erste davon zu erfahren.',
     about_story: 'Meine Geschichte',
     didi_motto: '„Zählt keine Kalorien — zählt eure Lächeln und Schritte."',
+
+    blog_title: 'Blog',
+    blog_subtitle: 'Geschichten aus der Küche',
+    blog_read_more: 'Weiterlesen',
+    blog_back: 'Zurück zum Blog',
+    blog_published: 'Veröffentlicht am',
+    blog_by: 'Von',
+    blog_empty: 'Bald neue Texte.',
   },
 
   en: {
     nav_home: 'Home',
     nav_recipes: 'Recipes',
+    nav_blog: 'Blog',
     nav_about: 'About',
     nav_contact: 'Contact',
     nav_favorites: 'Favorites',
@@ -243,5 +262,13 @@ const translations = {
     book_desc: 'All these recipes and many more, soon in print. Subscribe to the newsletter to be the first to know.',
     about_story: 'My story',
     didi_motto: '"Don\'t count calories — count your smiles and steps."',
+
+    blog_title: 'Blog',
+    blog_subtitle: 'Stories from the kitchen',
+    blog_read_more: 'Read more',
+    blog_back: 'Back to blog',
+    blog_published: 'Published on',
+    blog_by: 'By',
+    blog_empty: 'More posts coming soon.',
   }
 };

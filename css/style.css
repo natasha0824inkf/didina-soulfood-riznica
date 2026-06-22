@@ -60,6 +60,7 @@ html.dark-mode .hero {
 html.dark-mode .page-hero-recipes { background: linear-gradient(140deg, #180C04, #221008 55%, #120804); }
 html.dark-mode .page-hero-about   { background: linear-gradient(140deg, #120804, #180C04 55%, #221008); }
 html.dark-mode .page-hero-contact { background: linear-gradient(140deg, #221008, #180C04 60%, #0E0602); }
+html.dark-mode .page-hero-blog    { background: linear-gradient(140deg, #180C04, #221008 55%, #120804); }
 
 html.dark-mode .cat-card-morning    { background: linear-gradient(140deg, #C07838, #5A2E08); box-shadow: 0 6px 22px rgba(192,120,56,.22); }
 html.dark-mode .cat-card-refreshing { background: linear-gradient(140deg, #5DA840, #1E4010); box-shadow: 0 6px 22px rgba(93,168,64,.28); }
@@ -381,6 +382,7 @@ ul,ol { list-style: none; }
 .page-hero-recipes  { background: linear-gradient(140deg,#2A1608,#3A2010 55%,#221008); }
 .page-hero-about    { background: linear-gradient(140deg,#221008,#2A1608 55%,#3A2010); }
 .page-hero-contact  { background: linear-gradient(140deg,#3A2010,#2A1608 60%,#1A0C04); }
+.page-hero-blog     { background: linear-gradient(140deg,#2A1608,#3A2010 55%,#221008); }
 
 /* ---- MODAL ---- */
 .modal-overlay {
@@ -734,3 +736,46 @@ ul,ol { list-style: none; }
   transition: background var(--ease);
 }
 .newsletter-btn:hover { background: var(--coral-dark); }
+
+/* ---- BLOG ---- */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+.blog-card {
+  background: var(--warm-white);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--ease), box-shadow var(--ease);
+  display: flex; flex-direction: column;
+}
+.blog-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.blog-card-body  { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+.blog-card-tag   { font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--coral); margin-bottom: .6rem; }
+.blog-card-title { font-family: 'Dancing Script', cursive; font-size: 1.45rem; color: var(--text-dark); line-height: 1.3; margin-bottom: .7rem; }
+.blog-card-excerpt { font-size: .9rem; color: var(--text-mid); line-height: 1.7; flex: 1; }
+.blog-card-meta  { display: flex; align-items: center; justify-content: space-between; margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+.blog-card-date  { font-size: .78rem; color: var(--text-light); }
+.blog-read-more  { font-size: .82rem; font-weight: 600; color: var(--coral); }
+.blog-read-more:hover { text-decoration: underline; }
+
+/* Blog post page */
+.blog-post { max-width: 720px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+.blog-post-back { display: inline-flex; align-items: center; gap: .4rem; font-size: .85rem; color: var(--text-light); margin-bottom: 2rem; }
+.blog-post-back:hover { color: var(--coral); }
+.blog-post-tag   { font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--coral); margin-bottom: .75rem; }
+.blog-post-title { font-family: 'Dancing Script', cursive; font-size: clamp(2rem,5vw,3rem); color: var(--text-dark); line-height: 1.2; margin-bottom: 1rem; }
+.blog-post-meta  { display: flex; gap: 1.25rem; font-size: .82rem; color: var(--text-light); margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+.blog-post-body  { font-size: 1.05rem; line-height: 1.9; color: var(--text-mid); }
+.blog-post-body p { margin-bottom: 1.4rem; }
+.blog-post-body ul, .blog-post-body ol { margin: 0 0 1.4rem 1.4rem; padding: 0; }
+.blog-post-body li { margin-bottom: .6rem; }
+.blog-post-body h2 { font-family: 'Dancing Script', cursive; font-size: 1.6rem; color: var(--text-dark); margin: 2rem 0 .75rem; }
+.blog-post-share { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; align-items: center; gap: 1rem; }
+.blog-post-share span { font-size: .85rem; color: var(--text-light); }
+
+html.dark-mode .blog-card { background: #221808; border-color: var(--border); }
