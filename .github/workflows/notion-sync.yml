@@ -5,6 +5,9 @@ on:
     - cron: '0 * * * *'   # every hour
   workflow_dispatch:        # manual trigger
 
+permissions:
+  contents: write
+
 jobs:
   sync:
     runs-on: ubuntu-latest
@@ -22,7 +25,7 @@ jobs:
 
       - name: Run Notion sync
         env:
-          NOTION_TOKEN: ${{ secrets.NOTIONTOKEN }}
+          NOTION_TOKEN: ${{ secrets.NOTIONTOKENN }}
           NOTION_DB_ID: ${{ secrets.NOTIONDBID }}
         run: python scripts/notion_sync.py
 
