@@ -103,7 +103,7 @@ function getCategoryInfo(category) {
   return CATEGORY_MAP[key] || { emoji: '🍽️', cls: 'morning', label_key: 'cat_morning' };
 }
 
-// ---- FAVORITES ----
+// ---- FAVORITES (localStorage + URL hash for persistence) ----
 function getFavorites() {
   try { return JSON.parse(localStorage.getItem('didina-favorites') || '[]'); }
   catch { return []; }
@@ -111,8 +111,27 @@ function getFavorites() {
 
 function saveFavorites(favs) {
   localStorage.setItem('didina-favorites', JSON.stringify(favs));
+  // Encode in URL hash so bookmarking/sharing preserves favorites
+  if (favs.length > 0) {
+    history.replaceState(null, '', '#favs=' + favs.join(','));
+  } else {
+    history.replaceState(null, '', window.location.pathname + window.location.search);
+  }
   updateFavCount();
 }
+
+function loadFavoritesFromHash() {
+  const hash = window.location.hash;
+  const match = hash.match(/favs=([^&]+)/);
+  if (match) {
+    const fromHash = match[1].split(',').filter(Boolean);
+    if (fromHash.length) {
+      localStorage.setItem('didina-favorites', JSON.stringify(fromHash));
+    }
+  }
+}
+
+loadFavoritesFromHash();
 
 function isFavorite(number) {
   return getFavorites().includes(number);
