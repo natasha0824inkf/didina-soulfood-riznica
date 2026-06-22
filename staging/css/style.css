@@ -789,6 +789,12 @@ ul,ol { list-style: none; }
   transition: background var(--ease);
 }
 .newsletter-btn:hover { background: var(--coral-dark); }
+.newsletter-gdpr {
+  width: 100%; display: flex; align-items: flex-start; gap: .5rem;
+  font-size: .8rem; color: var(--text-mid); cursor: pointer; text-align: left;
+  justify-content: center;
+}
+.newsletter-gdpr input[type="checkbox"] { margin-top: 2px; flex-shrink: 0; accent-color: var(--coral); }
 
 /* ---- BLOG ---- */
 .blog-grid {
