@@ -22,6 +22,78 @@ recipe_by_num = {r['number']: r for r in json.loads(raw)}
 print(f"Loaded {len(recipe_by_num)} recipes")
 
 # ---------------------------------------------------------------------------
+# 1b. Full content for recipes missing from the website data
+# ---------------------------------------------------------------------------
+EXTRA_RECIPES = {
+    'Hrskava celer salata': {
+        'subtitle':       'Osveženje posle posla – između ručka i večere',
+        'author_comment': 'Ova salata mi je bila pravo otkriće! Idealna je kao prva pomoć posle posla, kad je napolju vruće, a treba ti nešto lagano, hrskavo i hranljivo.',
+        'prep_time':      '10 minuta',
+        'image':          None,   # no image in original
+        'ingredients': [
+            '2–3 štapića celera (sitno seckana)',
+            '1 šargarepa (rendana)',
+            '1 jabuka (na kockice)',
+            'šaka semenki bundeve (lagano prepečenih na suvom tiganju)',
+            '2 kašike grčkog jogurta',
+            '1 kašičica maslinovog ulja',
+            'malo ceđenog limuna',
+            'prstohvat soli',
+        ],
+        'instructions': [
+            'Pomešaj povrće i jabuku.',
+            'Dodaj prepečene semenke bundeve.',
+            'Umuti kremasti preliv od jogurta, ulja, limuna i soli.',
+            'Sjedini sve i uživaj u salati.',
+        ],
+        'note': 'Za jači obrok dodaj malo humusa pored salate.',
+    },
+    'Dubai zalogajčići': {
+        'subtitle':       'Malo čokoladno zadovoljstvo zamišljeno kao omaž Dubai čokoladi.',
+        'author_comment': 'Domaće čokoladice inspirisane jednim blagim osmehom i lakoćom kretanja.',
+        'prep_time':      '10 minuta + hlađenje 1–2 sata ili duže po želji',
+        'image':          'assets/images/mali-coko-zalogaji.png',
+        'ingredients': [
+            '2–3 kašike krema od pistaća',
+            '1 kašika tahinija',
+            'oko dve šake seckanog kadaifa',
+            'crna čokolada (70–80% kakaoa), otopljena',
+        ],
+        'instructions': [
+            'Umešaj krem od pistaća i tahini dok ne dobiješ glatku smesu.',
+            'Dodaj kadaif i pažljivo promešaj da ostane hrskavo, ali da kadaif bude zasićen kremom.',
+            'Kašikom vadi male zalogaje i oblikuj ih rukama.',
+            'Stavi u frižider da se stegnu oko sat vremena.',
+            'Otopi čokoladu i filuj čokoladice pomoću dve viljuške.',
+        ],
+        'note': 'Ovi zalogaji su kao mala slatka nagrada posle treninga ili joge, bez osećaja prejedanja. Možeš ih držati u zamrzivaču i vaditi po potrebi kada god ti je potrebno malo čokoladne podrške.',
+    },
+    'Raznobojni namaz od avokada': {
+        'subtitle':       'Kremasta svežina sa slatkastim iznenađenjem.',
+        'author_comment': 'Ovaj namaz nastao je iz želje za nečim laganim, a punim života. Avokado daje mekoću i zdrave masti, crveni luk svežinu, a kukuruz tajanstvenu slatku notu.',
+        'prep_time':      '10 minuta',
+        'image':          None,
+        'ingredients': [
+            '1 zreo avokado',
+            '2 kašike kuvanog kukuruza',
+            '2 kašike sitno seckanog crvenog luka',
+            '1 kašičica maslinovog ulja',
+            'sok od pola limuna',
+            'prstohvat soli',
+            'po želji: malo sveže mlevenog bibera ili seckanog peršuna',
+        ],
+        'instructions': [
+            'Avokado prepolovi, ukloni košticu i kašikom izvadi meso u činiju.',
+            'Fino izgnječi viljuškom.',
+            'Dodaj kukuruz i sitno seckani crveni luk.',
+            'Umešaj maslinovo ulje, limunov sok i so.',
+            'Sve lagano promešati dok se sastojci ne sjedine.',
+        ],
+        'note': 'Namaz je najbolji kada se posluži odmah. Može stajati nekoliko sati u frižideru ako se prekrije folijom direktno uz površinu, kako bi se sprečilo tamnjenje. Odličan je uz integralni hleb, tortilje ili kao dodatak salati.',
+    },
+}
+
+# ---------------------------------------------------------------------------
 # 2. Section structure — exact order from original book
 #    Each entry: num (str | None for missing), display_title (optional override)
 # ---------------------------------------------------------------------------
@@ -287,8 +359,10 @@ recipe_file_counter = [0]
 
 def recipe_page(num, display_title, data):
     """Build and add one recipe page. Returns (EpubHtml, final_title)."""
-    if data is None:
-        # Placeholder for missing recipe
+    # Use extra recipe data if no website data available
+    extra = EXTRA_RECIPES.get(display_title) if data is None else None
+
+    if data is None and extra is None:
         body = f"""
 <p class="recipe-num">Recept &#8212; dolazi uskoro</p>
 <h2 class="r-title">{esc(display_title)}</h2>
@@ -297,14 +371,24 @@ def recipe_page(num, display_title, data):
         ch = add_page(f'miss_{display_title[:8]}', fname, display_title, body)
         return ch, display_title
 
-    title_sr   = display_title or data.get('title',{}).get('sr','')
-    subtitle   = data.get('subtitle',{}).get('sr','')
-    comment    = data.get('author_comment',{}).get('sr','')
-    prep       = data.get('prep_time',{}).get('sr','')
-    ingrs      = data.get('ingredients',{}).get('sr',[])
-    steps      = data.get('instructions',{}).get('sr',[])
-    note       = (data.get('note','') or '').strip()
-    img_path   = data.get('image','')
+    if extra:
+        title_sr = display_title
+        subtitle  = extra.get('subtitle', '')
+        comment   = extra.get('author_comment', '')
+        prep      = extra.get('prep_time', '')
+        ingrs     = extra.get('ingredients', [])
+        steps     = extra.get('instructions', [])
+        note      = extra.get('note', '') or ''
+        img_path  = extra.get('image') or ''
+    else:
+        title_sr   = display_title or data.get('title',{}).get('sr','')
+        subtitle   = data.get('subtitle',{}).get('sr','')
+        comment    = data.get('author_comment',{}).get('sr','')
+        prep       = data.get('prep_time',{}).get('sr','')
+        ingrs      = data.get('ingredients',{}).get('sr',[])
+        steps      = data.get('instructions',{}).get('sr',[])
+        note       = (data.get('note','') or '').strip()
+        img_path   = data.get('image','')
 
     # Image
     img_html = ''
@@ -339,7 +423,8 @@ def recipe_page(num, display_title, data):
 {note_html}"""
 
     recipe_file_counter[0] += 1
-    xfname = f'recipe_{num}.xhtml'
+    slug = num if num else title_sr[:20].replace(' ', '_').replace('č','c').replace('ć','c').replace('š','s').replace('ž','z').replace('đ','d')
+    xfname = f'recipe_{slug}.xhtml'
     ch = add_page(f'r{num}', xfname, f'#{num} {title_sr}', body)
     return ch, title_sr
 
