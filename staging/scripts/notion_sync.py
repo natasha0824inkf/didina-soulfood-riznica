@@ -77,7 +77,7 @@ def rich_text_to_html(rich_texts):
 
 
 def blocks_to_html(blocks):
-    html = ""
+    out = ""
     i = 0
     while i < len(blocks):
         block = blocks[i]
@@ -87,22 +87,22 @@ def blocks_to_html(blocks):
         if btype == "paragraph":
             text = rich_text_to_html(content.get("rich_text", []))
             if text.strip():
-                html += f"        <p>{text}</p>\n"
+                out += f"        <p>{text}</p>\n"
 
         elif btype in ("heading_1", "heading_2", "heading_3"):
             level = btype[-1]
             text = rich_text_to_html(content.get("rich_text", []))
-            html += f"        <h{level}>{text}</h{level}>\n"
+            out += f"        <h{level}>{text}</h{level}>\n"
 
         elif btype == "bulleted_list_item":
             items = []
             while i < len(blocks) and blocks[i]["type"] == "bulleted_list_item":
                 items.append(rich_text_to_html(blocks[i]["bulleted_list_item"].get("rich_text", [])))
                 i += 1
-            html += "        <ul>\n"
+            out += "        <ul>\n"
             for item in items:
-                html += f"          <li>{item}</li>\n"
-            html += "        </ul>\n"
+                out += f"          <li>{item}</li>\n"
+            out += "        </ul>\n"
             continue
 
         elif btype == "numbered_list_item":
@@ -110,25 +110,25 @@ def blocks_to_html(blocks):
             while i < len(blocks) and blocks[i]["type"] == "numbered_list_item":
                 items.append(rich_text_to_html(blocks[i]["numbered_list_item"].get("rich_text", [])))
                 i += 1
-            html += "        <ol>\n"
+            out += "        <ol>\n"
             for item in items:
-                html += f"          <li>{item}</li>\n"
-            html += "        </ol>\n"
+                out += f"          <li>{item}</li>\n"
+            out += "        </ol>\n"
             continue
 
         elif btype == "quote":
             text = rich_text_to_html(content.get("rich_text", []))
-            html += f"        <blockquote>{text}</blockquote>\n"
+            out += f"        <blockquote>{text}</blockquote>\n"
 
         elif btype == "divider":
-            html += "        <hr>\n"
+            out += "        <hr>\n"
 
         elif btype == "callout":
             text = rich_text_to_html(content.get("rich_text", []))
-            html += f"        <p><em>{text}</em></p>\n"
+            out += f"        <p><em>{text}</em></p>\n"
 
         i += 1
-    return html
+    return out
 
 
 def get_page_blocks(page_id):
