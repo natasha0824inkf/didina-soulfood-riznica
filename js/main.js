@@ -589,9 +589,29 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // Newsletter form — submits via FormSubmit to Gmail; show success if returned with ?subscribed=1
-  if (new URLSearchParams(window.location.search).get('subscribed') === '1') {
-    const btn = document.querySelector('.newsletter-btn');
-    if (btn) btn.textContent = '✓ ' + t('newsletter_btn');
+  // Newsletter form — submit via fetch so user never lands on Brevo's English page
+  const nlForm = document.getElementById('newsletterForm');
+  if (nlForm) {
+    nlForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn   = this.querySelector('.newsletter-btn');
+      const msg   = document.getElementById('newsletterSuccess');
+      const orig  = btn.textContent;
+      btn.textContent = '...';
+      btn.disabled = true;
+      try {
+        await fetch(this.action, {
+          method: 'POST',
+          body: new FormData(this),
+          mode: 'no-cors'
+        });
+        if (msg) { msg.textContent = t('contact_success'); msg.style.display = 'block'; }
+        this.reset();
+        btn.textContent = '✓';
+      } catch {
+        btn.textContent = orig;
+        btn.disabled = false;
+      }
+    });
   }
 });
