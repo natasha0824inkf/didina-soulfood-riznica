@@ -211,24 +211,28 @@ def resize_img(path, max_w=320, max_h=170):
         return buf.getvalue()
 
 def make_cover_image():
-    """Generate a simple PNG cover with title and author."""
-    w, h = 600, 800
-    bg   = (250, 248, 243)
-    dark = (92, 61, 46)
-    gold = (212, 167, 106)
-    im   = Image.new('RGB', (w, h), bg)
-    d    = ImageDraw.Draw(im)
-    # border
-    for i in range(3):
-        d.rectangle([10+i, 10+i, w-10-i, h-10-i], outline=gold)
-    # title block
-    d.rectangle([0, 260, w, 460], fill=(240, 230, 215))
-    # simple text placeholders (PIL default font — small but reliable)
-    d.text((w//2, 300), 'Didina SoulFood Riznica',  fill=dark, anchor='mm')
-    d.text((w//2, 340), '44 recepta iz srca kuhinje', fill=(139, 109, 92), anchor='mm')
-    d.text((w//2, 390), 'Dragana Stamenković',       fill=dark, anchor='mm')
-    d.text((w//2, 700), 'Ne brojite kalorije,',      fill=dark, anchor='mm')
-    d.text((w//2, 720), 'brojite vaše osmehe i korake.', fill=dark, anchor='mm')
+    """Generate a PNG cover matching the original purple/magenta style."""
+    w, h   = 600, 800
+    bg     = (255, 255, 255)          # white background
+    purple = (139, 26, 107)           # #8B1A6B — magenta-purple from original
+    light  = (245, 235, 245)          # very light lavender panel
+    im     = Image.new('RGB', (w, h), bg)
+    d      = ImageDraw.Draw(im)
+    # top and bottom purple bands
+    d.rectangle([0, 0, w, 120], fill=purple)
+    d.rectangle([0, h-100, w, h], fill=purple)
+    # light center panel
+    d.rectangle([40, 220, w-40, 600], fill=light)
+    # thin purple border around panel
+    d.rectangle([40, 220, w-40, 600], outline=purple, width=2)
+    # text
+    d.text((w//2, 60),  'Didina SoulFood Riznica',      fill=(255,255,255), anchor='mm')
+    d.text((w//2, 100), 'Dragana Stamenković',           fill=(255,220,245), anchor='mm')
+    d.text((w//2, 300), 'Didina SoulFood Riznica',      fill=purple, anchor='mm')
+    d.text((w//2, 340), '44 recepta iz srca kuhinje',   fill=(160, 60, 130), anchor='mm')
+    d.text((w//2, 400), 'Dragana Stamenković',           fill=purple, anchor='mm')
+    d.text((w//2, 680), 'Ne brojite kalorije,',          fill=(255,255,255), anchor='mm')
+    d.text((w//2, 710), 'brojite vaše osmehe i korake.', fill=(255,220,245), anchor='mm')
     buf = io.BytesIO()
     im.save(buf, format='PNG')
     return buf.getvalue()
@@ -238,48 +242,49 @@ def make_cover_image():
 # ---------------------------------------------------------------------------
 CSS = """
 body { font-family: Georgia,'Times New Roman',serif; font-size:1em;
-       line-height:1.65; color:#3a2e1f; background:#faf8f3; margin:1em 1.2em; }
-h1.book-title  { font-size:1.9em; text-align:center; color:#5c3d2e; margin:1.5em 0 0.2em; }
-h2.book-sub    { font-size:1em; text-align:center; font-style:italic; color:#8a6d5c; margin:0 0 1.5em; }
+       line-height:1.65; color:#2e2e2e; background:#ffffff; margin:1em 1.2em; }
+h1.book-title  { font-size:1.9em; text-align:center; color:#8B1A6B; margin:1.5em 0 0.2em;
+                 font-style:italic; }
+h2.book-sub    { font-size:1em; text-align:center; font-style:italic; color:#a03585; margin:0 0 1.5em; }
 .cover-quote   { font-style:italic; font-size:1.1em; text-align:center; margin:2em auto;
-                 max-width:80%; color:#5c3d2e; border-top:1px solid #d4a76a;
-                 border-bottom:1px solid #d4a76a; padding:.7em 0; }
-.cover-author  { text-align:center; color:#5c3d2e; margin:.4em 0; font-size:1em; }
-h2.sec-title   { font-size:1.6em; color:#5c3d2e; text-align:center; margin:2em 0 .5em;
-                 border-bottom:2px solid #d4a76a; padding-bottom:.4em; }
-.sec-desc      { text-align:center; font-style:italic; color:#8a6d5c; margin-bottom:2em; }
-h2.intro-title { font-size:1.4em; color:#5c3d2e; border-bottom:2px solid #d4a76a;
-                 padding-bottom:.3em; margin-bottom:1em; }
+                 max-width:80%; color:#8B1A6B; border-top:1px solid #8B1A6B;
+                 border-bottom:1px solid #8B1A6B; padding:.7em 0; }
+.cover-author  { text-align:center; color:#8B1A6B; margin:.4em 0; font-size:1em; font-weight:bold; }
+h2.sec-title   { font-size:1.6em; color:#8B1A6B; text-align:center; margin:2em 0 .5em;
+                 font-style:italic; border-bottom:2px solid #8B1A6B; padding-bottom:.4em; }
+.sec-desc      { text-align:center; font-style:italic; color:#a03585; margin-bottom:2em; }
+h2.intro-title { font-size:1.4em; color:#8B1A6B; border-bottom:2px solid #8B1A6B;
+                 padding-bottom:.3em; margin-bottom:1em; font-style:italic; }
 .intro-text p  { margin:.7em 0; text-align:justify; }
-.sign-off      { margin-top:2em; font-style:italic; color:#5c3d2e; }
-h2.toc-title   { font-size:1.4em; color:#5c3d2e; border-bottom:2px solid #d4a76a;
-                 padding-bottom:.3em; margin-bottom:1em; }
-.toc-section   { font-weight:bold; color:#5c3d2e; margin:1em 0 .2em;
+.sign-off      { margin-top:2em; font-style:italic; color:#8B1A6B; }
+h2.toc-title   { font-size:1.4em; color:#8B1A6B; border-bottom:2px solid #8B1A6B;
+                 padding-bottom:.3em; margin-bottom:1em; font-style:italic; }
+.toc-section   { font-weight:bold; color:#8B1A6B; margin:1em 0 .2em;
                  font-size:.85em; text-transform:uppercase; letter-spacing:.06em; }
 .toc-item      { margin:.25em 0 .25em 1em; font-size:.92em; }
-.toc-item a    { color:#3a2e1f; text-decoration:none; }
-.toc-num       { color:#d4a76a; font-weight:bold; margin-right:.3em; }
-.recipe-num    { font-size:.78em; font-weight:bold; color:#d4a76a;
+.toc-item a    { color:#2e2e2e; text-decoration:none; }
+.toc-num       { color:#8B1A6B; font-weight:bold; margin-right:.3em; }
+.recipe-num    { font-size:.78em; font-weight:bold; color:#8B1A6B;
                  text-transform:uppercase; letter-spacing:.08em; margin-bottom:.1em; }
-h2.r-title     { font-size:1.35em; color:#5c3d2e; margin:.1em 0 .2em; }
-.r-sub         { font-style:italic; color:#6b5c4e; margin:.2em 0 .6em; font-size:.95em; }
-.prep          { display:inline-block; background:#f0e6d3; color:#5c3d2e;
+h2.r-title     { font-size:1.35em; color:#8B1A6B; margin:.1em 0 .2em; font-style:italic; }
+.r-sub         { font-style:italic; color:#5a5a5a; margin:.2em 0 .6em; font-size:.95em; }
+.prep          { display:inline-block; background:#f5eaf5; color:#8B1A6B;
                  padding:.2em .7em; border-radius:20px; font-size:.85em; margin:.4em 0 .5em; }
 .recipe-image  { display:block; width:auto; max-width:92%; max-height:11em;
                  margin:.5em auto; border-radius:5px; }
-.comment       { font-style:italic; color:#6b5c4e; border-left:3px solid #d4a76a;
+.comment       { font-style:italic; color:#5a5a5a; border-left:3px solid #8B1A6B;
                  padding:.3em .7em; margin:.6em 0 .8em; font-size:.93em; }
-h3.sh          { font-size:.82em; font-weight:bold; color:#5c3d2e; margin:.9em 0 .2em;
+h3.sh          { font-size:.82em; font-weight:bold; color:#8B1A6B; margin:.9em 0 .2em;
                  text-transform:uppercase; letter-spacing:.06em; }
 ul.ingr        { padding-left:1.2em; margin:.2em 0 .6em; }
 ul.ingr li     { margin:.15em 0; }
 ol.steps       { padding-left:1.3em; margin:.2em 0; }
 ol.steps li    { margin:.3em 0; }
-.note          { background:#f5f0e8; border-left:3px solid #c4976a;
-                 padding:.35em .7em; font-size:.88em; margin-top:.8em; color:#5c3d2e; }
-.placeholder   { text-align:center; padding:2em 1em; color:#8a6d5c;
-                 font-style:italic; border:1px dashed #d4a76a; margin:1em 0; border-radius:6px; }
-hr.div         { border:none; border-top:1px solid #e0d0bc; margin:1.2em 0; }
+.note          { background:#faf0f8; border-left:3px solid #8B1A6B;
+                 padding:.35em .7em; font-size:.88em; margin-top:.8em; color:#2e2e2e; }
+.placeholder   { text-align:center; padding:2em 1em; color:#a03585;
+                 font-style:italic; border:1px dashed #8B1A6B; margin:1em 0; border-radius:6px; }
+hr.div         { border:none; border-top:1px solid #d4a0d4; margin:1.2em 0; }
 """
 
 # ---------------------------------------------------------------------------
@@ -321,7 +326,6 @@ cover_body = """
   <h2 class="book-sub">44 recepta iz srca kuhinje</h2>
   <p class="cover-quote">Ne brojite kalorije, brojite va&#353;e osmehe i korake.</p>
   <p class="cover-author"><strong>Dragana Stamenković</strong></p>
-  <p class="cover-author" style="font-size:.88em; color:#8a6d5c;">Bremen, prole&#263;e 2026.</p>
 </div>"""
 cover_ch = add_page('cover', 'cover.xhtml', 'Naslovnica', cover_body,
                     extra_ns='xmlns:epub="http://www.idpf.org/2007/ops" epub:prefix="z3998: http://www.daisy.org/z3998/2012/vocab/structure/, se: https://standardebooks.org/vocab/1.0"')
@@ -343,7 +347,7 @@ intro_body = """
   <p>I da zna&#353;: sve fotografije u ovoj knjizi nastale su bukvalno sekund pre nego &#353;to sam ja (ili neko od uku&#263;ana) zgrabila ka&#353;iku i bacila se na degustaciju!</p>
   <p>Ovo nije kuvar iz studija nego iz &#382;ivota. Sve je poteklo iz moje kuhinje i li&#269;ne kreativnosti. U&#382;ivajte u &#269;itanju i isprobavanju!</p>
 </div>
-<p class="sign-off">S ljubavlju,<br/>Didi<br/><br/>Bremen, prole&#263;e 2026.</p>"""
+<p class="sign-off">S ljubavlju,<br/>Didi &#127819;&#127807;</p>"""
 intro_ch = add_page('intro', 'intro.xhtml', 'Uvod', intro_body)
 toc_entries.append(epub.Link('intro.xhtml', 'Uvod', 'intro'))
 
@@ -407,13 +411,14 @@ def recipe_page(num, display_title, data):
     comment_html = f'<p class="comment">{esc(comment)}</p>' if comment.strip() else ''
     prep_html    = f'<p><span class="prep">&#9202; Vreme pripreme: {esc(prep)}</span></p>' if prep else ''
 
+    num_label = f'Recept #{num}' if num else 'Bonus recept'
     body = f"""
-<p class="recipe-num">Recept #{num}</p>
 <h2 class="r-title">{esc(title_sr)}</h2>
+<p class="recipe-num">{num_label}</p>
 <p class="r-sub">{esc(subtitle)}</p>
+{comment_html}
 {prep_html}
 {img_html}
-{comment_html}
 <h3 class="sh">Sastojci</h3>
 <ul class="ingr">
 {ingr_li}</ul>
