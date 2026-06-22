@@ -795,6 +795,11 @@ ul,ol { list-style: none; }
   justify-content: center;
 }
 .newsletter-gdpr input[type="checkbox"] { margin-top: 2px; flex-shrink: 0; accent-color: var(--coral); }
+.newsletter-success {
+  width: 100%; margin-top: .5rem; padding: .6rem 1rem; border-radius: 10px;
+  background: #e7faf0; border: 1px solid #13ce66; color: #085229;
+  font-size: .88rem; text-align: center;
+}
 
 /* ---- BLOG ---- */
 .blog-grid {
