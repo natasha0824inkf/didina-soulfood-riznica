@@ -21,6 +21,7 @@ jobs:
           for f in *.html; do
             sed -i "s|href=\"css/\([^\"]*\.css\)\"|href=\"css/\1?v=${SHA}\"|g" "$f"
             sed -i "s|src=\"js/\([^\"]*\.js\)\"|src=\"js/\1?v=${SHA}\"|g" "$f"
+            sed -i "s|src=\"assets/images/\([^\"]*\)\"|src=\"assets/images/\1?v=${SHA}\"|g" "$f"
           done
       - uses: peaceiris/actions-gh-pages@v4
         with:
@@ -40,6 +41,7 @@ jobs:
           for f in *.html; do
             sed -i "s|href=\"css/\([^\"]*\.css\)\"|href=\"css/\1?v=${SHA}\"|g" "$f"
             sed -i "s|src=\"js/\([^\"]*\.js\)\"|src=\"js/\1?v=${SHA}\"|g" "$f"
+            sed -i "s|src=\"assets/images/\([^\"]*\)\"|src=\"assets/images/\1?v=${SHA}\"|g" "$f"
           done
       - uses: peaceiris/actions-gh-pages@v4
         with:
