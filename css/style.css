@@ -701,6 +701,7 @@ ul,ol { list-style: none; }
   transition: opacity .15s;
 }
 .share-option:hover { opacity: .85; }
+.share-fb   { background: #1877f2; color: #fff; }
 .share-wa   { background: #25D366; color: #fff; }
 .share-copy { background: var(--border); color: var(--text-mid); }
 
