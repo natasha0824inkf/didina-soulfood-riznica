@@ -589,15 +589,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // Newsletter form — submits to Brevo when action URL is set; shows friendly message if still pending
-  const nlForm = document.getElementById('newsletterForm');
-  if (nlForm) {
-    if (nlForm.dataset.brevoPending) {
-      nlForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const btn = this.querySelector('.newsletter-btn');
-        if (btn) { btn.textContent = '✓ Uskoro!'; setTimeout(() => { btn.textContent = t('newsletter_btn'); }, 2500); }
-      });
-    }
+  // Newsletter form — submits via FormSubmit to Gmail; show success if returned with ?subscribed=1
+  if (new URLSearchParams(window.location.search).get('subscribed') === '1') {
+    const btn = document.querySelector('.newsletter-btn');
+    if (btn) btn.textContent = '✓ ' + t('newsletter_btn');
   }
 });
