@@ -9,8 +9,8 @@ import requests
 from datetime import datetime
 from pathlib import Path
 
-NOTION_TOKEN = os.environ["NOTION_TOKEN"]
-NOTION_DB_ID = os.environ["NOTION_DB_ID"]
+NOTION_TOKEN = os.environ["NOTION_TOKEN"].strip()
+NOTION_DB_ID = os.environ["NOTION_DB_ID"].strip()
 REPO_ROOT = Path(__file__).parent.parent
 
 HEADERS = {
@@ -428,7 +428,6 @@ def update_blog_listing(cards_html):
     blog_path = REPO_ROOT / "blog.html"
     content = blog_path.read_text(encoding="utf-8")
 
-    # Replace everything between <div class="blog-grid"> and </div> (the grid)
     new_grid = f'    <div class="blog-grid">\n{cards_html}\n\n    </div>'
     content = re.sub(
         r'<div class="blog-grid">.*?</div>',
@@ -444,7 +443,6 @@ def main():
     pages = query_database()
     print(f"Found {len(pages)} published entries")
 
-    # Group by slug
     posts = {}
     for page in pages:
         slug = get_prop(page, "Slug", "text")
@@ -468,10 +466,8 @@ def main():
         print("No valid posts to sync.")
         return
 
-    # Sort by date descending (newest first)
     sorted_posts = sorted(posts.items(), key=lambda x: x[1]["date"] or "", reverse=True)
 
-    # Generate post HTML files
     blog_dir = REPO_ROOT / "blog"
     blog_dir.mkdir(exist_ok=True)
     cards = []
@@ -487,7 +483,6 @@ def main():
 
         cards.append(render_card(slug, versions, date_raw))
 
-    # Update blog.html listing
     cards_html = "\n".join(cards)
     update_blog_listing(cards_html)
     print("  Updated: blog.html")
