@@ -1,11 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="36" height="36">
-  <!-- D as faint backdrop -->
-  <text x="16" y="32"
-        font-family="cursive"
-        font-size="36"
-        fill="#D8A14A"
-        stroke="none"
-        opacity="0.18">D</text>
   <g stroke="#D8A14A" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
     <!-- Fork -->
     <g transform="translate(15,19)">
