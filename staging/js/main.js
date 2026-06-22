@@ -233,7 +233,21 @@ function populateModal(recipe) {
   overlay.querySelector('#modalCategory').innerHTML = `${cat.emoji} <span>${t(cat.label_key)}</span>`;
   overlay.querySelector('#modalTitle').textContent    = tr(recipe.title);
   overlay.querySelector('#modalSubtitle').textContent = tr(recipe.subtitle);
-  overlay.querySelector('#modalTime').textContent     = `⏱ ${tr(recipe.prep_time)}`;
+
+  const timeRaw = tr(recipe.prep_time);
+  const timeText = timeRaw ? (/\d/.test(timeRaw) && !/min/i.test(timeRaw) ? `${timeRaw} min` : timeRaw) : '';
+  overlay.querySelector('#modalTime').textContent = timeText ? `⏱ ${timeText}` : '';
+
+  const heroEl = overlay.querySelector('#modalHeroImage');
+  if (heroEl) {
+    if (recipe.image) {
+      heroEl.innerHTML = `<img src="${recipe.image}" alt="${tr(recipe.title)}" loading="lazy">`;
+      heroEl.hidden = false;
+    } else {
+      heroEl.innerHTML = '';
+      heroEl.hidden = true;
+    }
+  }
 
   const commentEl = overlay.querySelector('#modalComment');
   const comment   = tr(recipe.author_comment);
@@ -259,6 +273,16 @@ function populateModal(recipe) {
   if (shareBtn) shareBtn.innerHTML = `↗ <span>${t('share_recipe')}</span>`;
 }
 
+function updateModalNav() {
+  const overlay = document.getElementById('modalOverlay');
+  if (!overlay || !activeRecipe) return;
+  const idx = recipes.indexOf(activeRecipe);
+  const prevBtn = overlay.querySelector('#modalPrevBtn');
+  const nextBtn = overlay.querySelector('#modalNextBtn');
+  if (prevBtn) prevBtn.disabled = idx <= 0;
+  if (nextBtn) nextBtn.disabled = idx >= recipes.length - 1;
+}
+
 function openModal(number) {
   const recipe = recipes.find(r => r.number === number);
   if (!recipe) return;
@@ -268,6 +292,7 @@ function openModal(number) {
   if (!overlay) return;
 
   populateModal(recipe);
+  updateModalNav();
   overlay.classList.add('open');
   document.body.style.overflow = 'hidden';
   overlay.querySelector('.modal').focus();
@@ -469,6 +494,16 @@ document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('closeModal')?.addEventListener('click', closeModal);
   document.getElementById('modalFavBtn')?.addEventListener('click', toggleModalFavorite);
   document.getElementById('modalShareBtn')?.addEventListener('click', shareRecipe);
+  document.getElementById('modalPrevBtn')?.addEventListener('click', () => {
+    if (!activeRecipe) return;
+    const idx = recipes.indexOf(activeRecipe);
+    if (idx > 0) openModal(recipes[idx - 1].number);
+  });
+  document.getElementById('modalNextBtn')?.addEventListener('click', () => {
+    if (!activeRecipe) return;
+    const idx = recipes.indexOf(activeRecipe);
+    if (idx < recipes.length - 1) openModal(recipes[idx + 1].number);
+  });
 
   // Escape key
   document.addEventListener('keydown', e => {

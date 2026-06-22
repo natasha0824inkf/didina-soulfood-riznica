@@ -71,6 +71,8 @@ const translations = {
     footer_rights: 'Sva prava zadržana.',
 
     share_recipe: 'Podeli recept',
+    prev_recipe: 'Prethodni',
+    next_recipe: 'Sledeći',
     newsletter_title: 'Ostanite u toku',
     newsletter_desc: 'Novi recepti, sezonske ideje i vesti — direktno u inbox.',
     newsletter_placeholder: 'Vaša email adresa',
@@ -162,6 +164,8 @@ const translations = {
     footer_rights: 'Alle Rechte vorbehalten.',
 
     share_recipe: 'Rezept teilen',
+    prev_recipe: 'Vorheriges',
+    next_recipe: 'Nächstes',
     newsletter_title: 'Bleib dabei',
     newsletter_desc: 'Neue Rezepte, saisonale Ideen und Neuigkeiten — direkt ins Postfach.',
     newsletter_placeholder: 'Deine E-Mail-Adresse',
@@ -253,6 +257,8 @@ const translations = {
     footer_rights: 'All rights reserved.',
 
     share_recipe: 'Share recipe',
+    prev_recipe: 'Previous',
+    next_recipe: 'Next',
     newsletter_title: 'Stay in the loop',
     newsletter_desc: 'New recipes, seasonal ideas and news — straight to your inbox.',
     newsletter_placeholder: 'Your email address',
