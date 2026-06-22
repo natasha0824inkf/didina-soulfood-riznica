@@ -234,7 +234,7 @@ book = epub.EpubBook()
 book.set_identifier('didina-soulfood-riznica-2026')
 book.set_title('Didina SoulFood Riznica')
 book.set_language('sr')
-book.add_author('Didi')
+book.add_author('Dragana Stamenković')
 
 # CSS item
 css_item = epub.EpubItem(
@@ -252,7 +252,8 @@ cover_body = """
   <h1 class="book-title">Didina SoulFood Riznica</h1>
   <h2 class="book-subtitle">44 recepta iz srca kuhinje</h2>
   <p class="cover-quote">Ne brojite kalorije, brojite va&#353;e osmehe i korake.</p>
-  <p class="cover-author">Didi · Bremen, prole&#263;e 2026.</p>
+  <p class="cover-author">Dragana Stamenković</p>
+  <p class="cover-author" style="font-size:0.85em; margin-top:0.3em;">Bremen, prole&#263;e 2026.</p>
 </div>
 """
 cover_ch = epub.EpubHtml(title='Naslovnica', file_name='cover.xhtml', lang='sr')
@@ -379,9 +380,82 @@ book.toc = [
     epub.Link('cover.xhtml', 'Naslovnica', 'cover'),
     *toc_entries,
     epub.Section('Recepti', recipe_toc),
+    epub.Link('final.xhtml', 'Na kraju...', 'final'),
 ]
 book.add_item(epub.EpubNcx())
 book.add_item(epub.EpubNav())
+# --- Bonus recipe ---
+bonus_img_path = os.path.join(REPO, 'assets/images/ukusni-prokelj-iz-rerne.png')
+bonus_img_html = ''
+if os.path.exists(bonus_img_path):
+    img_data, media_type = resize_image(bonus_img_path)
+    epub_img = epub.EpubItem(uid='img_bonus', file_name='images/recipe_bonus.jpg',
+                             media_type=media_type, content=img_data)
+    book.add_item(epub_img)
+    bonus_img_html = '<img src="images/recipe_bonus.jpg" alt="Ukusni prokelj iz rerne" class="recipe-image"/>'
+
+bonus_body = f"""
+<p class="recipe-number" style="font-size:1em; letter-spacing:0;">Bonus recept &#8211; jelo od samo jednog sastojka</p>
+<h2 class="recipe-title">Ukusni prokelj iz rerne</h2>
+<p class="recipe-subtitle">Dovoljan je samo jedan sastojak i malo kreativnosti pa da i najskromnije povr&#263;e postane zvezda stola.</p>
+<p><span class="prep-time">&#9202; Vreme pripreme: 30 minuta</span></p>
+{bonus_img_html}
+<p class="author-comment">Prokelj &#269;esto ima lo&#353;u reputaciju, ali kada se pravilno pripremi u rerni postaje hrskav spolja, a mekan iznutra.</p>
+<h3 class="section-heading">Sastojci</h3>
+<ul class="ingredients">
+<li>10-ak glavica proklja</li>
+<li>malo maslinovog ulja</li>
+<li>so</li>
+<li>aleva paprika</li>
+</ul>
+<h3 class="section-heading">Priprema</h3>
+<ol class="instructions">
+<li>Prokelj operi, ukloni peteljke i prve listi&#263;e uz peteljku.</li>
+<li>Svaku glavicu prepolovi po du&#382;ini.</li>
+<li>Polutke kratko prokuvaj u vodi 2&#8211;3 minuta, zatim ocedi.</li>
+<li>Pore&#273;aj prokelj ravnom stranom na pleh oblo&#382;en papirom za pe&#269;enje.</li>
+<li>Prelij sa malo maslinovog ulja, posoli i dodaj alevu papriku po ukusu.</li>
+<li><strong>Mali trik:</strong> blago pritisni svaku polutku da pusti vi&#353;ak vode i dobije hrskaviju koricu.</li>
+<li>Peci u rerni zagrejanoj na 180&#176;C oko 20 minuta, dok prokelj ne porumeni.</li>
+</ol>
+<div class="recipe-note"><strong>Napomena:</strong> Odli&#269;no ide kao prilog uz meso ili ribu, ali i kao mali topli zalogaj uz &#269;a&#353;u vina.</div>
+<h3 class="section-heading" style="margin-top:1.2em;">Energija jela</h3>
+<p><em>&#268;ista jednostavnost!</em></p>
+<p>Za kraj ove male riznice &#8211; jedno skromno povr&#263;e koje nas podse&#263;a da se prava &#269;ar kuvanja &#269;esto krije u jednostavnosti i da je manje vrlo &#269;esto &#8211; vi&#353;e!</p>
+"""
+bonus_ch = epub.EpubHtml(title='Bonus recept – Ukusni prokelj iz rerne', file_name='bonus.xhtml', lang='sr')
+bonus_ch.content = page('Bonus recept', bonus_body).encode('utf-8')
+bonus_ch.add_item(css_item)
+book.add_item(bonus_ch)
+spine_items.append(bonus_ch)
+recipe_toc.append(epub.Link('bonus.xhtml', 'Bonus recept – Ukusni prokelj iz rerne', 'bonus'))
+
+# --- Final word: Na kraju... ---
+final_body = """
+<h2 class="intro-title">Na kraju&#8230;</h2>
+<div class="intro-text">
+  <p>Ovo nije knjiga o dijetama.</p>
+  <p>Nema kalorijskh tablica, brojanja porcija, zabrana i gri&#382;e savesti.<br/>
+  Ovo je kuvar i poziv da voli&#353; sebe kroz hranu.</p>
+  <p>Recepti koje si ovde prona&#353;la nisu niskokalori&#269;ni, ali su <strong>ne&#382;no izbalansirani</strong>, ba&#353; kao i &#382;ivot koji &#382;eli&#353; da &#382;ivi&#353;.</p>
+  <p>Hrana je tu da nas nahrani, umiri, obraduje i podsteti: kad se kre&#263;e&#353;, di&#353;e&#353;, smeje&#353; i voli&#353; &#8212; sve drugo do&#273;e na svoje mesto.</p>
+  <p>I zapamti: &#353;ta god da se u ovom trenutku de&#353;ava, sve na kraju ispadne dobro!</p>
+  <hr class="divider"/>
+  <p><strong>Ne broji kalorije.<br/>
+  Broj osmehe. Korake. Lepe zalogaje.</strong></p>
+  <p><strong>Ve&#382;baj i u&#382;ivaj u trenucima i malim, jednostavnim stvarima. Nasme&#353;i se bez razloga.</strong></p>
+  <hr class="divider"/>
+  <p>Hvala ti &#353;to si kuvala sa mnom.<br/>
+  Ova knjiga je mo&#382;da gotova, ali tvoja kuhinjska avantura tek po&#269;inje.</p>
+</div>
+<p class="sign-off">Iz jedne male kuhinje i sa puno ljubavi,<br/><br/>Didi<br/><br/>Bremen, prole&#263;e 2026.</p>
+"""
+final_ch = epub.EpubHtml(title='Na kraju...', file_name='final.xhtml', lang='sr')
+final_ch.content = page('Na kraju...', final_body).encode('utf-8')
+final_ch.add_item(css_item)
+book.add_item(final_ch)
+spine_items.append(final_ch)
+
 book.spine = ['nav'] + spine_items
 
 # ---------------------------------------------------------------------------
