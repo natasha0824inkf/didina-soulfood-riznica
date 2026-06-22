@@ -87,14 +87,17 @@
       <h3 data-i18n="newsletter_title">Ostanite u toku</h3>
       <p data-i18n="newsletter_desc">Novi recepti, sezonske ideje i vesti — direktno u inbox.</p>
       <form class="newsletter-form" id="newsletterForm"
-            action="https://formsubmit.co/stamenkovic116@gmail.com"
-            method="POST">
-        <input type="hidden" name="_subject" value="Nova prijava za newsletter — Didina SoulFood">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="basic">
-        <input type="text" name="_honey" style="display:none">
-        <input type="email" class="newsletter-input" name="email"
+            action="https://eb92a696.sibforms.com/serve/MUIFAGXu94i9D2QQ5jR-Qjcvk4MVfoaoygqavVBzCMRGrN1Sqe7NfbIPwDa6KX-HvH9jy64xAz7p64oKqjLAlu5ovxohrv1cCenYD87ufhIxVWDrsSMSn0PX7lXCXqE3oVmXvrT_IcNHjbF0oym_rbLPWKLBYOM3co8CvXkrEFKQng_N7F0YDfx6w3V8X10mFSnl43spb4FARf40Ow=="
+            method="POST"
+            data-type="subscription">
+        <input type="email" class="newsletter-input" name="EMAIL"
                data-i18n-placeholder="newsletter_placeholder" placeholder="Vaša email adresa" required>
+        <input type="text" name="email_address_check" value="" style="display:none">
+        <input type="hidden" name="locale" value="sr">
+        <label class="newsletter-gdpr">
+          <input type="checkbox" name="CAPTCHA" value="1" required>
+          <span data-i18n="newsletter_gdpr">Slažem se da primam newsletter i prihvatam politiku privatnosti.</span>
+        </label>
         <button type="submit" class="newsletter-btn" data-i18n="newsletter_btn">Prijavi se</button>
       </form>
     </div>
