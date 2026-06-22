@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="36" height="36">
+  <g stroke="#D8A14A" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Fork -->
+    <g transform="translate(15,19)">
+      <line x1="-4" y1="-14" x2="-4" y2="-5"/>
+      <line x1="0"  y1="-14" x2="0"  y2="-5"/>
+      <line x1="4"  y1="-14" x2="4"  y2="-5"/>
+      <path d="M-4,-5 Q0,0 4,-5"/>
+      <line x1="0" y1="0" x2="0" y2="13"/>
+    </g>
+    <!-- Heart -->
+    <g transform="translate(25,9) scale(0.50)">
+      <path d="M0,9 C-9,0 -14,-10 -7,-13 C-3,-15 0,-10 0,-10 C0,-10 3,-15 7,-13 C14,-10 9,0 0,9 Z"
+            fill="#D8A14A" stroke="none"/>
+    </g>
+  </g>
+</svg>
