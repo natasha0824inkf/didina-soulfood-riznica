@@ -86,8 +86,15 @@
     <div class="newsletter-section">
       <h3 data-i18n="newsletter_title">Ostanite u toku</h3>
       <p data-i18n="newsletter_desc">Novi recepti, sezonske ideje i vesti — direktno u inbox.</p>
-      <form class="newsletter-form" id="newsletterForm">
-        <input type="email" class="newsletter-input" data-i18n-placeholder="newsletter_placeholder" placeholder="Vaša email adresa" required>
+      <!-- Replace action URL with Brevo embed URL after signing up at brevo.com -->
+      <form class="newsletter-form" id="newsletterForm"
+            action="BREVO_FORM_ACTION_URL_HERE"
+            method="POST"
+            data-brevo-pending="true">
+        <input type="email" class="newsletter-input" name="EMAIL"
+               data-i18n-placeholder="newsletter_placeholder" placeholder="Vaša email adresa" required>
+        <input type="hidden" name="email_address_check" value="">
+        <input type="hidden" name="locale" value="sr">
         <button type="submit" class="newsletter-btn" data-i18n="newsletter_btn">Prijavi se</button>
       </form>
     </div>

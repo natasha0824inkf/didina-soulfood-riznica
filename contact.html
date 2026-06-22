@@ -61,7 +61,17 @@
 <!-- CONTACT FORM -->
 <main class="section">
   <div class="contact-wrapper">
-    <form class="contact-form" id="contactForm" novalidate>
+    <form
+      class="contact-form"
+      id="contactForm"
+      action="https://formsubmit.co/d.stamenkovic@yahoo.com"
+      method="POST"
+    >
+      <!-- FormSubmit config: no captcha, redirect back to same page, subject label -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="Poruka sa Didina SoulFood sajta">
+      <input type="hidden" name="_next" value="https://natasha0824inkf.github.io/didina-soulfood-riznica/contact.html?sent=1">
+      <input type="text" name="_honey" style="display:none">
 
       <div class="form-group">
         <label class="form-label" for="contactName" data-i18n="contact_name">Vaše ime</label>

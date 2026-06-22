@@ -682,6 +682,22 @@ ul,ol { list-style: none; }
 }
 .modal-share-btn:hover { border-color: var(--teal); color: var(--teal); }
 
+/* ---- SHARE PANEL ---- */
+.share-panel {
+  display: flex; gap: .5rem; flex-wrap: wrap;
+  margin-top: .5rem;
+  animation: fadeIn .15s ease;
+}
+.share-option {
+  display: inline-flex; align-items: center; gap: .4rem;
+  padding: .4rem .9rem; border-radius: 50px; font-size: .82rem;
+  cursor: pointer; text-decoration: none; border: none;
+  transition: opacity .15s;
+}
+.share-option:hover { opacity: .85; }
+.share-wa   { background: #25D366; color: #fff; }
+.share-copy { background: var(--border); color: var(--text-mid); }
+
 /* ---- MODAL HERO IMAGE ---- */
 .modal-hero-image {
   width: 100%; max-height: 260px; overflow: hidden;
