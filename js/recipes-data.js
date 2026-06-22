@@ -1141,7 +1141,7 @@ const recipes = [
   },
   {
     number: "28",
-    title: { sr: "Krem supica od tikvica", de: "Cremige Zucchinisuppe", en: "Creamy Zucchini Soup" },
+    title: { sr: "Krem supa od tikvica", de: "Cremige Zucchinisuppe", en: "Creamy Zucchini Soup" },
     subtitle: {
       sr: "Nežna, mirisna i lako svarljiva.",
       de: "Zart, aromatisch und leicht verdaulich.",
