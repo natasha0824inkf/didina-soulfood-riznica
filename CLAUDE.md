@@ -28,18 +28,21 @@ git push
   └──► didina-soulfood/riznica                  (production)
 ```
 
-To set up the dual remote (one-time, per machine):
+To set up the dual remote (one-time, per machine — use SSH):
 ```bash
-git remote set-url --add origin https://github.com/didina-soulfood/riznica.git
+git remote set-url origin git@github.com:natasha0824inkf/didina-soulfood-riznica.git
+git remote set-url --add origin git@github.com:didina-soulfood/riznica.git
 ```
 
 Verify:
 ```bash
 git remote -v
-# origin  https://github.com/natasha0824inkf/didina-soulfood-riznica.git (fetch)
-# origin  https://github.com/natasha0824inkf/didina-soulfood-riznica.git (push)
-# origin  https://github.com/didina-soulfood/riznica.git (push)
+# origin  git@github.com:natasha0824inkf/didina-soulfood-riznica.git (fetch)
+# origin  git@github.com:natasha0824inkf/didina-soulfood-riznica.git (push)
+# origin  git@github.com:didina-soulfood/riznica.git (push)
 ```
+
+SSH key must be added to `natasha0824inkf` GitHub account. `natasha0824inkf` must have write access to `didina-soulfood/riznica`.
 
 ## Pull / sync
 
@@ -63,9 +66,11 @@ All HTML files reference JS and CSS with `?v=N` — increment N when deploying b
 <script src="js/main.js?v=2"></script>
 ```
 
-## Pending setup (see issue #41)
+## Production setup — DONE ✅
 
-- [ ] Create `riznica` repo inside `didina-soulfood` org (public, enable Pages on `main`)
-- [ ] Add second push remote locally: `git remote set-url --add origin https://github.com/didina-soulfood/riznica.git`
-- [ ] Do an initial push to populate the prod repo
-- [ ] Verify `https://didina-soulfood.github.io/riznica` loads correctly
+- [x] Created `didina-soulfood` org on GitHub
+- [x] Created `riznica` repo inside org (public, Pages enabled on `main`)
+- [x] Added `natasha0824inkf` as collaborator with write access
+- [x] Set up SSH key on natasha's Mac
+- [x] Configured dual-remote push via `.git/config`
+- [x] Initial push done — production site live at `https://didina-soulfood.github.io/riznica`
