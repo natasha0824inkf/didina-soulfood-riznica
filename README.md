@@ -2,8 +2,9 @@
 
 A trilingual recipe website and digital cookbook — Serbian, German, and English editions.
 
-**Pre-prod:** https://natasha0824inkf.github.io/didina-soulfood-riznica  
-**Production:** https://didina-soulfood.github.io/riznica
+**Staging:** https://natasha0824inkf.github.io/didina-soulfood-riznica/staging/index.html
+**Pre-prod:** https://natasha0824inkf.github.io/didina-soulfood-riznica/index.html  
+**Production:** https://didina-soulfood.github.io/riznica/index.html
 
 ---
 
