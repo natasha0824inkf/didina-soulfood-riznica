@@ -127,6 +127,42 @@ def blocks_to_html(blocks):
             text = rich_text_to_html(content.get("rich_text", []))
             out += f"        <p><em>{text}</em></p>\n"
 
+        elif btype == "image":
+            src = (content.get("file", {}).get("url")
+                   or content.get("external", {}).get("url", ""))
+            caption_parts = content.get("caption", [])
+            caption = rich_text_to_html(caption_parts) if caption_parts else ""
+            if src:
+                out += f'        <figure class="blog-figure">\n'
+                out += f'          <img src="{html.escape(src)}" alt="{html.escape(re.sub(chr(60)+"[^>]+>","",caption))}" class="blog-img" loading="lazy">\n'
+                if caption:
+                    out += f'          <figcaption>{caption}</figcaption>\n'
+                out += f'        </figure>\n'
+
+        elif btype in ("embed", "video", "bookmark"):
+            url = (content.get("url", "")
+                   or content.get("external", {}).get("url", "")
+                   or content.get("file", {}).get("url", ""))
+            if url:
+                yt = re.search(r"(?:youtube\.com/watch\?v=|youtu\.be/)([\w-]+)", url)
+                spotify = re.search(r"open\.spotify\.com/(track|album|playlist|episode)/([\w]+)", url)
+                if yt:
+                    vid = yt.group(1)
+                    out += (f'        <div class="blog-embed">\n'
+                            f'          <iframe src="https://www.youtube.com/embed/{vid}" '
+                            f'frameborder="0" allowfullscreen loading="lazy" '
+                            f'title="YouTube video"></iframe>\n'
+                            f'        </div>\n')
+                elif spotify:
+                    kind, sid = spotify.group(1), spotify.group(2)
+                    out += (f'        <div class="blog-embed blog-embed--spotify">\n'
+                            f'          <iframe src="https://open.spotify.com/embed/{kind}/{sid}" '
+                            f'frameborder="0" allowtransparency="true" allow="encrypted-media" '
+                            f'loading="lazy" title="Spotify"></iframe>\n'
+                            f'        </div>\n')
+                else:
+                    out += f'        <p><a href="{html.escape(url)}">{html.escape(url)}</a></p>\n'
+
         i += 1
     return out
 
