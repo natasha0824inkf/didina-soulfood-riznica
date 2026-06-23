@@ -1,140 +1,93 @@
 # Didina SoulFood Riznica
 
----
+A multilingual recipe website by Dragana Stamenković (Didi) — Serbian home cooking, served in Serbian, German, and English.
 
-## 🎨 Design Language & Visual System Tokens
-
-This project features a custom "Warm Organic Modern" design identity crafted specifically to showcase real-life smartphone food photography without losing its appetizing warmth.
-
-| Token | Value | Usage |
-|---|---|---|
-| Canvas Base | `#FDFBF7` Soft Almond Cream | High-readability canvas texture |
-| Primary Type | `#23211F` Dark Chocolate Espresso | Soft-contrast luxury typography |
-| Healthy Token | `#607A66` Sage Olive Green | Ingredient grids and nutrition labels |
-| Upbeat Accent | `#E5A93C` Mustard Gold | Layout grid lines, numbers, meta tags |
-| Soul Details | `#8C7AA6` Lavender Purple | Didi's commentary boxes and intimate quotes |
+**Staging:** https://natasha0824inkf.github.io/didina-soulfood-riznica  
+**Production:** https://didina-soulfood.github.io/riznica
 
 ---
 
-## 🏗️ Multi-Channel System Architecture
+## Features
 
-The codebase enforces a single-source configuration workflow where the master recipe text remains structured as standardized data attributes, feeding cleanly into separate distribution channels:
-
-```
-                       ┌──> [Web Channel] ───> WordPress Studio Local / Independent Cloud
-                       │
-[Master Data Backup] ──┼──> [E-Book Channel] ──> Universal EPUB3 Layout (Apple Books & Android)
-                       │
-                       └──> [Asset Processing] ─> Cloud Jupyter Notebook Pipeline Tool (Zero Local Load)
-```
+- **Recipes** — searchable, filterable collection with live search, category filters (morning, refreshing, oven, coffee, dunno), and a full-screen modal with ingredients + instructions
+- **Blog** — long-form posts in SR/DE/EN with per-language content switching
+- **Trilingual UI** — SR / DE / EN, switchable from the nav, persisted across pages
+- **Dark mode** — system-preference aware, manual toggle, persisted
+- **Favorites** — save recipes to a slide-in panel, stored in localStorage
+- **Social share** — Facebook, WhatsApp, copy-link panel on recipes and blog posts
+- **Newsletter** — Brevo double opt-in with GDPR consent checkbox, AJAX submit (no page redirect), trilingual confirmation emails
+- **Contact form** — FormSubmit.co powered, success message in visitor's language
 
 ---
 
-## 📁 Project Structure
+## Screenshots
+
+| Staging | Production |
+|---|---|
+| ![Staging](https://natasha0824inkf.github.io/didina-soulfood-riznica) | ![Production](https://didina-soulfood.github.io/riznica) |
+
+> Replace table above with actual screenshots — take one per site and add as `assets/images/screenshot-staging.png` / `screenshot-prod.png`
+
+---
+
+## Project Structure
 
 ```
 didina-soulfood-riznica/
-├── assets/
-│   └── images/             # Optimized WebP/JPG output + logo/brand assets
+├── assets/images/          # Recipe photos (WebP/JPG) + logo
+├── blog/
+│   └── kako-naci-vremena.html   # Blog post — SR/DE/EN
 ├── css/
-│   ├── style.css           # Unified brand visual design stylesheet
+│   ├── style.css           # Design system (coral/teal/plum tokens, dark mode)
 │   └── responsive.css      # Mobile-first breakpoints
 ├── js/
-│   ├── translations.js     # SR/DE/EN translations
-│   ├── recipes-data.js     # Recipe data
-│   └── main.js             # Language switch, search, modal, favorites
-├── index.html              # Home page — hero, featured recipes, categories
-├── recipes.html            # All recipes — live search + category filters
-├── about.html              # About Didina — story + values
+│   ├── translations.js     # All UI strings — SR / DE / EN
+│   ├── recipes-data.js     # Recipe data (ingredients, instructions, metadata)
+│   └── main.js             # Lang switch, search, modal, favorites, share panel, newsletter
+├── index.html              # Home — hero, featured recipes, newsletter, book banner
+├── recipes.html            # All recipes — search + category filters
+├── blog.html               # Blog listing
+├── about.html              # About Didi
 ├── contact.html            # Contact form
-└── README.md
+├── privacy.html            # Privacy policy — SR/DE/EN
+└── CLAUDE.md               # Dev rules — branch strategy, deploy flow
 ```
 
 ---
 
-## 📋 Page & File Reference
+## Dev Setup
 
-| File | Purpose |
-|---|---|
-| `index.html` | Home page — hero, 6 featured recipes, categories grid |
-| `recipes.html` | All 16 recipes — live search + 5 category filters |
-| `about.html` | About Didina — story + values |
-| `contact.html` | Contact form |
-| `css/style.css` | Coral/teal design system |
-| `css/responsive.css` | Mobile-first breakpoints |
-| `js/translations.js` | SR/DE/EN translations |
-| `js/recipes-data.js` | 16 recipes from didina-recipes.json |
-| `js/main.js` | Language switch, search, modal, favorites |
+No build step. Pure HTML/CSS/JS.
 
----
+Open any `.html` file directly in a browser, or serve locally:
 
-## 📊 Recipe Data Schema
-
-Recipes are parsed from unformatted text paragraphs into strict relational properties:
-
-| Ingredient | Quantity | Unit | Section |
-|---|---|---|---|
-| Proteinska tortilja | 1 | komad | Sastojci |
-| Feta sir | 50 | g | Sastojci |
-| Grčki jogurt | 1 | kašika | Sastojci |
-
----
-
-## 🏁 Development Roadmap
-
-- **Phase 1** — Initialize repository scaffold, connect remote tracking main branches, and deploy secure developer access tokens.
-- **Phase 2** — Cloud-sync master text backups (1.pdf, 2.zip) via remote server virtualization.
-- **Phase 3** — Establish local container framework inside isolated WordPress Studio environments matching the visual style palette.
-- **Phase 4** — Build the clean component templates for semantic recipe data views.
-- **Phase 5** — Ship the universal e-book packages and deploy cloud-hosted preview environments.
-
----
-
-## 🖼️ Image-to-Recipe Mapping
-
+```bash
+npx serve .
 ```
-Image# | PDF Page | Recipe Title
-------------------------------------------------------------
-image01 | page   7  | Nedeljna tortilja
-image02 | page  10  | Tople leblebije sa jogurtom
-image03 | page  13  | Slani doručak sa lanom
-image04 | page  16  | Kinoina kaša sa borovnicama
-image05 | page  18  | Kokos palačinke
-image06 | page  22  | Ćureći stejk
-image07 | page  25  | Kokos curry sa crvenim
-image08 | page  28  | „Žive" lazanje
-image10 | page  31  | Mediteranski pirinač
-image11 | page  35  | Krem supa od šargarepe
-image12 | page  37  | Ćuretina sa patlidžanom
-image13 | page  40  | Restovan krompir
-image14 | page  43  | Mini pice od plavog patlidžana
-image15 | page  46  | Juneći gulaš sa zelenom
-image16 | page  49  | Krem supa od tikvica
-image18 | page  52  | Prebranac sa slatkim
-image19 | page  60  | Hrskava celer salata
-image20 | page  62  | Nesvakidašnja salata
-image21 | page  65  | Brzi Tapas
-image22 | page  67  | Detoks salata sa narom
-image23 | page  70  | Tunin obrok
-image24 | page  73  | Salata sa rukolom, fetom
-image25 | page  76  | Brokoli sa pinjolima
-image26 | page  78  | Jaka voćna salata
-image27 | page  82  | Banana hleb sa suvim
-image28 | page  85  | Integralni hleb sa semenkama
-image29 | page  88  | Rolnice od lisnatog testa
-image31 | page  90  | Spori medenjaci iz ugašene rerne
-image33 | page  93  | Šumska pita
-image34 | page  96  | Zimski kolač sa bundevom
-image36 | page 103  | Dubai zalogajčići
-image37 | page 105  | Kremasti sutlijaš
-image38 | page 107  | Kraljevske bombice
-image40 | page 109  | Brzinski banana kolačići
-image41 | page 111  | Jafa bez brašna
-image43 | page 114  | Najčokoladniji Brauni
-image45 | page 118  | Kroasani sa crnom čokoladom
-image46 | page 120  | Lažne čoko rolnice
-image47 | page 123  | Domaći humus
-image48 | page 126  | Proteinski namaz
-image49 | page 128  | Pašteta od tune
-image50 | page 131  | Raznobojni namaz od avokada
+
+### Adding a new translation string
+
+All UI strings go in `js/translations.js`. Every key needs SR, DE, and EN:
+
+```js
+my_key: { sr: '...', de: '...', en: '...' }
 ```
+
+Then use `data-i18n="my_key"` in HTML.
+
+### Cache busting
+
+When deploying breaking CSS/JS changes, increment `?v=N` on all HTML imports:
+
+```html
+<link rel="stylesheet" href="css/style.css?v=2">
+<script src="js/main.js?v=2"></script>
+```
+
+---
+
+## Deploy
+
+Every push to `main` deploys to both sites simultaneously via dual-remote git setup.
+
+See `CLAUDE.md` for full branch strategy and push flow.
