@@ -1,140 +1,200 @@
 # Didina SoulFood Riznica
 
+A trilingual recipe website and digital cookbook — Serbian, German, and English editions.
+
+**Staging:** https://natasha0824inkf.github.io/didina-soulfood-riznica  
+**Production:** https://didina-soulfood.github.io/riznica
+
 ---
 
-## 🎨 Design Language & Visual System Tokens
-
-This project features a custom "Warm Organic Modern" design identity crafted specifically to showcase real-life smartphone food photography without losing its appetizing warmth.
+## Design Tokens
 
 | Token | Value | Usage |
 |---|---|---|
-| Canvas Base | `#FDFBF7` Soft Almond Cream | High-readability canvas texture |
-| Primary Type | `#23211F` Dark Chocolate Espresso | Soft-contrast luxury typography |
-| Healthy Token | `#607A66` Sage Olive Green | Ingredient grids and nutrition labels |
-| Upbeat Accent | `#E5A93C` Mustard Gold | Layout grid lines, numbers, meta tags |
-| Soul Details | `#8C7AA6` Lavender Purple | Didi's commentary boxes and intimate quotes |
+| Coral (accent) | `#C9773A` | Buttons, highlights, links |
+| Gold | `#D8A14A` | Secondary accent, tags |
+| Plum | `#7A5890` | Commentary boxes, quotes |
+| Teal | `#4FA83A` | Success states, nutrition labels |
+| Cream canvas | `#FDFAF5` | Page background |
+| Dark text | `#2A1A0E` | Body typography |
 
 ---
 
-## 🏗️ Multi-Channel System Architecture
-
-The codebase enforces a single-source configuration workflow where the master recipe text remains structured as standardized data attributes, feeding cleanly into separate distribution channels:
-
-```
-                       ┌──> [Web Channel] ───> WordPress Studio Local / Independent Cloud
-                       │
-[Master Data Backup] ──┼──> [E-Book Channel] ──> Universal EPUB3 Layout (Apple Books & Android)
-                       │
-                       └──> [Asset Processing] ─> Cloud Jupyter Notebook Pipeline Tool (Zero Local Load)
-```
-
----
-
-## 📁 Project Structure
+## Repository Structure
 
 ```
 didina-soulfood-riznica/
 ├── assets/
-│   └── images/             # Optimized WebP/JPG output + logo/brand assets
+│   └── images/             # Recipe photos (kebab-case PNG/JPEG slugs)
+├── blog/
+│   └── kako-naci-vremena.html   # First blog post (SR/DE/EN)
 ├── css/
-│   ├── style.css           # Unified brand visual design stylesheet
+│   ├── style.css           # Full design system + dark mode
 │   └── responsive.css      # Mobile-first breakpoints
 ├── js/
-│   ├── translations.js     # SR/DE/EN translations
-│   ├── recipes-data.js     # Recipe data
-│   └── main.js             # Language switch, search, modal, favorites
-├── index.html              # Home page — hero, featured recipes, categories
-├── recipes.html            # All recipes — live search + category filters
-├── about.html              # About Didina — story + values
-├── contact.html            # Contact form
+│   ├── recipes-data.js     # 44 recipes — multilingual (sr/de/en)
+│   ├── translations.js     # All UI strings in SR / DE / EN
+│   └── main.js             # Language switch, search, modal, favorites, newsletter
+├── scripts/
+│   ├── generate_epub.py    # Produces SR / DE / EN EPUB editions
+│   ├── generate_pdf.py     # Produces SR / DE / EN PDF editions
+│   └── notion_sync.py      # Syncs blog posts from Notion
+├── sources/
+│   ├── Didina_SoulFood_Riznica_SR.epub
+│   ├── Didina_SoulFood_Riznica_DE.epub
+│   ├── Didina_SoulFood_Riznica_EN.epub
+│   ├── Didina_SoulFood_Riznica_SR.pdf
+│   ├── Didina_SoulFood_Riznica_DE.pdf
+│   └── Didina_SoulFood_Riznica_EN.pdf
+├── about.html
+├── blog.html
+├── contact.html
+├── index.html
+├── privacy.html
+├── recipes.html
+├── CLAUDE.md               # Dev rules (branch strategy, dual-remote push)
+├── DRAGANA.md              # Quick reference for Dragana (non-technical)
 └── README.md
 ```
 
 ---
 
-## 📋 Page & File Reference
+## Pages
 
 | File | Purpose |
 |---|---|
-| `index.html` | Home page — hero, 6 featured recipes, categories grid |
-| `recipes.html` | All 16 recipes — live search + 5 category filters |
-| `about.html` | About Didina — story + values |
-| `contact.html` | Contact form |
-| `css/style.css` | Coral/teal design system |
-| `css/responsive.css` | Mobile-first breakpoints |
-| `js/translations.js` | SR/DE/EN translations |
-| `js/recipes-data.js` | 16 recipes from didina-recipes.json |
-| `js/main.js` | Language switch, search, modal, favorites |
+| `index.html` | Home — hero, featured recipes, newsletter, blog teaser |
+| `recipes.html` | All 44 recipes — live search + 6 category filters |
+| `about.html` | About Didi — story and values |
+| `contact.html` | Contact form (FormSubmit → email) |
+| `blog.html` | Blog listing |
+| `blog/kako-naci-vremena.html` | First blog post |
+| `privacy.html` | Privacy policy (SR / DE / EN) |
 
 ---
 
-## 📊 Recipe Data Schema
+## Recipe Data
 
-Recipes are parsed from unformatted text paragraphs into strict relational properties:
+44 recipes in `js/recipes-data.js`. Each recipe is a multilingual object:
 
-| Ingredient | Quantity | Unit | Section |
+```js
+{
+  number: '1',
+  title:         { sr: 'Nedeljni wrap',   de: 'Der Sonntags-Wrap',  en: 'Sunday Wrap' },
+  subtitle:      { sr: '...',             de: '...',                en: '...' },
+  author_comment:{ sr: '...',             de: '...',                en: '...' },
+  prep_time:     { sr: '15 minuta',       de: '15 Minuten',         en: '15 minutes' },
+  ingredients:   { sr: [...],             de: [...],                en: [...] },
+  instructions:  { sr: [...],             de: [...],                en: [...] },
+  note: '...',   // SR only (plain string)
+  image: 'assets/images/nedeljni-wrap.png',
+  category: 'morning',
+  tags: ['vegan', 'quick'],
+}
+```
+
+---
+
+## Sections (cookbook structure)
+
+| # | SR | DE | EN |
 |---|---|---|---|
-| Proteinska tortilja | 1 | komad | Sastojci |
-| Feta sir | 50 | g | Sastojci |
-| Grčki jogurt | 1 | kašika | Sastojci |
+| 1 | Jutarnji recepti | Morgenrezepte | Morning Recipes |
+| 2 | Recepti kada ne znam šta da kuvam | Wenn ich nicht weiß, was ich kochen soll | When I Don't Know What to Cook |
+| 3 | Osvežavajući recepti | Erfrischende Rezepte | Refreshing Recipes |
+| 4 | Recepti koji mirišu iz rerne | Aus dem Ofen | From the Oven |
+| 5 | Recepti uz kafu | Zum Kaffee | With Coffee |
+| 6 | Recepti koji se mažu | Aufstriche & Dips | Spreads & Dips |
+
+Plus 3 bonus recipes (not in website data, included in EPUB/PDF only):
+- Hrskava celer salata / Knuspriger Sellerie-Salat / Crunchy Celery Salad
+- Dubai zalogajčići / Dubai-Häppchen / Dubai Bites
+- Raznobojni namaz od avokada / Bunter Avocado-Aufstrich / Colourful Avocado Spread
 
 ---
 
-## 🏁 Development Roadmap
+## Digital Editions
 
-- **Phase 1** — Initialize repository scaffold, connect remote tracking main branches, and deploy secure developer access tokens.
-- **Phase 2** — Cloud-sync master text backups (1.pdf, 2.zip) via remote server virtualization.
-- **Phase 3** — Establish local container framework inside isolated WordPress Studio environments matching the visual style palette.
-- **Phase 4** — Build the clean component templates for semantic recipe data views.
-- **Phase 5** — Ship the universal e-book packages and deploy cloud-hosted preview environments.
+Generated by the `scripts/` Python tools using WeasyPrint (PDF) and ebooklib (EPUB).
+
+| Edition | EPUB | PDF |
+|---|---|---|
+| Serbian | `Didina_SoulFood_Riznica_SR.epub` | `Didina_SoulFood_Riznica_SR.pdf` |
+| German | `Didina_SoulFood_Riznica_DE.epub` | `Didina_SoulFood_Riznica_DE.pdf` |
+| English | `Didina_SoulFood_Riznica_EN.epub` | `Didina_SoulFood_Riznica_EN.pdf` |
+
+To regenerate all editions:
+```bash
+python3 scripts/generate_epub.py
+python3 scripts/generate_pdf.py
+```
 
 ---
 
-## 🖼️ Image-to-Recipe Mapping
+## Image Naming
+
+All recipe images follow the kebab-case slug pattern matching the recipe title:
 
 ```
-Image# | PDF Page | Recipe Title
-------------------------------------------------------------
-image01 | page   7  | Nedeljna tortilja
-image02 | page  10  | Tople leblebije sa jogurtom
-image03 | page  13  | Slani doručak sa lanom
-image04 | page  16  | Kinoina kaša sa borovnicama
-image05 | page  18  | Kokos palačinke
-image06 | page  22  | Ćureći stejk
-image07 | page  25  | Kokos curry sa crvenim
-image08 | page  28  | „Žive" lazanje
-image10 | page  31  | Mediteranski pirinač
-image11 | page  35  | Krem supa od šargarepe
-image12 | page  37  | Ćuretina sa patlidžanom
-image13 | page  40  | Restovan krompir
-image14 | page  43  | Mini pice od plavog patlidžana
-image15 | page  46  | Juneći gulaš sa zelenom
-image16 | page  49  | Krem supa od tikvica
-image18 | page  52  | Prebranac sa slatkim
-image19 | page  60  | Hrskava celer salata
-image20 | page  62  | Nesvakidašnja salata
-image21 | page  65  | Brzi Tapas
-image22 | page  67  | Detoks salata sa narom
-image23 | page  70  | Tunin obrok
-image24 | page  73  | Salata sa rukolom, fetom
-image25 | page  76  | Brokoli sa pinjolima
-image26 | page  78  | Jaka voćna salata
-image27 | page  82  | Banana hleb sa suvim
-image28 | page  85  | Integralni hleb sa semenkama
-image29 | page  88  | Rolnice od lisnatog testa
-image31 | page  90  | Spori medenjaci iz ugašene rerne
-image33 | page  93  | Šumska pita
-image34 | page  96  | Zimski kolač sa bundevom
-image36 | page 103  | Dubai zalogajčići
-image37 | page 105  | Kremasti sutlijaš
-image38 | page 107  | Kraljevske bombice
-image40 | page 109  | Brzinski banana kolačići
-image41 | page 111  | Jafa bez brašna
-image43 | page 114  | Najčokoladniji Brauni
-image45 | page 118  | Kroasani sa crnom čokoladom
-image46 | page 120  | Lažne čoko rolnice
-image47 | page 123  | Domaći humus
-image48 | page 126  | Proteinski namaz
-image49 | page 128  | Pašteta od tune
-image50 | page 131  | Raznobojni namaz od avokada
+nedeljni-wrap.png
+tople-leblebije.png
+slani-dorucak.png
+kinoa-kasa-sa-borovnicama.png
+kokos-palacinka.png
+cureci-stejk.png
+kokos-curry.png
+zive-lazanje.png
+mediteranski-pirinac.png
+krem-supa-od-sargarepe.png
+curetina-sa-patlidzanom.png
+restovani-krompir.png
+mini-pice-od-patlidzana.png
+juneci-gulas.png
+krem-supa-od-tikvica.png
+prebranac.png
+pasta-sa-zelenim-pestom.png
+nesvakidasnja-salata-sa-cveklom.png
+brzi-tapas.png
+detoks-salata-od-cvekle.png
+tunin-bowl.png
+salata-sa-cveklom.png
+brokoli-sa-pinjolima.png
+jaka-vocna-salata.png
+banana-hleb.png
+integralni-hleb.png
+rolnice-od-lisnatog-testa.png
+spori-medenjaci.jpeg
+vocna-pita-iz-sume.png
+zimski-kolac-sa-bundevom.png
+puding-od-vanile.png
+mali-coko-zalogaji.png
+kremasti-sutlijash.png
+kraljevske-bombice.png
+brzinski-banana-kolacici.png
+jafa-bez-brasna.png
+najcokoladniji-brauni.png
+kroasani-sa-cokoladom.png
+lazne-coko-rolnice.png
+domaci-humus.png
+proteinski-namaz-od-jaja.png
+domaca-pasteta-od-tune.png
+prokelj-iz-rerne.png
 ```
+
+---
+
+## Deployment
+
+Two GitHub repositories receive every push to `main`:
+
+| Repo | URL | Role |
+|---|---|---|
+| `natasha0824inkf/didina-soulfood-riznica` | natasha0824inkf.github.io/didina-soulfood-riznica | Staging |
+| `didina-soulfood/riznica` | didina-soulfood.github.io/riznica | Production |
+
+Push flow (configured in `.git/config`):
+```bash
+git push   # goes to both remotes simultaneously
+```
+
+See `CLAUDE.md` for full branch strategy and dual-remote setup instructions.
