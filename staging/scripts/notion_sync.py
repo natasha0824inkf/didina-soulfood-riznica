@@ -270,6 +270,27 @@ def find_language_sections(all_blocks, slug):
     }
 
 
+def ensure_db_properties():
+    """Add Title DE and Title EN text properties to the DB if they don't exist yet."""
+    db_url = f"https://api.notion.com/v1/databases/{NOTION_DB_ID}"
+    res = requests.get(db_url, headers=HEADERS)
+    if not res.ok:
+        print(f"  Warning: could not read DB schema: {res.status_code}", file=sys.stderr)
+        return
+    existing = res.json().get("properties", {})
+    to_add = {}
+    if "Title DE" not in existing:
+        to_add["Title DE"] = {"rich_text": {}}
+    if "Title EN" not in existing:
+        to_add["Title EN"] = {"rich_text": {}}
+    if to_add:
+        patch = requests.patch(db_url, headers=HEADERS, json={"properties": to_add})
+        if patch.ok:
+            print(f"  Added missing DB properties: {', '.join(to_add)}")
+        else:
+            print(f"  Warning: could not add properties: {patch.status_code} {patch.text}", file=sys.stderr)
+
+
 def query_database():
     url = f"https://api.notion.com/v1/databases/{NOTION_DB_ID}/query"
     payload = {"filter": {"property": "Status", "status": {"equals": "Published"}}}
@@ -581,6 +602,7 @@ def update_blog_listing(cards_html):
 
 
 def main():
+    ensure_db_properties()
     print("Querying Notion database...")
     pages = query_database()
     print(f"Found {len(pages)} published entries")
