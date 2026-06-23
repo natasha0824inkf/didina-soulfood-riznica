@@ -1,11 +1,18 @@
 #!/usr/bin/env python3
-"""Syncs Published posts from Notion database to blog HTML files."""
+"""Syncs Published posts from Notion database to blog HTML files.
+
+Two authoring modes:
+  Legacy (3-row):  Row has Language select set to SR/DE/EN → grouped by slug (old behaviour)
+  New (1-row):     Row has no Language select → single page per post, language content
+                   lives inside toggle blocks labelled 🇷🇸 / 🇩🇪 / 🇬🇧 (or SR/DE/EN)
+"""
 
 import os
 import re
 import sys
 import html
 import json
+import unicodedata
 import requests
 from datetime import datetime
 from pathlib import Path
@@ -23,6 +30,25 @@ HEADERS = {
 SR_MONTHS = ["jan","feb","mar","apr","maj","jun","jul","avg","sep","okt","nov","dec"]
 DE_MONTHS = ["Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"]
 EN_MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+
+_SR_TRANSLIT = str.maketrans("šŠčČćĆđĐžŽ", "sScCcCdDzZ")
+
+def slugify(text):
+    """Turn any title into a URL-safe slug (Serbian-aware)."""
+    text = text.translate(_SR_TRANSLIT)
+    text = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode()
+    text = text.lower()
+    text = re.sub(r"[^\w\s-]", "", text)
+    text = re.sub(r"[\s_]+", "-", text).strip("-")
+    return re.sub(r"-+", "-", text)[:60]
+
+
+# Patterns to detect language toggle headings like "🇷🇸 Srpski", "DE", "[EN]", etc.
+LANG_TOGGLE_RE = {
+    "SR": re.compile(r"🇷🇸|[Ss]rpsk|[Ss]erbian|\bSR\b|\[SR\]", re.IGNORECASE),
+    "DE": re.compile(r"🇩🇪|[Dd]eutsch|[Gg]erman|\bDE\b|\[DE\]",  re.IGNORECASE),
+    "EN": re.compile(r"🇬🇧|[Ee]nglish|\bEN\b|\[EN\]",              re.IGNORECASE),
+}
 
 
 def format_date(date_str, lang):
@@ -210,6 +236,74 @@ def get_page_blocks(page_id):
     return blocks
 
 
+def find_language_sections(all_blocks, slug):
+    """
+    Scan top-level blocks for toggle blocks whose label matches a language pattern.
+    Fetches toggle children and converts to HTML per language.
+
+    If no language toggles are found, all content is treated as SR.
+    Non-toggle blocks that sit outside any language toggle are prepended to SR.
+
+    Returns: {'SR': html_str, 'DE': html_str, 'EN': html_str}
+    """
+    lang_blocks = {"SR": [], "DE": [], "EN": []}
+    extra_sr_blocks = []
+    found_any_toggle = False
+
+    for block in all_blocks:
+        if block["type"] == "toggle":
+            toggle_text = "".join(
+                rt["plain_text"]
+                for rt in block.get("toggle", {}).get("rich_text", [])
+            )
+            matched = None
+            for lang, pattern in LANG_TOGGLE_RE.items():
+                if pattern.search(toggle_text):
+                    matched = lang
+                    break
+            if matched:
+                found_any_toggle = True
+                children = get_page_blocks(block["id"])
+                lang_blocks[matched].extend(children)
+                continue
+        extra_sr_blocks.append(block)
+
+    if not found_any_toggle:
+        return {
+            "SR": blocks_to_html(all_blocks, slug),
+            "DE": "",
+            "EN": "",
+        }
+
+    sr_blocks = extra_sr_blocks + lang_blocks["SR"]
+    return {
+        "SR": blocks_to_html(sr_blocks, slug)                 if sr_blocks              else "",
+        "DE": blocks_to_html(lang_blocks["DE"], slug + "-de") if lang_blocks["DE"]      else "",
+        "EN": blocks_to_html(lang_blocks["EN"], slug + "-en") if lang_blocks["EN"]      else "",
+    }
+
+
+def ensure_db_properties():
+    """Add Title DE and Title EN text properties to the DB if they don't exist yet."""
+    db_url = f"https://api.notion.com/v1/databases/{NOTION_DB_ID}"
+    res = requests.get(db_url, headers=HEADERS)
+    if not res.ok:
+        print(f"  Warning: could not read DB schema: {res.status_code}", file=sys.stderr)
+        return
+    existing = res.json().get("properties", {})
+    to_add = {}
+    if "Title DE" not in existing:
+        to_add["Title DE"] = {"rich_text": {}}
+    if "Title EN" not in existing:
+        to_add["Title EN"] = {"rich_text": {}}
+    if to_add:
+        patch = requests.patch(db_url, headers=HEADERS, json={"properties": to_add})
+        if patch.ok:
+            print(f"  Added missing DB properties: {', '.join(to_add)}")
+        else:
+            print(f"  Warning: could not add properties: {patch.status_code} {patch.text}", file=sys.stderr)
+
+
 def query_database():
     url = f"https://api.notion.com/v1/databases/{NOTION_DB_ID}/query"
     payload = {"filter": {"property": "Status", "status": {"equals": "Published"}}}
@@ -262,7 +356,6 @@ def render_post(slug, versions):
 
     meta_desc = first_paragraph(sr_body)
 
-    # Escape values used in HTML attributes and JSON-LD
     sr_title_h  = html.escape(sr_title)
     de_title_h  = html.escape(de_title)
     en_title_h  = html.escape(en_title)
@@ -522,29 +615,62 @@ def update_blog_listing(cards_html):
 
 
 def main():
+    ensure_db_properties()
     print("Querying Notion database...")
     pages = query_database()
     print(f"Found {len(pages)} published entries")
 
-    # Group by slug
-    posts = {}
+    posts = {}   # slug → {versions, date}  — new single-row mode
+    legacy = {}  # slug → {versions, date}  — old 3-row mode (Language select set)
+
     for page in pages:
-        slug = get_prop(page, "Slug", "text")
-        lang = get_prop(page, "Language", "select").upper()
-        if not slug or lang not in ("SR", "DE", "EN"):
-            print(f"  Skipping page {page['id']}: missing slug or invalid language")
+        sr_title_raw = get_prop(page, "Title", "title")
+        slug = get_prop(page, "Slug", "text") or slugify(sr_title_raw)
+        if not slug:
+            print(f"  Skipping page {page['id']}: no title or slug")
             continue
 
-        if slug not in posts:
-            posts[slug] = {"versions": {}, "date": get_prop(page, "Date", "date")}
+        lang = get_prop(page, "Language", "select").upper()
 
-        blocks = get_page_blocks(page["id"])
-        posts[slug]["versions"][lang] = {
-            "title": get_prop(page, "Title", "title"),
-            "tags":  get_prop(page, "Tags", "multi_select"),
-            "date":  get_prop(page, "Date", "date"),
-            "body":  blocks_to_html(blocks, slug),
-        }
+        if lang in ("SR", "DE", "EN"):
+            # ── Legacy mode: one row per language, grouped by slug ────────────
+            if slug not in legacy:
+                legacy[slug] = {"versions": {}, "date": get_prop(page, "Date", "date")}
+            blocks = get_page_blocks(page["id"])
+            legacy[slug]["versions"][lang] = {
+                "title": sr_title_raw,
+                "tags":  get_prop(page, "Tags", "multi_select"),
+                "date":  get_prop(page, "Date", "date"),
+                "body":  blocks_to_html(blocks, slug),
+            }
+            print(f"  [legacy] {slug} / {lang}")
+
+        else:
+            # ── New mode: single row, language content in toggle blocks ───────
+            # Minimum required: just a title. Everything else is optional.
+            sr_title = sr_title_raw
+            de_title = get_prop(page, "Title DE", "text") or sr_title
+            en_title = get_prop(page, "Title EN", "text") or sr_title
+            tags     = get_prop(page, "Tags", "multi_select")
+            # Date falls back to page creation time if not set
+            date_raw = get_prop(page, "Date", "date") or page.get("created_time", "")[:10]
+
+            all_blocks = get_page_blocks(page["id"])
+            bodies = find_language_sections(all_blocks, slug)
+
+            posts[slug] = {
+                "versions": {
+                    "SR": {"title": sr_title, "tags": tags, "date": date_raw, "body": bodies["SR"]},
+                    "DE": {"title": de_title, "tags": tags, "date": date_raw, "body": bodies["DE"]},
+                    "EN": {"title": en_title, "tags": tags, "date": date_raw, "body": bodies["EN"]},
+                },
+                "date": date_raw,
+            }
+            print(f"  [new]    {slug}")
+
+    # Legacy posts take precedence when slug exists in both modes
+    for slug, data in legacy.items():
+        posts[slug] = data
 
     if not posts:
         print("No valid posts to sync.")
@@ -553,7 +679,6 @@ def main():
     # Sort by date descending (newest first)
     sorted_posts = sorted(posts.items(), key=lambda x: x[1]["date"] or "", reverse=True)
 
-    # Generate post HTML files
     blog_dir = REPO_ROOT / "blog"
     blog_dir.mkdir(exist_ok=True)
     cards = []
@@ -569,7 +694,6 @@ def main():
 
         cards.append(render_card(slug, versions, date_raw))
 
-    # Update blog.html listing
     cards_html = "\n".join(cards)
     update_blog_listing(cards_html)
     print("  Updated: blog.html")
