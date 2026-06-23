@@ -374,9 +374,9 @@ cover_body = """
   <p class="cover-quote">Ne brojite kalorije, brojite va&#353;e osmehe i korake.</p>
   <p class="cover-author"><strong>Dragana Stamenković</strong></p>
 </div>"""
-cover_ch = add_page('cover', 'cover.xhtml', 'Naslovnica', cover_body,
+cover_ch = add_page('cover', 'cover.xhtml', 'Naslovna', cover_body,
                     extra_ns='xmlns:epub="http://www.idpf.org/2007/ops" epub:prefix="z3998: http://www.daisy.org/z3998/2012/vocab/structure/, se: https://standardebooks.org/vocab/1.0"')
-toc_entries.append(epub.Link('cover.xhtml', 'Naslovnica', 'cover'))
+toc_entries.append(epub.Link('cover.xhtml', 'Naslovna', 'cover'))
 
 # --- Intro ---
 intro_body = """
@@ -586,7 +586,7 @@ toc_entries.append(epub.Link('toc_page.xhtml', 'Sadržaj', 'toc_page'))
 # 7. Nav / spine / write
 # ---------------------------------------------------------------------------
 book.toc = [
-    epub.Link('cover.xhtml',   'Naslovnica', 'cover'),
+    epub.Link('cover.xhtml',   'Naslovna', 'cover'),
     epub.Link('intro.xhtml',   'Uvod',       'intro'),
     epub.Link('toc_page.xhtml','Sadržaj',    'toc_page'),
     *section_toc,
