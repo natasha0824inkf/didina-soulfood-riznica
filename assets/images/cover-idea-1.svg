@@ -1,70 +1,55 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1800" width="1200" height="1800">
   <defs>
-    <!-- Deep warm dark background — website dark mode hero -->
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%"   stop-color="#180C04"/>
-      <stop offset="45%"  stop-color="#221008"/>
+      <stop offset="50%"  stop-color="#221008"/>
       <stop offset="100%" stop-color="#120804"/>
     </linearGradient>
-    <!-- Golden glow top-left -->
-    <radialGradient id="glow1" cx="20%" cy="18%" r="50%">
-      <stop offset="0%" stop-color="#D8A14A" stop-opacity="0.22"/>
+    <radialGradient id="glow1" cx="20%" cy="20%" r="55%">
+      <stop offset="0%" stop-color="#D8A14A" stop-opacity="0.18"/>
       <stop offset="100%" stop-color="#D8A14A" stop-opacity="0"/>
     </radialGradient>
-    <!-- Plum glow bottom-right -->
-    <radialGradient id="glow2" cx="82%" cy="80%" r="48%">
-      <stop offset="0%" stop-color="#7A5890" stop-opacity="0.20"/>
+    <radialGradient id="glow2" cx="80%" cy="80%" r="50%">
+      <stop offset="0%" stop-color="#7A5890" stop-opacity="0.16"/>
       <stop offset="100%" stop-color="#7A5890" stop-opacity="0"/>
-    </radialGradient>
-    <!-- Rust glow centre -->
-    <radialGradient id="glow3" cx="50%" cy="55%" r="35%">
-      <stop offset="0%" stop-color="#C9773A" stop-opacity="0.10"/>
-      <stop offset="100%" stop-color="#C9773A" stop-opacity="0"/>
     </radialGradient>
   </defs>
 
-  <!-- Background layers -->
-  <rect width="1200" height="1800" fill="url(#bgGrad)"/>
+  <rect width="1200" height="1800" fill="url(#bg)"/>
   <rect width="1200" height="1800" fill="url(#glow1)"/>
   <rect width="1200" height="1800" fill="url(#glow2)"/>
-  <rect width="1200" height="1800" fill="url(#glow3)"/>
 
-  <!-- Outer border — gold -->
-  <rect x="55" y="55" width="1090" height="1690" fill="none" stroke="#D8A14A" stroke-width="1" opacity="0.35"/>
+  <!-- Corner brackets -->
+  <line x1="60" y1="60" x2="220" y2="60"   stroke="#D8A14A" stroke-width="5" stroke-linecap="round"/>
+  <line x1="60" y1="60" x2="60"  y2="220"  stroke="#D8A14A" stroke-width="5" stroke-linecap="round"/>
+  <line x1="1140" y1="60"  x2="980"  y2="60"  stroke="#D8A14A" stroke-width="5" stroke-linecap="round"/>
+  <line x1="1140" y1="60"  x2="1140" y2="220" stroke="#D8A14A" stroke-width="5" stroke-linecap="round"/>
+  <line x1="60"   y1="1740" x2="220"  y2="1740" stroke="#D8A14A" stroke-width="5" stroke-linecap="round"/>
+  <line x1="60"   y1="1740" x2="60"   y2="1580" stroke="#D8A14A" stroke-width="5" stroke-linecap="round"/>
+  <line x1="1140" y1="1740" x2="980"  y2="1740" stroke="#D8A14A" stroke-width="5" stroke-linecap="round"/>
+  <line x1="1140" y1="1740" x2="1140" y2="1580" stroke="#D8A14A" stroke-width="5" stroke-linecap="round"/>
 
-  <!-- Inner border — rust -->
-  <rect x="75" y="75" width="1050" height="1650" fill="none" stroke="#C9773A" stroke-width="0.8" opacity="0.25"/>
-
-  <!-- Corner brackets — gold -->
-  <line x1="55"  y1="55"  x2="220" y2="55"  stroke="#D8A14A" stroke-width="5" stroke-linecap="round"/>
-  <line x1="55"  y1="55"  x2="55"  y2="220" stroke="#D8A14A" stroke-width="5" stroke-linecap="round"/>
-  <line x1="1145" y1="55"  x2="980"  y2="55"  stroke="#D8A14A" stroke-width="5" stroke-linecap="round"/>
-  <line x1="1145" y1="55"  x2="1145" y2="220" stroke="#D8A14A" stroke-width="5" stroke-linecap="round"/>
-  <line x1="55"  y1="1745" x2="220"  y2="1745" stroke="#D8A14A" stroke-width="5" stroke-linecap="round"/>
-  <line x1="55"  y1="1745" x2="55"   y2="1580" stroke="#D8A14A" stroke-width="5" stroke-linecap="round"/>
-  <line x1="1145" y1="1745" x2="980"  y2="1745" stroke="#D8A14A" stroke-width="5" stroke-linecap="round"/>
-  <line x1="1145" y1="1745" x2="1145" y2="1580" stroke="#D8A14A" stroke-width="5" stroke-linecap="round"/>
-
-  <!-- Logo — fork + heart, gold on dark -->
-  <g transform="translate(600, 350) scale(17)" stroke="#D8A14A" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <g transform="translate(-3, -10)">
-      <line x1="-4" y1="-14" x2="-4" y2="-5"/>
-      <line x1="0"  y1="-14" x2="0"  y2="-5"/>
-      <line x1="4"  y1="-14" x2="4"  y2="-5"/>
-      <path d="M-4,-5 Q0,0 4,-5"/>
-      <line x1="0" y1="0" x2="0" y2="13"/>
-    </g>
-    <g transform="translate(8, -18) scale(0.55)">
-      <path d="M0,9 C-9,0 -14,-10 -7,-13 C-3,-15 0,-10 0,-10 C0,-10 3,-15 7,-13 C14,-10 9,0 0,9 Z"
-            fill="#E8A050" stroke="none"/>
-    </g>
+  <!-- FORK — drawn with absolute coords, centred at x=560 -->
+  <g stroke="#D8A14A" stroke-width="18" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- 3 tines -->
+    <line x1="496" y1="160" x2="496" y2="320"/>
+    <line x1="556" y1="160" x2="556" y2="320"/>
+    <line x1="616" y1="160" x2="616" y2="320"/>
+    <!-- curved bridge -->
+    <path d="M496,320 Q496,370 556,375 Q616,370 616,320"/>
+    <!-- handle -->
+    <line x1="556" y1="375" x2="556" y2="530"/>
   </g>
 
-  <!-- Thin gold rule below logo -->
-  <line x1="360" y1="565" x2="840" y2="565" stroke="#D8A14A" stroke-width="1.2" opacity="0.55"/>
+  <!-- HEART — gold fill, to the right of fork -->
+  <path d="M690,200 C690,170 720,155 740,168 C760,155 790,170 790,200 C790,230 740,265 740,265 C740,265 690,230 690,200 Z"
+        fill="#E8A050"/>
 
-  <!-- DIDINA — warm cream, large italic -->
-  <text x="600" y="730"
+  <!-- Divider -->
+  <line x1="300" y1="590" x2="900" y2="590" stroke="#D8A14A" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- DIDINA -->
+  <text x="600" y="760"
         text-anchor="middle"
         font-family="Georgia,'Times New Roman',serif"
         font-style="italic"
@@ -72,19 +57,19 @@
         font-weight="bold"
         fill="#F0E8D8">Didina</text>
 
-  <!-- SoulFood — golden -->
-  <text x="600" y="895"
+  <!-- SoulFood -->
+  <text x="600" y="920"
         text-anchor="middle"
         font-family="Georgia,'Times New Roman',serif"
         font-style="italic"
         font-size="138"
         fill="#D8A14A">SoulFood</text>
 
-  <!-- Plum rule -->
-  <line x1="130" y1="965" x2="1070" y2="965" stroke="#9E78B8" stroke-width="1" opacity="0.45"/>
+  <!-- Rule -->
+  <line x1="130" y1="985" x2="1070" y2="985" stroke="#C9773A" stroke-width="1" opacity="0.4"/>
 
-  <!-- RIZNICA — rust/coral -->
-  <text x="600" y="1075"
+  <!-- RIZNICA -->
+  <text x="600" y="1095"
         text-anchor="middle"
         font-family="Georgia,'Times New Roman',serif"
         font-size="86"
@@ -92,35 +77,23 @@
         fill="#C9773A"
         letter-spacing="26">RIZNICA</text>
 
-  <!-- Subtitle — muted warm -->
-  <text x="600" y="1190"
+  <!-- Subtitle -->
+  <text x="600" y="1205"
         text-anchor="middle"
         font-family="Georgia,'Times New Roman',serif"
         font-style="italic"
         font-size="52"
         fill="#C8A070"
-        opacity="0.75">recepti za svaki dan</text>
+        opacity="0.70">recepti za svaki dan</text>
 
-  <!-- Plum decorative band -->
-  <rect x="75" y="1440" width="1050" height="4" fill="#7A5890" opacity="0.30" rx="2"/>
+  <!-- Heart divider -->
+  <text x="600" y="1590" text-anchor="middle" font-size="38" fill="#E8A050" opacity="0.80">♥</text>
 
-  <!-- Heart -->
-  <text x="600" y="1530" text-anchor="middle" font-size="40" fill="#E8A050" opacity="0.85">♥</text>
-
-  <!-- Author name — warm mid -->
-  <text x="600" y="1620"
+  <!-- Author -->
+  <text x="600" y="1678"
         text-anchor="middle"
         font-family="Georgia,'Times New Roman',serif"
         font-size="54"
         fill="#C8A070"
         letter-spacing="2">Dragana Stamenković</text>
-
-  <!-- Tagline -->
-  <text x="600" y="1700"
-        text-anchor="middle"
-        font-family="Georgia,'Times New Roman',serif"
-        font-style="italic"
-        font-size="36"
-        fill="#D8A14A"
-        opacity="0.45">hrana je jezik duše</text>
 </svg>
