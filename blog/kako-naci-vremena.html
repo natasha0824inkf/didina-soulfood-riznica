@@ -249,11 +249,7 @@
 <script src="../js/main.js?v=2"></script>
 <script>
   document.getElementById('shareBtn')?.addEventListener('click', () => {
-    if (navigator.share) {
-      navigator.share({ title: document.title, url: location.href });
-    } else {
-      navigator.clipboard.writeText(location.href);
-    }
+    buildSharePanel(location.href, document.title, document.getElementById('shareBtn'), 'shareBtn');
   });
 </script>
 </body>
