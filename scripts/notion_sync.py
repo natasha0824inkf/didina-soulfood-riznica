@@ -124,7 +124,7 @@ def download_image(url, slug, idx):
         except Exception as e:
             print(f"  Warning: could not download image: {e}", file=sys.stderr)
             return None
-    return f"../assets/images/blog/{filename}"
+    return f"../../assets/images/blog/{filename}"
 
 
 def blocks_to_html(blocks, slug="post"):
@@ -485,8 +485,8 @@ def render_post(slug, versions):
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/responsive.css">
   <script>if(localStorage.getItem('didina-theme')==='dark'||(!localStorage.getItem('didina-theme')&&window.matchMedia('(prefers-color-scheme:dark)').matches))document.documentElement.classList.add('dark-mode');</script>
   <style>.site-header{{background:#6B4F3A;border-bottom:2px solid #D8A14A;position:sticky;top:0;z-index:100}}.nav-links a{{color:rgba(247,241,231,.72);border-bottom:2px solid transparent}}.nav-links a.active{{color:#D8A14A;border-bottom-color:#D8A14A;font-weight:600}}html.dark-mode .site-header{{background:#1A1208}}</style>
 </head>
@@ -494,8 +494,8 @@ def render_post(slug, versions):
 
 <header class="site-header">
   <nav class="nav-container">
-    <a href="../index.html" class="nav-logo" aria-label="Didina SoulFood Riznica">
-      <img src="../assets/images/logo.svg" alt="" class="nav-logo-img" aria-hidden="true">
+    <a href="../../index.html" class="nav-logo" aria-label="Didina SoulFood Riznica">
+      <img src="../../assets/images/logo.svg" alt="" class="nav-logo-img" aria-hidden="true">
       <span class="nav-logo-main">Didina SoulFood Riznica</span>
     </a>
     <button class="hamburger" id="hamburger" aria-label="Meni" aria-expanded="false">
