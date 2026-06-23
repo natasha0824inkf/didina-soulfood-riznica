@@ -20,7 +20,6 @@ from pathlib import Path
 
 NOTION_TOKEN = re.sub(r'\s', '', os.environ["NOTION_TOKEN"])
 NOTION_DB_ID = re.sub(r'\s', '', os.environ["NOTION_DB_ID"])
-ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 REPO_ROOT = Path(__file__).parent.parent
 TRANSLATION_CACHE = REPO_ROOT / "scripts" / "translation_cache.json"
 
@@ -321,56 +320,78 @@ def _sr_hash(text):
     return hashlib.md5(text.encode()).hexdigest()[:12]
 
 
-def claude_translate(text, target_lang):
-    """Translate plain text or HTML via Claude API. Preserves HTML tags."""
-    if not ANTHROPIC_API_KEY:
+def _mymemory_call(text, target_lang):
+    """Single MyMemory API call. Returns original text on failure."""
+    try:
+        res = requests.get(
+            "https://api.mymemory.translated.net/get",
+            params={"q": text, "langpair": f"sr|{target_lang}", "de": "nevenaneks@gmail.com"},
+            timeout=20,
+        )
+        if not res.ok:
+            return text
+        data = res.json()
+        if data.get("responseStatus") == 200:
+            return data["responseData"]["translatedText"]
+        return text
+    except Exception as e:
+        print(f"  Warning: MyMemory error: {e}", file=sys.stderr)
+        return text
+
+
+def mymemory_translate(text, target_lang):
+    """Translate SR text to target_lang via MyMemory (free, no key needed). Chunks long text."""
+    if not text or not text.strip():
         return ""
-    lang_names = {"de": "German", "en": "English"}
-    name = lang_names.get(target_lang, target_lang)
-    payload = {
-        "model": "claude-haiku-4-5-20251001",
-        "max_tokens": 4096,
-        "messages": [{
-            "role": "user",
-            "content": (
-                f"Translate the following HTML content to {name}. "
-                "Preserve ALL HTML tags, attributes, and structure exactly — only translate the visible text. "
-                "Return only the translated HTML, nothing else.\n\n"
-                f"{text}"
-            )
-        }]
-    }
-    res = requests.post(
-        "https://api.anthropic.com/v1/messages",
-        headers={"x-api-key": ANTHROPIC_API_KEY, "anthropic-version": "2023-06-01", "content-type": "application/json"},
-        json=payload,
-        timeout=60,
-    )
-    if not res.ok:
-        print(f"  Warning: Claude API error {res.status_code}", file=sys.stderr)
+    MAX = 1500
+    if len(text) <= MAX:
+        return _mymemory_call(text, target_lang)
+    parts = re.split(r'(?<=[.!?])\s+', text)
+    chunks, current = [], ""
+    for part in parts:
+        if len(current) + len(part) + 1 > MAX and current:
+            chunks.append(current.strip())
+            current = part
+        else:
+            current = (current + " " + part).strip()
+    if current:
+        chunks.append(current)
+    return " ".join(_mymemory_call(c, target_lang) for c in chunks)
+
+
+def translate_html_body(html_str, target_lang):
+    """Translate visible text inside HTML block elements, preserving structure."""
+    if not html_str:
         return ""
-    return res.json()["content"][0]["text"].strip()
+    pattern = re.compile(r'([ \t]*)<(p|h[1-3]|li|blockquote)>(.*?)</\2>\n', re.DOTALL)
+
+    def replace(m):
+        indent, tag, inner = m.group(1), m.group(2), m.group(3)
+        plain = html.unescape(re.sub(r'<[^>]+>', '', inner)).strip()
+        if not plain:
+            return m.group(0)
+        translated = mymemory_translate(plain, target_lang)
+        return f'{indent}<{tag}>{html.escape(translated)}</{tag}>\n'
+
+    return pattern.sub(replace, html_str)
 
 
 def auto_translate(slug, sr_title, sr_body, cache):
     """
-    Return (de_title, de_body, en_title, en_body) from cache or via Claude.
-    Only calls the API when SR content has changed since last translation.
+    Return (de_title, de_body, en_title, en_body) from cache or via MyMemory.
+    Only translates when SR content has changed since last sync.
     """
-    if not ANTHROPIC_API_KEY:
-        return "", "", "", ""
-
     h = _sr_hash(sr_title + sr_body)
     entry = cache.get(slug, {})
 
     if entry.get("hash") == h:
         return entry.get("de_title",""), entry.get("de_body",""), entry.get("en_title",""), entry.get("en_body","")
 
-    print(f"  Translating {slug}...")
-    de_title = claude_translate(sr_title, "de")
-    en_title = claude_translate(sr_title, "en")
-    de_body  = claude_translate(sr_body,  "de") if sr_body else ""
-    en_body  = claude_translate(sr_body,  "en") if sr_body else ""
+    print(f"  Translating {slug} via MyMemory...")
+    de_title = mymemory_translate(sr_title, "de")
+    en_title = mymemory_translate(sr_title, "en")
+    de_body  = translate_html_body(sr_body, "de") if sr_body else ""
+    en_body  = translate_html_body(sr_body, "en") if sr_body else ""
 
     cache[slug] = {"hash": h, "de_title": de_title, "de_body": de_body, "en_title": en_title, "en_body": en_body}
     save_cache(cache)

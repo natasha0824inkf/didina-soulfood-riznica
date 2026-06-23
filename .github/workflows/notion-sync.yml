@@ -21,13 +21,12 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install requests anthropic
+        run: pip install requests
 
       - name: Run Notion sync
         env:
           NOTION_TOKEN: ${{ secrets.NOTIONTOKENN }}
           NOTION_DB_ID: ${{ secrets.NOTIONDBID }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python scripts/notion_sync.py
 
       - name: Commit and push if changed
