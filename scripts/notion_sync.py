@@ -12,6 +12,7 @@ import re
 import sys
 import html
 import json
+import unicodedata
 import requests
 from datetime import datetime
 from pathlib import Path
@@ -29,6 +30,18 @@ HEADERS = {
 SR_MONTHS = ["jan","feb","mar","apr","maj","jun","jul","avg","sep","okt","nov","dec"]
 DE_MONTHS = ["Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"]
 EN_MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+
+_SR_TRANSLIT = str.maketrans("šŠčČćĆđĐžŽ", "sScCcCdDzZ")
+
+def slugify(text):
+    """Turn any title into a URL-safe slug (Serbian-aware)."""
+    text = text.translate(_SR_TRANSLIT)
+    text = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode()
+    text = text.lower()
+    text = re.sub(r"[^\w\s-]", "", text)
+    text = re.sub(r"[\s_]+", "-", text).strip("-")
+    return re.sub(r"-+", "-", text)[:60]
+
 
 # Patterns to detect language toggle headings like "🇷🇸 Srpski", "DE", "[EN]", etc.
 LANG_TOGGLE_RE = {
@@ -611,9 +624,10 @@ def main():
     legacy = {}  # slug → {versions, date}  — old 3-row mode (Language select set)
 
     for page in pages:
-        slug = get_prop(page, "Slug", "text")
+        sr_title_raw = get_prop(page, "Title", "title")
+        slug = get_prop(page, "Slug", "text") or slugify(sr_title_raw)
         if not slug:
-            print(f"  Skipping page {page['id']}: no slug")
+            print(f"  Skipping page {page['id']}: no title or slug")
             continue
 
         lang = get_prop(page, "Language", "select").upper()
@@ -624,7 +638,7 @@ def main():
                 legacy[slug] = {"versions": {}, "date": get_prop(page, "Date", "date")}
             blocks = get_page_blocks(page["id"])
             legacy[slug]["versions"][lang] = {
-                "title": get_prop(page, "Title", "title"),
+                "title": sr_title_raw,
                 "tags":  get_prop(page, "Tags", "multi_select"),
                 "date":  get_prop(page, "Date", "date"),
                 "body":  blocks_to_html(blocks, slug),
@@ -633,11 +647,13 @@ def main():
 
         else:
             # ── New mode: single row, language content in toggle blocks ───────
-            sr_title = get_prop(page, "Title", "title")
+            # Minimum required: just a title. Everything else is optional.
+            sr_title = sr_title_raw
             de_title = get_prop(page, "Title DE", "text") or sr_title
             en_title = get_prop(page, "Title EN", "text") or sr_title
             tags     = get_prop(page, "Tags", "multi_select")
-            date_raw = get_prop(page, "Date", "date")
+            # Date falls back to page creation time if not set
+            date_raw = get_prop(page, "Date", "date") or page.get("created_time", "")[:10]
 
             all_blocks = get_page_blocks(page["id"])
             bodies = find_language_sections(all_blocks, slug)

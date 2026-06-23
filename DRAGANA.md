@@ -22,29 +22,27 @@ https://github.com/didina-soulfood/riznica
 
 ---
 
-## Writing a blog post (NEW — one entry per post)
+## Writing a blog post
 
-You only need **one row** in Notion per blog post. All three languages go inside the same page.
+You only need **one Notion row** per post. The minimum is just two things:
 
-### Step 1 — Fill in the row properties
-
-| Property | What to write |
-|----------|--------------|
-| **Title** | Serbian title (e.g. `Nedeljno kuvanje: mali ritual`) |
-| **Title DE** | German title |
-| **Title EN** | English title |
-| **Slug** | URL-friendly ID, lowercase, hyphens only (e.g. `nedeljno-kuvanje`) |
-| **Tags** | Choose from the multi-select list |
-| **Date** | Publication date |
+| Field | Notes |
+|-------|-------|
+| **Title** | Write it in Serbian — that's enough |
+| **Tags** | Pick from the list |
 | **Status** | Set to **Published** when ready |
 
-> **Title DE** and **Title EN** are new text properties — add them in your Notion DB if they're not there yet:  
-> Open the DB → click `+` to add a property → choose **Text** → name it `Title DE`, repeat for `Title EN`.
+Everything else is automatic:
+- **Slug** (URL) → generated from your title automatically
+- **Date** → uses today if you leave it blank
+- **German / English titles** → show the Serbian title until you add them
 
-### Step 2 — Write the content inside the page
+### If you want translations too (optional)
 
-Open the page and create **3 toggle blocks**, one per language.  
-Type `/toggle` and press Enter to create a toggle. Name them exactly:
+Write the translated titles in **Title DE** and **Title EN** (these columns appear automatically after the first sync).
+
+For the body text, open the page and add **toggle blocks** — one per language.  
+Type `/toggle` → Enter, then name them:
 
 ```
 🇷🇸 Srpski
@@ -52,16 +50,12 @@ Type `/toggle` and press Enter to create a toggle. Name them exactly:
 🇬🇧 English
 ```
 
-Write that language's content *inside* each toggle (click the triangle to expand it).
+Write each language's text inside its toggle. Images, YouTube, Spotify all work inside toggles.
 
-You can add images, YouTube links, Spotify embeds, bullet lists — everything works inside a toggle.
+### Publish
 
-**Only writing in Serbian?** That's fine — just write the content normally in the page (no toggles needed) and the site will show the Serbian text for all languages until you add the others.
-
-### Step 3 — Publish
-
-Set Status → **Published**. The site syncs every hour automatically.  
-To sync immediately: go to the GitHub repo → Actions → "Sync from Notion" → Run workflow.
+Set Status → **Published**. Site updates every hour.  
+To push immediately: GitHub repo → Actions → "Sync from Notion" → Run workflow.
 
 ---
 
