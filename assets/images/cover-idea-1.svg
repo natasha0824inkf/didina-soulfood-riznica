@@ -1,16 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1800" width="1200" height="1800">
   <defs>
+    <!-- Deep warm dark bg -->
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%"   stop-color="#180C04"/>
-      <stop offset="50%"  stop-color="#221008"/>
-      <stop offset="100%" stop-color="#120804"/>
+      <stop offset="0%"   stop-color="#1E0E04"/>
+      <stop offset="50%"  stop-color="#2A1408"/>
+      <stop offset="100%" stop-color="#160A04"/>
     </linearGradient>
-    <radialGradient id="glow1" cx="20%" cy="20%" r="55%">
-      <stop offset="0%" stop-color="#D8A14A" stop-opacity="0.18"/>
+    <!-- Warm golden glow centre-top -->
+    <radialGradient id="glow1" cx="50%" cy="28%" r="40%">
+      <stop offset="0%" stop-color="#D8A14A" stop-opacity="0.28"/>
       <stop offset="100%" stop-color="#D8A14A" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="glow2" cx="80%" cy="80%" r="50%">
-      <stop offset="0%" stop-color="#7A5890" stop-opacity="0.16"/>
+    <!-- Plum glow centre-bottom -->
+    <radialGradient id="glow2" cx="50%" cy="72%" r="45%">
+      <stop offset="0%" stop-color="#7A5890" stop-opacity="0.22"/>
       <stop offset="100%" stop-color="#7A5890" stop-opacity="0"/>
     </radialGradient>
   </defs>
@@ -19,7 +22,7 @@
   <rect width="1200" height="1800" fill="url(#glow1)"/>
   <rect width="1200" height="1800" fill="url(#glow2)"/>
 
-  <!-- Corner brackets -->
+  <!-- Corner brackets — gold -->
   <line x1="60" y1="60" x2="220" y2="60"   stroke="#D8A14A" stroke-width="5" stroke-linecap="round"/>
   <line x1="60" y1="60" x2="60"  y2="220"  stroke="#D8A14A" stroke-width="5" stroke-linecap="round"/>
   <line x1="1140" y1="60"  x2="980"  y2="60"  stroke="#D8A14A" stroke-width="5" stroke-linecap="round"/>
@@ -29,26 +32,30 @@
   <line x1="1140" y1="1740" x2="980"  y2="1740" stroke="#D8A14A" stroke-width="5" stroke-linecap="round"/>
   <line x1="1140" y1="1740" x2="1140" y2="1580" stroke="#D8A14A" stroke-width="5" stroke-linecap="round"/>
 
-  <!-- FORK — drawn with absolute coords, centred at x=560 -->
-  <g stroke="#D8A14A" stroke-width="18" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <!-- 3 tines -->
-    <line x1="496" y1="160" x2="496" y2="320"/>
-    <line x1="556" y1="160" x2="556" y2="320"/>
-    <line x1="616" y1="160" x2="616" y2="320"/>
-    <!-- curved bridge -->
-    <path d="M496,320 Q496,370 556,375 Q616,370 616,320"/>
-    <!-- handle -->
-    <line x1="556" y1="375" x2="556" y2="530"/>
+  <!-- Gold circle behind logo — breaks darkness -->
+  <circle cx="600" cy="340" r="200" fill="none" stroke="#D8A14A" stroke-width="2" opacity="0.35"/>
+  <circle cx="600" cy="340" r="185" fill="#2E1A08" opacity="0.6"/>
+  <circle cx="600" cy="340" r="185" fill="none" stroke="#D8A14A" stroke-width="1" opacity="0.2"/>
+
+  <!-- FORK — centred in circle, gold stroke -->
+  <g stroke="#D8A14A" stroke-width="16" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="548" y1="200" x2="548" y2="320"/>
+    <line x1="600" y1="200" x2="600" y2="320"/>
+    <line x1="652" y1="200" x2="652" y2="320"/>
+    <path d="M548,320 Q548,365 600,370 Q652,365 652,320"/>
+    <line x1="600" y1="370" x2="600" y2="475"/>
   </g>
 
-  <!-- HEART — gold fill, to the right of fork -->
-  <path d="M740,305 C695,269 650,233 650,188 C650,125 704,125 740,161 C776,125 830,125 830,188 C830,233 785,269 740,305 Z"
-        fill="#E8A050"/>
+  <!-- HEART — plum/gold beside fork -->
+  <path d="M700,260 C700,232 724,218 742,228 C760,218 784,232 784,260 C784,288 742,318 742,318 C742,318 700,288 700,260 Z"
+        fill="#9E78B8"/>
 
-  <!-- Divider -->
-  <line x1="300" y1="590" x2="900" y2="590" stroke="#D8A14A" stroke-width="1.5" opacity="0.5"/>
+  <!-- Gold divider with plum diamond centre -->
+  <line x1="140" y1="590" x2="560" y2="590" stroke="#D8A14A" stroke-width="1.5" opacity="0.6"/>
+  <polygon points="600,578 614,590 600,602 586,590" fill="#9E78B8"/>
+  <line x1="640" y1="590" x2="1060" y2="590" stroke="#D8A14A" stroke-width="1.5" opacity="0.6"/>
 
-  <!-- DIDINA -->
+  <!-- DIDINA — warm cream -->
   <text x="600" y="760"
         text-anchor="middle"
         font-family="Georgia,'Times New Roman',serif"
@@ -57,7 +64,7 @@
         font-weight="bold"
         fill="#F0E8D8">Didina</text>
 
-  <!-- SoulFood -->
+  <!-- SoulFood — gold -->
   <text x="600" y="920"
         text-anchor="middle"
         font-family="Georgia,'Times New Roman',serif"
@@ -65,35 +72,43 @@
         font-size="138"
         fill="#D8A14A">SoulFood</text>
 
-  <!-- Rule -->
-  <line x1="130" y1="985" x2="1070" y2="985" stroke="#C9773A" stroke-width="1" opacity="0.4"/>
+  <!-- Plum band behind RIZNICA -->
+  <rect x="100" y="960" width="1000" height="110" fill="#4A2E6A" opacity="0.45" rx="4"/>
 
-  <!-- RIZNICA -->
-  <text x="600" y="1095"
+  <!-- RIZNICA — gold on plum -->
+  <text x="600" y="1050"
         text-anchor="middle"
         font-family="Georgia,'Times New Roman',serif"
-        font-size="86"
+        font-size="82"
         font-weight="bold"
-        fill="#C9773A"
-        letter-spacing="26">RIZNICA</text>
+        fill="#D8A14A"
+        letter-spacing="24">RIZNICA</text>
 
-  <!-- Subtitle -->
-  <text x="600" y="1205"
+  <!-- Gold rule below -->
+  <line x1="140" y1="1100" x2="560" y2="1100" stroke="#D8A14A" stroke-width="1.5" opacity="0.5"/>
+  <polygon points="600,1088 614,1100 600,1112 586,1100" fill="#C9773A"/>
+  <line x1="640" y1="1100" x2="1060" y2="1100" stroke="#D8A14A" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- Subtitle — warm muted -->
+  <text x="600" y="1210"
         text-anchor="middle"
         font-family="Georgia,'Times New Roman',serif"
         font-style="italic"
         font-size="52"
         fill="#C8A070"
-        opacity="0.70">recepti za svaki dan</text>
+        opacity="0.75">recepti za svaki dan</text>
 
-  <!-- Heart divider -->
-  <text x="600" y="1590" text-anchor="middle" font-size="38" fill="#E8A050" opacity="0.80">♥</text>
+  <!-- Plum rule before author -->
+  <line x1="200" y1="1560" x2="1000" y2="1560" stroke="#9E78B8" stroke-width="1.5" opacity="0.45"/>
+
+  <!-- Heart -->
+  <text x="600" y="1635" text-anchor="middle" font-size="38" fill="#E8A050">♥</text>
 
   <!-- Author -->
-  <text x="600" y="1678"
+  <text x="600" y="1710"
         text-anchor="middle"
         font-family="Georgia,'Times New Roman',serif"
-        font-size="54"
+        font-size="52"
         fill="#C8A070"
         letter-spacing="2">Dragana Stamenković</text>
 </svg>
