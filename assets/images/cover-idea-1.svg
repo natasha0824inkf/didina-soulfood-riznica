@@ -1,64 +1,128 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
-  <!-- Outer gold ring -->
-  <circle cx="80" cy="80" r="79" fill="#D8A14A"/>
-  <!-- Cream background -->
-  <circle cx="80" cy="80" r="73" fill="#F7F0E3"/>
-  <!-- Inner brown ring -->
-  <circle cx="80" cy="80" r="68" fill="none" stroke="#6B4F3A" stroke-width="1.5"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1800" width="1200" height="1800">
+  <defs>
+    <!-- Background gradient matching website hero -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#3D2010"/>
+      <stop offset="45%"  stop-color="#5A2E0E"/>
+      <stop offset="100%" stop-color="#2A1208"/>
+    </linearGradient>
+    <!-- Warm overlay blobs -->
+    <radialGradient id="blob1" cx="20%" cy="20%" r="50%">
+      <stop offset="0%" stop-color="#D8A14A" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#D8A14A" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="blob2" cx="80%" cy="75%" r="50%">
+      <stop offset="0%" stop-color="#7A5890" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#7A5890" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="blob3" cx="60%" cy="40%" r="40%">
+      <stop offset="0%" stop-color="#4FA83A" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#4FA83A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
 
-  <!-- Laurel left -->
-  <g fill="#8B7050" opacity="0.85">
-    <ellipse cx="43" cy="108" rx="9.5" ry="3.8" transform="rotate(-38 43 108)"/>
-    <ellipse cx="37" cy="97"  rx="9.5" ry="3.8" transform="rotate(-52 37 97)"/>
-    <ellipse cx="35" cy="85"  rx="9"   ry="3.5" transform="rotate(-68 35 85)"/>
-    <ellipse cx="39" cy="74"  rx="8.5" ry="3.2" transform="rotate(-80 39 74)"/>
-    <ellipse cx="47" cy="64"  rx="7.5" ry="3"   transform="rotate(-88 47 64)"/>
-  </g>
-  <!-- Laurel right (mirrored) -->
-  <g fill="#8B7050" opacity="0.85">
-    <ellipse cx="117" cy="108" rx="9.5" ry="3.8" transform="rotate(38 117 108)"/>
-    <ellipse cx="123" cy="97"  rx="9.5" ry="3.8" transform="rotate(52 123 97)"/>
-    <ellipse cx="125" cy="85"  rx="9"   ry="3.5" transform="rotate(68 125 85)"/>
-    <ellipse cx="121" cy="74"  rx="8.5" ry="3.2" transform="rotate(80 121 74)"/>
-    <ellipse cx="113" cy="64"  rx="7.5" ry="3"   transform="rotate(88 113 64)"/>
-  </g>
-  <!-- Laurel stems -->
-  <path d="M80 112 Q60 112 42 107" fill="none" stroke="#8B7050" stroke-width="1.2" opacity="0.7"/>
-  <path d="M80 112 Q100 112 118 107" fill="none" stroke="#8B7050" stroke-width="1.2" opacity="0.7"/>
+  <!-- Background -->
+  <rect width="1200" height="1800" fill="url(#bgGrad)"/>
+  <rect width="1200" height="1800" fill="url(#blob1)"/>
+  <rect width="1200" height="1800" fill="url(#blob2)"/>
+  <rect width="1200" height="1800" fill="url(#blob3)"/>
 
-  <!-- "Didina" -->
-  <text x="80" y="60"
+  <!-- Top border line -->
+  <line x1="80" y1="80" x2="1120" y2="80" stroke="#D8A14A" stroke-width="2" opacity="0.6"/>
+  <!-- Bottom border line -->
+  <line x1="80" y1="1720" x2="1120" y2="1720" stroke="#D8A14A" stroke-width="2" opacity="0.6"/>
+  <!-- Left border line -->
+  <line x1="80" y1="80" x2="80" y2="1720" stroke="#D8A14A" stroke-width="2" opacity="0.6"/>
+  <!-- Right border line -->
+  <line x1="1120" y1="80" x2="1120" y2="1720" stroke="#D8A14A" stroke-width="2" opacity="0.6"/>
+
+  <!-- Corner accents top-left -->
+  <line x1="80" y1="80" x2="200" y2="80"   stroke="#D8A14A" stroke-width="4" opacity="0.9"/>
+  <line x1="80" y1="80" x2="80"  y2="200"  stroke="#D8A14A" stroke-width="4" opacity="0.9"/>
+  <!-- Corner accents top-right -->
+  <line x1="1120" y1="80" x2="1000" y2="80"  stroke="#D8A14A" stroke-width="4" opacity="0.9"/>
+  <line x1="1120" y1="80" x2="1120" y2="200" stroke="#D8A14A" stroke-width="4" opacity="0.9"/>
+  <!-- Corner accents bottom-left -->
+  <line x1="80" y1="1720" x2="200"  y2="1720" stroke="#D8A14A" stroke-width="4" opacity="0.9"/>
+  <line x1="80" y1="1720" x2="80"   y2="1600" stroke="#D8A14A" stroke-width="4" opacity="0.9"/>
+  <!-- Corner accents bottom-right -->
+  <line x1="1120" y1="1720" x2="1000" y2="1720" stroke="#D8A14A" stroke-width="4" opacity="0.9"/>
+  <line x1="1120" y1="1720" x2="1120" y2="1600" stroke="#D8A14A" stroke-width="4" opacity="0.9"/>
+
+  <!-- Logo mark — fork + heart, scaled up, centered -->
+  <g transform="translate(600, 380) scale(14)" stroke="#D8A14A" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Fork -->
+    <g transform="translate(-3, -10)">
+      <line x1="-4" y1="-14" x2="-4" y2="-5"/>
+      <line x1="0"  y1="-14" x2="0"  y2="-5"/>
+      <line x1="4"  y1="-14" x2="4"  y2="-5"/>
+      <path d="M-4,-5 Q0,0 4,-5"/>
+      <line x1="0" y1="0" x2="0" y2="13"/>
+    </g>
+    <!-- Heart -->
+    <g transform="translate(8, -18) scale(0.55)">
+      <path d="M0,9 C-9,0 -14,-10 -7,-13 C-3,-15 0,-10 0,-10 C0,-10 3,-15 7,-13 C14,-10 9,0 0,9 Z"
+            fill="#D8A14A" stroke="none"/>
+    </g>
+  </g>
+
+  <!-- Decorative divider line above title -->
+  <line x1="300" y1="560" x2="900" y2="560" stroke="#D8A14A" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- DIDINA — main title -->
+  <text x="600" y="700"
         text-anchor="middle"
         font-family="Georgia,'Times New Roman',serif"
         font-style="italic"
-        font-size="24"
+        font-size="180"
         font-weight="bold"
-        fill="#4A2E14">Didina</text>
+        fill="#F7F1E7"
+        letter-spacing="-2">Didina</text>
 
-  <!-- "SoulFood" -->
-  <text x="80" y="82"
+  <!-- SoulFood -->
+  <text x="600" y="860"
         text-anchor="middle"
         font-family="Georgia,'Times New Roman',serif"
         font-style="italic"
-        font-size="19"
-        fill="#4A2E14">SoulFood</text>
+        font-size="130"
+        fill="#D8A14A"
+        letter-spacing="2">SoulFood</text>
 
-  <!-- Heart -->
-  <text x="80" y="97"
+  <!-- Thin divider -->
+  <line x1="200" y1="920" x2="1000" y2="920" stroke="#D8A14A" stroke-width="1" opacity="0.4"/>
+
+  <!-- RIZNICA -->
+  <text x="600" y="1020"
         text-anchor="middle"
-        font-size="11"
-        fill="#D8A14A">♥</text>
+        font-family="Georgia,'Times New Roman',serif"
+        font-size="90"
+        font-weight="bold"
+        fill="#C9773A"
+        letter-spacing="22">RIZNICA</text>
 
-  <!-- "RIZNICA" -->
-  <text x="80" y="113"
+  <!-- Subtitle -->
+  <text x="600" y="1140"
         text-anchor="middle"
-        font-family="Arial,Helvetica,sans-serif"
-        font-size="10.5"
-        letter-spacing="3.5"
-        fill="#6B4F3A"
-        font-weight="bold">RIZNICA</text>
+        font-family="Georgia,'Times New Roman',serif"
+        font-style="italic"
+        font-size="52"
+        fill="#F7F1E7"
+        opacity="0.65">recepti za svaki dan</text>
 
-  <!-- Flanking dashes on RIZNICA -->
-  <line x1="27" y1="107" x2="46" y2="107" stroke="#D8A14A" stroke-width="0.9"/>
-  <line x1="114" y1="107" x2="133" y2="107" stroke="#D8A14A" stroke-width="0.9"/>
+  <!-- Decorative dots -->
+  <circle cx="560" cy="1200" r="4" fill="#D8A14A" opacity="0.7"/>
+  <circle cx="600" cy="1200" r="4" fill="#D8A14A" opacity="0.7"/>
+  <circle cx="640" cy="1200" r="4" fill="#D8A14A" opacity="0.7"/>
+
+  <!-- Author name at bottom -->
+  <text x="600" y="1640"
+        text-anchor="middle"
+        font-family="Georgia,'Times New Roman',serif"
+        font-size="52"
+        fill="#F7F1E7"
+        opacity="0.55"
+        letter-spacing="3">Dragana Stamenković</text>
+
+  <!-- Small heart divider above author -->
+  <text x="600" y="1590" text-anchor="middle" font-size="32" fill="#D8A14A" opacity="0.7">♥</text>
 </svg>
