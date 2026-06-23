@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recepti – Didina SoulFood Riznica</title>
-  <meta name="description" content="Svi recepti — pretraži, filtriraj po kategoriji i sačuvaj omiljene.">
+  <title>O meni – Didina SoulFood Riznica</title>
+  <meta name="description" content="Upoznajte Didinu — kuvaricu iz ljubavi koja veruje da dobra hrana ne mora biti komplikovana.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=3">
-  <link rel="stylesheet" href="css/responsive.css?v=3cf9a6190cbe9bcaac87d5d1175130990935ae90">
+  <link rel="stylesheet" href="../css/style.css?v=3">
+  <link rel="stylesheet" href="../css/responsive.css">
   <script>if(localStorage.getItem('didina-theme')==='dark'||(!localStorage.getItem('didina-theme')&&window.matchMedia('(prefers-color-scheme:dark)').matches))document.documentElement.classList.add('dark-mode');</script>
   <style>.site-header{background:#6B4F3A;border-bottom:2px solid #D8A14A;position:sticky;top:0;z-index:100}.nav-links a{color:rgba(247,241,231,.72);border-bottom:2px solid transparent}.nav-links a.active{color:#D8A14A;border-bottom-color:#D8A14A;font-weight:600}html.dark-mode .site-header{background:#1A1208}</style>
 </head>
@@ -18,8 +18,8 @@
 <!-- HEADER -->
 <header class="site-header">
   <nav class="nav-container">
-    <a href="index.html" class="nav-logo" aria-label="Didina SoulFood Riznica">
-      <img src="assets/images/logo.svg?v=3cf9a6190cbe9bcaac87d5d1175130990935ae90" alt="" class="nav-logo-img" aria-hidden="true">
+    <a href="../index.html" class="nav-logo" aria-label="Didina SoulFood Riznica">
+      <img src="../assets/images/logo.svg" alt="" class="nav-logo-img" aria-hidden="true">
       <span class="nav-logo-main">Didina SoulFood Riznica</span>
     </a>
 
@@ -30,11 +30,11 @@
     </button>
 
     <ul class="nav-links" id="navLinks">
-      <li><a href="index.html"   data-i18n="nav_home">Početna</a></li>
-      <li><a href="recipes.html" class="active" data-i18n="nav_recipes">Recepti</a></li>
-      <li><a href="blog.html"    data-i18n="nav_blog">Blog</a></li>
-      <li><a href="about.html"   data-i18n="nav_about">O meni</a></li>
-      <li><a href="contact.html" data-i18n="nav_contact">Kontakt</a></li>
+      <li><a href="../index.html"   data-i18n="nav_home">Početna</a></li>
+      <li><a href="../recipes.html" data-i18n="nav_recipes">Recepti</a></li>
+      <li><a href="../blog.html"    data-i18n="nav_blog">Blog</a></li>
+      <li><a href="../about.html"   class="active" data-i18n="nav_about">O meni</a></li>
+      <li><a href="../contact.html" data-i18n="nav_contact">Kontakt</a></li>
     </ul>
 
     <div class="nav-right">
@@ -53,37 +53,58 @@
 </header>
 
 <!-- PAGE HERO -->
-<section class="page-hero page-hero-recipes">
-  <h1 data-i18n="page_recipes_title">Svi recepti</h1>
-  <p data-i18n="page_recipes_subtitle">Pronađite savršen recept za svaki trenutak dana</p>
+<section class="page-hero page-hero-about">
+  <h1 data-i18n="about_title">O Didi</h1>
+  <p data-i18n="about_subtitle">Kuvarica iz ljubavi, ne iz obaveze</p>
 </section>
 
-<!-- MAIN CONTENT -->
+<!-- ABOUT CONTENT -->
 <main class="section">
   <div class="container">
+    <div class="about-content">
 
-    <!-- SEARCH & FILTER -->
-    <div class="search-filter-bar">
-      <div class="search-input-wrapper">
-        <span class="search-icon">🔍</span>
-        <input
-          type="search"
-          class="search-input"
-          id="searchInput"
-          data-i18n-placeholder="search_placeholder"
-          placeholder="Pretraži recepte..."
-          autocomplete="off"
-          aria-label="Pretraži recepte"
-        >
+      <div class="about-block">
+        <h3>👋 <span data-i18n="about_story">Moja priča</span></h3>
+        <p data-i18n="about_p1">Zovem se Didi. Volim da kuvam, ali još više volim da pripremam hranu koja hrani dušu, greje srce i smeška se iznutra. Ova riznica nije nastala preko noći — nego kroz mnoga nedeljna jutra, tihe večeri uz šolju čaja, osmehe iz rerne i poneki eksperiment koji se nikad više nije ponovio.</p>
+        <p data-i18n="about_p2">Ovi recepti nisu samo za stomak — oni su za dane kad ti treba mir, za brza jutra, trenutke uz kafu ili kad ne znaš šta da pojedeš. Ovde nećeš naći komplikovane korake. Samo stvarne zalogaje — inspirisane sportom, jogom, letom, morem i onom večitom potrebom da svemu dodam šaku oraha.</p>
+        <p data-i18n="about_p3">Ovo nije kuvar iz studija nego iz života. Sve je poteklo iz moje kuhinje i lične kreativnosti. Uživajte u čitanju i isprobavanju!</p>
       </div>
-      <div class="filter-buttons" id="filterButtons" role="group" aria-label="Filtriraj po kategoriji"></div>
+
+      <div class="about-block">
+        <h3>🌿 <span data-i18n="about_philosophy">Moja filozofija kuvanja</span></h3>
+        <div class="values-grid">
+          <div class="value-item">
+            <div class="value-emoji">✨</div>
+            <div class="value-title" data-i18n="about_val1_title">Jednostavnost</div>
+            <div class="value-desc"  data-i18n="about_val1_desc">Recepti koji ne zahtevaju sat vremena ni specijalne sastojke</div>
+          </div>
+          <div class="value-item">
+            <div class="value-emoji">💛</div>
+            <div class="value-title" data-i18n="about_val2_title">Iskrenost</div>
+            <div class="value-desc"  data-i18n="about_val2_desc">Svako jelo ima priču i to je ono što ga čini posebnim</div>
+          </div>
+          <div class="value-item">
+            <div class="value-emoji">🌱</div>
+            <div class="value-title" data-i18n="about_val3_title">Briga o telu</div>
+            <div class="value-desc"  data-i18n="about_val3_desc">Hrana koja hrani i telo i dušu, bez krivice</div>
+          </div>
+          <div class="value-item">
+            <div class="value-emoji">🎶</div>
+            <div class="value-title" data-i18n="about_val4_title">Radost</div>
+            <div class="value-desc"  data-i18n="about_val4_desc">Kuvanje kao meditacija, a ne obaveza</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-block" style="text-align:center">
+        <p style="font-size:1.15rem;font-style:italic;color:var(--text-mid);margin-bottom:.6rem" data-i18n="didi_motto">
+          „Ne brojite kalorije, brojite vaše osmehe i korake."
+        </p>
+        <p style="font-size:.9rem;color:var(--text-light);margin-bottom:1.75rem">— Didi</p>
+        <a href="../recipes.html" class="hero-cta" style="background:var(--coral);color:#fff;font-size:.95rem;padding:.75rem 2rem;display:inline-block" data-i18n="all_recipes">Svi recepti</a>
+      </div>
+
     </div>
-
-    <p class="results-info" id="resultsInfo"></p>
-
-    <!-- RECIPE GRID -->
-    <div class="recipe-grid" id="recipeGrid" aria-live="polite"></div>
-
   </div>
 </main>
 
@@ -94,12 +115,12 @@
     <p class="footer-tagline" data-i18n="footer_text">Napravljeno s ljubavlju za sve koji veruju da je hrana jezik duše.</p>
     <div class="footer-divider"></div>
     <nav class="footer-nav">
-      <a href="index.html"   data-i18n="nav_home">Početna</a>
-      <a href="recipes.html" data-i18n="nav_recipes">Recepti</a>
-      <a href="blog.html"    data-i18n="nav_blog">Blog</a>
-      <a href="about.html"   data-i18n="nav_about">O meni</a>
-      <a href="contact.html" data-i18n="nav_contact">Kontakt</a>
-      <a href="privacy.html" data-i18n="nav_privacy">Privatnost</a>
+      <a href="../index.html"   data-i18n="nav_home">Početna</a>
+      <a href="../recipes.html" data-i18n="nav_recipes">Recepti</a>
+      <a href="../blog.html"    data-i18n="nav_blog">Blog</a>
+      <a href="../about.html"   data-i18n="nav_about">O meni</a>
+      <a href="../contact.html" data-i18n="nav_contact">Kontakt</a>
+      <a href="../privacy.html" data-i18n="nav_privacy">Privatnost</a>
     </nav>
     <div class="footer-social">
       <a href="https://www.instagram.com/didinasoulfoodriznica" target="_blank" rel="noopener" class="footer-social-link">
@@ -160,8 +181,8 @@
   </div>
 </div>
 
-<script src="js/translations.js?v=3"></script>
-<script src="js/recipes-data.js?v=3cf9a6190cbe9bcaac87d5d1175130990935ae90"></script>
-<script src="js/main.js?v=3"></script>
+<script src="../js/translations.js?v=3"></script>
+<script src="../js/recipes-data.js"></script>
+<script src="../js/main.js?v=3"></script>
 </body>
 </html>

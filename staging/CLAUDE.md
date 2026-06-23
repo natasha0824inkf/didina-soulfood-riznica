@@ -4,16 +4,17 @@
 
 | Repo | Owner | Role |
 |------|-------|------|
-| `natasha0824inkf/didina-soulfood-riznica` | Natasha | **Staging** — active development, feature branches, PRs |
-| `didina-soulfood/riznica` | Dragana (org) | **Preprod / Production** — receives every push to `main` via dual remote |
+| `natasha0824inkf/didina-soulfood-riznica` | Natasha | Hosts both **Staging** (`/staging/`) and **Preprod** (root) |
+| `didina-soulfood/riznica` | Dragana (org) | **Production** — receives every push to `main` via sync workflow |
 
 **URLs:**
-- Staging: `https://natasha0824inkf.github.io/didina-soulfood-riznica`
-- Production: `https://didina-soulfood.github.io/riznica`
+- Staging (testing): `https://natasha0824inkf.github.io/didina-soulfood-riznica/staging/`
+- Preprod (Natasha's original site): `https://natasha0824inkf.github.io/didina-soulfood-riznica/`
+- Production (Dragana's live site): `https://didina-soulfood.github.io/riznica/`
 
 ## Branch strategy
 
-- `main` — stable, deploys to **both** staging and preprod on every push
+- `main` — stable, deploys to preprod and prod on every push
 - `claude/*` — AI-assisted feature branches (e.g. `claude/friendly-cray-sha9s`)
 - `feature/*` — manual feature branches
 - All work goes via PR into `main`; direct pushes to `main` only for hotfixes
@@ -24,7 +25,7 @@ Every `git push` goes to both remotes simultaneously:
 
 ```
 git push
-  └──► natasha0824inkf/didina-soulfood-riznica  (staging)
+  └──► natasha0824inkf/didina-soulfood-riznica  (preprod)
   └──► didina-soulfood/riznica                  (production)
 ```
 

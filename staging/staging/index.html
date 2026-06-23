@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recepti – Didina SoulFood Riznica</title>
-  <meta name="description" content="Svi recepti — pretraži, filtriraj po kategoriji i sačuvaj omiljene.">
+  <title>Didina SoulFood Riznica</title>
+  <meta name="description" content="Jednostavni recepti s dušom — za ljude koji vole hranu koja ih voli za uzvrat.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=3">
-  <link rel="stylesheet" href="css/responsive.css?v=3cf9a6190cbe9bcaac87d5d1175130990935ae90">
+  <link rel="stylesheet" href="../css/style.css?v=3">
+  <link rel="stylesheet" href="../css/responsive.css">
   <script>if(localStorage.getItem('didina-theme')==='dark'||(!localStorage.getItem('didina-theme')&&window.matchMedia('(prefers-color-scheme:dark)').matches))document.documentElement.classList.add('dark-mode');</script>
   <style>.site-header{background:#6B4F3A;border-bottom:2px solid #D8A14A;position:sticky;top:0;z-index:100}.nav-links a{color:rgba(247,241,231,.72);border-bottom:2px solid transparent}.nav-links a.active{color:#D8A14A;border-bottom-color:#D8A14A;font-weight:600}html.dark-mode .site-header{background:#1A1208}</style>
 </head>
@@ -18,8 +18,8 @@
 <!-- HEADER -->
 <header class="site-header">
   <nav class="nav-container">
-    <a href="index.html" class="nav-logo" aria-label="Didina SoulFood Riznica">
-      <img src="assets/images/logo.svg?v=3cf9a6190cbe9bcaac87d5d1175130990935ae90" alt="" class="nav-logo-img" aria-hidden="true">
+    <a href="../index.html" class="nav-logo" aria-label="Didina SoulFood Riznica">
+      <img src="../assets/images/logo.svg" alt="" class="nav-logo-img" aria-hidden="true">
       <span class="nav-logo-main">Didina SoulFood Riznica</span>
     </a>
 
@@ -30,62 +30,90 @@
     </button>
 
     <ul class="nav-links" id="navLinks">
-      <li><a href="index.html"   data-i18n="nav_home">Početna</a></li>
-      <li><a href="recipes.html" class="active" data-i18n="nav_recipes">Recepti</a></li>
-      <li><a href="blog.html"    data-i18n="nav_blog">Blog</a></li>
-      <li><a href="about.html"   data-i18n="nav_about">O meni</a></li>
-      <li><a href="contact.html" data-i18n="nav_contact">Kontakt</a></li>
+      <li><a href="../index.html"   class="active" data-i18n="nav_home">Početna</a></li>
+      <li><a href="../recipes.html" data-i18n="nav_recipes">Recepti</a></li>
+      <li><a href="../blog.html"    data-i18n="nav_blog">Blog</a></li>
+      <li><a href="../about.html"   data-i18n="nav_about">O meni</a></li>
+      <li><a href="../contact.html" data-i18n="nav_contact">Kontakt</a></li>
     </ul>
 
     <div class="nav-right">
-      <div class="lang-switcher">
+      <div class="lang-switcher" role="group" aria-label="Izbor jezika">
         <button class="lang-btn active" data-lang="sr">SR</button>
         <button class="lang-btn"        data-lang="de">DE</button>
         <button class="lang-btn"        data-lang="en">EN</button>
       </div>
       <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
-      <button class="favorites-btn">
+      <button class="favorites-btn" aria-label="Omiljeni recepti">
         🤍 <span class="favorites-btn-label" data-i18n="nav_favorites">Omiljeni</span>
-        <span class="fav-count">0</span>
+        <span class="fav-count" aria-live="polite">0</span>
       </button>
     </div>
   </nav>
 </header>
 
-<!-- PAGE HERO -->
-<section class="page-hero page-hero-recipes">
-  <h1 data-i18n="page_recipes_title">Svi recepti</h1>
-  <p data-i18n="page_recipes_subtitle">Pronađite savršen recept za svaki trenutak dana</p>
+<!-- HERO -->
+<section class="hero" aria-label="Naslovna sekcija">
+  <div class="hero-content">
+    <h1 data-i18n="hero_title">Didina SoulFood Riznica</h1>
+    <p class="hero-subtitle" data-i18n="hero_subtitle">Jednostavni recepti sa dušom — za ljude koji vole hranu koja ih voli za uzvrat.</p>
+    <a href="../recipes.html" class="hero-cta" data-i18n="hero_cta">Istraži recepte</a>
+  </div>
 </section>
 
-<!-- MAIN CONTENT -->
-<main class="section">
+<!-- FEATURED RECIPES -->
+<section class="section" aria-labelledby="featured-heading">
   <div class="container">
-
-    <!-- SEARCH & FILTER -->
-    <div class="search-filter-bar">
-      <div class="search-input-wrapper">
-        <span class="search-icon">🔍</span>
-        <input
-          type="search"
-          class="search-input"
-          id="searchInput"
-          data-i18n-placeholder="search_placeholder"
-          placeholder="Pretraži recepte..."
-          autocomplete="off"
-          aria-label="Pretraži recepte"
-        >
-      </div>
-      <div class="filter-buttons" id="filterButtons" role="group" aria-label="Filtriraj po kategoriji"></div>
+    <div class="section-title">
+      <h2 id="featured-heading" data-i18n="featured_title">Izdvojeni recepti</h2>
     </div>
-
-    <p class="results-info" id="resultsInfo"></p>
-
-    <!-- RECIPE GRID -->
-    <div class="recipe-grid" id="recipeGrid" aria-live="polite"></div>
-
+    <div class="recipe-grid" id="featuredGrid"></div>
+    <div style="text-align:center;margin-top:2rem">
+      <a href="../recipes.html" class="hero-cta" style="background:var(--coral);color:#fff;font-size:.95rem;padding:.75rem 2rem" data-i18n="all_recipes">Svi recepti</a>
+    </div>
   </div>
-</main>
+</section>
+
+<!-- BOOK BANNER + NEWSLETTER -->
+<section class="section">
+  <div class="container">
+    <div class="book-banner">
+      <div class="book-banner-emoji">📖</div>
+      <div class="book-banner-badge" data-i18n="book_coming">Uskoro</div>
+      <h3 data-i18n="book_title">Didina SoulFood Riznica — knjiga</h3>
+      <p data-i18n="book_desc">Svi ovi recepti, i još mnogo toga, uskoro u štampanom obliku. Prijavite se za newsletter da budete prvi koji saznaju.</p>
+    </div>
+    <div class="newsletter-section">
+      <h3 data-i18n="newsletter_title">Ostanite u toku</h3>
+      <p data-i18n="newsletter_desc">Novi recepti, sezonske ideje i vesti — direktno u inbox.</p>
+      <form class="newsletter-form" id="newsletterForm"
+            action="https://eb92a696.sibforms.com/serve/MUIFAGXu94i9D2QQ5jR-Qjcvk4MVfoaoygqavVBzCMRGrN1Sqe7NfbIPwDa6KX-HvH9jy64xAz7p64oKqjLAlu5ovxohrv1cCenYD87ufhIxVWDrsSMSn0PX7lXCXqE3oVmXvrT_IcNHjbF0oym_rbLPWKLBYOM3co8CvXkrEFKQng_N7F0YDfx6w3V8X10mFSnl43spb4FARf40Ow=="
+            method="POST"
+            data-type="subscription">
+        <input type="email" class="newsletter-input" name="EMAIL"
+               data-i18n-placeholder="newsletter_placeholder" placeholder="Vaša email adresa" required>
+        <input type="text" name="email_address_check" value="" style="display:none">
+        <input type="hidden" name="locale" value="de">
+        <div class="form-success newsletter-success" id="newsletterSuccess" role="alert" style="display:none"></div>
+        <label class="newsletter-gdpr">
+          <input type="checkbox" name="CAPTCHA" value="1" required>
+          <span data-i18n="newsletter_gdpr">Slažem se da primam newsletter i prihvatam politiku privatnosti.</span>
+        </label>
+        <button type="submit" class="newsletter-btn" data-i18n="newsletter_btn">Prijavi se</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="section" style="background:var(--warm-white)" aria-labelledby="categories-heading">
+  <div class="container">
+    <div class="section-title">
+      <h2 id="categories-heading" data-i18n="categories_title">Kategorije recepata</h2>
+    </div>
+    <div class="categories-grid" id="categoriesGrid"></div>
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer class="site-footer">
@@ -93,13 +121,13 @@
     <div class="footer-logo">Didina SoulFood Riznica</div>
     <p class="footer-tagline" data-i18n="footer_text">Napravljeno s ljubavlju za sve koji veruju da je hrana jezik duše.</p>
     <div class="footer-divider"></div>
-    <nav class="footer-nav">
-      <a href="index.html"   data-i18n="nav_home">Početna</a>
-      <a href="recipes.html" data-i18n="nav_recipes">Recepti</a>
-      <a href="blog.html"    data-i18n="nav_blog">Blog</a>
-      <a href="about.html"   data-i18n="nav_about">O meni</a>
-      <a href="contact.html" data-i18n="nav_contact">Kontakt</a>
-      <a href="privacy.html" data-i18n="nav_privacy">Privatnost</a>
+    <nav class="footer-nav" aria-label="Footer navigacija">
+      <a href="../index.html"   data-i18n="nav_home">Početna</a>
+      <a href="../recipes.html" data-i18n="nav_recipes">Recepti</a>
+      <a href="../blog.html"    data-i18n="nav_blog">Blog</a>
+      <a href="../about.html"   data-i18n="nav_about">O meni</a>
+      <a href="../contact.html" data-i18n="nav_contact">Kontakt</a>
+      <a href="../privacy.html" data-i18n="nav_privacy">Privatnost</a>
     </nav>
     <div class="footer-social">
       <a href="https://www.instagram.com/didinasoulfoodriznica" target="_blank" rel="noopener" class="footer-social-link">
@@ -123,10 +151,10 @@
 </footer>
 
 <!-- FAVORITES PANEL -->
-<aside class="favorites-panel" id="favoritesPanel">
+<aside class="favorites-panel" id="favoritesPanel" aria-label="Omiljeni recepti">
   <div class="favorites-panel-header">
     <span class="favorites-panel-title" data-i18n="favorites_title">Moji omiljeni recepti</span>
-    <button class="close-favorites-btn" id="closeFavPanel">×</button>
+    <button class="close-favorites-btn" id="closeFavPanel" aria-label="Zatvori">×</button>
   </div>
   <div class="favorites-list" id="favoritesList"></div>
 </aside>
@@ -135,7 +163,7 @@
 <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
   <div class="modal" tabindex="-1">
     <div class="modal-header">
-      <button class="modal-close" id="closeModal" aria-label="Zatvori">×</button>
+      <button class="modal-close" id="closeModal" aria-label="Zatvori recept">×</button>
       <div class="modal-category-badge" id="modalCategory"></div>
       <h2 class="modal-title" id="modalTitle"></h2>
       <p class="modal-subtitle" id="modalSubtitle"></p>
@@ -160,8 +188,8 @@
   </div>
 </div>
 
-<script src="js/translations.js?v=3"></script>
-<script src="js/recipes-data.js?v=3cf9a6190cbe9bcaac87d5d1175130990935ae90"></script>
-<script src="js/main.js?v=3"></script>
+<script src="../js/translations.js?v=3"></script>
+<script src="../js/recipes-data.js"></script>
+<script src="../js/main.js?v=3"></script>
 </body>
 </html>

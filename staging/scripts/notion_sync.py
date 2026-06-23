@@ -12,6 +12,7 @@ import re
 import sys
 import html
 import json
+import hashlib
 import unicodedata
 import requests
 from datetime import datetime
@@ -20,6 +21,7 @@ from pathlib import Path
 NOTION_TOKEN = re.sub(r'\s', '', os.environ["NOTION_TOKEN"])
 NOTION_DB_ID = re.sub(r'\s', '', os.environ["NOTION_DB_ID"])
 REPO_ROOT = Path(__file__).parent.parent
+TRANSLATION_CACHE = REPO_ROOT / "scripts" / "translation_cache.json"
 
 HEADERS = {
     "Authorization": f"Bearer {NOTION_TOKEN}",
@@ -122,7 +124,7 @@ def download_image(url, slug, idx):
         except Exception as e:
             print(f"  Warning: could not download image: {e}", file=sys.stderr)
             return None
-    return f"../assets/images/blog/{filename}"
+    return f"../../assets/images/blog/{filename}"
 
 
 def blocks_to_html(blocks, slug="post"):
@@ -304,6 +306,158 @@ def ensure_db_properties():
             print(f"  Warning: could not add properties: {patch.status_code} {patch.text}", file=sys.stderr)
 
 
+def load_cache():
+    if TRANSLATION_CACHE.exists():
+        return json.loads(TRANSLATION_CACHE.read_text())
+    return {}
+
+
+def save_cache(cache):
+    TRANSLATION_CACHE.write_text(json.dumps(cache, ensure_ascii=False, indent=2))
+
+
+POST_REGISTRY = REPO_ROOT / "scripts" / "post_registry.json"
+
+def load_registry():
+    if POST_REGISTRY.exists():
+        return json.loads(POST_REGISTRY.read_text())
+    return {}
+
+def save_registry(registry):
+    POST_REGISTRY.write_text(json.dumps(registry, ensure_ascii=False, indent=2))
+
+def extract_post_metadata(html_content, slug):
+    """Parse metadata from an existing blog/slug/index.html for the registry."""
+    meta = {"source": "manual", "slug": slug}
+
+    m = re.search(r'article:published_time" content="([^"]+)"', html_content)
+    meta["date"] = m.group(1) if m else ""
+
+    # SR section
+    sr_match = re.search(r'<!-- SR -->\s*<div data-lang-content="sr">(.*?)<!-- DE -->', html_content, re.DOTALL)
+    if sr_match:
+        sr_html = sr_match.group(1)
+        m = re.search(r'<h1 class="blog-post-title">([^<]+)</h1>', sr_html)
+        meta["sr_title"] = m.group(1).strip() if m else slug
+        m = re.search(r'<div class="blog-post-tag">([^<]+)</div>', sr_html)
+        meta["sr_tags"] = m.group(1).strip() if m else ""
+        meta["sr_excerpt"] = first_paragraph(sr_html)
+    else:
+        meta.update({"sr_title": slug, "sr_tags": "", "sr_excerpt": ""})
+
+    meta["sr_date"] = format_date(meta["date"], "SR") if meta["date"] else ""
+
+    # DE section
+    de_match = re.search(r'<!-- DE -->\s*<div data-lang-content="de" hidden>(.*?)<!-- EN -->', html_content, re.DOTALL)
+    if de_match:
+        de_html = de_match.group(1)
+        m = re.search(r'<h1 class="blog-post-title">([^<]+)</h1>', de_html)
+        meta["de_title"] = m.group(1).strip() if m else meta["sr_title"]
+        meta["de_excerpt"] = first_paragraph(de_html)
+    else:
+        meta.update({"de_title": meta["sr_title"], "de_excerpt": meta["sr_excerpt"]})
+
+    meta["de_tags"] = meta["sr_tags"]
+    meta["de_date"] = format_date(meta["date"], "DE") if meta["date"] else ""
+
+    # EN section
+    en_match = re.search(r'<!-- EN -->\s*<div data-lang-content="en" hidden>(.*?)<div class="blog-post-share">', html_content, re.DOTALL)
+    if en_match:
+        en_html = en_match.group(1)
+        m = re.search(r'<h1 class="blog-post-title">([^<]+)</h1>', en_html)
+        meta["en_title"] = m.group(1).strip() if m else meta["sr_title"]
+        meta["en_excerpt"] = first_paragraph(en_html)
+    else:
+        meta.update({"en_title": meta["sr_title"], "en_excerpt": meta["sr_excerpt"]})
+
+    meta["en_tags"] = meta["sr_tags"]
+    meta["en_date"] = format_date(meta["date"], "EN") if meta["date"] else ""
+
+    return meta
+
+
+def _sr_hash(text):
+    return hashlib.md5(text.encode()).hexdigest()[:12]
+
+
+def _mymemory_call(text, target_lang):
+    """Single MyMemory API call. Returns original text on failure."""
+    try:
+        res = requests.get(
+            "https://api.mymemory.translated.net/get",
+            params={"q": text, "langpair": f"sr|{target_lang}", "de": "nevenaneks@gmail.com"},
+            timeout=20,
+        )
+        if not res.ok:
+            return text
+        data = res.json()
+        if data.get("responseStatus") == 200:
+            return data["responseData"]["translatedText"]
+        return text
+    except Exception as e:
+        print(f"  Warning: MyMemory error: {e}", file=sys.stderr)
+        return text
+
+
+def mymemory_translate(text, target_lang):
+    """Translate SR text to target_lang via MyMemory (free, no key needed). Chunks long text."""
+    if not text or not text.strip():
+        return ""
+    MAX = 1500
+    if len(text) <= MAX:
+        return _mymemory_call(text, target_lang)
+    parts = re.split(r'(?<=[.!?])\s+', text)
+    chunks, current = [], ""
+    for part in parts:
+        if len(current) + len(part) + 1 > MAX and current:
+            chunks.append(current.strip())
+            current = part
+        else:
+            current = (current + " " + part).strip()
+    if current:
+        chunks.append(current)
+    return " ".join(_mymemory_call(c, target_lang) for c in chunks)
+
+
+def translate_html_body(html_str, target_lang):
+    """Translate visible text inside HTML block elements, preserving structure."""
+    if not html_str:
+        return ""
+    pattern = re.compile(r'([ \t]*)<(p|h[1-3]|li|blockquote)>(.*?)</\2>\n', re.DOTALL)
+
+    def replace(m):
+        indent, tag, inner = m.group(1), m.group(2), m.group(3)
+        plain = html.unescape(re.sub(r'<[^>]+>', '', inner)).strip()
+        if not plain:
+            return m.group(0)
+        translated = mymemory_translate(plain, target_lang)
+        return f'{indent}<{tag}>{html.escape(translated)}</{tag}>\n'
+
+    return pattern.sub(replace, html_str)
+
+
+def auto_translate(slug, sr_title, sr_body, cache):
+    """
+    Return (de_title, de_body, en_title, en_body) from cache or via MyMemory.
+    Only translates when SR content has changed since last sync.
+    """
+    h = _sr_hash(sr_title + sr_body)
+    entry = cache.get(slug, {})
+
+    if entry.get("hash") == h:
+        return entry.get("de_title",""), entry.get("de_body",""), entry.get("en_title",""), entry.get("en_body","")
+
+    print(f"  Translating {slug} via MyMemory...")
+    de_title = mymemory_translate(sr_title, "de")
+    en_title = mymemory_translate(sr_title, "en")
+    de_body  = translate_html_body(sr_body, "de") if sr_body else ""
+    en_body  = translate_html_body(sr_body, "en") if sr_body else ""
+
+    cache[slug] = {"hash": h, "de_title": de_title, "de_body": de_body, "en_title": en_title, "en_body": en_body}
+    save_cache(cache)
+    return de_title, de_body, en_title, en_body
+
+
 def query_database():
     url = f"https://api.notion.com/v1/databases/{NOTION_DB_ID}/query"
     payload = {"filter": {"property": "Status", "status": {"equals": "Published"}}}
@@ -351,8 +505,8 @@ def render_post(slug, versions):
     en_date  = format_date(date_raw, "EN")
 
     sr_body  = v(sr, "body")
-    de_body  = v(de, "body")
-    en_body  = v(en, "body")
+    de_body  = v(de, "body", sr_body)
+    en_body  = v(en, "body", sr_body)
 
     meta_desc = first_paragraph(sr_body)
 
@@ -391,8 +545,8 @@ def render_post(slug, versions):
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/responsive.css">
   <script>if(localStorage.getItem('didina-theme')==='dark'||(!localStorage.getItem('didina-theme')&&window.matchMedia('(prefers-color-scheme:dark)').matches))document.documentElement.classList.add('dark-mode');</script>
   <style>.site-header{{background:#6B4F3A;border-bottom:2px solid #D8A14A;position:sticky;top:0;z-index:100}}.nav-links a{{color:rgba(247,241,231,.72);border-bottom:2px solid transparent}}.nav-links a.active{{color:#D8A14A;border-bottom-color:#D8A14A;font-weight:600}}html.dark-mode .site-header{{background:#1A1208}}</style>
 </head>
@@ -400,8 +554,8 @@ def render_post(slug, versions):
 
 <header class="site-header">
   <nav class="nav-container">
-    <a href="../index.html" class="nav-logo" aria-label="Didina SoulFood Riznica">
-      <img src="../assets/images/logo.svg" alt="" class="nav-logo-img" aria-hidden="true">
+    <a href="../../index.html" class="nav-logo" aria-label="Didina SoulFood Riznica">
+      <img src="../../assets/images/logo.svg" alt="" class="nav-logo-img" aria-hidden="true">
       <span class="nav-logo-main">Didina SoulFood Riznica</span>
     </a>
     <button class="hamburger" id="hamburger" aria-label="Meni" aria-expanded="false">
@@ -410,11 +564,11 @@ def render_post(slug, versions):
       <span class="hamburger-line"></span>
     </button>
     <ul class="nav-links" id="navLinks">
-      <li><a href="../index.html"   data-i18n="nav_home">Početna</a></li>
-      <li><a href="../recipes.html" data-i18n="nav_recipes">Recepti</a></li>
-      <li><a href="../blog.html"    class="active" data-i18n="nav_blog">Blog</a></li>
-      <li><a href="../about.html"   data-i18n="nav_about">O meni</a></li>
-      <li><a href="../contact.html" data-i18n="nav_contact">Kontakt</a></li>
+      <li><a href="../../index.html"   data-i18n="nav_home">Početna</a></li>
+      <li><a href="../../recipes.html" data-i18n="nav_recipes">Recepti</a></li>
+      <li><a href="../../blog.html"    class="active" data-i18n="nav_blog">Blog</a></li>
+      <li><a href="../../about.html"   data-i18n="nav_about">O meni</a></li>
+      <li><a href="../../contact.html" data-i18n="nav_contact">Kontakt</a></li>
     </ul>
     <div class="nav-right">
       <div class="lang-switcher">
@@ -434,7 +588,7 @@ def render_post(slug, versions):
 <main>
   <article class="blog-post">
 
-    <a href="../blog.html" class="blog-post-back">← <span data-i18n="blog_back">Nazad na blog</span></a>
+    <a href="../../blog.html" class="blog-post-back">← <span data-i18n="blog_back">Nazad na blog</span></a>
 
     <!-- SR -->
     <div data-lang-content="sr">
@@ -486,11 +640,11 @@ def render_post(slug, versions):
     <p class="footer-tagline" data-i18n="footer_text">Napravljeno s ljubavlju za sve koji veruju da je hrana jezik duše.</p>
     <div class="footer-divider"></div>
     <nav class="footer-nav">
-      <a href="../index.html"   data-i18n="nav_home">Početna</a>
-      <a href="../recipes.html" data-i18n="nav_recipes">Recepti</a>
-      <a href="../blog.html"    data-i18n="nav_blog">Blog</a>
-      <a href="../about.html"   data-i18n="nav_about">O meni</a>
-      <a href="../contact.html" data-i18n="nav_contact">Kontakt</a>
+      <a href="../../index.html"   data-i18n="nav_home">Početna</a>
+      <a href="../../recipes.html" data-i18n="nav_recipes">Recepti</a>
+      <a href="../../blog.html"    data-i18n="nav_blog">Blog</a>
+      <a href="../../about.html"   data-i18n="nav_about">O meni</a>
+      <a href="../../contact.html" data-i18n="nav_contact">Kontakt</a>
     </nav>
     <p class="footer-copy">© 2026 Dragana Stamenković – Didi · Didina SoulFood Riznica. <span data-i18n="footer_rights">Sva prava zadržana.</span></p>
   </div>
@@ -525,9 +679,9 @@ def render_post(slug, versions):
   </div>
 </div>
 
-<script src="../js/translations.js"></script>
-<script src="../js/recipes-data.js"></script>
-<script src="../js/main.js"></script>
+<script src="../../js/translations.js"></script>
+<script src="../../js/recipes-data.js"></script>
+<script src="../../js/main.js"></script>
 <script>
   document.getElementById('shareBtn')?.addEventListener('click', () => {{
     if (navigator.share) {{
@@ -541,26 +695,19 @@ def render_post(slug, versions):
 </html>'''
 
 
-def render_card(slug, versions, date_raw):
-    sr = versions.get("SR", {})
-    de = versions.get("DE", {})
-    en = versions.get("EN", {})
-
-    sr_title   = sr.get("title", "")
-    de_title   = de.get("title", sr_title)
-    en_title   = en.get("title", sr_title)
-
-    sr_tags    = sr.get("tags", "")
-    de_tags    = de.get("tags", sr_tags)
-    en_tags    = en.get("tags", sr_tags)
-
-    sr_excerpt = first_paragraph(sr.get("body", ""))
-    de_excerpt = first_paragraph(de.get("body", ""))
-    en_excerpt = first_paragraph(en.get("body", ""))
-
-    sr_date    = format_date(date_raw, "SR")
-    de_date    = format_date(date_raw, "DE")
-    en_date    = format_date(date_raw, "EN")
+def render_card(slug, entry):
+    sr_title   = entry.get("sr_title", slug)
+    de_title   = entry.get("de_title", sr_title)
+    en_title   = entry.get("en_title", sr_title)
+    sr_tags    = entry.get("sr_tags", "")
+    de_tags    = entry.get("de_tags", sr_tags)
+    en_tags    = entry.get("en_tags", sr_tags)
+    sr_excerpt = entry.get("sr_excerpt", "")
+    de_excerpt = entry.get("de_excerpt", sr_excerpt)
+    en_excerpt = entry.get("en_excerpt", sr_excerpt)
+    sr_date    = entry.get("sr_date", "")
+    de_date    = entry.get("de_date", sr_date)
+    en_date    = entry.get("en_date", sr_date)
 
     return f'''
       <!-- Post: {slug} -->
@@ -588,7 +735,7 @@ def render_card(slug, versions, date_raw):
               <span data-lang-content="de" hidden>{de_date}</span>
               <span data-lang-content="en" hidden>{en_date}</span>
             </span>
-            <a href="blog/{slug}.html" class="blog-read-more" data-i18n="blog_read_more">Čitaj dalje</a>
+            <a href="blog/{slug}/" class="blog-read-more" data-i18n="blog_read_more">Čitaj dalje</a>
           </div>
         </div>
       </article>'''
@@ -620,8 +767,9 @@ def main():
     pages = query_database()
     print(f"Found {len(pages)} published entries")
 
-    posts = {}   # slug → {versions, date}  — new single-row mode
-    legacy = {}  # slug → {versions, date}  — old 3-row mode (Language select set)
+    posts = {}
+    legacy = {}
+    trans_cache = load_cache()
 
     for page in pages:
         sr_title_raw = get_prop(page, "Title", "title")
@@ -633,7 +781,6 @@ def main():
         lang = get_prop(page, "Language", "select").upper()
 
         if lang in ("SR", "DE", "EN"):
-            # ── Legacy mode: one row per language, grouped by slug ────────────
             if slug not in legacy:
                 legacy[slug] = {"versions": {}, "date": get_prop(page, "Date", "date")}
             blocks = get_page_blocks(page["id"])
@@ -644,56 +791,93 @@ def main():
                 "body":  blocks_to_html(blocks, slug),
             }
             print(f"  [legacy] {slug} / {lang}")
-
         else:
-            # ── New mode: single row, language content in toggle blocks ───────
-            # Minimum required: just a title. Everything else is optional.
             sr_title = sr_title_raw
             de_title = get_prop(page, "Title DE", "text") or sr_title
             en_title = get_prop(page, "Title EN", "text") or sr_title
             tags     = get_prop(page, "Tags", "multi_select")
-            # Date falls back to page creation time if not set
             date_raw = get_prop(page, "Date", "date") or page.get("created_time", "")[:10]
 
             all_blocks = get_page_blocks(page["id"])
             bodies = find_language_sections(all_blocks, slug)
 
+            at_de_title, at_de_body, at_en_title, at_en_body = auto_translate(
+                slug, sr_title, bodies["SR"], trans_cache
+            )
+            de_title = get_prop(page, "Title DE", "text") or at_de_title or sr_title
+            en_title = get_prop(page, "Title EN", "text") or at_en_title or sr_title
+
             posts[slug] = {
                 "versions": {
                     "SR": {"title": sr_title, "tags": tags, "date": date_raw, "body": bodies["SR"]},
-                    "DE": {"title": de_title, "tags": tags, "date": date_raw, "body": bodies["DE"]},
-                    "EN": {"title": en_title, "tags": tags, "date": date_raw, "body": bodies["EN"]},
+                    "DE": {"title": de_title, "tags": tags, "date": date_raw, "body": bodies["DE"] or at_de_body},
+                    "EN": {"title": en_title, "tags": tags, "date": date_raw, "body": bodies["EN"] or at_en_body},
                 },
                 "date": date_raw,
             }
             print(f"  [new]    {slug}")
 
-    # Legacy posts take precedence when slug exists in both modes
     for slug, data in legacy.items():
         posts[slug] = data
 
-    if not posts:
-        print("No valid posts to sync.")
-        return
-
-    # Sort by date descending (newest first)
     sorted_posts = sorted(posts.items(), key=lambda x: x[1]["date"] or "", reverse=True)
 
     blog_dir = REPO_ROOT / "blog"
     blog_dir.mkdir(exist_ok=True)
-    cards = []
 
+    registry = load_registry()
+
+    # Write / update Notion posts
     for slug, data in sorted_posts:
         versions = data["versions"]
         date_raw = data["date"]
+        sr = versions.get("SR", {})
+        de = versions.get("DE", {})
+        en = versions.get("EN", {})
 
         post_html = render_post(slug, versions)
-        out_path = blog_dir / f"{slug}.html"
+        slug_dir = blog_dir / slug
+        slug_dir.mkdir(exist_ok=True)
+        out_path = slug_dir / "index.html"
         out_path.write_text(post_html, encoding="utf-8")
-        print(f"  Written: blog/{slug}.html")
+        print(f"  Written: blog/{slug}/index.html")
 
-        cards.append(render_card(slug, versions, date_raw))
+        sr_body = sr.get("body", "")
+        de_body = de.get("body", "") or sr_body
+        en_body = en.get("body", "") or sr_body
 
+        registry[slug] = {
+            "source": "notion",
+            "date": date_raw,
+            "sr_title": sr.get("title", ""), "de_title": de.get("title", ""), "en_title": en.get("title", ""),
+            "sr_tags": sr.get("tags", ""), "de_tags": de.get("tags", ""), "en_tags": en.get("tags", ""),
+            "sr_date": format_date(date_raw, "SR"), "de_date": format_date(date_raw, "DE"), "en_date": format_date(date_raw, "EN"),
+            "sr_excerpt": first_paragraph(sr_body), "de_excerpt": first_paragraph(de_body), "en_excerpt": first_paragraph(en_body),
+        }
+
+    # Pick up manually-written posts not in Notion
+    for subdir in sorted(blog_dir.iterdir()):
+        if not subdir.is_dir():
+            continue
+        index_file = subdir / "index.html"
+        if not index_file.exists():
+            continue
+        slug = subdir.name
+        if slug in registry:
+            continue
+        content = index_file.read_text(encoding="utf-8")
+        meta = extract_post_metadata(content, slug)
+        registry[slug] = meta
+        print(f"  [manual] {slug}")
+
+    save_registry(registry)
+
+    if not registry:
+        print("No posts to list.")
+        return
+
+    sorted_registry = sorted(registry.items(), key=lambda x: x[1].get("date", ""), reverse=True)
+    cards = [render_card(slug, entry) for slug, entry in sorted_registry]
     cards_html = "\n".join(cards)
     update_blog_listing(cards_html)
     print("  Updated: blog.html")
