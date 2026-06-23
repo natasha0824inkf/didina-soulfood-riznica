@@ -316,6 +316,66 @@ def save_cache(cache):
     TRANSLATION_CACHE.write_text(json.dumps(cache, ensure_ascii=False, indent=2))
 
 
+POST_REGISTRY = REPO_ROOT / "scripts" / "post_registry.json"
+
+def load_registry():
+    if POST_REGISTRY.exists():
+        return json.loads(POST_REGISTRY.read_text())
+    return {}
+
+def save_registry(registry):
+    POST_REGISTRY.write_text(json.dumps(registry, ensure_ascii=False, indent=2))
+
+def extract_post_metadata(html_content, slug):
+    """Parse metadata from an existing blog/slug/index.html for the registry."""
+    meta = {"source": "manual", "slug": slug}
+
+    m = re.search(r'article:published_time" content="([^"]+)"', html_content)
+    meta["date"] = m.group(1) if m else ""
+
+    # SR section
+    sr_match = re.search(r'<!-- SR -->\s*<div data-lang-content="sr">(.*?)<!-- DE -->', html_content, re.DOTALL)
+    if sr_match:
+        sr_html = sr_match.group(1)
+        m = re.search(r'<h1 class="blog-post-title">([^<]+)</h1>', sr_html)
+        meta["sr_title"] = m.group(1).strip() if m else slug
+        m = re.search(r'<div class="blog-post-tag">([^<]+)</div>', sr_html)
+        meta["sr_tags"] = m.group(1).strip() if m else ""
+        meta["sr_excerpt"] = first_paragraph(sr_html)
+    else:
+        meta.update({"sr_title": slug, "sr_tags": "", "sr_excerpt": ""})
+
+    meta["sr_date"] = format_date(meta["date"], "SR") if meta["date"] else ""
+
+    # DE section
+    de_match = re.search(r'<!-- DE -->\s*<div data-lang-content="de" hidden>(.*?)<!-- EN -->', html_content, re.DOTALL)
+    if de_match:
+        de_html = de_match.group(1)
+        m = re.search(r'<h1 class="blog-post-title">([^<]+)</h1>', de_html)
+        meta["de_title"] = m.group(1).strip() if m else meta["sr_title"]
+        meta["de_excerpt"] = first_paragraph(de_html)
+    else:
+        meta.update({"de_title": meta["sr_title"], "de_excerpt": meta["sr_excerpt"]})
+
+    meta["de_tags"] = meta["sr_tags"]
+    meta["de_date"] = format_date(meta["date"], "DE") if meta["date"] else ""
+
+    # EN section
+    en_match = re.search(r'<!-- EN -->\s*<div data-lang-content="en" hidden>(.*?)<div class="blog-post-share">', html_content, re.DOTALL)
+    if en_match:
+        en_html = en_match.group(1)
+        m = re.search(r'<h1 class="blog-post-title">([^<]+)</h1>', en_html)
+        meta["en_title"] = m.group(1).strip() if m else meta["sr_title"]
+        meta["en_excerpt"] = first_paragraph(en_html)
+    else:
+        meta.update({"en_title": meta["sr_title"], "en_excerpt": meta["sr_excerpt"]})
+
+    meta["en_tags"] = meta["sr_tags"]
+    meta["en_date"] = format_date(meta["date"], "EN") if meta["date"] else ""
+
+    return meta
+
+
 def _sr_hash(text):
     return hashlib.md5(text.encode()).hexdigest()[:12]
 
@@ -635,26 +695,19 @@ def render_post(slug, versions):
 </html>'''
 
 
-def render_card(slug, versions, date_raw):
-    sr = versions.get("SR", {})
-    de = versions.get("DE", {})
-    en = versions.get("EN", {})
-
-    sr_title   = sr.get("title", "")
-    de_title   = de.get("title", sr_title)
-    en_title   = en.get("title", sr_title)
-
-    sr_tags    = sr.get("tags", "")
-    de_tags    = de.get("tags", sr_tags)
-    en_tags    = en.get("tags", sr_tags)
-
-    sr_excerpt = first_paragraph(sr.get("body", ""))
-    de_excerpt = first_paragraph(de.get("body", "") or sr.get("body", ""))
-    en_excerpt = first_paragraph(en.get("body", "") or sr.get("body", ""))
-
-    sr_date    = format_date(date_raw, "SR")
-    de_date    = format_date(date_raw, "DE")
-    en_date    = format_date(date_raw, "EN")
+def render_card(slug, entry):
+    sr_title   = entry.get("sr_title", slug)
+    de_title   = entry.get("de_title", sr_title)
+    en_title   = entry.get("en_title", sr_title)
+    sr_tags    = entry.get("sr_tags", "")
+    de_tags    = entry.get("de_tags", sr_tags)
+    en_tags    = entry.get("en_tags", sr_tags)
+    sr_excerpt = entry.get("sr_excerpt", "")
+    de_excerpt = entry.get("de_excerpt", sr_excerpt)
+    en_excerpt = entry.get("en_excerpt", sr_excerpt)
+    sr_date    = entry.get("sr_date", "")
+    de_date    = entry.get("de_date", sr_date)
+    en_date    = entry.get("en_date", sr_date)
 
     return f'''
       <!-- Post: {slug} -->
@@ -682,7 +735,7 @@ def render_card(slug, versions, date_raw):
               <span data-lang-content="de" hidden>{de_date}</span>
               <span data-lang-content="en" hidden>{en_date}</span>
             </span>
-            <a href="blog/{slug}.html" class="blog-read-more" data-i18n="blog_read_more">Čitaj dalje</a>
+            <a href="blog/{slug}/" class="blog-read-more" data-i18n="blog_read_more">Čitaj dalje</a>
           </div>
         </div>
       </article>'''
@@ -714,8 +767,8 @@ def main():
     pages = query_database()
     print(f"Found {len(pages)} published entries")
 
-    posts = {}   # slug → {versions, date}  — new single-row mode
-    legacy = {}  # slug → {versions, date}  — old 3-row mode (Language select set)
+    posts = {}
+    legacy = {}
     trans_cache = load_cache()
 
     for page in pages:
@@ -728,7 +781,6 @@ def main():
         lang = get_prop(page, "Language", "select").upper()
 
         if lang in ("SR", "DE", "EN"):
-            # ── Legacy mode: one row per language, grouped by slug ────────────
             if slug not in legacy:
                 legacy[slug] = {"versions": {}, "date": get_prop(page, "Date", "date")}
             blocks = get_page_blocks(page["id"])
@@ -739,21 +791,16 @@ def main():
                 "body":  blocks_to_html(blocks, slug),
             }
             print(f"  [legacy] {slug} / {lang}")
-
         else:
-            # ── New mode: single row, language content in toggle blocks ───────
-            # Minimum required: just a title. Everything else is optional.
             sr_title = sr_title_raw
             de_title = get_prop(page, "Title DE", "text") or sr_title
             en_title = get_prop(page, "Title EN", "text") or sr_title
             tags     = get_prop(page, "Tags", "multi_select")
-            # Date falls back to page creation time if not set
             date_raw = get_prop(page, "Date", "date") or page.get("created_time", "")[:10]
 
             all_blocks = get_page_blocks(page["id"])
             bodies = find_language_sections(all_blocks, slug)
 
-            # Auto-translate SR → DE/EN when manual translations are missing
             at_de_title, at_de_body, at_en_title, at_en_body = auto_translate(
                 slug, sr_title, bodies["SR"], trans_cache
             )
@@ -770,32 +817,67 @@ def main():
             }
             print(f"  [new]    {slug}")
 
-    # Legacy posts take precedence when slug exists in both modes
     for slug, data in legacy.items():
         posts[slug] = data
 
-    if not posts:
-        print("No valid posts to sync.")
-        return
-
-    # Sort by date descending (newest first)
     sorted_posts = sorted(posts.items(), key=lambda x: x[1]["date"] or "", reverse=True)
 
     blog_dir = REPO_ROOT / "blog"
     blog_dir.mkdir(exist_ok=True)
-    cards = []
 
+    registry = load_registry()
+
+    # Write / update Notion posts
     for slug, data in sorted_posts:
         versions = data["versions"]
         date_raw = data["date"]
+        sr = versions.get("SR", {})
+        de = versions.get("DE", {})
+        en = versions.get("EN", {})
 
         post_html = render_post(slug, versions)
-        out_path = blog_dir / f"{slug}.html"
+        slug_dir = blog_dir / slug
+        slug_dir.mkdir(exist_ok=True)
+        out_path = slug_dir / "index.html"
         out_path.write_text(post_html, encoding="utf-8")
-        print(f"  Written: blog/{slug}.html")
+        print(f"  Written: blog/{slug}/index.html")
 
-        cards.append(render_card(slug, versions, date_raw))
+        sr_body = sr.get("body", "")
+        de_body = de.get("body", "") or sr_body
+        en_body = en.get("body", "") or sr_body
 
+        registry[slug] = {
+            "source": "notion",
+            "date": date_raw,
+            "sr_title": sr.get("title", ""), "de_title": de.get("title", ""), "en_title": en.get("title", ""),
+            "sr_tags": sr.get("tags", ""), "de_tags": de.get("tags", ""), "en_tags": en.get("tags", ""),
+            "sr_date": format_date(date_raw, "SR"), "de_date": format_date(date_raw, "DE"), "en_date": format_date(date_raw, "EN"),
+            "sr_excerpt": first_paragraph(sr_body), "de_excerpt": first_paragraph(de_body), "en_excerpt": first_paragraph(en_body),
+        }
+
+    # Pick up manually-written posts not in Notion
+    for subdir in sorted(blog_dir.iterdir()):
+        if not subdir.is_dir():
+            continue
+        index_file = subdir / "index.html"
+        if not index_file.exists():
+            continue
+        slug = subdir.name
+        if slug in registry:
+            continue
+        content = index_file.read_text(encoding="utf-8")
+        meta = extract_post_metadata(content, slug)
+        registry[slug] = meta
+        print(f"  [manual] {slug}")
+
+    save_registry(registry)
+
+    if not registry:
+        print("No posts to list.")
+        return
+
+    sorted_registry = sorted(registry.items(), key=lambda x: x[1].get("date", ""), reverse=True)
+    cards = [render_card(slug, entry) for slug, entry in sorted_registry]
     cards_html = "\n".join(cards)
     update_blog_listing(cards_html)
     print("  Updated: blog.html")
