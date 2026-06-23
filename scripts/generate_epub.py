@@ -505,7 +505,7 @@ for sec in SECTIONS:
         )
         print(f'  [{sec["title"][:20]}] #{num or "?"} {rtitle}')
 
-    section_toc.append(epub.Section(sec['title'], sec_recipe_links))
+    section_toc.append(epub.Link(f"{sec['file']}.xhtml", sec['title'], sec['file']))
 
 # --- Bonus recipe ---
 bonus_img_html = ''
