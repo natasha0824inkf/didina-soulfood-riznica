@@ -1,142 +1,200 @@
 # Didina SoulFood Riznica
 
-A multilingual recipe website by Dragana Stamenković (Didi) — Serbian home cooking, served in Serbian, German, and English.
+A trilingual recipe website and digital cookbook — Serbian, German, and English editions.
 
 **Staging:** https://natasha0824inkf.github.io/didina-soulfood-riznica  
 **Production:** https://didina-soulfood.github.io/riznica
 
 ---
 
-## Features
+## Design Tokens
 
-- **50+ recipes** — searchable, filterable by category (morning, refreshing, oven, coffee, dunno), full-screen modal with ingredients + step-by-step instructions
-- **Blog** — long-form posts in SR/DE/EN with per-language content switching
-- **Trilingual UI** — SR / DE / EN switchable from the nav, persisted in localStorage
-- **Dark mode** — follows system preference, manual toggle, persisted
-- **Favorites** — save recipes to a slide-in panel, stored in localStorage, shareable via URL hash
-- **Social share** — Facebook, WhatsApp, copy-link panel on recipes and blog posts
-- **Newsletter** — Brevo double opt-in, GDPR consent checkbox, AJAX submit (no redirect), trilingual confirmation emails (SR/DE/EN)
-- **Contact form** — FormSubmit.co powered, success/error feedback in visitor's language
-- **EPUB / PDF** — generated book versions of the recipe collection (see `sources/`)
-- **Notion sync** — optional script to sync recipe data from a Notion database
+| Token | Value | Usage |
+|---|---|---|
+| Coral (accent) | `#C9773A` | Buttons, highlights, links |
+| Gold | `#D8A14A` | Secondary accent, tags |
+| Plum | `#7A5890` | Commentary boxes, quotes |
+| Teal | `#4FA83A` | Success states, nutrition labels |
+| Cream canvas | `#FDFAF5` | Page background |
+| Dark text | `#2A1A0E` | Body typography |
 
 ---
 
-## Screenshots
-
-| Staging | Production |
-|---|---|
-| ![Staging](assets/images/screenshot-staging.png) | ![Production](assets/images/screenshot-prod.png) |
-
-> Take screenshots of both sites and save as `assets/images/screenshot-staging.png` and `assets/images/screenshot-prod.png`
-
----
-
-## Project Structure
+## Repository Structure
 
 ```
 didina-soulfood-riznica/
 ├── assets/
-│   └── images/                   # Recipe photos (WebP/JPG/PNG) + logo + SVGs
+│   └── images/             # Recipe photos (kebab-case PNG/JPEG slugs)
 ├── blog/
-│   └── kako-naci-vremena.html    # Blog post — SR/DE/EN
+│   └── kako-naci-vremena.html   # First blog post (SR/DE/EN)
 ├── css/
-│   ├── style.css                 # Design system (coral/teal/plum tokens, dark mode)
-│   └── responsive.css            # Mobile-first breakpoints
+│   ├── style.css           # Full design system + dark mode
+│   └── responsive.css      # Mobile-first breakpoints
 ├── js/
-│   ├── translations.js           # All UI strings — SR / DE / EN
-│   ├── recipes-data.js           # All recipe data (ingredients, instructions, metadata)
-│   └── main.js                   # Lang switch, search, modal, favorites, share, newsletter
+│   ├── recipes-data.js     # 44 recipes — multilingual (sr/de/en)
+│   ├── translations.js     # All UI strings in SR / DE / EN
+│   └── main.js             # Language switch, search, modal, favorites, newsletter
 ├── scripts/
-│   ├── generate_epub.py          # Generates EPUB from recipes-data.js
-│   ├── generate_pdf.py           # Generates PDF from recipes-data.js
-│   └── notion_sync.py            # Syncs recipes from Notion database
+│   ├── generate_epub.py    # Produces SR / DE / EN EPUB editions
+│   ├── generate_pdf.py     # Produces SR / DE / EN PDF editions
+│   └── notion_sync.py      # Syncs blog posts from Notion
 ├── sources/
-│   ├── Didina_SoulFood_Riznica.epub     # Generated EPUB (EN)
-│   ├── Didina_SoulFood_Riznica.pdf      # Generated PDF
-│   └── Didina_kuhinjska_riznica.epub    # Original SR EPUB
-├── raw_assets/                   # Original unprocessed images
-├── didina-recipes.json           # Recipe data source (JSON)
-├── index.html                    # Home — hero, featured recipes, newsletter, book banner
-├── recipes.html                  # All recipes — search + category filters
-├── blog.html                     # Blog listing
-├── about.html                    # About Didi
-├── contact.html                  # Contact form
-├── privacy.html                  # Privacy policy — SR/DE/EN
-├── CLAUDE.md                     # Dev rules — branch strategy, deploy flow
-└── SECURITY.md                   # Security policy
+│   ├── Didina_SoulFood_Riznica_SR.epub
+│   ├── Didina_SoulFood_Riznica_DE.epub
+│   ├── Didina_SoulFood_Riznica_EN.epub
+│   ├── Didina_SoulFood_Riznica_SR.pdf
+│   ├── Didina_SoulFood_Riznica_DE.pdf
+│   └── Didina_SoulFood_Riznica_EN.pdf
+├── about.html
+├── blog.html
+├── contact.html
+├── index.html
+├── privacy.html
+├── recipes.html
+├── CLAUDE.md               # Dev rules (branch strategy, dual-remote push)
+├── DRAGANA.md              # Quick reference for Dragana (non-technical)
+└── README.md
 ```
 
 ---
 
-## Dev Setup
+## Pages
 
-No build step. Pure HTML/CSS/JS — open any `.html` directly in a browser, or:
+| File | Purpose |
+|---|---|
+| `index.html` | Home — hero, featured recipes, newsletter, blog teaser |
+| `recipes.html` | All 44 recipes — live search + 6 category filters |
+| `about.html` | About Didi — story and values |
+| `contact.html` | Contact form (FormSubmit → email) |
+| `blog.html` | Blog listing |
+| `blog/kako-naci-vremena.html` | First blog post |
+| `privacy.html` | Privacy policy (SR / DE / EN) |
 
-```bash
-npx serve .
-```
+---
 
-### Adding a new translation string
+## Recipe Data
 
-Every UI string lives in `js/translations.js`. All three languages required:
+44 recipes in `js/recipes-data.js`. Each recipe is a multilingual object:
 
 ```js
-my_key: { sr: '...', de: '...', en: '...' }
-```
-
-Then in HTML: `data-i18n="my_key"`
-
-### Cache busting
-
-Increment `?v=N` on all HTML imports when deploying breaking CSS/JS changes:
-
-```html
-<link rel="stylesheet" href="css/style.css?v=2">
-<script src="js/main.js?v=2"></script>
-```
-
-### Generating the EPUB / PDF
-
-```bash
-cd scripts
-python3 generate_epub.py   # → sources/Didina_SoulFood_Riznica.epub
-python3 generate_pdf.py    # → sources/Didina_SoulFood_Riznica.pdf
-```
-
-### Notion sync
-
-Set your Notion API key and database ID, then:
-
-```bash
-python3 scripts/notion_sync.py
+{
+  number: '1',
+  title:         { sr: 'Nedeljni wrap',   de: 'Der Sonntags-Wrap',  en: 'Sunday Wrap' },
+  subtitle:      { sr: '...',             de: '...',                en: '...' },
+  author_comment:{ sr: '...',             de: '...',                en: '...' },
+  prep_time:     { sr: '15 minuta',       de: '15 Minuten',         en: '15 minutes' },
+  ingredients:   { sr: [...],             de: [...],                en: [...] },
+  instructions:  { sr: [...],             de: [...],                en: [...] },
+  note: '...',   // SR only (plain string)
+  image: 'assets/images/nedeljni-wrap.png',
+  category: 'morning',
+  tags: ['vegan', 'quick'],
+}
 ```
 
 ---
 
-## Deploy
+## Sections (cookbook structure)
 
-Every push to `main` deploys to both staging and production simultaneously via dual-remote git.
+| # | SR | DE | EN |
+|---|---|---|---|
+| 1 | Jutarnji recepti | Morgenrezepte | Morning Recipes |
+| 2 | Recepti kada ne znam šta da kuvam | Wenn ich nicht weiß, was ich kochen soll | When I Don't Know What to Cook |
+| 3 | Osvežavajući recepti | Erfrischende Rezepte | Refreshing Recipes |
+| 4 | Recepti koji mirišu iz rerne | Aus dem Ofen | From the Oven |
+| 5 | Recepti uz kafu | Zum Kaffee | With Coffee |
+| 6 | Recepti koji se mažu | Aufstriche & Dips | Spreads & Dips |
 
-```
-git push
-  └──► natasha0824inkf/didina-soulfood-riznica  → staging Pages
-  └──► didina-soulfood/riznica                  → production Pages
-```
-
-See `CLAUDE.md` for full branch strategy, push setup, and "new machine" instructions.
+Plus 3 bonus recipes (not in website data, included in EPUB/PDF only):
+- Hrskava celer salata / Knuspriger Sellerie-Salat / Crunchy Celery Salad
+- Dubai zalogajčići / Dubai-Häppchen / Dubai Bites
+- Raznobojni namaz od avokada / Bunter Avocado-Aufstrich / Colourful Avocado Spread
 
 ---
 
-## Newsletter (Brevo)
+## Digital Editions
 
-- List: `Didina SoulFood Riznica` on Brevo
-- Sender: `natashabullitt@gmail.com` (verified)
-- Double opt-in enabled with 4 custom trilingual email templates
-- Form submits via AJAX to Brevo embed URL — visitor stays on page
+Generated by the `scripts/` Python tools using WeasyPrint (PDF) and ebooklib (EPUB).
 
-## Contact
+| Edition | EPUB | PDF |
+|---|---|---|
+| Serbian | `Didina_SoulFood_Riznica_SR.epub` | `Didina_SoulFood_Riznica_SR.pdf` |
+| German | `Didina_SoulFood_Riznica_DE.epub` | `Didina_SoulFood_Riznica_DE.pdf` |
+| English | `Didina_SoulFood_Riznica_EN.epub` | `Didina_SoulFood_Riznica_EN.pdf` |
 
-Dragana Stamenković – Didi  
-Instagram: [@didinasoulfoodriznica](https://www.instagram.com/didinasoulfoodriznica)  
-Email: didinasoulfoodriznica@gmail.com
+To regenerate all editions:
+```bash
+python3 scripts/generate_epub.py
+python3 scripts/generate_pdf.py
+```
+
+---
+
+## Image Naming
+
+All recipe images follow the kebab-case slug pattern matching the recipe title:
+
+```
+nedeljni-wrap.png
+tople-leblebije.png
+slani-dorucak.png
+kinoa-kasa-sa-borovnicama.png
+kokos-palacinka.png
+cureci-stejk.png
+kokos-curry.png
+zive-lazanje.png
+mediteranski-pirinac.png
+krem-supa-od-sargarepe.png
+curetina-sa-patlidzanom.png
+restovani-krompir.png
+mini-pice-od-patlidzana.png
+juneci-gulas.png
+krem-supa-od-tikvica.png
+prebranac.png
+pasta-sa-zelenim-pestom.png
+nesvakidasnja-salata-sa-cveklom.png
+brzi-tapas.png
+detoks-salata-od-cvekle.png
+tunin-bowl.png
+salata-sa-cveklom.png
+brokoli-sa-pinjolima.png
+jaka-vocna-salata.png
+banana-hleb.png
+integralni-hleb.png
+rolnice-od-lisnatog-testa.png
+spori-medenjaci.jpeg
+vocna-pita-iz-sume.png
+zimski-kolac-sa-bundevom.png
+puding-od-vanile.png
+mali-coko-zalogaji.png
+kremasti-sutlijash.png
+kraljevske-bombice.png
+brzinski-banana-kolacici.png
+jafa-bez-brasna.png
+najcokoladniji-brauni.png
+kroasani-sa-cokoladom.png
+lazne-coko-rolnice.png
+domaci-humus.png
+proteinski-namaz-od-jaja.png
+domaca-pasteta-od-tune.png
+prokelj-iz-rerne.png
+```
+
+---
+
+## Deployment
+
+Two GitHub repositories receive every push to `main`:
+
+| Repo | URL | Role |
+|---|---|---|
+| `natasha0824inkf/didina-soulfood-riznica` | natasha0824inkf.github.io/didina-soulfood-riznica | Staging |
+| `didina-soulfood/riznica` | didina-soulfood.github.io/riznica | Production |
+
+Push flow (configured in `.git/config`):
+```bash
+git push   # goes to both remotes simultaneously
+```
+
+See `CLAUDE.md` for full branch strategy and dual-remote setup instructions.
