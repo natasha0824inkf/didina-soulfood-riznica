@@ -211,28 +211,75 @@ def resize_img(path, max_w=320, max_h=170):
         return buf.getvalue()
 
 def make_cover_image():
-    """Generate a PNG cover matching the original purple/magenta style."""
-    w, h   = 600, 800
-    bg     = (255, 255, 255)          # white background
-    purple = (139, 26, 107)           # #8B1A6B — magenta-purple from original
-    light  = (245, 235, 245)          # very light lavender panel
-    im     = Image.new('RGB', (w, h), bg)
-    d      = ImageDraw.Draw(im)
-    # top and bottom purple bands
-    d.rectangle([0, 0, w, 120], fill=purple)
-    d.rectangle([0, h-100, w, h], fill=purple)
-    # light center panel
-    d.rectangle([40, 220, w-40, 600], fill=light)
-    # thin purple border around panel
-    d.rectangle([40, 220, w-40, 600], outline=purple, width=2)
-    # text
-    d.text((w//2, 60),  'Didina SoulFood Riznica',      fill=(255,255,255), anchor='mm')
-    d.text((w//2, 100), 'Dragana Stamenković',           fill=(255,220,245), anchor='mm')
-    d.text((w//2, 300), 'Didina SoulFood Riznica',      fill=purple, anchor='mm')
-    d.text((w//2, 340), '44 recepta iz srca kuhinje',   fill=(160, 60, 130), anchor='mm')
-    d.text((w//2, 400), 'Dragana Stamenković',           fill=purple, anchor='mm')
-    d.text((w//2, 680), 'Ne brojite kalorije,',          fill=(255,255,255), anchor='mm')
-    d.text((w//2, 710), 'brojite vaše osmehe i korake.', fill=(255,220,245), anchor='mm')
+    """Generate cover PNG — dark warm brown, gold, plum — matching website palette."""
+    w, h    = 1200, 1800
+    dark    = ( 34,  16,   8)   # #221008 — website dark hero
+    darker  = ( 24,  12,   4)   # #180C04
+    gold    = (216, 161,  74)   # #D8A14A
+    rust    = (201, 119,  58)   # #C9773A
+    plum    = ( 74,  46, 106)   # #4A2E6A
+    cream   = (240, 232, 216)   # #F0E8D8
+    midgold = (200, 160, 112)   # #C8A070
+
+    im = Image.new('RGB', (w, h), darker)
+    d  = ImageDraw.Draw(im)
+
+    # Warm gradient — slightly lighter centre band
+    for y in range(h):
+        t = abs(y - h * 0.45) / (h * 0.55)
+        r = int(darker[0] + (dark[0] - darker[0]) * (1 - t * 0.6))
+        g = int(darker[1] + (dark[1] - darker[1]) * (1 - t * 0.6))
+        b = int(darker[2] + (dark[2] - darker[2]) * (1 - t * 0.6))
+        d.line([(0, y), (w, y)], fill=(r, g, b))
+
+    # Gold corner brackets
+    bw = 5
+    for x1, y1, x2, y2 in [
+        (55,55,220,55),(55,55,55,220),
+        (w-55,55,w-220,55),(w-55,55,w-55,220),
+        (55,h-55,220,h-55),(55,h-55,55,h-220),
+        (w-55,h-55,w-220,h-55),(w-55,h-55,w-55,h-220),
+    ]:
+        d.line([(x1,y1),(x2,y2)], fill=gold, width=bw)
+
+    # Gold circle around logo area
+    cx, cy, r = 600, 340, 190
+    d.ellipse([cx-r, cy-r, cx+r, cy+r], outline=gold, width=2)
+
+    # Fork (3 tines + bridge + handle) — gold
+    fw = 14
+    for tx in [548, 600, 652]:
+        d.line([(tx, 200), (tx, 320)], fill=gold, width=fw)
+    d.arc([535, 300, 665, 390], start=0, end=180, fill=gold, width=fw)
+    d.line([(600, 345), (600, 480)], fill=gold, width=fw)
+
+    # Heart — plum
+    hx, hy, hs = 700, 255, 55
+    d.ellipse([hx,      hy-hs, hx+hs*2, hy+hs], fill=(158,120,184))
+    d.ellipse([hx+hs,   hy-hs, hx+hs*3, hy+hs], fill=(158,120,184))
+    d.polygon([(hx, hy+hs//2), (hx+hs*1.5, hy+hs*2.2), (hx+hs*3, hy+hs//2)], fill=(158,120,184))
+
+    # Gold divider line with plum diamond
+    d.line([(140,590),(555,590)], fill=gold, width=2)
+    d.polygon([(600,577),(614,590),(600,603),(586,590)], fill=plum)
+    d.line([(645,590),(1060,590)], fill=gold, width=2)
+
+    # Text — Didina
+    d.text((w//2, 730), 'Didina',              fill=cream,   anchor='mm', font_size=148)
+    d.text((w//2, 890), 'SoulFood',            fill=gold,    anchor='mm', font_size=110)
+
+    # Plum band for RIZNICA
+    d.rectangle([100, 960, w-100, 1080], fill=plum)
+    d.text((w//2, 1025), 'R I Z N I C A',     fill=gold,    anchor='mm', font_size=72)
+
+    # Subtitle
+    d.text((w//2, 1185), 'recepti za svaki dan', fill=midgold, anchor='mm', font_size=48)
+
+    # Plum rule + author
+    d.line([(200,1560),(1000,1560)], fill=(158,120,184), width=2)
+    d.text((w//2, 1640), '♥',                 fill=gold,    anchor='mm', font_size=40)
+    d.text((w//2, 1710), 'Dragana Stamenković', fill=midgold, anchor='mm', font_size=48)
+
     buf = io.BytesIO()
     im.save(buf, format='PNG')
     return buf.getvalue()
@@ -243,47 +290,47 @@ def make_cover_image():
 CSS = """
 body { font-family: Georgia,'Times New Roman',serif; font-size:1em;
        line-height:1.65; color:#2e2e2e; background:#ffffff; margin:1em 1.2em; }
-h1.book-title  { font-size:1.9em; text-align:center; color:#8B1A6B; margin:1.5em 0 0.2em;
+h1.book-title  { font-size:1.9em; text-align:center; color:#C9773A; margin:1.5em 0 0.2em;
                  font-style:italic; }
-h2.book-sub    { font-size:1em; text-align:center; font-style:italic; color:#a03585; margin:0 0 1.5em; }
+h2.book-sub    { font-size:1em; text-align:center; font-style:italic; color:#D8A14A; margin:0 0 1.5em; }
 .cover-quote   { font-style:italic; font-size:1.1em; text-align:center; margin:2em auto;
-                 max-width:80%; color:#8B1A6B; border-top:1px solid #8B1A6B;
-                 border-bottom:1px solid #8B1A6B; padding:.7em 0; }
-.cover-author  { text-align:center; color:#8B1A6B; margin:.4em 0; font-size:1em; font-weight:bold; }
-h2.sec-title   { font-size:1.6em; color:#8B1A6B; text-align:center; margin:2em 0 .5em;
-                 font-style:italic; border-bottom:2px solid #8B1A6B; padding-bottom:.4em; }
-.sec-desc      { text-align:center; font-style:italic; color:#a03585; margin-bottom:2em; }
-h2.intro-title { font-size:1.4em; color:#8B1A6B; border-bottom:2px solid #8B1A6B;
+                 max-width:80%; color:#C9773A; border-top:1px solid #C9773A;
+                 border-bottom:1px solid #C9773A; padding:.7em 0; }
+.cover-author  { text-align:center; color:#C9773A; margin:.4em 0; font-size:1em; font-weight:bold; }
+h2.sec-title   { font-size:1.6em; color:#C9773A; text-align:center; margin:2em 0 .5em;
+                 font-style:italic; border-bottom:2px solid #C9773A; padding-bottom:.4em; }
+.sec-desc      { text-align:center; font-style:italic; color:#D8A14A; margin-bottom:2em; }
+h2.intro-title { font-size:1.4em; color:#C9773A; border-bottom:2px solid #C9773A;
                  padding-bottom:.3em; margin-bottom:1em; font-style:italic; }
 .intro-text p  { margin:.7em 0; text-align:justify; }
-.sign-off      { margin-top:2em; font-style:italic; color:#8B1A6B; }
-h2.toc-title   { font-size:1.4em; color:#8B1A6B; border-bottom:2px solid #8B1A6B;
+.sign-off      { margin-top:2em; font-style:italic; color:#C9773A; }
+h2.toc-title   { font-size:1.4em; color:#C9773A; border-bottom:2px solid #C9773A;
                  padding-bottom:.3em; margin-bottom:1em; font-style:italic; }
-.toc-section   { font-weight:bold; color:#8B1A6B; margin:1em 0 .2em;
+.toc-section   { font-weight:bold; color:#C9773A; margin:1em 0 .2em;
                  font-size:.85em; text-transform:uppercase; letter-spacing:.06em; }
 .toc-item      { margin:.25em 0 .25em 1em; font-size:.92em; }
 .toc-item a    { color:#2e2e2e; text-decoration:none; }
-.toc-num       { color:#8B1A6B; font-weight:bold; margin-right:.3em; }
-.recipe-num    { font-size:.78em; font-weight:bold; color:#8B1A6B;
+.toc-num       { color:#C9773A; font-weight:bold; margin-right:.3em; }
+.recipe-num    { font-size:.78em; font-weight:bold; color:#C9773A;
                  text-transform:uppercase; letter-spacing:.08em; margin-bottom:.1em; }
-h2.r-title     { font-size:1.35em; color:#8B1A6B; margin:.1em 0 .2em; font-style:italic; }
+h2.r-title     { font-size:1.35em; color:#C9773A; margin:.1em 0 .2em; font-style:italic; }
 .r-sub         { font-style:italic; color:#5a5a5a; margin:.2em 0 .6em; font-size:.95em; }
-.prep          { display:inline-block; background:#f5eaf5; color:#8B1A6B;
+.prep          { display:inline-block; background:#f5eaf5; color:#C9773A;
                  padding:.2em .7em; border-radius:20px; font-size:.85em; margin:.4em 0 .5em; }
 .recipe-image  { display:block; width:auto; max-width:92%; max-height:11em;
                  margin:.5em auto; border-radius:5px; }
-.comment       { font-style:italic; color:#5a5a5a; border-left:3px solid #8B1A6B;
+.comment       { font-style:italic; color:#5a5a5a; border-left:3px solid #C9773A;
                  padding:.3em .7em; margin:.6em 0 .8em; font-size:.93em; }
-h3.sh          { font-size:.82em; font-weight:bold; color:#8B1A6B; margin:.9em 0 .2em;
+h3.sh          { font-size:.82em; font-weight:bold; color:#C9773A; margin:.9em 0 .2em;
                  text-transform:uppercase; letter-spacing:.06em; }
 ul.ingr        { padding-left:1.2em; margin:.2em 0 .6em; }
 ul.ingr li     { margin:.15em 0; }
 ol.steps       { padding-left:1.3em; margin:.2em 0; }
 ol.steps li    { margin:.3em 0; }
-.note          { background:#faf0f8; border-left:3px solid #8B1A6B;
+.note          { background:#faf0f8; border-left:3px solid #C9773A;
                  padding:.35em .7em; font-size:.88em; margin-top:.8em; color:#2e2e2e; }
-.placeholder   { text-align:center; padding:2em 1em; color:#a03585;
-                 font-style:italic; border:1px dashed #8B1A6B; margin:1em 0; border-radius:6px; }
+.placeholder   { text-align:center; padding:2em 1em; color:#D8A14A;
+                 font-style:italic; border:1px dashed #C9773A; margin:1em 0; border-radius:6px; }
 hr.div         { border:none; border-top:1px solid #d4a0d4; margin:1.2em 0; }
 """
 
