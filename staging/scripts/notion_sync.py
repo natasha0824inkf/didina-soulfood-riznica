@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Syncs Published posts from Notion database to blog HTML files."""
+"""Syncs Published posts from Notion database to blog HTML files.
+
+Two authoring modes:
+  Legacy (3-row):  Row has Language select set to SR/DE/EN → grouped by slug (old behaviour)
+  New (1-row):     Row has no Language select → single page per post, language content
+                   lives inside toggle blocks labelled 🇷🇸 / 🇩🇪 / 🇬🇧 (or SR/DE/EN)
+"""
 
 import os
 import re
@@ -23,6 +29,13 @@ HEADERS = {
 SR_MONTHS = ["jan","feb","mar","apr","maj","jun","jul","avg","sep","okt","nov","dec"]
 DE_MONTHS = ["Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"]
 EN_MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+
+# Patterns to detect language toggle headings like "🇷🇸 Srpski", "DE", "[EN]", etc.
+LANG_TOGGLE_RE = {
+    "SR": re.compile(r"🇷🇸|[Ss]rpsk|[Ss]erbian|\bSR\b|\[SR\]", re.IGNORECASE),
+    "DE": re.compile(r"🇩🇪|[Dd]eutsch|[Gg]erman|\bDE\b|\[DE\]",  re.IGNORECASE),
+    "EN": re.compile(r"🇬🇧|[Ee]nglish|\bEN\b|\[EN\]",              re.IGNORECASE),
+}
 
 
 def format_date(date_str, lang):
@@ -76,8 +89,32 @@ def rich_text_to_html(rich_texts):
     return out
 
 
-def blocks_to_html(blocks):
+def download_image(url, slug, idx):
+    """Download a Notion image to assets/images/blog/ and return the relative src path."""
+    img_dir = REPO_ROOT / "assets" / "images" / "blog"
+    img_dir.mkdir(parents=True, exist_ok=True)
+    ext = ".jpg"
+    for candidate in (".png", ".gif", ".webp", ".jpeg"):
+        if candidate in url.lower().split("?")[0]:
+            ext = candidate
+            break
+    filename = f"{slug}-{idx}{ext}"
+    dest = img_dir / filename
+    if not dest.exists():
+        try:
+            res = requests.get(url, timeout=20)
+            res.raise_for_status()
+            dest.write_bytes(res.content)
+            print(f"  Downloaded image → assets/images/blog/{filename}")
+        except Exception as e:
+            print(f"  Warning: could not download image: {e}", file=sys.stderr)
+            return None
+    return f"../assets/images/blog/{filename}"
+
+
+def blocks_to_html(blocks, slug="post"):
     out = ""
+    img_counter = [0]
     i = 0
     while i < len(blocks):
         block = blocks[i]
@@ -133,8 +170,12 @@ def blocks_to_html(blocks):
             caption_parts = content.get("caption", [])
             caption = rich_text_to_html(caption_parts) if caption_parts else ""
             if src:
+                local = download_image(src, slug, img_counter[0])
+                img_counter[0] += 1
+                display_src = local if local else html.escape(src)
+                alt = html.escape(re.sub(r"<[^>]+>", "", caption))
                 out += f'        <figure class="blog-figure">\n'
-                out += f'          <img src="{html.escape(src)}" alt="{html.escape(re.sub(chr(60)+"[^>]+>","",caption))}" class="blog-img" loading="lazy">\n'
+                out += f'          <img src="{display_src}" alt="{alt}" class="blog-img" loading="lazy">\n'
                 if caption:
                     out += f'          <figcaption>{caption}</figcaption>\n'
                 out += f'        </figure>\n'
@@ -180,6 +221,53 @@ def get_page_blocks(page_id):
         else:
             url = None
     return blocks
+
+
+def find_language_sections(all_blocks, slug):
+    """
+    Scan top-level blocks for toggle blocks whose label matches a language pattern.
+    Fetches toggle children and converts to HTML per language.
+
+    If no language toggles are found, all content is treated as SR.
+    Non-toggle blocks that sit outside any language toggle are prepended to SR.
+
+    Returns: {'SR': html_str, 'DE': html_str, 'EN': html_str}
+    """
+    lang_blocks = {"SR": [], "DE": [], "EN": []}
+    extra_sr_blocks = []
+    found_any_toggle = False
+
+    for block in all_blocks:
+        if block["type"] == "toggle":
+            toggle_text = "".join(
+                rt["plain_text"]
+                for rt in block.get("toggle", {}).get("rich_text", [])
+            )
+            matched = None
+            for lang, pattern in LANG_TOGGLE_RE.items():
+                if pattern.search(toggle_text):
+                    matched = lang
+                    break
+            if matched:
+                found_any_toggle = True
+                children = get_page_blocks(block["id"])
+                lang_blocks[matched].extend(children)
+                continue
+        extra_sr_blocks.append(block)
+
+    if not found_any_toggle:
+        return {
+            "SR": blocks_to_html(all_blocks, slug),
+            "DE": "",
+            "EN": "",
+        }
+
+    sr_blocks = extra_sr_blocks + lang_blocks["SR"]
+    return {
+        "SR": blocks_to_html(sr_blocks, slug)                 if sr_blocks              else "",
+        "DE": blocks_to_html(lang_blocks["DE"], slug + "-de") if lang_blocks["DE"]      else "",
+        "EN": blocks_to_html(lang_blocks["EN"], slug + "-en") if lang_blocks["EN"]      else "",
+    }
 
 
 def query_database():
@@ -234,7 +322,6 @@ def render_post(slug, versions):
 
     meta_desc = first_paragraph(sr_body)
 
-    # Escape values used in HTML attributes and JSON-LD
     sr_title_h  = html.escape(sr_title)
     de_title_h  = html.escape(de_title)
     en_title_h  = html.escape(en_title)
@@ -498,25 +585,54 @@ def main():
     pages = query_database()
     print(f"Found {len(pages)} published entries")
 
-    # Group by slug
-    posts = {}
+    posts = {}   # slug → {versions, date}  — new single-row mode
+    legacy = {}  # slug → {versions, date}  — old 3-row mode (Language select set)
+
     for page in pages:
         slug = get_prop(page, "Slug", "text")
-        lang = get_prop(page, "Language", "select").upper()
-        if not slug or lang not in ("SR", "DE", "EN"):
-            print(f"  Skipping page {page['id']}: missing slug or invalid language")
+        if not slug:
+            print(f"  Skipping page {page['id']}: no slug")
             continue
 
-        if slug not in posts:
-            posts[slug] = {"versions": {}, "date": get_prop(page, "Date", "date")}
+        lang = get_prop(page, "Language", "select").upper()
 
-        blocks = get_page_blocks(page["id"])
-        posts[slug]["versions"][lang] = {
-            "title": get_prop(page, "Title", "title"),
-            "tags":  get_prop(page, "Tags", "multi_select"),
-            "date":  get_prop(page, "Date", "date"),
-            "body":  blocks_to_html(blocks),
-        }
+        if lang in ("SR", "DE", "EN"):
+            # ── Legacy mode: one row per language, grouped by slug ────────────
+            if slug not in legacy:
+                legacy[slug] = {"versions": {}, "date": get_prop(page, "Date", "date")}
+            blocks = get_page_blocks(page["id"])
+            legacy[slug]["versions"][lang] = {
+                "title": get_prop(page, "Title", "title"),
+                "tags":  get_prop(page, "Tags", "multi_select"),
+                "date":  get_prop(page, "Date", "date"),
+                "body":  blocks_to_html(blocks, slug),
+            }
+            print(f"  [legacy] {slug} / {lang}")
+
+        else:
+            # ── New mode: single row, language content in toggle blocks ───────
+            sr_title = get_prop(page, "Title", "title")
+            de_title = get_prop(page, "Title DE", "text") or sr_title
+            en_title = get_prop(page, "Title EN", "text") or sr_title
+            tags     = get_prop(page, "Tags", "multi_select")
+            date_raw = get_prop(page, "Date", "date")
+
+            all_blocks = get_page_blocks(page["id"])
+            bodies = find_language_sections(all_blocks, slug)
+
+            posts[slug] = {
+                "versions": {
+                    "SR": {"title": sr_title, "tags": tags, "date": date_raw, "body": bodies["SR"]},
+                    "DE": {"title": de_title, "tags": tags, "date": date_raw, "body": bodies["DE"]},
+                    "EN": {"title": en_title, "tags": tags, "date": date_raw, "body": bodies["EN"]},
+                },
+                "date": date_raw,
+            }
+            print(f"  [new]    {slug}")
+
+    # Legacy posts take precedence when slug exists in both modes
+    for slug, data in legacy.items():
+        posts[slug] = data
 
     if not posts:
         print("No valid posts to sync.")
@@ -525,7 +641,6 @@ def main():
     # Sort by date descending (newest first)
     sorted_posts = sorted(posts.items(), key=lambda x: x[1]["date"] or "", reverse=True)
 
-    # Generate post HTML files
     blog_dir = REPO_ROOT / "blog"
     blog_dir.mkdir(exist_ok=True)
     cards = []
@@ -541,7 +656,6 @@ def main():
 
         cards.append(render_card(slug, versions, date_raw))
 
-    # Update blog.html listing
     cards_html = "\n".join(cards)
     update_blog_listing(cards_html)
     print("  Updated: blog.html")
