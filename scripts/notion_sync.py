@@ -504,11 +504,11 @@ def render_post(slug, versions):
       <span class="hamburger-line"></span>
     </button>
     <ul class="nav-links" id="navLinks">
-      <li><a href="../index.html"   data-i18n="nav_home">Početna</a></li>
-      <li><a href="../recipes.html" data-i18n="nav_recipes">Recepti</a></li>
-      <li><a href="../blog.html"    class="active" data-i18n="nav_blog">Blog</a></li>
-      <li><a href="../about.html"   data-i18n="nav_about">O meni</a></li>
-      <li><a href="../contact.html" data-i18n="nav_contact">Kontakt</a></li>
+      <li><a href="../../index.html"   data-i18n="nav_home">Početna</a></li>
+      <li><a href="../../recipes.html" data-i18n="nav_recipes">Recepti</a></li>
+      <li><a href="../../blog.html"    class="active" data-i18n="nav_blog">Blog</a></li>
+      <li><a href="../../about.html"   data-i18n="nav_about">O meni</a></li>
+      <li><a href="../../contact.html" data-i18n="nav_contact">Kontakt</a></li>
     </ul>
     <div class="nav-right">
       <div class="lang-switcher">
@@ -528,7 +528,7 @@ def render_post(slug, versions):
 <main>
   <article class="blog-post">
 
-    <a href="../blog.html" class="blog-post-back">← <span data-i18n="blog_back">Nazad na blog</span></a>
+    <a href="../../blog.html" class="blog-post-back">← <span data-i18n="blog_back">Nazad na blog</span></a>
 
     <!-- SR -->
     <div data-lang-content="sr">
@@ -580,11 +580,11 @@ def render_post(slug, versions):
     <p class="footer-tagline" data-i18n="footer_text">Napravljeno s ljubavlju za sve koji veruju da je hrana jezik duše.</p>
     <div class="footer-divider"></div>
     <nav class="footer-nav">
-      <a href="../index.html"   data-i18n="nav_home">Početna</a>
-      <a href="../recipes.html" data-i18n="nav_recipes">Recepti</a>
-      <a href="../blog.html"    data-i18n="nav_blog">Blog</a>
-      <a href="../about.html"   data-i18n="nav_about">O meni</a>
-      <a href="../contact.html" data-i18n="nav_contact">Kontakt</a>
+      <a href="../../index.html"   data-i18n="nav_home">Početna</a>
+      <a href="../../recipes.html" data-i18n="nav_recipes">Recepti</a>
+      <a href="../../blog.html"    data-i18n="nav_blog">Blog</a>
+      <a href="../../about.html"   data-i18n="nav_about">O meni</a>
+      <a href="../../contact.html" data-i18n="nav_contact">Kontakt</a>
     </nav>
     <p class="footer-copy">© 2026 Dragana Stamenković – Didi · Didina SoulFood Riznica. <span data-i18n="footer_rights">Sva prava zadržana.</span></p>
   </div>
@@ -619,9 +619,9 @@ def render_post(slug, versions):
   </div>
 </div>
 
-<script src="../js/translations.js"></script>
-<script src="../js/recipes-data.js"></script>
-<script src="../js/main.js"></script>
+<script src="../../js/translations.js"></script>
+<script src="../../js/recipes-data.js"></script>
+<script src="../../js/main.js"></script>
 <script>
   document.getElementById('shareBtn')?.addEventListener('click', () => {{
     if (navigator.share) {{
