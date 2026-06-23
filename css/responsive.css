@@ -14,6 +14,9 @@
 
   .hamburger { display: flex; }
 
+  .nav-logo { flex: 1; min-width: 0; }
+  .nav-logo-main { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
   .categories-grid { grid-template-columns: repeat(3, 1fr); }
 
   .hero { padding: 4rem 1.5rem; }
