@@ -351,8 +351,8 @@ def render_post(slug, versions):
     en_date  = format_date(date_raw, "EN")
 
     sr_body  = v(sr, "body")
-    de_body  = v(de, "body")
-    en_body  = v(en, "body")
+    de_body  = v(de, "body", sr_body)
+    en_body  = v(en, "body", sr_body)
 
     meta_desc = first_paragraph(sr_body)
 
@@ -555,8 +555,8 @@ def render_card(slug, versions, date_raw):
     en_tags    = en.get("tags", sr_tags)
 
     sr_excerpt = first_paragraph(sr.get("body", ""))
-    de_excerpt = first_paragraph(de.get("body", ""))
-    en_excerpt = first_paragraph(en.get("body", ""))
+    de_excerpt = first_paragraph(de.get("body", "") or sr.get("body", ""))
+    en_excerpt = first_paragraph(en.get("body", "") or sr.get("body", ""))
 
     sr_date    = format_date(date_raw, "SR")
     de_date    = format_date(date_raw, "DE")
