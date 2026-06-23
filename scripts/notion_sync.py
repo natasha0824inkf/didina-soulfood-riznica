@@ -76,8 +76,32 @@ def rich_text_to_html(rich_texts):
     return out
 
 
-def blocks_to_html(blocks):
+def download_image(url, slug, idx):
+    """Download a Notion image to assets/images/blog/ and return the relative src path."""
+    img_dir = REPO_ROOT / "assets" / "images" / "blog"
+    img_dir.mkdir(parents=True, exist_ok=True)
+    ext = ".jpg"
+    for candidate in (".png", ".gif", ".webp", ".jpeg"):
+        if candidate in url.lower().split("?")[0]:
+            ext = candidate
+            break
+    filename = f"{slug}-{idx}{ext}"
+    dest = img_dir / filename
+    if not dest.exists():
+        try:
+            res = requests.get(url, timeout=20)
+            res.raise_for_status()
+            dest.write_bytes(res.content)
+            print(f"  Downloaded image → assets/images/blog/{filename}")
+        except Exception as e:
+            print(f"  Warning: could not download image: {e}", file=sys.stderr)
+            return None
+    return f"../assets/images/blog/{filename}"
+
+
+def blocks_to_html(blocks, slug="post"):
     out = ""
+    img_counter = [0]
     i = 0
     while i < len(blocks):
         block = blocks[i]
@@ -133,8 +157,12 @@ def blocks_to_html(blocks):
             caption_parts = content.get("caption", [])
             caption = rich_text_to_html(caption_parts) if caption_parts else ""
             if src:
+                local = download_image(src, slug, img_counter[0])
+                img_counter[0] += 1
+                display_src = local if local else html.escape(src)
+                alt = html.escape(re.sub(r"<[^>]+>", "", caption))
                 out += f'        <figure class="blog-figure">\n'
-                out += f'          <img src="{html.escape(src)}" alt="{html.escape(re.sub(chr(60)+"[^>]+>","",caption))}" class="blog-img" loading="lazy">\n'
+                out += f'          <img src="{display_src}" alt="{alt}" class="blog-img" loading="lazy">\n'
                 if caption:
                     out += f'          <figcaption>{caption}</figcaption>\n'
                 out += f'        </figure>\n'
@@ -515,7 +543,7 @@ def main():
             "title": get_prop(page, "Title", "title"),
             "tags":  get_prop(page, "Tags", "multi_select"),
             "date":  get_prop(page, "Date", "date"),
-            "body":  blocks_to_html(blocks),
+            "body":  blocks_to_html(blocks, slug),
         }
 
     if not posts:
