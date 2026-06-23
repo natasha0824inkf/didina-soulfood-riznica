@@ -22,6 +22,43 @@ https://github.com/didina-soulfood/riznica
 
 ---
 
+## Writing a blog post
+
+You only need **one Notion row** per post. The minimum is just two things:
+
+| Field | Notes |
+|-------|-------|
+| **Title** | Write it in Serbian — that's enough |
+| **Tags** | Pick from the list |
+| **Status** | Set to **Published** when ready |
+
+Everything else is automatic:
+- **Slug** (URL) → generated from your title automatically
+- **Date** → uses today if you leave it blank
+- **German / English titles** → show the Serbian title until you add them
+
+### If you want translations too (optional)
+
+Write the translated titles in **Title DE** and **Title EN** (these columns appear automatically after the first sync).
+
+For the body text, open the page and add **toggle blocks** — one per language.  
+Type `/toggle` → Enter, then name them:
+
+```
+🇷🇸 Srpski
+🇩🇪 Deutsch
+🇬🇧 English
+```
+
+Write each language's text inside its toggle. Images, YouTube, Spotify all work inside toggles.
+
+### Publish
+
+Set Status → **Published**. Site updates every hour.  
+To push immediately: GitHub repo → Actions → "Sync from Notion" → Run workflow.
+
+---
+
 ## Upload a new EPUB
 Drag and drop directly into GitHub — no technical knowledge needed:
 https://github.com/didina-soulfood/riznica/upload/main/sources
