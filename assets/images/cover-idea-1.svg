@@ -1,22 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1800" width="1200" height="1800">
   <defs>
-    <!-- Background gradient matching website hero -->
+    <!-- Warm cream background like website -->
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%"   stop-color="#3D2010"/>
-      <stop offset="45%"  stop-color="#5A2E0E"/>
-      <stop offset="100%" stop-color="#2A1208"/>
+      <stop offset="0%"   stop-color="#F7F1E7"/>
+      <stop offset="55%"  stop-color="#EFE6D6"/>
+      <stop offset="100%" stop-color="#E8DBC8"/>
     </linearGradient>
-    <!-- Warm overlay blobs -->
-    <radialGradient id="blob1" cx="20%" cy="20%" r="50%">
-      <stop offset="0%" stop-color="#D8A14A" stop-opacity="0.18"/>
+    <!-- Subtle blob top-left coral -->
+    <radialGradient id="blob1" cx="15%" cy="15%" r="45%">
+      <stop offset="0%" stop-color="#D8A14A" stop-opacity="0.13"/>
       <stop offset="100%" stop-color="#D8A14A" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="blob2" cx="80%" cy="75%" r="50%">
-      <stop offset="0%" stop-color="#7A5890" stop-opacity="0.18"/>
+    <!-- Subtle blob bottom-right plum -->
+    <radialGradient id="blob2" cx="85%" cy="85%" r="45%">
+      <stop offset="0%" stop-color="#7A5890" stop-opacity="0.10"/>
       <stop offset="100%" stop-color="#7A5890" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="blob3" cx="60%" cy="40%" r="40%">
-      <stop offset="0%" stop-color="#4FA83A" stop-opacity="0.10"/>
+    <!-- Teal blob centre -->
+    <radialGradient id="blob3" cx="55%" cy="50%" r="38%">
+      <stop offset="0%" stop-color="#4FA83A" stop-opacity="0.06"/>
       <stop offset="100%" stop-color="#4FA83A" stop-opacity="0"/>
     </radialGradient>
   </defs>
@@ -27,31 +29,21 @@
   <rect width="1200" height="1800" fill="url(#blob2)"/>
   <rect width="1200" height="1800" fill="url(#blob3)"/>
 
-  <!-- Top border line -->
-  <line x1="80" y1="80" x2="1120" y2="80" stroke="#D8A14A" stroke-width="2" opacity="0.6"/>
-  <!-- Bottom border line -->
-  <line x1="80" y1="1720" x2="1120" y2="1720" stroke="#D8A14A" stroke-width="2" opacity="0.6"/>
-  <!-- Left border line -->
-  <line x1="80" y1="80" x2="80" y2="1720" stroke="#D8A14A" stroke-width="2" opacity="0.6"/>
-  <!-- Right border line -->
-  <line x1="1120" y1="80" x2="1120" y2="1720" stroke="#D8A14A" stroke-width="2" opacity="0.6"/>
+  <!-- Outer border -->
+  <rect x="60" y="60" width="1080" height="1680" fill="none" stroke="#C8A87A" stroke-width="1.5" opacity="0.5"/>
 
-  <!-- Corner accents top-left -->
-  <line x1="80" y1="80" x2="200" y2="80"   stroke="#D8A14A" stroke-width="4" opacity="0.9"/>
-  <line x1="80" y1="80" x2="80"  y2="200"  stroke="#D8A14A" stroke-width="4" opacity="0.9"/>
-  <!-- Corner accents top-right -->
-  <line x1="1120" y1="80" x2="1000" y2="80"  stroke="#D8A14A" stroke-width="4" opacity="0.9"/>
-  <line x1="1120" y1="80" x2="1120" y2="200" stroke="#D8A14A" stroke-width="4" opacity="0.9"/>
-  <!-- Corner accents bottom-left -->
-  <line x1="80" y1="1720" x2="200"  y2="1720" stroke="#D8A14A" stroke-width="4" opacity="0.9"/>
-  <line x1="80" y1="1720" x2="80"   y2="1600" stroke="#D8A14A" stroke-width="4" opacity="0.9"/>
-  <!-- Corner accents bottom-right -->
-  <line x1="1120" y1="1720" x2="1000" y2="1720" stroke="#D8A14A" stroke-width="4" opacity="0.9"/>
-  <line x1="1120" y1="1720" x2="1120" y2="1600" stroke="#D8A14A" stroke-width="4" opacity="0.9"/>
+  <!-- Corner accents — coral, like website accent -->
+  <line x1="60"  y1="60"  x2="200" y2="60"  stroke="#C9773A" stroke-width="5" opacity="0.85" stroke-linecap="round"/>
+  <line x1="60"  y1="60"  x2="60"  y2="200" stroke="#C9773A" stroke-width="5" opacity="0.85" stroke-linecap="round"/>
+  <line x1="1140" y1="60"  x2="1000" y2="60"  stroke="#C9773A" stroke-width="5" opacity="0.85" stroke-linecap="round"/>
+  <line x1="1140" y1="60"  x2="1140" y2="200" stroke="#C9773A" stroke-width="5" opacity="0.85" stroke-linecap="round"/>
+  <line x1="60"  y1="1740" x2="200"  y2="1740" stroke="#C9773A" stroke-width="5" opacity="0.85" stroke-linecap="round"/>
+  <line x1="60"  y1="1740" x2="60"   y2="1600" stroke="#C9773A" stroke-width="5" opacity="0.85" stroke-linecap="round"/>
+  <line x1="1140" y1="1740" x2="1000" y2="1740" stroke="#C9773A" stroke-width="5" opacity="0.85" stroke-linecap="round"/>
+  <line x1="1140" y1="1740" x2="1140" y2="1600" stroke="#C9773A" stroke-width="5" opacity="0.85" stroke-linecap="round"/>
 
-  <!-- Logo mark — fork + heart, scaled up, centered -->
-  <g transform="translate(600, 380) scale(14)" stroke="#D8A14A" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <!-- Fork -->
+  <!-- Logo mark — fork + heart, centred -->
+  <g transform="translate(600, 360) scale(16)" stroke="#6B4F3A" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
     <g transform="translate(-3, -10)">
       <line x1="-4" y1="-14" x2="-4" y2="-5"/>
       <line x1="0"  y1="-14" x2="0"  y2="-5"/>
@@ -59,70 +51,72 @@
       <path d="M-4,-5 Q0,0 4,-5"/>
       <line x1="0" y1="0" x2="0" y2="13"/>
     </g>
-    <!-- Heart -->
     <g transform="translate(8, -18) scale(0.55)">
       <path d="M0,9 C-9,0 -14,-10 -7,-13 C-3,-15 0,-10 0,-10 C0,-10 3,-15 7,-13 C14,-10 9,0 0,9 Z"
-            fill="#D8A14A" stroke="none"/>
+            fill="#C9773A" stroke="none"/>
     </g>
   </g>
 
-  <!-- Decorative divider line above title -->
-  <line x1="300" y1="560" x2="900" y2="560" stroke="#D8A14A" stroke-width="1.5" opacity="0.5"/>
+  <!-- Divider below logo -->
+  <line x1="340" y1="570" x2="860" y2="570" stroke="#D8A14A" stroke-width="1.5" opacity="0.6"/>
 
-  <!-- DIDINA — main title -->
-  <text x="600" y="700"
+  <!-- DIDINA -->
+  <text x="600" y="730"
         text-anchor="middle"
         font-family="Georgia,'Times New Roman',serif"
         font-style="italic"
-        font-size="180"
+        font-size="190"
         font-weight="bold"
-        fill="#F7F1E7"
-        letter-spacing="-2">Didina</text>
+        fill="#2A1A0E">Didina</text>
 
   <!-- SoulFood -->
-  <text x="600" y="860"
+  <text x="600" y="890"
         text-anchor="middle"
         font-family="Georgia,'Times New Roman',serif"
         font-style="italic"
-        font-size="130"
-        fill="#D8A14A"
-        letter-spacing="2">SoulFood</text>
+        font-size="135"
+        fill="#C9773A">SoulFood</text>
 
-  <!-- Thin divider -->
-  <line x1="200" y1="920" x2="1000" y2="920" stroke="#D8A14A" stroke-width="1" opacity="0.4"/>
+  <!-- Divider -->
+  <line x1="160" y1="955" x2="1040" y2="955" stroke="#C8A87A" stroke-width="1" opacity="0.5"/>
 
   <!-- RIZNICA -->
-  <text x="600" y="1020"
+  <text x="600" y="1065"
         text-anchor="middle"
         font-family="Georgia,'Times New Roman',serif"
-        font-size="90"
+        font-size="88"
         font-weight="bold"
-        fill="#C9773A"
-        letter-spacing="22">RIZNICA</text>
+        fill="#6B4F3A"
+        letter-spacing="24">RIZNICA</text>
 
   <!-- Subtitle -->
-  <text x="600" y="1140"
+  <text x="600" y="1180"
         text-anchor="middle"
         font-family="Georgia,'Times New Roman',serif"
         font-style="italic"
-        font-size="52"
-        fill="#F7F1E7"
-        opacity="0.65">recepti za svaki dan</text>
+        font-size="54"
+        fill="#8A6850">recepti za svaki dan</text>
 
-  <!-- Decorative dots -->
-  <circle cx="560" cy="1200" r="4" fill="#D8A14A" opacity="0.7"/>
-  <circle cx="600" cy="1200" r="4" fill="#D8A14A" opacity="0.7"/>
-  <circle cx="640" cy="1200" r="4" fill="#D8A14A" opacity="0.7"/>
+  <!-- Plum accent band -->
+  <rect x="60" y="1420" width="1080" height="6" fill="#7A5890" opacity="0.18" rx="3"/>
 
-  <!-- Author name at bottom -->
-  <text x="600" y="1640"
+  <!-- Author name -->
+  <text x="600" y="1560"
         text-anchor="middle"
         font-family="Georgia,'Times New Roman',serif"
-        font-size="52"
-        fill="#F7F1E7"
-        opacity="0.55"
-        letter-spacing="3">Dragana Stamenković</text>
+        font-size="56"
+        fill="#6B4F3A"
+        letter-spacing="2">Dragana Stamenković</text>
 
-  <!-- Small heart divider above author -->
-  <text x="600" y="1590" text-anchor="middle" font-size="32" fill="#D8A14A" opacity="0.7">♥</text>
+  <!-- Small coral heart above author -->
+  <text x="600" y="1490" text-anchor="middle" font-size="36" fill="#C9773A" opacity="0.8">♥</text>
+
+  <!-- Bottom tagline -->
+  <text x="600" y="1680"
+        text-anchor="middle"
+        font-family="Georgia,'Times New Roman',serif"
+        font-style="italic"
+        font-size="38"
+        fill="#8A6850"
+        opacity="0.7">hrana je jezik duše</text>
 </svg>
