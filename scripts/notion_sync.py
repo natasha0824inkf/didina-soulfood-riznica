@@ -12,6 +12,7 @@ import re
 import sys
 import html
 import json
+import hashlib
 import unicodedata
 import requests
 from datetime import datetime
@@ -19,7 +20,9 @@ from pathlib import Path
 
 NOTION_TOKEN = re.sub(r'\s', '', os.environ["NOTION_TOKEN"])
 NOTION_DB_ID = re.sub(r'\s', '', os.environ["NOTION_DB_ID"])
+ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 REPO_ROOT = Path(__file__).parent.parent
+TRANSLATION_CACHE = REPO_ROOT / "scripts" / "translation_cache.json"
 
 HEADERS = {
     "Authorization": f"Bearer {NOTION_TOKEN}",
@@ -302,6 +305,76 @@ def ensure_db_properties():
             print(f"  Added missing DB properties: {', '.join(to_add)}")
         else:
             print(f"  Warning: could not add properties: {patch.status_code} {patch.text}", file=sys.stderr)
+
+
+def load_cache():
+    if TRANSLATION_CACHE.exists():
+        return json.loads(TRANSLATION_CACHE.read_text())
+    return {}
+
+
+def save_cache(cache):
+    TRANSLATION_CACHE.write_text(json.dumps(cache, ensure_ascii=False, indent=2))
+
+
+def _sr_hash(text):
+    return hashlib.md5(text.encode()).hexdigest()[:12]
+
+
+def claude_translate(text, target_lang):
+    """Translate plain text or HTML via Claude API. Preserves HTML tags."""
+    if not ANTHROPIC_API_KEY:
+        return ""
+    lang_names = {"de": "German", "en": "English"}
+    name = lang_names.get(target_lang, target_lang)
+    payload = {
+        "model": "claude-haiku-4-5-20251001",
+        "max_tokens": 4096,
+        "messages": [{
+            "role": "user",
+            "content": (
+                f"Translate the following HTML content to {name}. "
+                "Preserve ALL HTML tags, attributes, and structure exactly — only translate the visible text. "
+                "Return only the translated HTML, nothing else.\n\n"
+                f"{text}"
+            )
+        }]
+    }
+    res = requests.post(
+        "https://api.anthropic.com/v1/messages",
+        headers={"x-api-key": ANTHROPIC_API_KEY, "anthropic-version": "2023-06-01", "content-type": "application/json"},
+        json=payload,
+        timeout=60,
+    )
+    if not res.ok:
+        print(f"  Warning: Claude API error {res.status_code}", file=sys.stderr)
+        return ""
+    return res.json()["content"][0]["text"].strip()
+
+
+def auto_translate(slug, sr_title, sr_body, cache):
+    """
+    Return (de_title, de_body, en_title, en_body) from cache or via Claude.
+    Only calls the API when SR content has changed since last translation.
+    """
+    if not ANTHROPIC_API_KEY:
+        return "", "", "", ""
+
+    h = _sr_hash(sr_title + sr_body)
+    entry = cache.get(slug, {})
+
+    if entry.get("hash") == h:
+        return entry.get("de_title",""), entry.get("de_body",""), entry.get("en_title",""), entry.get("en_body","")
+
+    print(f"  Translating {slug}...")
+    de_title = claude_translate(sr_title, "de")
+    en_title = claude_translate(sr_title, "en")
+    de_body  = claude_translate(sr_body,  "de") if sr_body else ""
+    en_body  = claude_translate(sr_body,  "en") if sr_body else ""
+
+    cache[slug] = {"hash": h, "de_title": de_title, "de_body": de_body, "en_title": en_title, "en_body": en_body}
+    save_cache(cache)
+    return de_title, de_body, en_title, en_body
 
 
 def query_database():
@@ -622,6 +695,7 @@ def main():
 
     posts = {}   # slug → {versions, date}  — new single-row mode
     legacy = {}  # slug → {versions, date}  — old 3-row mode (Language select set)
+    trans_cache = load_cache()
 
     for page in pages:
         sr_title_raw = get_prop(page, "Title", "title")
@@ -658,11 +732,18 @@ def main():
             all_blocks = get_page_blocks(page["id"])
             bodies = find_language_sections(all_blocks, slug)
 
+            # Auto-translate SR → DE/EN when manual translations are missing
+            at_de_title, at_de_body, at_en_title, at_en_body = auto_translate(
+                slug, sr_title, bodies["SR"], trans_cache
+            )
+            de_title = get_prop(page, "Title DE", "text") or at_de_title or sr_title
+            en_title = get_prop(page, "Title EN", "text") or at_en_title or sr_title
+
             posts[slug] = {
                 "versions": {
                     "SR": {"title": sr_title, "tags": tags, "date": date_raw, "body": bodies["SR"]},
-                    "DE": {"title": de_title, "tags": tags, "date": date_raw, "body": bodies["DE"]},
-                    "EN": {"title": en_title, "tags": tags, "date": date_raw, "body": bodies["EN"]},
+                    "DE": {"title": de_title, "tags": tags, "date": date_raw, "body": bodies["DE"] or at_de_body},
+                    "EN": {"title": en_title, "tags": tags, "date": date_raw, "body": bodies["EN"] or at_en_body},
                 },
                 "date": date_raw,
             }
