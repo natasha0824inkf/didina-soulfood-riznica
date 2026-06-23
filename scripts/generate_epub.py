@@ -3,7 +3,14 @@
 
 import json, subprocess, os, io
 from ebooklib import epub
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFont
+
+FONT_SERIF_BOLD   = '/usr/share/fonts/truetype/freefont/FreeSerifBold.ttf'
+FONT_SERIF_REG    = '/usr/share/fonts/truetype/freefont/FreeSerif.ttf'
+FONT_SERIF_ITALIC = '/usr/share/fonts/truetype/freefont/FreeSerifItalic.ttf'
+
+def ttf(path, size):
+    return ImageFont.truetype(path, size)
 
 REPO   = '/home/user/didina-soulfood-riznica'
 IMGDIR = os.path.join(REPO, 'assets', 'images')
@@ -357,6 +364,8 @@ LANG_STRINGS = {
         'book_title':          'Didina SoulFood Riznica',
         'book_subtitle':       '44 recepta iz srca kuhinje',
         'tagline':             'recepti za svaki dan',
+        'cover_line1':         'Didina',
+        'cover_line3':         'R I Z N I C A',
         'identifier':          'didina-soulfood-riznica-2026-sr',
         'cover_page_title':    'Naslovna',
         'cover_quote':         'Ne brojite kalorije, brojite vaše osmehe i korake.',
@@ -401,9 +410,12 @@ LANG_STRINGS = {
         'bonus_closing':       'Za kraj ove male riznice – jedno skromno povrće koje nas podseća da se prava čar kuvanja često krije u jednostavnosti i da je manje vrlo često – više!',
     },
     'de': {
-        'book_title':          'Didina SoulFood Riznica',
+        'book_title':          'Didina SoulFood Schatzkiste',
         'book_subtitle':       '44 Rezepte aus dem Herzen der Küche',
         'tagline':             'Rezepte für jeden Tag',
+        'cover_line1':         'Didina',
+        'cover_line3':         'SCHATZKISTE',
+        'cover_line3_size':    62,
         'identifier':          'didina-soulfood-riznica-2026-de',
         'cover_page_title':    'Titelseite',
         'cover_quote':         'Zählt keine Kalorien — zählt eure Lächeln und Schritte.',
@@ -448,9 +460,11 @@ LANG_STRINGS = {
         'bonus_closing':       'Zum Abschluss dieser kleinen Schatzkiste – ein bescheidenes Gemüse, das uns daran erinnert, dass der wahre Zauber des Kochens oft in der Einfachheit liegt und dass weniger sehr oft – mehr ist!',
     },
     'en': {
-        'book_title':          'Didina SoulFood Riznica',
+        'book_title':          "Didi's SoulFood Treasury",
         'book_subtitle':       '44 Recipes from the Heart of the Kitchen',
         'tagline':             'Recipes for every day',
+        'cover_line1':         "Didi's",
+        'cover_line3':         'T R E A S U R Y',
         'identifier':          'didina-soulfood-riznica-2026-en',
         'cover_page_title':    'Cover',
         'cover_quote':         "Don't count calories — count your smiles and steps.",
@@ -638,8 +652,8 @@ def resize_img(path, max_w=320, max_h=170):
         im.save(buf, format='JPEG', quality=75, optimize=True)
         return buf.getvalue()
 
-def make_cover_image(tagline):
-    """Generate cover PNG with the given tagline for the language edition."""
+def make_cover_image(ls):
+    """Generate cover PNG using language-specific strings from ls dict."""
     w, h    = 1200, 1800
     dark    = ( 34,  16,   8)
     darker  = ( 24,  12,   4)
@@ -685,14 +699,15 @@ def make_cover_image(tagline):
     d.polygon([(600,577),(614,590),(600,603),(586,590)], fill=plum)
     d.line([(645,590),(1060,590)], fill=gold, width=2)
 
-    d.text((w//2, 730), 'Didina',           fill=cream,   anchor='mm', font_size=148)
-    d.text((w//2, 890), 'SoulFood',         fill=gold,    anchor='mm', font_size=110)
+    line3_size = ls.get('cover_line3_size', 72)
+    d.text((w//2, 730),  ls['cover_line1'], fill=cream,   anchor='mm', font=ttf(FONT_SERIF_BOLD, 148))
+    d.text((w//2, 890),  'SoulFood',        fill=gold,    anchor='mm', font=ttf(FONT_SERIF_BOLD, 110))
     d.rectangle([100, 960, w-100, 1080], fill=plum)
-    d.text((w//2, 1025), 'R I Z N I C A',  fill=gold,    anchor='mm', font_size=72)
-    d.text((w//2, 1185), tagline,           fill=midgold, anchor='mm', font_size=42)
+    d.text((w//2, 1025), ls['cover_line3'], fill=gold,    anchor='mm', font=ttf(FONT_SERIF_BOLD, line3_size))
+    d.text((w//2, 1185), ls['tagline'],     fill=midgold, anchor='mm', font=ttf(FONT_SERIF_REG,  44))
     d.line([(200,1560),(1000,1560)], fill=(158,120,184), width=2)
-    d.text((w//2, 1640), '♥',          fill=gold,    anchor='mm', font_size=40)
-    d.text((w//2, 1710), 'Dragana Stamenković', fill=midgold, anchor='mm', font_size=48)
+    d.text((w//2, 1640), '♥',          fill=gold,    anchor='mm', font=ttf(FONT_SERIF_REG,  44))
+    d.text((w//2, 1710), 'Dragana Stamenković', fill=midgold, anchor='mm', font=ttf(FONT_SERIF_REG, 50))
 
     buf = io.BytesIO()
     im.save(buf, format='PNG')
@@ -764,7 +779,7 @@ def build_epub(lang):
                              media_type='text/css', content=CSS.encode('utf-8'))
     book.add_item(css_item)
 
-    cover_png = make_cover_image(ls['tagline'])
+    cover_png = make_cover_image(ls)
     cover_img_item = epub.EpubImage(uid='cover-img', file_name='cover.png',
                                     media_type='image/png', content=cover_png)
     book.add_item(cover_img_item)
