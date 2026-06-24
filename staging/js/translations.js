@@ -83,6 +83,8 @@ const translations = {
     book_desc: 'Svi ovi recepti, i još mnogo toga, uskoro u štampanom obliku. Prijavite se za newsletter da budete prvi koji saznaju.',
     about_story: 'Moja priča',
     didi_motto: '„Ne brojite kalorije, brojite vaše osmehe i korake."',
+    epub_title: 'Preuzmite e-knjigu',
+    epub_desc: 'Svi recepti u džepu — besplatno, u tri jezička izdanja.',
 
     blog_title: 'Blog',
     blog_subtitle: 'Priče iz kuhinje',
@@ -195,6 +197,8 @@ const translations = {
     book_desc: 'All diese Rezepte und noch viele mehr — bald auch gedruckt. Meld dich für den Newsletter an, um als Erste davon zu erfahren.',
     about_story: 'Meine Geschichte',
     didi_motto: '„Zählt keine Kalorien — zählt eure Lächeln und Schritte."',
+    epub_title: 'E-Buch herunterladen',
+    epub_desc: 'Alle Rezepte für unterwegs — kostenlos, in drei Sprachen.',
 
     blog_title: 'Blog',
     blog_subtitle: 'Geschichten aus der Küche',
@@ -307,6 +311,8 @@ const translations = {
     book_desc: 'All these recipes and many more, soon in print. Subscribe to the newsletter to be the first to know.',
     about_story: 'My story',
     didi_motto: '"Don\'t count calories — count your smiles and steps."',
+    epub_title: 'Download the e-book',
+    epub_desc: 'All recipes in your pocket — free, in three language editions.',
 
     blog_title: 'Blog',
     blog_subtitle: 'Stories from the kitchen',
