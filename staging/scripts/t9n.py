@@ -26,10 +26,9 @@ MODES
 import sys
 import time
 import os
-import json
 import re
-import textwrap
-import requests
+import urllib.request
+import urllib.parse
 
 EMAIL = "nevenaneks@gmail.com"  # MyMemory free quota: 10k chars/day with email
 
@@ -52,14 +51,12 @@ def translate(text: str, target: str) -> str:
     if not text.strip():
         return text
     try:
-        r = requests.get(
-            "https://api.mymemory.translated.net/get",
-            params={"q": text, "langpair": f"en|{target}", "de": EMAIL},
-            timeout=10,
-        )
-        data = r.json()
+        params = urllib.parse.urlencode({"q": text, "langpair": f"en|{target}", "de": EMAIL})
+        url = f"https://api.mymemory.translated.net/get?{params}"
+        with urllib.request.urlopen(url, timeout=10) as resp:
+            import json
+            data = json.loads(resp.read().decode())
         result = data["responseData"]["translatedText"]
-        # MyMemory returns "PLEASE SELECT TWO DISTINCT..." on bad input
         if result.startswith("PLEASE SELECT"):
             return text
         return result
