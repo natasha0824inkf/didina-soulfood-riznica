@@ -408,6 +408,8 @@ LANG_STRINGS = {
         'bonus_energy_head':   'Energija jela',
         'bonus_energy_sub':    'Čista jednostavnost!',
         'bonus_closing':       'Za kraj ove male riznice – jedno skromno povrće koje nas podseća da se prava čar kuvanja često krije u jednostavnosti i da je manje vrlo često – više!',
+        'zahvalnica_page_title': 'Zahvalnica',
+        'colofon_page_title':    'Kolofon',
     },
     'de': {
         'book_title':          'Didina SoulFood Schatzkiste',
@@ -458,6 +460,8 @@ LANG_STRINGS = {
         'bonus_energy_head':   'Energie des Gerichts',
         'bonus_energy_sub':    'Pure Einfachheit!',
         'bonus_closing':       'Zum Abschluss dieser kleinen Schatzkiste – ein bescheidenes Gemüse, das uns daran erinnert, dass der wahre Zauber des Kochens oft in der Einfachheit liegt und dass weniger sehr oft – mehr ist!',
+        'zahvalnica_page_title': 'Danksagung',
+        'colofon_page_title':    'Impressum',
     },
     'en': {
         'book_title':          "Didi's SoulFood Treasury",
@@ -507,6 +511,8 @@ LANG_STRINGS = {
         'bonus_energy_head':   'The energy of this dish',
         'bonus_energy_sub':    'Pure simplicity!',
         'bonus_closing':       'To close this little treasury – one humble vegetable reminding us that the true magic of cooking often lies in simplicity, and that less is very often – more!',
+        'zahvalnica_page_title': 'Acknowledgements',
+        'colofon_page_title':    'Colophon',
     },
 }
 
@@ -620,6 +626,88 @@ FINAL_BODY = {
   This book may be finished, but your kitchen adventure is just beginning.</p>
 </div>
 <p class="sign-off">From a small kitchen, with lots of love,<br/><br/>Didi<br/><br/>Bremen, spring 2026.</p>""",
+}
+
+# ---------------------------------------------------------------------------
+# 4b. Zahvalnica (acknowledgements) page
+# ---------------------------------------------------------------------------
+ZAHVALNICA_BODY = {
+    'sr': """
+<h2 class="intro-title">Zahvalnica</h2>
+<div class="intro-text">
+  <p>Zahvaljujem se pre svega mojoj mami, koja me je uvela u svet kuvanja i naučila me prvim receptima. Od nje sam naučila da se ljubav često pokazuje kroz miris domaće hrane, pun sto i želju da se uvek spremi nešto lepo za drage ljude.</p>
+  <p>Hvala mom suprugu na nesebičnoj podršci i beskrajnom strpljenju od trenutka kada je ova knjiga bila samo ideja. Bezbroj recepata prvo je prošlo kroz tvoje ruke (i tanjir). Hvala ti što si svojim talentom za fotografiju učinio da ova knjiga zaista postane kuvar, a ne samo još jedna zbirka recepata. Hvala ti što si bio deo ove priče i verovao u nju od samog početka.</p>
+  <p>Posebnu zahvalnost dugujem svojoj dragoj prijateljici Nataši, koja je uz mene bila od prve ideje do poslednje stranice. Hvala ti na lekturi, prevodima, tehničkoj podršci, izradi web stranice i bezbroj sati uloženih u ovaj projekat. Tvoja pomoć, znanje i vera da ova knjiga ugleda svetlost dana ostavili su trag na svakoj njenoj stranici.</p>
+  <p>I na kraju, hvala svakome ko je otvorio ovu knjigu. Nadam se da će vam njeni recepti doneti isto onoliko radosti koliko su je meni doneli dok sam ih stvarala. Neka vas podsete da se najlepše uspomene često stvaraju upravo oko stola, uz dobru hranu i drage ljude.</p>
+</div>
+<p class="sign-off">Sa ljubavlju,<br/>Didi</p>""",
+
+    'de': """
+<h2 class="intro-title">Danksagung</h2>
+<div class="intro-text">
+  <p>Zuallererst danke ich meiner Mutter, die mich in die Welt des Kochens eingeführt und mir die ersten Rezepte beigebracht hat. Von ihr habe ich gelernt, dass Liebe sich oft im Duft selbst gekochter Speisen zeigt, in einem vollen Tisch und dem Wunsch, für liebe Menschen immer etwas Schönes zuzubereiten.</p>
+  <p>Meinem Mann danke ich für seine selbstlose Unterstützung und unendliche Geduld von dem Moment an, als dieses Buch noch eine bloße Idee war. Unzählige Rezepte gingen zuerst durch seine Hände (und auf seinen Teller). Ich danke dir, dass du mit deinem fotografischen Talent dafür gesorgt hast, dass dieses Buch wirklich ein Kochbuch geworden ist – und nicht nur eine weitere Rezeptsammlung. Danke, dass du Teil dieser Geschichte warst und von Anfang an an sie geglaubt hast.</p>
+  <p>Besonderen Dank schulde ich meiner lieben Freundin Nataša, die von der ersten Idee bis zur letzten Seite an meiner Seite war. Danke für das Lektorat, die Übersetzungen, die technische Unterstützung, die Gestaltung der Webseite und die unzähligen Stunden, die du in dieses Projekt gesteckt hast. Deine Hilfe, dein Wissen und dein Glaube daran, dass dieses Buch das Licht der Welt erblickt, haben auf jeder Seite ihre Spuren hinterlassen.</p>
+  <p>Und am Ende danke ich jedem, der dieses Buch aufgeschlagen hat. Ich hoffe, dass seine Rezepte euch genauso viel Freude bringen, wie sie mir beim Erstellen bereitet haben. Mögen sie euch daran erinnern, dass die schönsten Erinnerungen oft genau am Tisch entstehen, bei gutem Essen und lieben Menschen.</p>
+</div>
+<p class="sign-off">Mit Liebe,<br/>Didi</p>""",
+
+    'en': """
+<h2 class="intro-title">Acknowledgements</h2>
+<div class="intro-text">
+  <p>First and foremost, I want to thank my mother, who introduced me to the world of cooking and taught me my first recipes. From her I learned that love is often expressed through the smell of home-cooked food, a full table, and the desire to always prepare something special for the people we care about.</p>
+  <p>I thank my husband for his selfless support and endless patience from the very moment this book was just an idea. Countless recipes first passed through your hands (and onto your plate). Thank you for using your gift for photography to make this book a real cookbook – and not just another collection of recipes. Thank you for being part of this story and believing in it from the very beginning.</p>
+  <p>Special thanks go to my dear friend Nataša, who was with me from the first idea to the last page. Thank you for the proofreading, translations, technical support, building the website, and the countless hours invested in this project. Your help, knowledge, and belief that this book would see the light of day have left their mark on every single page.</p>
+  <p>And finally, thank you to everyone who has opened this book. I hope its recipes bring you as much joy as they brought me while creating them. May they remind you that the most beautiful memories are often made right at the table, with good food and dear people.</p>
+</div>
+<p class="sign-off">With love,<br/>Didi</p>""",
+}
+
+# ---------------------------------------------------------------------------
+# 4c. Colophon (imprint) page
+# ---------------------------------------------------------------------------
+COLOFON_BODY = {
+    'sr': """
+<div class="intro-text" style="font-size:0.88em; margin-top:2em;">
+  <p><strong>Naslov knjige:</strong> Didina SoulFood Riznica</p>
+  <p><strong>Autor:</strong> Dragana Stamenković</p>
+  <p><strong>Lektura, prevod i digitalna podrška:</strong> Nataša Šebek</p>
+  <p><strong>Fotografije:</strong> Dragana Stamenković, Mohammad Khalass</p>
+  <p><strong>Web stranica:</strong> Nataša Šebek</p>
+  <p><strong>Prvo izdanje:</strong> 2026.</p>
+  <hr class="div"/>
+  <p>Copyright © 2026 Dragana Stamenković<br/>Sva prava zadržana.</p>
+  <p>Nijedan deo ove publikacije ne sme se umnožavati, distribuirati ili prenositi u bilo kom obliku ili na bilo koji način bez prethodne pisane saglasnosti autora, osim u slučaju kratkih citata korišćenih u prikazima i recenzijama.</p>
+  <p>Svi recepti, fotografije i tekstovi u ovoj knjizi autorsko su delo autora, osim ako nije drugačije naznačeno.</p>
+</div>""",
+
+    'de': """
+<div class="intro-text" style="font-size:0.88em; margin-top:2em;">
+  <p><strong>Buchtitel:</strong> Didina SoulFood Schatzkiste</p>
+  <p><strong>Autorin:</strong> Dragana Stamenković</p>
+  <p><strong>Lektorat, Übersetzung und digitale Unterstützung:</strong> Nataša Šebek</p>
+  <p><strong>Fotografien:</strong> Dragana Stamenković, Mohammad Khalass</p>
+  <p><strong>Website:</strong> Nataša Šebek</p>
+  <p><strong>Erste Ausgabe:</strong> 2026.</p>
+  <hr class="div"/>
+  <p>Copyright © 2026 Dragana Stamenković<br/>Alle Rechte vorbehalten.</p>
+  <p>Kein Teil dieser Publikation darf ohne vorherige schriftliche Genehmigung der Autorin in irgendeiner Form oder auf irgendeine Weise vervielfältigt, verbreitet oder übertragen werden, außer bei kurzen Zitaten in Rezensionen.</p>
+  <p>Alle Rezepte, Fotografien und Texte in diesem Buch sind das Originalwerk der Autorin, sofern nicht anders angegeben.</p>
+</div>""",
+
+    'en': """
+<div class="intro-text" style="font-size:0.88em; margin-top:2em;">
+  <p><strong>Book title:</strong> Didina SoulFood Riznica</p>
+  <p><strong>Author:</strong> Dragana Stamenković</p>
+  <p><strong>Proofreading, translation and digital support:</strong> Nataša Šebek</p>
+  <p><strong>Photography:</strong> Dragana Stamenković, Mohammad Khalass</p>
+  <p><strong>Website:</strong> Nataša Šebek</p>
+  <p><strong>First edition:</strong> 2026.</p>
+  <hr class="div"/>
+  <p>Copyright © 2026 Dragana Stamenković<br/>All rights reserved.</p>
+  <p>No part of this publication may be reproduced, distributed, or transmitted in any form or by any means without the prior written consent of the author, except in the case of brief quotations used in reviews and critiques.</p>
+  <p>All recipes, photographs, and texts in this book are the original work of the author unless otherwise stated.</p>
+</div>""",
 }
 
 # ---------------------------------------------------------------------------
@@ -908,6 +996,12 @@ def build_epub(lang):
     cover_ch = add_page('cover', 'cover.xhtml', ls['cover_page_title'], cover_body,
                         extra_ns='xmlns:epub="http://www.idpf.org/2007/ops"')
 
+    # --- Colophon page ---
+    colofon_ch = add_page('colofon', 'colofon.xhtml', ls['colofon_page_title'], COLOFON_BODY[lang])
+
+    # --- Zahvalnica page ---
+    zahvalnica_ch = add_page('zahvalnica', 'zahvalnica.xhtml', ls['zahvalnica_page_title'], ZAHVALNICA_BODY[lang])
+
     # --- Intro page ---
     intro_ch = add_page('intro', 'intro.xhtml', ls['intro_page_title'], INTRO_BODY[lang])
 
@@ -995,9 +1089,11 @@ def build_epub(lang):
 
     # --- Nav / spine / write ---
     book.toc = [
-        epub.Link('cover.xhtml',    ls['cover_page_title'],  'cover'),
-        epub.Link('intro.xhtml',    ls['intro_page_title'],  'intro'),
-        epub.Link('toc_page.xhtml', ls['toc_page_title'],    'toc_page'),
+        epub.Link('cover.xhtml',      ls['cover_page_title'],      'cover'),
+        epub.Link('colofon.xhtml',    ls['colofon_page_title'],    'colofon'),
+        epub.Link('zahvalnica.xhtml', ls['zahvalnica_page_title'], 'zahvalnica'),
+        epub.Link('intro.xhtml',      ls['intro_page_title'],      'intro'),
+        epub.Link('toc_page.xhtml',   ls['toc_page_title'],        'toc_page'),
         *section_toc,
         epub.Link('bonus.xhtml',    ls['bonus_nav_title'],   'bonus'),
         epub.Link('final.xhtml',    ls['final_page_title'],  'final'),
