@@ -28,9 +28,13 @@ A trilingual recipe website and digital cookbook — Serbian, German, and Englis
 ```
 didina-soulfood-riznica/
 ├── assets/
-│   └── images/             # Recipe photos (kebab-case PNG/JPEG slugs)
+│   └── images/
+│       └── blog/           # Blog post images
 ├── blog/
-│   └── kako-naci-vremena.html   # First blog post (SR/DE/EN)
+│   ├── kako-naci-vremena/
+│   │   └── index.html      # Blog post (directory URL)
+│   └── nedeljno-kuvanje-mali-ritual/
+│       └── index.html
 ├── css/
 │   ├── style.css           # Full design system + dark mode
 │   └── responsive.css      # Mobile-first breakpoints
@@ -41,14 +45,11 @@ didina-soulfood-riznica/
 ├── scripts/
 │   ├── generate_epub.py    # Produces SR / DE / EN EPUB editions
 │   ├── generate_pdf.py     # Produces SR / DE / EN PDF editions
-│   └── notion_sync.py      # Syncs blog posts from Notion
-├── sources/
-│   ├── Didina_SoulFood_Riznica_SR.epub
-│   ├── Didina_SoulFood_Riznica_DE.epub
-│   ├── Didina_SoulFood_Riznica_EN.epub
-│   ├── Didina_SoulFood_Riznica_SR.pdf
-│   ├── Didina_SoulFood_Riznica_DE.pdf
-│   └── Didina_SoulFood_Riznica_EN.pdf
+│   ├── notion_sync.py      # Syncs blog posts from Notion (manual trigger only)
+│   ├── post_registry.json  # Registry of all blog posts (Notion + manual)
+│   └── translation_cache.json
+├── staging/                # Staging copies with ../asset paths
+├── sources/                # Generated EPUB + PDF files
 ├── about.html
 ├── blog.html
 ├── contact.html
@@ -71,8 +72,94 @@ didina-soulfood-riznica/
 | `about.html` | About Didi — story and values |
 | `contact.html` | Contact form (FormSubmit → email) |
 | `blog.html` | Blog listing |
-| `blog/kako-naci-vremena.html` | First blog post |
+| `blog/slug/index.html` | Individual blog post (directory-style URL) |
 | `privacy.html` | Privacy policy (SR / DE / EN) |
+
+---
+
+## Translation Architecture
+
+The site is fully trilingual: **SR (Serbian)** is the default, **DE (German)** and **EN (English)** are optional.
+
+### How it works
+
+`js/translations.js` holds a flat key→string map for each language:
+
+```js
+const translations = {
+  sr: { nav_home: 'Početna', blog_read_more: 'Čitaj dalje', ... },
+  de: { nav_home: 'Startseite', blog_read_more: 'Weiterlesen', ... },
+  en: { nav_home: 'Home',      blog_read_more: 'Read more',   ... },
+};
+```
+
+`js/main.js` exposes two patterns via `setLanguage(lang)`:
+
+| Pattern | HTML attribute | Effect |
+|---|---|---|
+| `data-i18n="key"` | on any element | `el.textContent = t(key)` |
+| `data-lang-content="sr/de/en"` | on sibling elements | sets `hidden` on non-matching ones |
+
+`t(key)` falls back: current lang → SR → key name.
+
+### Shorthand: adding a new UI string
+
+**1. Add the key to all three languages in `translations.js`:**
+```js
+// sr block (~line 3)
+my_new_key: 'Srpski tekst',
+
+// de block (~line 115)
+my_new_key: 'Deutscher Text',
+
+// en block (~line 227)
+my_new_key: 'English text',
+```
+
+**2a. Single-language element (JS replaces text at runtime):**
+```html
+<span data-i18n="my_new_key">Srpski tekst</span>
+```
+Put the SR fallback as inner text so it shows even before JS runs.
+
+**2b. Multi-language siblings (JS toggles visibility):**
+```html
+<span data-lang-content="sr">Srpski tekst</span>
+<span data-lang-content="de" hidden>Deutscher Text</span>
+<span data-lang-content="en" hidden>English text</span>
+```
+SR element has **no** `hidden` attribute (it's the default).
+
+### Blog post translation pattern
+
+Inside `blog/slug/index.html`, full content blocks use `data-lang-content`:
+
+```html
+<div data-lang-content="sr">
+  <h1>Srpski naslov</h1>
+  <p>Srpski tekst...</p>
+</div>
+<div data-lang-content="de" hidden>
+  <h1>Deutscher Titel</h1>
+  <p>Deutscher Text...</p>
+</div>
+<div data-lang-content="en" hidden>
+  <h1>English title</h1>
+  <p>English text...</p>
+</div>
+```
+
+### Cache busting
+
+Assets are versioned with `?v=N`. Increment N in **all** HTML files when making breaking JS/CSS changes:
+
+```html
+<link rel="stylesheet" href="css/style.css?v=3">
+<script src="js/translations.js?v=3"></script>
+<script src="js/main.js?v=3"></script>
+```
+
+Current version: **v=3**
 
 ---
 
@@ -188,12 +275,13 @@ prokelj-iz-rerne.png
 
 ## Deployment
 
-Two GitHub repositories receive every push to `main`:
+Three environments across two GitHub repos:
 
-| Repo | URL | Role |
+| Environment | URL | Repo |
 |---|---|---|
-| `natasha0824inkf/didina-soulfood-riznica` | natasha0824inkf.github.io/didina-soulfood-riznica | Staging |
-| `didina-soulfood/riznica` | didina-soulfood.github.io/riznica | Production |
+| Staging (test) | `natasha0824inkf.github.io/didina-soulfood-riznica/staging/` | `natasha0824inkf/didina-soulfood-riznica` |
+| Pre-prod | `natasha0824inkf.github.io/didina-soulfood-riznica/` | `natasha0824inkf/didina-soulfood-riznica` |
+| Production | `didina-soulfood.github.io/riznica/` | `didina-soulfood/riznica` |
 
 Push flow (configured in `.git/config`):
 ```bash

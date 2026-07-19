@@ -8,7 +8,7 @@ const translations = {
     nav_favorites: 'Omiljeni',
 
     hero_title: 'Didina kuhinja sa dušom',
-    hero_subtitle: 'Jednostavni recepti sa dušom — za ljude koji vole hranu koja ih voli za uzvrat.',
+    hero_subtitle: 'Mala riznica domaćih recepata i lepih trenutaka.',
     hero_cta: 'Istraži recepte',
     hero_scroll: 'Otkrij više',
 
@@ -83,6 +83,8 @@ const translations = {
     book_desc: 'Svi ovi recepti, i još mnogo toga, uskoro u štampanom obliku. Prijavite se za newsletter da budete prvi koji saznaju.',
     about_story: 'Moja priča',
     didi_motto: '„Ne brojite kalorije, brojite vaše osmehe i korake."',
+    epub_title: 'Preuzmite e-knjigu',
+    epub_desc: 'Svi recepti u džepu — besplatno, u tri jezička izdanja.',
 
     blog_title: 'Blog',
     blog_subtitle: 'Priče iz kuhinje',
@@ -120,7 +122,7 @@ const translations = {
     nav_favorites: 'Favoriten',
 
     hero_title: "Didi's SoulFood-Schatzkammer",
-    hero_subtitle: 'Echte Rezepte mit Seele — für alle, die Essen wollen, das von Herzen kommt.',
+    hero_subtitle: 'Eine kleine Schatzkiste mit Hausrezepten und schönen Momenten.',
     hero_cta: 'Rezepte entdecken',
     hero_scroll: 'Mehr entdecken',
 
@@ -195,6 +197,8 @@ const translations = {
     book_desc: 'All diese Rezepte und noch viele mehr — bald auch gedruckt. Meld dich für den Newsletter an, um als Erste davon zu erfahren.',
     about_story: 'Meine Geschichte',
     didi_motto: '„Zählt keine Kalorien — zählt eure Lächeln und Schritte."',
+    epub_title: 'E-Buch herunterladen',
+    epub_desc: 'Alle Rezepte für unterwegs — kostenlos, in drei Sprachen.',
 
     blog_title: 'Blog',
     blog_subtitle: 'Geschichten aus der Küche',
@@ -232,7 +236,7 @@ const translations = {
     nav_favorites: 'Favorites',
 
     hero_title: "Didi's SoulFood Treasury",
-    hero_subtitle: 'Simple, soulful recipes — for people who love food that loves them right back.',
+    hero_subtitle: 'A little treasury of home recipes and beautiful moments.',
     hero_cta: 'Explore Recipes',
     hero_scroll: 'Discover more',
 
@@ -307,6 +311,8 @@ const translations = {
     book_desc: 'All these recipes and many more, soon in print. Subscribe to the newsletter to be the first to know.',
     about_story: 'My story',
     didi_motto: '"Don\'t count calories — count your smiles and steps."',
+    epub_title: 'Download the e-book',
+    epub_desc: 'All recipes in your pocket — free, in three language editions.',
 
     blog_title: 'Blog',
     blog_subtitle: 'Stories from the kitchen',
