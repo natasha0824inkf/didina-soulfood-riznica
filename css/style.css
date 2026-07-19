@@ -810,6 +810,7 @@ ul,ol { list-style: none; }
   margin-top: 2.5rem;
 }
 .blog-card {
+  position: relative;
   background: var(--warm-white);
   border: 1px solid var(--border);
   border-radius: var(--r-md);
@@ -827,6 +828,7 @@ ul,ol { list-style: none; }
 .blog-card-date  { font-size: .78rem; color: var(--text-light); }
 .blog-read-more  { font-size: .82rem; font-weight: 600; color: var(--coral); }
 .blog-read-more:hover { text-decoration: underline; }
+.blog-read-more::after { content: ''; position: absolute; inset: 0; }
 
 /* Blog post page */
 .blog-post { max-width: 720px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
