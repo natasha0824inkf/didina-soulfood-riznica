@@ -8,7 +8,7 @@ const translations = {
     nav_favorites: 'Omiljeni',
 
     hero_title: 'Didina kuhinja sa dušom',
-    hero_subtitle: 'Jednostavni recepti sa dušom — za ljude koji vole hranu koja ih voli za uzvrat.',
+    hero_subtitle: 'Mala riznica domaćih recepata i lepih trenutaka.',
     hero_cta: 'Istraži recepte',
     hero_scroll: 'Otkrij više',
 
@@ -122,7 +122,7 @@ const translations = {
     nav_favorites: 'Favoriten',
 
     hero_title: "Didi's SoulFood-Schatzkammer",
-    hero_subtitle: 'Echte Rezepte mit Seele — für alle, die Essen wollen, das von Herzen kommt.',
+    hero_subtitle: 'Eine kleine Schatzkiste mit Hausrezepten und schönen Momenten.',
     hero_cta: 'Rezepte entdecken',
     hero_scroll: 'Mehr entdecken',
 
@@ -236,7 +236,7 @@ const translations = {
     nav_favorites: 'Favorites',
 
     hero_title: "Didi's SoulFood Treasury",
-    hero_subtitle: 'Simple, soulful recipes — for people who love food that loves them right back.',
+    hero_subtitle: 'A little treasury of home recipes and beautiful moments.',
     hero_cta: 'Explore Recipes',
     hero_scroll: 'Discover more',
 
