@@ -11,6 +11,8 @@
   }
   .nav-links.open { display: flex; }
   .nav-links a { padding: .65rem .85rem; width: 100%; }
+  .nav-links.open a { color: var(--text-dark); }
+  html.dark-mode .nav-links.open a { color: var(--text-dark); }
 
   .hamburger { display: flex; }
 
