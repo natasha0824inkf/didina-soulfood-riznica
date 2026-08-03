@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - 'claude/friendly-cray-sha9s'
+      - staging
 
 permissions:
   contents: write
@@ -39,7 +39,7 @@ jobs:
           keep_files: true
 
   deploy-staging:
-    if: github.ref == 'refs/heads/claude/friendly-cray-sha9s'
+    if: github.ref == 'refs/heads/staging'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

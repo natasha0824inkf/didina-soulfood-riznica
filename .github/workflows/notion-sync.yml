@@ -50,15 +50,14 @@ jobs:
             echo "PROD_GITHUB_TOKEN not set, skipping"
             exit 0
           fi
-          # Remove the checkout action's credential helper so our PAT takes effect
+          # Use extraheader so the token never appears in remote URLs or error output
           git config --unset-all http.https://github.com/.extraheader || true
-          # Delete the production main branch first to clear any corrupted state
-          curl -s -X DELETE \
-            -H "Authorization: Bearer ${PROD_GITHUB_TOKEN}" \
-            -H "Accept: application/vnd.github+json" \
-            https://api.github.com/repos/didina-soulfood/riznica/git/refs/heads/main || true
-          # Give GitHub a moment to process the deletion
-          sleep 2
-          git remote add production https://x-access-token:${PROD_GITHUB_TOKEN}@github.com/didina-soulfood/riznica.git
-          git push production HEAD:main --force --no-thin
-          echo "Pushed to production"
+          git config http.https://github.com/.extraheader "Authorization: Bearer ${PROD_GITHUB_TOKEN}"
+          git remote add production https://github.com/didina-soulfood/riznica.git
+          # Force-push; if it fails the branch is untouched (no delete-before-push)
+          if git push production HEAD:main --force --no-thin; then
+            echo "Pushed to production"
+          else
+            echo "ERROR: push to production failed — production site unchanged"
+            exit 1
+          fi
