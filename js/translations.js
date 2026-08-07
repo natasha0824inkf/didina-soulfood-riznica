@@ -11,6 +11,7 @@ const translations = {
     hero_subtitle: 'Mala riznica domaćih recepata i lepih trenutaka.',
     hero_cta: 'Istraži recepte',
     hero_scroll: 'Otkrij više',
+    book_teaser: 'Uskoro: elektronsko i štampano izdanje',
 
     featured_title: 'Izdvojeni recepti',
     categories_title: 'Kategorije recepata',
@@ -125,6 +126,7 @@ const translations = {
     hero_subtitle: 'Eine kleine Schatzkiste mit Hausrezepten und schönen Momenten.',
     hero_cta: 'Rezepte entdecken',
     hero_scroll: 'Mehr entdecken',
+    book_teaser: 'Demnächst: elektronische und gedruckte Ausgabe',
 
     featured_title: 'Ausgewählte Rezepte',
     categories_title: 'Rezeptkategorien',
@@ -239,6 +241,7 @@ const translations = {
     hero_subtitle: 'A little treasury of home recipes and beautiful moments.',
     hero_cta: 'Explore Recipes',
     hero_scroll: 'Discover more',
+    book_teaser: 'Coming soon: electronic and printed edition',
 
     featured_title: 'Featured Recipes',
     categories_title: 'Recipe Categories',

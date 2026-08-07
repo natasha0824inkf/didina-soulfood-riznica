@@ -736,6 +736,22 @@ ul,ol { list-style: none; }
 .modal-nav-btn:hover:not(:disabled) { border-color: var(--amber); color: var(--amber); }
 .modal-nav-btn:disabled { opacity: .35; cursor: default; }
 
+/* ---- BOOK TEASER BAR ---- */
+.book-teaser-bar {
+  background: var(--accent);
+  color: #fff;
+  text-align: center;
+  padding: .6rem 1rem;
+  font-size: .92rem;
+  font-weight: 600;
+  letter-spacing: .025em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+}
+html.dark-mode .book-teaser-bar { background: #9b4e18; }
+
 /* ---- BOOK BANNER ---- */
 .book-banner {
   background: linear-gradient(135deg, #F7F1E7 0%, var(--plum-bg) 100%);
