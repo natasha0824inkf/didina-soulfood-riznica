@@ -34,6 +34,7 @@ jobs:
         with:
           personal_token: ${{ secrets.PROD_GITHUB_TOKEN1 }}
           external_repository: didina-soulfood/riznica
+          publish_branch: main
           publish_dir: .
           exclude_assets: '.github'
           keep_files: true
