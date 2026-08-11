@@ -45,7 +45,7 @@ const recipes = [
     instructions: {
       sr: [
         "Tortilju zagrej u suvom tiganju dok ne omekša i postane elastična.",
-        "Izgnj ečiti sireve viljuškom i dodati jogurt.",
+        "Izgnječiti sireve viljuškom i dodati jogurt.",
         "Ispeći semenke na suvom tiganju dok ne zamirišu.",
         "Pomešaj sireve i semenke i namuži na tortilju.",
         "Dodaj povrće i urolaj.",
