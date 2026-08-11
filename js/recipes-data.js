@@ -1314,7 +1314,7 @@ const recipes = [
       en: "Natural sweetness for every moment of peace and pleasure."
     },
     author_comment: {
-      sr: "Nastale su iz čiste želje za nečim slatkim, a bez griže savesti. Volim ih jer ih mogu napraviti za pet minuta, a svaki zalogaj nosi osećaj raskoši.",
+      sr: "Nastale su iz čiste želje za nečim slatkim, a da pritom ne osetim grižu savesti. Volim ih jer ih napravim za pet minuta, a svaki zalogaj donosi osećaj uživanja.",
       de: "Entstanden aus dem puren Wunsch nach Süßem ohne schlechtes Gewissen. Ich liebe sie, weil ich sie in fünf Minuten machen kann — jeder Bissen fühlt sich luxuriös an.",
       en: "Born from a pure desire for something sweet without guilt. I love them because I can make them in five minutes, and every bite feels indulgent."
     },
