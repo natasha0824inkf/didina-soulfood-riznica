@@ -365,7 +365,7 @@ const recipes = [
       en: "Because cookies love to rest too, not to burn."
     },
     author_comment: {
-      sr: "Ovi medenjaci se ne prave po pravilima, već po osećaju. Ne brojiš minute, ne proveriš rernu, ne juriš savršenstvo. Samo zamesiš rukama, zamirišeš kuhinju i veruješ.",
+      sr: "Ovi medenjaci se ne prave po pravilima, već po osećaju. Ne brojiš minute, ne proveriš rernu, ne juriš savršenstvo. Samo zamesiš rukama, zamirišeš kuhinju i veruješ procesu.",
       de: "Diese Lebkuchen folgen keinen Regeln, sondern dem Gefühl. Du zählst keine Minuten, schaust nicht in den Ofen, jagst keine Perfektion. Du knetest einfach mit den Händen, riechst wie die Küche sich erwärmt, und vertraust.",
       en: "These gingerbreads don't follow rules — they follow feeling. You don't count minutes, you don't check the oven, you don't chase perfection. You just knead with your hands, smell the kitchen fill with warmth, and trust."
     },
