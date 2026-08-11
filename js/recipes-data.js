@@ -1549,7 +1549,7 @@ const recipes = [
       en: ["3–4 potatoes", "1 onion", "A little oil for frying", "Salt, pepper", "1 tsp paprika"]
     },
     instructions: {
-      sr: ["Krompir oljušti, iseci na kocke i skuvaj u vodi (pazi da ne prekuvaš!).", "Na malo ulja proprži sitno seckan crni luk dok ne postane staklast.", "Dodaj krompir, posoli, pobiberi i začini alevom paprikom.", "Sve dobro izmešaj i kratko proprži da se ukusi sjedine."],
+      sr: ["Oljušti krompir, iseci ga na kocke i skuvaj u vodi (pazi da ga ne prekuvaš).", "Na malo ulja proprži sitno seckan crni luk dok ne postane staklast.", "Dodaj krompir, posoli, pobiberi i začini alevom paprikom.", "Sve dobro izmešaj i kratko proprži da se ukusi sjedine."],
       de: ["Kartoffeln schälen, in Würfel schneiden und in Wasser kochen (nicht zu lange!).", "Die fein gehackte Zwiebel in etwas Öl glasig dünsten.", "Kartoffeln hinzufügen, mit Salz, Pfeffer und Paprika würzen.", "Alles gut vermischen und kurz anbraten damit sich die Aromen verbinden."],
       en: ["Peel the potatoes, cut into cubes and cook in water (don't overcook!).", "Sauté the finely chopped onion in a little oil until translucent.", "Add the potatoes, season with salt, pepper and paprika.", "Mix everything well and fry briefly to let the flavours come together."]
     },
