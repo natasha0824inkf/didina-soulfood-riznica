@@ -1325,7 +1325,7 @@ const recipes = [
       en: ["6 Medjool dates", "2 handfuls of chopped walnuts", "1 tbsp tahini", "Unsweetened cocoa powder for rolling"]
     },
     instructions: {
-      sr: ["Urme oprati i potopiti u toploj vodi da omekšaju.", "Sitno iseckati orahe.", "Iseći urme, izvaditi koštice i zajedno sa orasima staviti u secka.", "Dodati tahini i kratko blendirati — samo koliko da se masa fino sjedini.", "Vaditi smesu kašičicom i rukama oblikovati male bombice.", "Po želji uvaljati u kakao, kokos ili mlevene pistaće."],
+      sr: ["Oprati urme i potopiti ih u toplu vodu da omekšaju.", "Sitno iseckati orahe.", "Iseći urme, izvaditi koštice i zajedno sa orasima staviti u secka.", "Dodati tahini i kratko blendirati — samo koliko da se masa fino sjedini.", "Vaditi smesu kašičicom i rukama oblikovati male bombice.", "Po želji uvaljati u kakao, kokos ili mlevene pistaće."],
       de: ["Datteln waschen und in warmem Wasser einweichen bis sie weich sind.", "Die Walnüsse fein hacken.", "Datteln aufschneiden, Kerne entfernen und mit den Walnüssen in den Zerkleinerer geben.", "Tahini hinzufügen und kurz mixen — nur bis die Masse sich verbindet.", "Mit einem Löffel etwas Masse entnehmen und mit den Händen zu kleinen Kugeln formen.", "Nach Belieben in Kakao, Kokos oder gemahlenen Pistazien wälzen."],
       en: ["Wash the dates and soak in warm water until soft.", "Finely chop the walnuts.", "Cut open the dates, remove the stones and place in a food processor with the walnuts.", "Add tahini and blend briefly — just until the mixture comes together.", "Scoop out with a spoon and roll into small balls with your hands.", "Roll in cocoa powder, coconut or ground pistachios as desired."]
     },
