@@ -1539,8 +1539,8 @@ const recipes = [
     },
     author_comment: {
       sr: "Ovo jelo iz detinjstva je dokaz da i od najjednostavnijih sastojaka može da nastane prava čarolija. To je onaj ukus koji me odmah vrati kući — savršen izbor kada želiš nešto brzo, ukusno i nostalgično.",
-      de: "Dieses Gericht ist der Beweis, dass selbst aus den einfachsten Zutaten ein echtes Festmahl entstehen kann. Die perfekte Wahl, wenn man etwas Schnelles, Leckeres und Sättigendes möchte.",
-      en: "This dish is proof that even the simplest ingredients can make a real feast. The perfect choice when you want something quick, tasty and filling."
+      de: "Dieses Gericht aus meiner Kindheit ist der Beweis, dass selbst aus den einfachsten Zutaten echte Magie entstehen kann. Es ist dieser Geschmack, der mich sofort nach Hause zurückversetzt — die perfekte Wahl, wenn man etwas Schnelles, Leckeres und Nostalgisches möchte.",
+      en: "This childhood dish is proof that even the simplest ingredients can create real magic. It's that flavour that takes me straight back home — the perfect choice when you want something quick, tasty and nostalgic."
     },
     prep_time: { sr: "oko 30 minuta", de: "ca. 30 Min.", en: "about 30 minutes" },
     ingredients: {
