@@ -1,0 +1,132 @@
+<svg viewBox="0 0 720 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Posuda sa brašnom i muzičke note u kuhinji">
+  <defs>
+    <radialGradient id="bg4" cx="48%" cy="52%" r="66%">
+      <stop offset="0%" stop-color="#EDE5D0"/>
+      <stop offset="100%" stop-color="#F7F1E7"/>
+    </radialGradient>
+    <radialGradient id="bowlGrad" cx="38%" cy="32%" r="62%">
+      <stop offset="0%" stop-color="#D8914A"/>
+      <stop offset="100%" stop-color="#A05A28"/>
+    </radialGradient>
+    <linearGradient id="flourGrad" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#FDFAF5"/>
+      <stop offset="100%" stop-color="#EEE5D5"/>
+    </linearGradient>
+    <filter id="softShadow3" x="-8%" y="-8%" width="120%" height="125%">
+      <feDropShadow dx="2" dy="5" stdDeviation="10" flood-color="#6B4F3A" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="720" height="480" fill="url(#bg4)"/>
+
+  <!-- Counter surface -->
+  <rect x="0" y="380" width="720" height="100" fill="#E4D4B8"/>
+  <line x1="0" y1="380" x2="720" y2="380" stroke="#C8A87A" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- === MIXING BOWL === -->
+  <!-- Bowl shadow on counter -->
+  <ellipse cx="360" cy="392" rx="155" ry="16" fill="#6B4F3A" opacity="0.09"/>
+
+  <!-- Bowl body (wide hemisphere) -->
+  <path d="M180 300 Q178 390 205 395 Q280 405 360 405 Q440 405 515 395 Q542 390 540 300 Z"
+        fill="url(#bowlGrad)" filter="url(#softShadow3)"/>
+
+  <!-- Bowl interior highlight (light catching left inner wall) -->
+  <path d="M200 310 Q198 360 208 385" fill="none" stroke="#D8A14A" stroke-width="16"
+        stroke-linecap="round" opacity="0.18"/>
+
+  <!-- Bowl interior (flour/batter visible at top) -->
+  <ellipse cx="360" cy="300" rx="178" ry="28" fill="url(#flourGrad)"/>
+  <!-- Flour surface texture (a few soft curves suggesting the dough surface) -->
+  <path d="M210 298 Q280 294 360 296 Q440 294 510 298" fill="none" stroke="#C8A87A"
+        stroke-width="1" opacity="0.2"/>
+  <path d="M225 304 Q295 300 370 302 Q430 301 500 304" fill="none" stroke="#C8A87A"
+        stroke-width="0.8" opacity="0.15"/>
+  <!-- Small flour puff highlight -->
+  <ellipse cx="310" cy="295" rx="30" ry="8" fill="#FDFAF5" opacity="0.45"/>
+
+  <!-- Bowl rim (top edge) -->
+  <ellipse cx="360" cy="300" rx="180" ry="30" fill="none" stroke="#8A4520" stroke-width="4"/>
+  <!-- Rim highlight -->
+  <path d="M195 295 Q240 282 310 286" fill="none" stroke="#D8A14A" stroke-width="3"
+        stroke-linecap="round" opacity="0.3"/>
+
+  <!-- === WHISK === -->
+  <!-- Whisk handle (resting in bowl, angled) -->
+  <line x1="460" y1="180" x2="420" y2="300" stroke="#8B6040" stroke-width="10"
+        stroke-linecap="round"/>
+  <!-- Whisk head wires (in bowl) -->
+  <!-- Central spine of whisk head -->
+  <line x1="420" y1="300" x2="400" y2="350" stroke="#8B6040" stroke-width="6"
+        stroke-linecap="round"/>
+  <!-- Outer wires forming the balloon shape -->
+  <path d="M420 300 Q395 320 395 345 Q398 358 402 350" fill="none" stroke="#6B4F3A"
+        stroke-width="2.5" stroke-linecap="round" opacity="0.65"/>
+  <path d="M420 300 Q408 318 406 345 Q408 358 410 350" fill="none" stroke="#6B4F3A"
+        stroke-width="2.5" stroke-linecap="round" opacity="0.65"/>
+  <path d="M420 300 Q415 315 413 342 Q413 355 416 350" fill="none" stroke="#6B4F3A"
+        stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+  <path d="M420 300 Q435 318 433 345 Q431 358 427 350" fill="none" stroke="#6B4F3A"
+        stroke-width="2.5" stroke-linecap="round" opacity="0.65"/>
+  <path d="M420 300 Q445 320 444 345 Q441 358 436 350" fill="none" stroke="#6B4F3A"
+        stroke-width="2.5" stroke-linecap="round" opacity="0.65"/>
+
+  <!-- === MUSICAL NOTES floating around the bowl === -->
+  <!-- Note 1 — upper left, larger -->
+  <text x="148" y="230" font-size="62" font-family="Georgia, serif" fill="#C9773A" opacity="0.55"
+        transform="rotate(-12 148 230)">♪</text>
+
+  <!-- Note 2 — upper right, medium -->
+  <text x="518" y="210" font-size="50" font-family="Georgia, serif" fill="#C9773A" opacity="0.50"
+        transform="rotate(8 518 210)">♫</text>
+
+  <!-- Note 3 — top center-left, small -->
+  <text x="248" y="155" font-size="36" font-family="Georgia, serif" fill="#D8A14A" opacity="0.40"
+        transform="rotate(-6 248 155)">♪</text>
+
+  <!-- Note 4 — top right, small -->
+  <text x="470" y="148" font-size="32" font-family="Georgia, serif" fill="#D8A14A" opacity="0.38"
+        transform="rotate(10 470 148)">♩</text>
+
+  <!-- Note 5 — left side, tiny -->
+  <text x="136" y="310" font-size="26" font-family="Georgia, serif" fill="#C9773A" opacity="0.30"
+        transform="rotate(-15 136 310)">♫</text>
+
+  <!-- Note 6 — right side, tiny -->
+  <text x="560" y="295" font-size="28" font-family="Georgia, serif" fill="#C9773A" opacity="0.30"
+        transform="rotate(12 560 295)">♪</text>
+
+  <!-- Note 7 — very top center, faint -->
+  <text x="338" y="110" font-size="28" font-family="Georgia, serif" fill="#D8A14A" opacity="0.28"
+        transform="rotate(5 338 110)">♫</text>
+
+  <!-- === FLOUR DUST floating (small circles) === -->
+  <circle cx="180" cy="265" r="4" fill="#FDFAF5" opacity="0.55"/>
+  <circle cx="165" cy="248" r="3" fill="#FDFAF5" opacity="0.45"/>
+  <circle cx="198" cy="238" r="2.5" fill="#FDFAF5" opacity="0.40"/>
+  <circle cx="530" cy="270" r="4" fill="#FDFAF5" opacity="0.50"/>
+  <circle cx="548" cy="252" r="3" fill="#FDFAF5" opacity="0.42"/>
+  <circle cx="518" cy="240" r="2.5" fill="#FDFAF5" opacity="0.38"/>
+  <circle cx="370" cy="262" r="3.5" fill="#FDFAF5" opacity="0.45"/>
+  <circle cx="340" cy="270" r="2.5" fill="#FDFAF5" opacity="0.38"/>
+
+  <!-- === SMALL PHONE (suggesting music source) — top right area === -->
+  <rect x="590" y="155" width="52" height="88" rx="9" fill="#2A1A0E" opacity="0.75"/>
+  <rect x="595" y="162" width="42" height="68" rx="5" fill="#3A2A1A" opacity="0.6"/>
+  <!-- Phone screen glow suggestion -->
+  <rect x="597" y="164" width="38" height="64" rx="4" fill="#C9773A" opacity="0.15"/>
+  <!-- Music wave lines on screen -->
+  <path d="M605 185 Q608 178 611 185 Q614 192 617 185 Q620 178 623 185 Q626 192 629 185"
+        fill="none" stroke="#D8A14A" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+  <path d="M607 198 Q609 194 612 198 Q615 202 618 198 Q621 194 624 198 Q627 202 630 198"
+        fill="none" stroke="#D8A14A" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+  <!-- Small home indicator dot -->
+  <circle cx="616" cy="237" r="3" fill="#FDFAF5" opacity="0.3"/>
+
+  <!-- Subtle decorative dots in background corners -->
+  <circle cx="68" cy="80" r="4" fill="#C8A87A" opacity="0.12"/>
+  <circle cx="82" cy="100" r="3" fill="#C8A87A" opacity="0.10"/>
+  <circle cx="648" cy="72" r="4.5" fill="#C8A87A" opacity="0.10"/>
+  <circle cx="634" cy="95" r="3" fill="#C8A87A" opacity="0.09"/>
+</svg>
