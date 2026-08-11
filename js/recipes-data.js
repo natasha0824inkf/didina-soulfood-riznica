@@ -1589,9 +1589,9 @@ const recipes = [
     number: "45",
     title: { sr: "Salata sa rukolom, cveklom, fetom i orasima", de: "Rucola-Salat mit Rote Bete, Feta und Walnüssen", en: "Rocket Salad with Beetroot, Feta & Walnuts" },
     subtitle: {
-      sr: "Mala bomba osveženja i ukusa.",
-      de: "Eine kleine Geschmacksbombe voller Frische.",
-      en: "A little bomb of freshness and flavour."
+      sr: "Eksplozija svežine i teksture.",
+      de: "Eine Explosion aus Frische und Texturen.",
+      en: "An explosion of freshness and texture."
     },
     author_comment: {
       sr: "Ova salata je kao mali vatromet u tanjiru — slatka cvekla, pikantna rukola, kremasta feta i hrskavi orasi stvaraju skladnu igru ukusa.",
