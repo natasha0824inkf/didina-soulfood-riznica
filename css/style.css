@@ -738,7 +738,7 @@ ul,ol { list-style: none; }
 
 /* ---- BOOK TEASER BAR ---- */
 .book-teaser-bar {
-  background: var(--accent);
+  background: var(--coral);
   color: #fff;
   text-align: center;
   padding: .6rem 1rem;
