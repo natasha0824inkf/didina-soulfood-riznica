@@ -1559,14 +1559,14 @@ const recipes = [
   },
   {
     number: "44",
-    title: { sr: "Voćna pita iz šume", de: "Waldfrüchtekuchen", en: "Forest Fruit Pie" },
+    title: { sr: "Voćna pita iz dubine šume", de: "Waldfrüchtekuchen", en: "Forest Fruit Pie" },
     subtitle: {
-      sr: "Hrskava, sočna i osvežavajuća — desert koji spaja kiselkaste note šumskog voća i prijatnu slatkoću.",
+      sr: "Hrskava, sočna i osvežavajuća — savršen spoj kiselkastog voća i blage slatkoće.",
       de: "Knusprig, saftig und erfrischend — ein Dessert das die sauren Noten von Waldfrüchten mit angenehmer Süße verbindet.",
       en: "Crispy, juicy and refreshing — a dessert that unites the tart notes of forest fruit with pleasant sweetness."
     },
     author_comment: {
-      sr: "Ova pita je moj tajni način da na brzinu napravim nešto što izgleda kao da sam ceo dan provela u kuhinji. U stvari — treba ti samo jedno testo, malo voća i puno ljubavi.",
+      sr: "Ovo je moje tajno oružje: izgleda kao da sam ceo dan u kuhinji, a zapravo je sprema za tili čas. Treba ti samo jedno testo, malo voća i puno ljubavi.",
       de: "Diese Torte ist mein Geheimtrick um schnell etwas zu zaubern, das aussieht als hätte ich den ganzen Tag in der Küche gestanden. In Wirklichkeit braucht man nur einen Teig, etwas Obst und viel Liebe.",
       en: "This pie is my secret way to quickly make something that looks like I spent all day in the kitchen. In reality — you just need pastry sheets, a little fruit and a lot of love."
     },
