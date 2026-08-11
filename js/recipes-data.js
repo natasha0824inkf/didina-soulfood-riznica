@@ -1309,7 +1309,7 @@ const recipes = [
     number: "35",
     title: { sr: "Kraljevske bombice", de: "Königliche Dattel-Bällchen", en: "Royal Date Balls" },
     subtitle: {
-      sr: "Prirodna slatkoća za svaki časak mira i zadovoljstva.",
+      sr: "Prirodna poslastica za trenutke mira i uživanja.",
       de: "Natürliche Süße für jeden Moment der Ruhe und des Genusses.",
       en: "Natural sweetness for every moment of peace and pleasure."
     },
