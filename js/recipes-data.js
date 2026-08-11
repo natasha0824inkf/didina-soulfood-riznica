@@ -76,7 +76,7 @@ const recipes = [
     number: "4",
     title: { sr: "Jaka voćna salata", de: "Kraftvoller Obstsalat", en: "Power Fruit Bowl" },
     subtitle: {
-      sr: "Lagano, voćno i baš taman — kad ne želiš da opterećiš stomak pre spavanja, ali hoćeš da nahraniš dušu.",
+      sr: "Lagano, voćno i baš taman — kad ne želiš da opteretiš stomak pre spavanja, ali hoćeš da nahraniš dušu.",
       de: "Leicht, fruchtig und genau richtig — wenn du deinen Magen vor dem Schlafen nicht belasten, aber deine Seele nähren willst.",
       en: "Light, fruity and just right — for when you don't want to weigh down your stomach before bed but still want to feed your soul."
     },
