@@ -45,8 +45,8 @@ const recipes = [
     instructions: {
       sr: [
         "Tortilju zagrej u suvom tiganju dok ne omekša i postane elastična.",
-        "Izgnječiti sireve viljuškom i dodati jogurt.",
-        "Ispeći semenke na suvom tiganju dok ne zamirišu.",
+        "Izgnječi sireve viljuškom i dodaj jogurt.",
+        "Ispeci semenke na suvom tiganju dok ne zamirišu.",
         "Pomešaj sireve i semenke i namaži na tortilju.",
         "Dodaj povrće i urolaj.",
         "Tostiraj kratko na tiganju i posluži uz sveži krastavac."
@@ -174,7 +174,7 @@ const recipes = [
         "Dodaj kadaif i pažljivo promešaj da ostane hrskavo ali da kadaif bude zasićen kremom.",
         "Kašikom vadi male zalogaje i oblikuj ih rukama.",
         "Stavi u frižider da se stegnu oko sat vremena.",
-        "Otopi čokoladu i filuj čokoladice pomoću dve viljuške.",
+        "Otopi čokoladu i umači zalogaje u čokoladu pomoću dve viljuške.",
         "Uživaj u malim trenucima slatke lakoće i zahvalnosti."
       ],
       de: [
@@ -1029,7 +1029,7 @@ const recipes = [
         "U većoj činiji pomešaj brašno, so, semenke i ulje. Dodaj nadošli kvasac i ostatak vode. Umesti glatko i mekano testo.",
         "Pokrij krpom i ostavi da naraste oko 45–60 minuta.",
         "Kada testo naraste, premesi ga i oblikuj u okrugli hleb. Na vrhu oštrim nožem možeš urezati oblik lista, krsta ili spirale.",
-        "Premazati hleb umućenim jajetom i pospi semenkama kumina ili susama.",
+        "Premazi hleb umućenim jajetom i pospi semenkama kumina ili susama.",
         "Peci u prethodno zagrejanoj rerni na 220°C oko 30–35 minuta bez ventilatora, dok ne zamiriše i ne dobije zlatnu koricu."
       ],
       de: [
@@ -1409,7 +1409,7 @@ const recipes = [
       en: ["4 large carrots (or 6 small)", "2 medium potatoes", "2 celery stalks", "1 garlic clove", "A piece of fresh ginger (about 2–3 cm)", "1 tbsp olive oil", "750 ml vegetable stock or water", "Salt and pepper to taste", "A pinch of turmeric"]
     },
     instructions: {
-      sr: ["U šerpi zagrej maslinovo ulje i kratko prodinstaj sitno seckan luk.", "Dodaj iseckane šargarepe, krompir i celer, pa dinstaj par minuta da povrće pusti miris.", "Ubaci narendani đumbir i kurkumu, promešaj.", "Nalij povrtnim bujonom, posoli i pobiberi, pa kuvaj dok povrće ne omekša (20–25 minuta).", "Izblendiraj sve u glatku krem supu.", "Po želji ukrasi kapljicom maslinovog ulja, svežim peršunom ili semenkama bundeve."],
+      sr: ["U šerpi zagrej maslinovo ulje i kratko prodinstaj sitno seckan beli luk.", "Dodaj iseckane šargarepe, krompir i celer, pa dinstaj par minuta da povrće pusti miris.", "Ubaci narendani đumbir i kurkumu, promešaj.", "Nalij povrtnim bujonom, posoli i pobiberi, pa kuvaj dok povrće ne omekša (20–25 minuta).", "Izblendiraj sve u glatku krem supu.", "Po želji ukrasi kapljicom maslinovog ulja, svežim peršunom ili semenkama bundeve."],
       de: ["Olivenöl in einem Topf erhitzen und den fein gehackten Knoblauch kurz andünsten.", "Karotten, Kartoffeln und Sellerie hinzufügen und einige Minuten dünsten bis das Gemüse duftet.", "Geriebenen Ingwer und Kurkuma einrühren.", "Mit Brühe aufgießen, salzen und pfeffern, dann kochen bis das Gemüse weich ist (20–25 Min.).", "Alles zu einer glatten Cremesuppe pürieren.", "Nach Belieben mit einem Tropfen Olivenöl, frischer Petersilie oder Kürbiskernen garnieren."],
       en: ["Heat the olive oil in a pot and briefly sauté the finely chopped garlic.", "Add the carrots, potatoes and celery and sauté for a few minutes until fragrant.", "Stir in the grated ginger and turmeric.", "Pour in the stock, season with salt and pepper, and cook until the vegetables are soft (20–25 minutes).", "Blend everything into a smooth cream soup.", "Garnish with a drizzle of olive oil, fresh parsley or pumpkin seeds if desired."]
     },
