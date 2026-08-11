@@ -109,7 +109,7 @@ const recipes = [
         "Poprskaj limunovim sokom da sve ostane sveže i mirišno.",
         "Pospi cimetom i lagano promešaj kašikom.",
         "Na kraju dodaj orahe ili bademe (šta imaš pri ruci).",
-        "Preko svega dodaj tahini, med ili bez slađivača."
+        "Preko svega dodaj tahini, med ili zaslađivač."
       ],
       de: [
         "Früchte schälen und in mundgerechte Stücke schneiden.",
