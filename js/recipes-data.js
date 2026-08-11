@@ -105,7 +105,7 @@ const recipes = [
     },
     instructions: {
       sr: [
-        "Voće oljašti i naseckaj na komade veličine zalogaja.",
+        "Voće oljušti i naseckaj na komade veličine zalogaja.",
         "Poprskaj limunovim sokom da sve ostane sveže i mirišno.",
         "Pospi cimetom i lagano promešaj kašikom.",
         "Na kraju dodaj orahe ili bademe (šta imaš pri ruci).",
