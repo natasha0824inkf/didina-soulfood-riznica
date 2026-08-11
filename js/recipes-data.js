@@ -1398,7 +1398,7 @@ const recipes = [
       en: "Warm orange magic for body and soul."
     },
     author_comment: {
-      sr: "Topla, mirisna i brza — ova supica je pravi zagrljaj u tanjiru! Nastala je bez mnogo planiranja, a ispala toliko dobra da odmah ide u riznicu.",
+      sr: "Topla, mirisna i brza — ova supica je pravi zagrljaj u tanjiru! Rođena je iz improvizacije, a ispala toliko ukusna da je odmah postala deo moje \"Riznice\".",
       de: "Warm, duftend und schnell — diese Suppe ist wie eine Umarmung in einer Schüssel! Ohne großes Planen entstanden, aber so gut, dass sie sofort in die Schatzkammer kam.",
       en: "Warm, fragrant and quick — this soup is a real hug in a bowl! It came together without much planning, yet turned out so good it went straight into the treasury."
     },
