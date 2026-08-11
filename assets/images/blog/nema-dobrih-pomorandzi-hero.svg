@@ -1,0 +1,134 @@
+<svg viewBox="0 0 720 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sveži limuni na drvenoj dasci">
+  <defs>
+    <radialGradient id="bg3" cx="50%" cy="55%" r="65%">
+      <stop offset="0%" stop-color="#EDE5D0"/>
+      <stop offset="100%" stop-color="#F7F1E7"/>
+    </radialGradient>
+    <!-- Lemon yellow gradient -->
+    <radialGradient id="lemon1" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#F8E060"/>
+      <stop offset="100%" stop-color="#E8B820"/>
+    </radialGradient>
+    <radialGradient id="lemon2" cx="40%" cy="28%" r="65%">
+      <stop offset="0%" stop-color="#F6DC55"/>
+      <stop offset="100%" stop-color="#DBA818"/>
+    </radialGradient>
+    <radialGradient id="lemon3" cx="38%" cy="32%" r="65%">
+      <stop offset="0%" stop-color="#F9E468"/>
+      <stop offset="100%" stop-color="#E4B415"/>
+    </radialGradient>
+    <!-- Cut lemon interior -->
+    <radialGradient id="lemonInterior" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FDF0A0"/>
+      <stop offset="70%" stop-color="#F8D840"/>
+      <stop offset="100%" stop-color="#E0A010"/>
+    </radialGradient>
+    <!-- Wood grain gradient -->
+    <linearGradient id="woodGrain" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C8A070"/>
+      <stop offset="30%" stop-color="#D4AE80"/>
+      <stop offset="55%" stop-color="#C0986A"/>
+      <stop offset="80%" stop-color="#D2AA7C"/>
+      <stop offset="100%" stop-color="#C4A272"/>
+    </linearGradient>
+    <filter id="softShadow2" x="-5%" y="-5%" width="115%" height="120%">
+      <feDropShadow dx="1" dy="3" stdDeviation="6" flood-color="#6B4F3A" flood-opacity="0.13"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="720" height="480" fill="url(#bg3)"/>
+
+  <!-- === WOODEN CUTTING BOARD === -->
+  <rect x="120" y="155" width="480" height="270" rx="20" fill="url(#woodGrain)"
+        filter="url(#softShadow2)"/>
+  <!-- Wood grain lines (subtle) -->
+  <path d="M140 175 Q280 168 460 175 Q500 178 580 172" fill="none" stroke="#B8906A"
+        stroke-width="1.2" opacity="0.25"/>
+  <path d="M140 200 Q200 195 350 198 Q450 200 590 196" fill="none" stroke="#B8906A"
+        stroke-width="1" opacity="0.2"/>
+  <path d="M135 230 Q260 225 400 228 Q500 230 595 226" fill="none" stroke="#B8906A"
+        stroke-width="1.2" opacity="0.22"/>
+  <path d="M135 270 Q220 265 390 268 Q490 270 590 267" fill="none" stroke="#B8906A"
+        stroke-width="1" opacity="0.18"/>
+  <path d="M140 310 Q250 306 420 309 Q510 311 585 308" fill="none" stroke="#B8906A"
+        stroke-width="1.2" opacity="0.20"/>
+  <path d="M138 355 Q300 350 470 353 Q540 355 588 353" fill="none" stroke="#B8906A"
+        stroke-width="1" opacity="0.18"/>
+  <!-- Board edge/handle suggestion -->
+  <rect x="550" y="240" width="68" height="90" rx="12" fill="#C4A272" opacity="0.7"/>
+  <rect x="555" y="250" width="58" height="70" rx="8" fill="#B89060" opacity="0.4"/>
+
+  <!-- === LEMON 1 (large, center-left, whole) === -->
+  <ellipse cx="280" cy="300" rx="95" ry="72" fill="url(#lemon1)"/>
+  <!-- Lemon tip left -->
+  <path d="M188 298 Q175 292 172 300 Q175 308 188 302 Z" fill="#E8B820"/>
+  <!-- Lemon tip right -->
+  <path d="M372 298 Q385 292 388 300 Q385 308 372 302 Z" fill="#E0A015"/>
+  <!-- Highlight -->
+  <ellipse cx="252" cy="272" rx="22" ry="14" fill="#FDF8D0" opacity="0.35"/>
+  <!-- Surface texture dots -->
+  <circle cx="270" cy="295" r="2" fill="#C8A010" opacity="0.2"/>
+  <circle cx="295" cy="308" r="1.8" fill="#C8A010" opacity="0.18"/>
+  <circle cx="305" cy="285" r="2" fill="#C8A010" opacity="0.2"/>
+  <circle cx="260" cy="318" r="1.5" fill="#C8A010" opacity="0.15"/>
+  <circle cx="318" cy="298" r="1.8" fill="#C8A010" opacity="0.18"/>
+  <circle cx="250" cy="303" r="1.5" fill="#C8A010" opacity="0.17"/>
+
+  <!-- === LEMON 2 (upper-right, whole, slightly overlapping) === -->
+  <ellipse cx="450" cy="255" rx="82" ry="62" fill="url(#lemon2)"/>
+  <path d="M371 253 Q360 247 357 255 Q360 263 371 257 Z" fill="#DBA818"/>
+  <path d="M529 253 Q540 247 543 255 Q540 263 529 257 Z" fill="#D4A010"/>
+  <!-- Highlight -->
+  <ellipse cx="428" cy="234" rx="18" ry="11" fill="#FDF8D0" opacity="0.35"/>
+  <!-- Texture dots -->
+  <circle cx="445" cy="252" r="1.8" fill="#B89010" opacity="0.2"/>
+  <circle cx="465" cy="265" r="1.5" fill="#B89010" opacity="0.17"/>
+  <circle cx="432" cy="270" r="2" fill="#B89010" opacity="0.18"/>
+
+  <!-- === LEMON 3 (halved, lower-right) === -->
+  <!-- The half that's face-up (cut face showing) -->
+  <!-- Outer peel ring -->
+  <ellipse cx="450" cy="370" rx="78" ry="60" fill="#E8B820"/>
+  <!-- White pith ring -->
+  <ellipse cx="450" cy="370" rx="66" ry="50" fill="#FFFDE8"/>
+  <!-- Interior segments radiating from center -->
+  <!-- Segment lines -->
+  <line x1="450" y1="320" x2="450" y2="370" stroke="#D4A820" stroke-width="1.5" opacity="0.5"/>
+  <line x1="450" y1="370" x2="450" y2="420" stroke="#D4A820" stroke-width="1.5" opacity="0.5"/>
+  <line x1="400" y1="370" x2="500" y2="370" stroke="#D4A820" stroke-width="1.5" opacity="0.5"/>
+  <line x1="408" y1="331" x2="492" y2="409" stroke="#D4A820" stroke-width="1.5" opacity="0.4"/>
+  <line x1="492" y1="331" x2="408" y2="409" stroke="#D4A820" stroke-width="1.5" opacity="0.4"/>
+  <line x1="422" y1="325" x2="478" y2="415" stroke="#D4A820" stroke-width="1" opacity="0.3"/>
+  <line x1="478" y1="325" x2="422" y2="415" stroke="#D4A820" stroke-width="1" opacity="0.3"/>
+  <!-- Segment fill colors alternating -->
+  <path d="M450 370 L450 322 Q465 328 474 340 Z" fill="#F8E040" opacity="0.6"/>
+  <path d="M450 370 L474 340 Q482 354 480 370 Z" fill="#F0D835" opacity="0.55"/>
+  <path d="M450 370 L480 370 Q480 385 472 396 Z" fill="#F8E040" opacity="0.6"/>
+  <path d="M450 370 L472 396 Q460 410 450 415 Z" fill="#F0D835" opacity="0.55"/>
+  <path d="M450 370 L450 415 Q435 410 426 396 Z" fill="#F8E040" opacity="0.6"/>
+  <path d="M450 370 L426 396 Q418 384 420 370 Z" fill="#F0D835" opacity="0.55"/>
+  <path d="M450 370 L420 370 Q420 355 428 342 Z" fill="#F8E040" opacity="0.6"/>
+  <path d="M450 370 L428 342 Q440 330 450 322 Z" fill="#F0D835" opacity="0.55"/>
+  <!-- Center nub -->
+  <circle cx="450" cy="370" r="6" fill="#E8B820"/>
+  <!-- Highlight on cut surface -->
+  <ellipse cx="438" cy="352" rx="9" ry="6" fill="#FFF8D0" opacity="0.4"/>
+
+  <!-- === LEAVES === -->
+  <!-- Leaf 1 (left of lemon 1) -->
+  <path d="M162 255 Q145 238 148 215 Q165 208 178 228 Q185 242 175 255 Q168 260 162 255 Z"
+        fill="#4FA83A"/>
+  <path d="M162 255 Q168 240 165 220" fill="none" stroke="#3A8020" stroke-width="1.5"
+        stroke-linecap="round" opacity="0.5"/>
+
+  <!-- Leaf 2 (upper right) -->
+  <path d="M545 185 Q562 165 575 170 Q582 185 568 200 Q555 210 542 200 Q538 192 545 185 Z"
+        fill="#5CB84A"/>
+  <path d="M545 185 Q558 192 570 186" fill="none" stroke="#3A8020" stroke-width="1.5"
+        stroke-linecap="round" opacity="0.45"/>
+
+  <!-- Leaf 3 (between lemons, small) -->
+  <path d="M358 218 Q348 202 352 190 Q365 185 372 200 Q376 212 366 218 Q362 221 358 218 Z"
+        fill="#4FA83A" opacity="0.9"/>
+</svg>

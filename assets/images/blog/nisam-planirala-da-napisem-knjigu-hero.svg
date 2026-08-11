@@ -1,0 +1,126 @@
+<svg viewBox="0 0 720 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Otvorena sveska sa receptima i olovkom">
+  <defs>
+    <radialGradient id="bg2" cx="50%" cy="45%" r="68%">
+      <stop offset="0%" stop-color="#F0E8D8"/>
+      <stop offset="100%" stop-color="#F7F1E7"/>
+    </radialGradient>
+    <linearGradient id="pageLeft" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F5EED8"/>
+      <stop offset="100%" stop-color="#FDFAF5"/>
+    </linearGradient>
+    <linearGradient id="pageRight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FDFAF5"/>
+      <stop offset="100%" stop-color="#F5EED8"/>
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="4" stdDeviation="8" flood-color="#6B4F3A" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="720" height="480" fill="url(#bg2)"/>
+
+  <!-- Table surface -->
+  <rect x="0" y="400" width="720" height="80" fill="#E8D8C0"/>
+  <line x1="0" y1="400" x2="720" y2="400" stroke="#C8A87A" stroke-width="1" opacity="0.4"/>
+
+  <!-- === OPEN BOOK / NOTEBOOK === -->
+  <!-- Book shadow -->
+  <ellipse cx="360" cy="415" rx="210" ry="16" fill="#6B4F3A" opacity="0.10"/>
+
+  <!-- Book back cover (just visible at edges) -->
+  <path d="M130 95 Q128 92 130 400 Q132 406 360 406 Q588 406 590 400 Q592 92 590 95 Z"
+        fill="#A05A28" filter="url(#softShadow)"/>
+
+  <!-- Left page -->
+  <path d="M132 98 Q134 94 358 92 Q360 93 360 400 Q360 404 134 404 Q132 404 132 98 Z"
+        fill="url(#pageLeft)"/>
+  <!-- Left page edge shadow (spine side) -->
+  <path d="M355 95 Q360 93 360 400 Q358 402 353 402 Q356 250 355 95 Z"
+        fill="#C8A87A" opacity="0.15"/>
+
+  <!-- Right page -->
+  <path d="M362 92 Q586 94 588 98 Q588 404 362 404 Q360 404 360 400 Q360 93 362 92 Z"
+        fill="url(#pageRight)"/>
+
+  <!-- Spine / binding -->
+  <rect x="354" y="88" width="12" height="318" rx="3" fill="#8A5020"/>
+  <line x1="360" y1="88" x2="360" y2="406" stroke="#C8A87A" stroke-width="1" opacity="0.3"/>
+
+  <!-- === LEFT PAGE — Handwritten recipe lines === -->
+  <!-- Title area (slightly bolder) -->
+  <rect x="155" y="120" width="180" height="9" rx="4" fill="#6B4F3A" opacity="0.45"/>
+  <rect x="155" y="132" width="130" height="7" rx="3" fill="#6B4F3A" opacity="0.3"/>
+
+  <!-- Body text lines (simulate handwriting with slightly irregular lengths/opacities) -->
+  <rect x="155" y="158" width="168" height="5" rx="2.5" fill="#6B4F3A" opacity="0.22"/>
+  <rect x="155" y="170" width="152" height="5" rx="2.5" fill="#6B4F3A" opacity="0.20"/>
+  <rect x="155" y="182" width="175" height="5" rx="2.5" fill="#6B4F3A" opacity="0.22"/>
+  <rect x="155" y="194" width="140" height="5" rx="2.5" fill="#6B4F3A" opacity="0.19"/>
+  <rect x="155" y="206" width="162" height="5" rx="2.5" fill="#6B4F3A" opacity="0.21"/>
+
+  <!-- Small divider -->
+  <line x1="155" y1="222" x2="335" y2="222" stroke="#C9773A" stroke-width="1.5" opacity="0.35"/>
+
+  <!-- Ingredient-list style lines (shorter, with bullets) -->
+  <circle cx="163" cy="240" r="3" fill="#C9773A" opacity="0.4"/>
+  <rect x="172" y="237" width="120" height="5" rx="2.5" fill="#6B4F3A" opacity="0.20"/>
+  <circle cx="163" cy="255" r="3" fill="#C9773A" opacity="0.4"/>
+  <rect x="172" y="252" width="98" height="5" rx="2.5" fill="#6B4F3A" opacity="0.19"/>
+  <circle cx="163" cy="270" r="3" fill="#C9773A" opacity="0.4"/>
+  <rect x="172" y="267" width="135" height="5" rx="2.5" fill="#6B4F3A" opacity="0.20"/>
+  <circle cx="163" cy="285" r="3" fill="#C9773A" opacity="0.4"/>
+  <rect x="172" y="282" width="110" height="5" rx="2.5" fill="#6B4F3A" opacity="0.18"/>
+
+  <!-- More lines below -->
+  <rect x="155" y="310" width="160" height="5" rx="2.5" fill="#6B4F3A" opacity="0.17"/>
+  <rect x="155" y="323" width="145" height="5" rx="2.5" fill="#6B4F3A" opacity="0.17"/>
+  <rect x="155" y="336" width="170" height="5" rx="2.5" fill="#6B4F3A" opacity="0.16"/>
+  <rect x="155" y="349" width="128" height="5" rx="2.5" fill="#6B4F3A" opacity="0.15"/>
+  <rect x="155" y="362" width="155" height="5" rx="2.5" fill="#6B4F3A" opacity="0.15"/>
+
+  <!-- === RIGHT PAGE — Botanical illustration sketch === -->
+  <!-- Small herb / rosemary sprig sketch on the right page -->
+  <!-- Main stem -->
+  <path d="M445 340 Q447 310 444 280 Q442 255 446 225 Q447 200 443 175"
+        fill="none" stroke="#6B4F3A" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+  <!-- Left leaves -->
+  <path d="M444 280 Q432 272 428 260 Q430 253 438 260 Q442 270 444 280 Z"
+        fill="#4FA83A" opacity="0.2"/>
+  <path d="M444 255 Q432 247 429 235 Q431 228 439 235 Q442 245 444 255 Z"
+        fill="#4FA83A" opacity="0.22"/>
+  <path d="M444 230 Q432 222 430 212 Q432 206 440 212 Q442 222 444 230 Z"
+        fill="#4FA83A" opacity="0.18"/>
+  <!-- Right leaves -->
+  <path d="M444 280 Q456 272 460 260 Q458 253 450 260 Q446 270 444 280 Z"
+        fill="#5CB84A" opacity="0.18"/>
+  <path d="M444 255 Q456 247 459 235 Q457 228 449 235 Q446 245 444 255 Z"
+        fill="#5CB84A" opacity="0.20"/>
+  <path d="M444 230 Q456 222 458 212 Q456 206 448 212 Q446 222 444 230 Z"
+        fill="#5CB84A" opacity="0.17"/>
+  <!-- Flower top -->
+  <circle cx="444" cy="168" r="8" fill="#C9773A" opacity="0.2"/>
+  <circle cx="444" cy="168" r="4" fill="#D8A14A" opacity="0.25"/>
+
+  <!-- Simple note lines on right page -->
+  <rect x="380" y="120" width="185" height="8" rx="4" fill="#6B4F3A" opacity="0.3"/>
+  <rect x="380" y="144" width="165" height="5" rx="2.5" fill="#6B4F3A" opacity="0.17"/>
+  <rect x="380" y="157" width="152" height="5" rx="2.5" fill="#6B4F3A" opacity="0.16"/>
+  <rect x="380" y="170" width="170" height="5" rx="2.5" fill="#6B4F3A" opacity="0.17"/>
+  <rect x="380" y="183" width="140" height="5" rx="2.5" fill="#6B4F3A" opacity="0.15"/>
+
+  <!-- === PENCIL resting diagonally across spine === -->
+  <!-- Pencil body -->
+  <rect x="300" y="72" width="120" height="14" rx="5"
+        fill="#F0C040" transform="rotate(-8 300 72)"/>
+  <!-- Pencil wood end -->
+  <path d="M300 68 L292 79 L300 86 Z" fill="#D4A060" transform="rotate(-8 300 72)"/>
+  <!-- Pencil tip -->
+  <path d="M420 68 L430 74 L420 80 Z" fill="#2A1A0E" opacity="0.6" transform="rotate(-8 300 72)"/>
+  <!-- Pencil eraser end -->
+  <rect x="296" y="68" width="10" height="14" rx="3"
+        fill="#E07070" transform="rotate(-8 300 72)" opacity="0.8"/>
+  <!-- Pencil line (stripe) -->
+  <rect x="310" y="70" width="2" height="14" rx="1"
+        fill="#2A1A0E" opacity="0.1" transform="rotate(-8 300 72)"/>
+</svg>

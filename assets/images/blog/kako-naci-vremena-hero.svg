@@ -1,0 +1,97 @@
+<svg viewBox="0 0 720 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lonac sa parom na šporetu">
+  <defs>
+    <radialGradient id="bg1" cx="50%" cy="60%" r="70%">
+      <stop offset="0%" stop-color="#EFE6D6"/>
+      <stop offset="100%" stop-color="#F7F1E7"/>
+    </radialGradient>
+    <radialGradient id="potShine" cx="35%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#D8914A" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#C9773A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="720" height="480" fill="url(#bg1)"/>
+
+  <!-- Countertop surface line -->
+  <rect x="0" y="390" width="720" height="90" fill="#E8D8C0" rx="0"/>
+  <line x1="0" y1="390" x2="720" y2="390" stroke="#C8A87A" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- === STOVE RING / BURNER === -->
+  <ellipse cx="360" cy="398" rx="115" ry="14" fill="#D0BC95" opacity="0.6"/>
+  <ellipse cx="360" cy="398" rx="80" ry="9" fill="#E8D8C0" opacity="0.7"/>
+  <ellipse cx="360" cy="398" rx="45" ry="5" fill="#D4C4A0" opacity="0.5"/>
+
+  <!-- === POT BODY === -->
+  <!-- Pot is a rounded trapezoid: wider at top, slightly narrower at bottom -->
+  <path d="M218 310 Q215 398 220 400 Q250 408 360 408 Q470 408 500 400 Q505 398 502 310 Z"
+        fill="#C9773A"/>
+  <!-- Pot highlight (upper-left light catch) -->
+  <path d="M232 322 Q228 360 232 385" fill="none" stroke="#D8914A" stroke-width="18"
+        stroke-linecap="round" opacity="0.22"/>
+  <!-- Pot shadow (right) -->
+  <path d="M490 325 Q492 365 488 390" fill="none" stroke="#9B5520" stroke-width="14"
+        stroke-linecap="round" opacity="0.18"/>
+
+  <!-- Pot ear handles -->
+  <path d="M218 345 Q190 342 183 358 Q178 374 198 380 Q210 382 218 370"
+        fill="#A05A28" stroke="#A05A28" stroke-width="1" stroke-linejoin="round"/>
+  <path d="M502 345 Q530 342 537 358 Q542 374 522 380 Q510 382 502 370"
+        fill="#A05A28" stroke="#A05A28" stroke-width="1" stroke-linejoin="round"/>
+
+  <!-- Pot rim / lip -->
+  <path d="M208 316 Q360 308 512 316 Q510 326 360 322 Q210 326 208 316 Z"
+        fill="#9B5520"/>
+
+  <!-- Lid body -->
+  <path d="M218 316 Q360 302 502 316 Q490 324 360 320 Q230 324 218 316 Z"
+        fill="#B06030"/>
+  <!-- Lid highlight -->
+  <path d="M238 314 Q270 307 320 306" fill="none" stroke="#D8A14A" stroke-width="2.5"
+        stroke-linecap="round" opacity="0.35"/>
+
+  <!-- Lid knob stem -->
+  <rect x="348" y="288" width="24" height="16" rx="6" fill="#9B5520"/>
+  <!-- Lid knob top -->
+  <ellipse cx="360" cy="288" rx="20" ry="8" fill="#C9773A"/>
+  <ellipse cx="358" cy="285" rx="10" ry="4" fill="#D8A14A" opacity="0.5"/>
+
+  <!-- === STEAM WISPS === -->
+  <path d="M302 295 C297 270 312 248 306 224 C300 200 314 178 308 158"
+        fill="none" stroke="#C8A87A" stroke-width="3.5" stroke-linecap="round" opacity="0.5"/>
+  <path d="M360 290 C355 265 372 243 366 218 C360 193 376 172 370 150"
+        fill="none" stroke="#C8A87A" stroke-width="4" stroke-linecap="round" opacity="0.55"/>
+  <path d="M418 295 C424 268 409 246 415 222 C421 198 407 177 413 156"
+        fill="none" stroke="#C8A87A" stroke-width="3.5" stroke-linecap="round" opacity="0.5"/>
+
+  <!-- === WOODEN SPOON (leaning right) === -->
+  <!-- Handle -->
+  <path d="M538 408 Q542 380 537 350 Q532 318 535 290 Q537 275 538 260"
+        fill="none" stroke="#8B6040" stroke-width="11" stroke-linecap="round"/>
+  <!-- Spoon bowl outline -->
+  <path d="M535 258 Q522 242 526 226 Q532 210 548 214 Q562 218 558 234 Q554 250 538 258 Z"
+        fill="#8B6040"/>
+  <!-- Spoon bowl hollow / interior -->
+  <path d="M537 254 Q527 241 530 230 Q535 220 546 223 Q555 227 552 238 Q549 250 537 254 Z"
+        fill="#C8A87A" opacity="0.35"/>
+
+  <!-- === SMALL HERB SPRIG (left) === -->
+  <path d="M152 410 Q154 392 152 378 Q150 368 154 352"
+        fill="none" stroke="#6B4F3A" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M153 378 Q143 370 139 360 Q141 353 148 360 Q151 368 153 378 Z"
+        fill="#4FA83A" opacity="0.8"/>
+  <path d="M153 378 Q163 370 167 360 Q165 353 158 360 Q154 368 153 378 Z"
+        fill="#5CB84A" opacity="0.75"/>
+  <path d="M153 358 Q143 350 140 340 Q142 334 149 341 Q151 350 153 358 Z"
+        fill="#4FA83A" opacity="0.7"/>
+  <path d="M153 358 Q162 349 165 340 Q163 334 157 341 Q153 349 153 358 Z"
+        fill="#5CB84A" opacity="0.65"/>
+
+  <!-- Subtle decorative dots / background texture -->
+  <circle cx="90" cy="120" r="4" fill="#C8A87A" opacity="0.12"/>
+  <circle cx="108" cy="145" r="3" fill="#C8A87A" opacity="0.10"/>
+  <circle cx="620" cy="110" r="4.5" fill="#C8A87A" opacity="0.10"/>
+  <circle cx="640" cy="135" r="3" fill="#C8A87A" opacity="0.09"/>
+  <circle cx="80" cy="220" r="2.5" fill="#C9773A" opacity="0.08"/>
+  <circle cx="650" cy="240" r="3" fill="#C9773A" opacity="0.07"/>
+</svg>
