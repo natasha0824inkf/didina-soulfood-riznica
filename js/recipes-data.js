@@ -1538,7 +1538,7 @@ const recipes = [
       en: "Simple, fragrant and filling — a dish for every occasion."
     },
     author_comment: {
-      sr: "Ovo jelo je dokaz da i od najjednostavnijih sastojaka može da nastane prava gozba. Savršen izbor kada želiš nešto brzo, ukusno i zasitno.",
+      sr: "Ovo jelo iz detinjstva je dokaz da i od najjednostavnijih sastojaka može da nastane prava čarolija. To je onaj ukus koji me odmah vrati kući — savršen izbor kada želiš nešto brzo, ukusno i nostalgično.",
       de: "Dieses Gericht ist der Beweis, dass selbst aus den einfachsten Zutaten ein echtes Festmahl entstehen kann. Die perfekte Wahl, wenn man etwas Schnelles, Leckeres und Sättigendes möchte.",
       en: "This dish is proof that even the simplest ingredients can make a real feast. The perfect choice when you want something quick, tasty and filling."
     },
