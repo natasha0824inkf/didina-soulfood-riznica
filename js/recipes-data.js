@@ -1370,7 +1370,7 @@ const recipes = [
       en: "A spur-of-the-moment treat — crispy outside, soft inside."
     },
     author_comment: {
-      sr: "Banane na stolu su menjale boju, rerna je već bila upaljena, a vreme je pozvalo na mali eksperiment. Tako su nastali ovi mekani i mirisni keksi — neplanirani, a savršeno jednostavni.",
+      sr: "Banane na stolu su već počele da menjaju boju, rerna je bila upaljena, a vreme je pozvalo na mali eksperiment. Tako su nastali ovi mekani i mirisni kolačići — neplanirani, ali savršeni.",
       de: "Die Bananen auf dem Tisch wurden reifer, der Ofen war schon an — und so entstand dieses kleine Experiment. Weich, duftend und wunderbar unkompliziert.",
       en: "The bananas on the counter were browning, the oven was already on — time for a little experiment. These soft, fragrant cookies were born unplanned and perfectly simple."
     },
