@@ -830,7 +830,7 @@ const recipes = [
       en: "Coconut Curry with Red Lentils"
     },
     subtitle: {
-      sr: "Jer kokos nisu samo kolači. Ovo je jelo koje greje stomak i smiruje misli — bilo gde da si.",
+      sr: "Jer kokos nije samo za kolače. Ovo je jelo koje greje stomak i smiruje misli, gde god da se nalaziš.",
       de: "Denn Kokos ist nicht nur für Desserts. Dieses Gericht wärmt den Bauch und beruhigt die Gedanken — wo auch immer du bist.",
       en: "Because coconut isn't just for desserts. This is a dish that warms the stomach and calms the mind — wherever you are."
     },
