@@ -1365,7 +1365,7 @@ const recipes = [
     number: "37",
     title: { sr: "Brzinski banana kolačići", de: "Blitz-Bananenplätzchen", en: "Quick Banana Cookies" },
     subtitle: {
-      sr: "Slatkiš iz trenutka — hrskav spolja, a mekan iznutra.",
+      sr: "Spremni za čas — hrskavi spolja, a mekani iznutra.",
       de: "Süßigkeit aus dem Moment — außen knusprig, innen weich.",
       en: "A spur-of-the-moment treat — crispy outside, soft inside."
     },
