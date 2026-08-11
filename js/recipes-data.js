@@ -3,7 +3,7 @@ const recipes = [
     number: "1",
     title: { sr: 'Nedeljni „wrap"', de: "Der Sonntags-Wrap", en: "Sunday Wrap" },
     subtitle: {
-      sr: "Topao, proteinski i pun života — savršen za lagani doručak ili brzi obrok nakon treniga.",
+      sr: "Topao, proteinski i pun života — savršen za lagani doručak ili brzi obrok nakon treninga.",
       de: "Warm, proteinreich und voller Leben — perfekt für ein leichtes Frühstück oder einen schnellen Snack nach dem Training.",
       en: "Warm, protein-packed and full of life — perfect for a light breakfast or a quick bite after your workout."
     },
@@ -17,7 +17,7 @@ const recipes = [
       sr: [
         "1 integralna ili proteinska tortilja (grejati kratko u suvom tiganju)",
         "malo parče feta sira (oko 50g)",
-        "Komadić ljutog sira za pikantnan ukus (može i bez)",
+        "Komadić ljutog sira za pikantan ukus (može i bez)",
         "kašika grčkog jogurta, za laganiju varijantu",
         "Pečene semenke (suncokret, susam, lan)",
         "Svež krastavac (na kolutiće)",
@@ -278,7 +278,7 @@ const recipes = [
   {
     number: "7",
     title: {
-      sr: "Mini pice od plavog patližāna",
+      sr: "Mini pice od plavog patlidžana",
       de: "Mini-Pizzen auf Auberginen-Basis",
       en: "Mini Aubergine Pizzas"
     },
@@ -288,14 +288,14 @@ const recipes = [
       en: "Light bites with a touch of Mediterranean summer — perfect when you want something warm and full of flavour."
     },
     author_comment: {
-      sr: "Patližjan kao baza umesto testa, paradajz i origano da zamiriše ceo tvoj dom, a masline i sir daju onaj domaći šmek kao staro bakino jelo.",
+      sr: "Patlidžan kao baza umesto testa, paradajz i origano da zamiriše ceo tvoj dom, a masline i sir daju onaj domaći šmek kao staro bakino jelo.",
       de: "Aubergine als Boden statt Teig, Tomate und Oregano damit dein ganzes Zuhause duftet, Oliven und Käse für dieses heimelige Gefühl wie bei Oma.",
       en: "Aubergine as the base instead of dough, tomato and oregano to fill the house with fragrance, olives and cheese for that homemade feel — like something from grandma's old kitchen."
     },
     prep_time: { sr: "45 minuta (uključujući pečenje)", de: "45 Min. (mit Backzeit)", en: "45 minutes (including baking)" },
     ingredients: {
       sr: [
-        "1 plavi patližjan, isečen na kolutiće (oko 1 cm), odgorčen",
+        "1 plavi patlidžan, isečen na kolutiće (oko 1 cm), odgorčen",
         "Paradajz, isečen na kolutiće",
         "Crne ili zelene masline",
         "Rendani sir po izboru",
@@ -321,12 +321,12 @@ const recipes = [
     },
     instructions: {
       sr: [
-        "U pleh za pečenje poređaj kolutiće patližjana.",
+        "U pleh za pečenje poređaj kolutiće patlidžana.",
         "Prelij ih sa malo maslinovog ulja.",
         "Pospi rendanim sirom.",
         "Preko složi kolutiće paradajza, masline i, ako voliš, šampinjone.",
         "Pospi sve origanom.",
-        "Stavi u zagrejanoj rernu i peci oko 30 minuta, dok se kuća ne ispuni mirisom Mediterana.",
+        "Stavi u zagrejanu rernu i peci oko 30 minuta, dok se kuća ne ispuni mirisom Mediterana.",
         "Posluži toplo, uz prepečen hleb ili kuvani krompir."
       ],
       de: [
@@ -478,7 +478,7 @@ const recipes = [
     },
     instructions: {
       sr: [
-        "U maloj činiici sjedini kikiriki puter, med i kakao dok ne dobiješ gust, maziv krem.",
+        "U maloj činiji sjedini kikiriki puter, med i kakao dok ne dobiješ gust, maziv krem.",
         "Po želji dodaj cimet ili vanilu.",
         "Rasporedi krem po čitavoj površini lavaša ili palačinke.",
         "Pažljivo urolaj i stavi u frižider na 10–15 minuta da se stegne.",
@@ -597,7 +597,7 @@ const recipes = [
     prep_time: { sr: "20–25 minuta", de: "20–25 Min.", en: "20–25 minutes" },
     ingredients: {
       sr: [
-        "½ šolje pirinča (okruglog ili za sutljaš)",
+        "½ šolje pirinča (okruglog ili za sutlijaš)",
         "1 šolja biljnog mleka (ili običnog, po želji)",
         "Prstohvat soli",
         "Prava vanila ili vanilin šećer (po ukusu)",
@@ -694,7 +694,7 @@ const recipes = [
     },
     instructions: {
       sr: [
-        "Banane izgnj eči viljuškom i pomešaj ih sa žumancima, medom i vanilom.",
+        "Banane izgnječi viljuškom i pomešaj ih sa žumancima, medom i vanilom.",
         "Dodaj brašno, prašak za pecivo, prstohvat soli i po želji cimet.",
         "Umešaj orahe i suvo grožđe.",
         "Belanca posebno umuti dok ne postanu penasta, pa ih lagano dodaj u smesu.",
@@ -799,7 +799,7 @@ const recipes = [
       sr: [
         "Papriku naseckaj na trake, paradajz na polovine.",
         "Na tiganju zagrej malo maslinovog ulja i proprži ćureći stejk sa svih strana dok ne dobije zlatnu boju.",
-        "U istom tiganju pored mesa dodaj povrće i kratko propriži dok ne omekša i blago karamelizuje.",
+        "U istom tiganju pored mesa dodaj povrće i kratko proprži dok ne omekša i blago karamelizuje.",
         "Dodaj limunov sok, začini sve zajedno i pusti da se ukusi sjedine još minut-dva.",
         "Serviraj uz svežu salatu i čašu dobrog vina."
       ],
@@ -871,14 +871,14 @@ const recipes = [
     },
     instructions: {
       sr: [
-        "Na laganoj vatri propriži sitno seckan luk, beli luk i đumbir dok ne zamirišu.",
+        "Na laganoj vatri proprži sitno seckan luk, beli luk i đumbir dok ne zamirišu.",
         "Dodaj curry i kurkumu, pa promešaj kratko da puste aromu.",
         "Dodaj crveno sočivo, promešaj i dodaj kokosovo mleko.",
         "Kuvaj 10–15 minuta dok sočivo ne omekša.",
         "Dodaj čašu vode ako je previše gusto.",
         "Začini po ukusu i pusti da krčka još nekoliko minuta.",
         "Serviraj toplo, uz malo limunovog soka i svežeg bilja.",
-        "Kao prilog možeš skuvati basmati pirinač ili istostirati jednu kukuruznu tortilju."
+        "Kao prilog možeš skuvati basmati pirinač ili tostirati jednu kukuruznu tortilju."
       ],
       de: [
         "Bei niedriger Hitze fein gehackte Zwiebel, Knoblauch und Ingwer andünsten, bis sie duften.",
@@ -951,7 +951,7 @@ const recipes = [
     },
     instructions: {
       sr: [
-        "Luk sitno iseckaj i propriži sa malo maslinovog ulja. Dodaj mleveno meso i šargarepu i propriži dok meso ne dobije boju. Dodaj sve začine i lovorov list.",
+        "Luk sitno iseckaj i proprži sa malo maslinovog ulja. Dodaj mleveno meso i šargarepu i proprži dok meso ne dobije boju. Dodaj sve začine i lovorov list.",
         "Dodaj sok od paradajza i po potrebi malo vode. Sos treba da bude dovoljno redak da se makarone mogu kuvati u njemu.",
         "Prokuvaj sos i meso još nekoliko minuta da se ukusi sjedine.",
         "U vatrostalnu posudu slaži slojeve: sirove makarone pa sos — i tako dok ne potrošiš sastojke. Poređaj najmanje dva sloja.",
@@ -1026,7 +1026,7 @@ const recipes = [
     instructions: {
       sr: [
         "U malo mlake vode rastopi kvasac sa prstohvatom brašna i šećera, pa ostavi da zapeni.",
-        "U većoj činiji pomešaj brašno, so, semenke i ulje. Dodaj nadešli kvasac i ostatak vode. Umesti glatko i mekano testo.",
+        "U većoj činiji pomešaj brašno, so, semenke i ulje. Dodaj nadošli kvasac i ostatak vode. Umesti glatko i mekano testo.",
         "Pokrij krpom i ostavi da naraste oko 45–60 minuta.",
         "Kada testo naraste, premesi ga i oblikuj u okrugli hleb. Na vrhu oštrim nožem možeš urezati oblik lista, krsta ili spirale.",
         "Premazati hleb umućenim jajetom i pospi semenkama kumina ili susama.",
@@ -1129,7 +1129,7 @@ const recipes = [
       en: ["2 medium zucchini", "1 small potato", "1 small onion", "1 garlic clove", "1 tbsp olive oil", "Salt and pepper", "A little fresh parsley or dill", "Around 600 ml water or vegetable stock", "A handful of sunflower seeds for serving"]
     },
     instructions: {
-      sr: ["Na maslinovom ulju kratko proprži sitno seckan crni i beli luk.", "Dodaj tikvice isečene na kolutove i krompir isečen na kockice, pa sve lepo promešaj.", "Nalij toliko vode ili bujona da povrće bude pokriveno, posoli i pobiberi.", "Kuvaj oko 15 minuta dok sve ne omekša.", "Štapnim mikserom ili u blenderu izmiksaj sve do glatke kremaste supe.", "Dodaj malo seckanog peršuna po ukusu.", "Pre serviranja pospi semenkim suncokreta za prijatnu hrskavost."],
+      sr: ["Na maslinovom ulju kratko proprži sitno seckan crni i beli luk.", "Dodaj tikvice isečene na kolutove i krompir isečen na kockice, pa sve lepo promešaj.", "Nalij toliko vode ili bujona da povrće bude pokriveno, posoli i pobiberi.", "Kuvaj oko 15 minuta dok sve ne omekša.", "Štapnim mikserom ili u blenderu izmiksaj sve do glatke kremaste supe.", "Dodaj malo seckanog peršuna po ukusu.", "Pre serviranja pospi semenkama suncokreta za prijatnu hrskavost."],
       de: ["Fein gehackte Zwiebel und Knoblauch in Olivenöl kurz anschwitzen.", "Zucchini in Scheiben und Kartoffel in Würfel schneiden, hinzufügen und gut umrühren.", "Mit Wasser oder Brühe aufgießen bis das Gemüse bedeckt ist, salzen und pfeffern.", "Ca. 15 Minuten kochen bis alles weich ist.", "Mit einem Stabmixer oder im Standmixer zu einer glatten Cremesuppe pürieren.", "Nach Geschmack etwas frische Petersilie einrühren.", "Vor dem Servieren mit Sonnenblumenkernen für angenehme Knusprigkeit bestreuen."],
       en: ["Sauté the finely chopped onion and garlic in olive oil briefly.", "Add the zucchini in slices and potato in cubes, stir everything together.", "Add enough water or stock to cover the vegetables, season with salt and pepper.", "Cook for about 15 minutes until everything is soft.", "Blend with a stick blender or in a blender until smooth and creamy.", "Stir in a little fresh parsley to taste.", "Before serving, sprinkle with sunflower seeds for a pleasant crunch."]
     },
