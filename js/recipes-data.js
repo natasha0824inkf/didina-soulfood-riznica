@@ -201,9 +201,9 @@ const recipes = [
   {
     number: "6",
     title: {
-      sr: "Tople leblebije sa jogurtom i tahinijem",
-      de: "Warme Kichererbsen mit Joghurt & Tahini",
-      en: "Warm Chickpeas with Yogurt & Tahini"
+      sr: "Tople leblebije sa jogurtom",
+      de: "Warme Kichererbsen mit Joghurt",
+      en: "Warm Chickpeas with Yogurt"
     },
     subtitle: {
       sr: "Topao, kremast, začinski — za lenja vikend jutra kada dan počinje bez žurbe.",
@@ -985,9 +985,9 @@ const recipes = [
   {
     number: "25",
     title: {
-      sr: "Integralni hleb sa semenkama",
-      de: "Vollkornbrot mit Samen",
-      en: "Wholegrain Seeded Bread"
+      sr: "Mirisni hleb sa semenkama",
+      de: "Duftendes Brot mit Samen",
+      en: "Fragrant Seeded Bread"
     },
     subtitle: {
       sr: "Tradicionalni recept kao malo umetničko delo.",
@@ -1811,7 +1811,7 @@ const recipes = [
   },
   {
     number: "53",
-    title: { sr: "Prebranac sa slatkim krompirom", de: "Kidneybohnen mit Süßkartoffeln", en: "Prebranac with Sweet Potato" },
+    title: { sr: "Prebranac sa slatkim krompirom", de: "Kidneybohnen mit Süßkartoffel", en: "Prebranac with Sweet Potato" },
     subtitle: {
       sr: "Tradicija u novom duhu.",
       de: "Tradition im neuen Geist.",
