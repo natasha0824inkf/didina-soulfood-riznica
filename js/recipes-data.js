@@ -1810,6 +1810,76 @@ const recipes = [
     category: "Osvežavajući recepti"
   },
   {
+    number: "",
+    title: { sr: "Hrskava celer salata", de: "Knuspriger Sellerie-Salat", en: "Crunchy Celery Salad" },
+    subtitle: {
+      sr: "Osveženje posle posla – između ručka i večere",
+      de: "Erfrischung nach der Arbeit – zwischen Mittag- und Abendessen",
+      en: "Refreshment after work – between lunch and dinner"
+    },
+    author_comment: {
+      sr: "Ova salata mi je bila pravo otkriće! Idealna je kao prva pomoć posle posla, kad je napolju vruće, a treba ti nešto lagano, hrskavo i hranljivo.",
+      de: "Dieser Salat war eine echte Entdeckung für mich! Ideal als schnelle Stärkung nach der Arbeit, wenn es draußen heiß ist und man etwas Leichtes, Knuspriges und Nahrhaftes braucht.",
+      en: "This salad was a real discovery for me! Perfect as a quick fix after work when it's hot outside and you need something light, crunchy, and nourishing."
+    },
+    prep_time: { sr: "10 minuta", de: "10 Minuten", en: "10 minutes" },
+    ingredients: {
+      sr: [
+        "2–3 štapića celera (sitno seckana)",
+        "1 šargarepa (rendana)",
+        "1 jabuka (na kockice)",
+        "šaka semenki bundeve (lagano prepečenih na suvom tiganju)",
+        "2 kašike grčkog jogurta",
+        "1 kašičica maslinovog ulja",
+        "malo ceđenog limuna",
+        "prstohvat soli"
+      ],
+      de: [
+        "2–3 Stangen Sellerie (fein gehackt)",
+        "1 Karotte (gerieben)",
+        "1 Apfel (gewürfelt)",
+        "eine Handvoll Kürbiskerne (leicht trocken geröstet)",
+        "2 EL griechischer Joghurt",
+        "1 TL Olivenöl",
+        "etwas Zitronensaft",
+        "eine Prise Salz"
+      ],
+      en: [
+        "2–3 celery stalks (finely chopped)",
+        "1 carrot (grated)",
+        "1 apple (diced)",
+        "a handful of pumpkin seeds (lightly dry-toasted)",
+        "2 tbsp Greek yogurt",
+        "1 tsp olive oil",
+        "a little lemon juice",
+        "a pinch of salt"
+      ]
+    },
+    instructions: {
+      sr: [
+        "Pomešaj povrće i jabuku.",
+        "Dodaj prepečene semenke bundeve.",
+        "Umuti kremasti preliv od jogurta, ulja, limuna i soli.",
+        "Sjedini sve i uživaj u salati."
+      ],
+      de: [
+        "Gemüse und Apfel mischen.",
+        "Geröstete Kürbiskerne hinzufügen.",
+        "Cremiges Dressing aus Joghurt, Öl, Zitrone und Salz anrühren.",
+        "Alles vermengen und den Salat genießen."
+      ],
+      en: [
+        "Mix the vegetables and apple.",
+        "Add the toasted pumpkin seeds.",
+        "Whisk a creamy dressing from yogurt, oil, lemon, and salt.",
+        "Combine everything and enjoy."
+      ]
+    },
+    note: "Za jači obrok dodaj malo humusa pored salate.",
+    image: "",
+    category: "Osvežavajući recepti"
+  },
+  {
     number: "53",
     title: { sr: "Prebranac sa slatkim krompirom", de: "Kidneybohnen mit Süßkartoffel", en: "Prebranac with Sweet Potato" },
     subtitle: {
