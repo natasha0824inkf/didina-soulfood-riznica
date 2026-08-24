@@ -1818,20 +1818,20 @@ const recipes = [
       en: "Refreshment after work – between lunch and dinner"
     },
     author_comment: {
-      sr: "Ova salata mi je bila pravo otkriće! Idealna je kao prva pomoć posle posla, kad je napolju vruće, a treba ti nešto lagano, hrskavo i hranljivo.",
+      sr: "Ova salata mi je bila pravo otkriće! Savršena je kao prva pomoć, kad se vratiš umoran posle posla, napolju je vruće, a treba ti nešto lagano, hrskavo i hranljivo.",
       de: "Dieser Salat war eine echte Entdeckung für mich! Ideal als schnelle Stärkung nach der Arbeit, wenn es draußen heiß ist und man etwas Leichtes, Knuspriges und Nahrhaftes braucht.",
       en: "This salad was a real discovery for me! Perfect as a quick fix after work when it's hot outside and you need something light, crunchy, and nourishing."
     },
     prep_time: { sr: "10 minuta", de: "10 Minuten", en: "10 minutes" },
     ingredients: {
       sr: [
-        "2–3 štapića celera (sitno seckana)",
-        "1 šargarepa (rendana)",
-        "1 jabuka (na kockice)",
-        "šaka semenki bundeve (lagano prepečenih na suvom tiganju)",
+        "2–3 štapića celera (sitno iseckana)",
+        "1 šargarepa (izrendana)",
+        "1 jabuka (sečena na kockice)",
+        "šaka semenki bundeve (blago prepečenih na suvom tiganju)",
         "2 kašike grčkog jogurta",
         "1 kašičica maslinovog ulja",
-        "malo ceđenog limuna",
+        "malo limunovog soka",
         "prstohvat soli"
       ],
       de: [
@@ -1857,10 +1857,10 @@ const recipes = [
     },
     instructions: {
       sr: [
-        "Pomešaj povrće i jabuku.",
-        "Dodaj prepečene semenke bundeve.",
-        "Umuti kremasti preliv od jogurta, ulja, limuna i soli.",
-        "Sjedini sve i uživaj u salati."
+        "Pomešaj celer, šargarepu i jabuku u činiji.",
+        "Dodaj semenke bundeve.",
+        "Umuti preliv od jogurta, ulja, limuna i soli.",
+        "Prelij salatu, promešaj i gotovo."
       ],
       de: [
         "Gemüse und Apfel mischen.",
@@ -1875,7 +1875,7 @@ const recipes = [
         "Combine everything and enjoy."
       ]
     },
-    note: "Za jači obrok dodaj malo humusa pored salate.",
+    note: 'Za "jači" obrok, u salatu dodaj i malo humusa.',
     image: "",
     category: "Osvežavajući recepti"
   },
