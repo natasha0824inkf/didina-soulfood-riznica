@@ -1876,7 +1876,7 @@ const recipes = [
       ]
     },
     note: 'Za "jači" obrok, u salatu dodaj i malo humusa.',
-    image: "",
+    image: "assets/images/hrskava-celer-salata.jpg",
     category: "Osvežavajući recepti"
   },
   {
