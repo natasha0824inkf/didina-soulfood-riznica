@@ -45,8 +45,8 @@ const recipes = [
     instructions: {
       sr: [
         "Tortilju zagrej u suvom tiganju dok ne omekša i postane elastična.",
-        "Izgnječiti sireve viljuškom i dodati jogurt.",
-        "Ispeći semenke na suvom tiganju dok ne zamirišu.",
+        "Izgnječi sireve viljuškom i dodaj jogurt.",
+        "Ispeci semenke na suvom tiganju dok ne zamirišu.",
         "Pomešaj sireve i semenke i namaži na tortilju.",
         "Dodaj povrće i urolaj.",
         "Tostiraj kratko na tiganju i posluži uz sveži krastavac."
@@ -174,7 +174,7 @@ const recipes = [
         "Dodaj kadaif i pažljivo promešaj da ostane hrskavo ali da kadaif bude zasićen kremom.",
         "Kašikom vadi male zalogaje i oblikuj ih rukama.",
         "Stavi u frižider da se stegnu oko sat vremena.",
-        "Otopi čokoladu i filuj čokoladice pomoću dve viljuške.",
+        "Otopi čokoladu i umači zalogaje u čokoladu pomoću dve viljuške.",
         "Uživaj u malim trenucima slatke lakoće i zahvalnosti."
       ],
       de: [
@@ -830,7 +830,7 @@ const recipes = [
       en: "Coconut Curry with Red Lentils"
     },
     subtitle: {
-      sr: "Jer kokos nisu samo kolači. Ovo je jelo koje greje stomak i smiruje misli — bilo gde da si.",
+      sr: "Jer kokos nije samo za kolače. Ovo je jelo koje greje stomak i smiruje misli, gde god da se nalaziš.",
       de: "Denn Kokos ist nicht nur für Desserts. Dieses Gericht wärmt den Bauch und beruhigt die Gedanken — wo auch immer du bist.",
       en: "Because coconut isn't just for desserts. This is a dish that warms the stomach and calms the mind — wherever you are."
     },
@@ -918,7 +918,7 @@ const recipes = [
       en: "Faster than classic, lighter than the original — and just as warm and delicious."
     },
     author_comment: {
-      sr: "Ko kaže da moraš praviti domaće kore i kuvati makarone da bi napravila dobre lazanje? Ovaj recept nastao je iz trenutka kad sam želela nešto konkretno – bez mnogo prljavih šerpi. Sve sirovo, sve slojevito, sve ide pravo u rernu.",
+      sr: "Ko kaže da moraš da praviš domaće kore i kuvaš makarone da bi napravila dobre lazanje? Ovaj recept nastao je iz trenutka kad sam želela nešto konkretno – bez mnogo prljavih šerpi. Sve sirovo, sve slojevito, sve ide pravo u rernu.",
       de: "Wer sagt, man muss Nudelplatten machen und Pasta kochen, um gute Lasagne zu machen? Dieses Rezept entstand aus dem Wunsch nach etwas Konkretem — ohne viele schmutzige Töpfe. Alles roh, alles schichtweise, alles direkt in den Ofen.",
       en: "Who says you have to make homemade pasta sheets to make good lasagne? This recipe was born from a moment when I wanted something substantial — without many dirty pots. Everything raw, everything layered, everything straight into the oven."
     },
@@ -1029,7 +1029,7 @@ const recipes = [
         "U većoj činiji pomešaj brašno, so, semenke i ulje. Dodaj nadošli kvasac i ostatak vode. Umesti glatko i mekano testo.",
         "Pokrij krpom i ostavi da naraste oko 45–60 minuta.",
         "Kada testo naraste, premesi ga i oblikuj u okrugli hleb. Na vrhu oštrim nožem možeš urezati oblik lista, krsta ili spirale.",
-        "Premazati hleb umućenim jajetom i pospi semenkama kumina ili susama.",
+        "Premazi hleb umućenim jajetom i pospi semenkama kumina ili susama.",
         "Peci u prethodno zagrejanoj rerni na 220°C oko 30–35 minuta bez ventilatora, dok ne zamiriše i ne dobije zlatnu koricu."
       ],
       de: [
@@ -1297,7 +1297,7 @@ const recipes = [
       en: ["Around 10 Brussels sprouts", "A little olive oil", "Salt to taste", "Paprika to taste"]
     },
     instructions: {
-      sr: ["Zagrej rernu na 200°C.", "Operi proklje, ukloni spoljne listove i preseči ih na pola.", "Posloži ih na pleh presečenom stranom prema dole.", "Prelij maslinovim uljem i dobro začini solju i alevom paprikom.", "Peci 25–30 minuta dok ivice ne porumene i postanu hrskave.", "Serviraj toplo — kao prilog ili samostalan obrok."],
+      sr: ["Zagrej rernu na 200°C.", "Operi prokelj, ukloni spoljne listove i preseči ih na pola.", "Posloži ih na pleh presečenom stranom prema dole.", "Prelij maslinovim uljem i dobro začini solju i alevom paprikom.", "Peci 25–30 minuta dok ivice ne porumene i postanu hrskave.", "Serviraj toplo — kao prilog ili samostalan obrok."],
       de: ["Ofen auf 200°C vorheizen.", "Rosenkohl waschen, äußere Blätter entfernen und halbieren.", "Mit der Schnittfläche nach unten auf das Blech legen.", "Mit Olivenöl beträufeln und großzügig mit Salz und Paprika würzen.", "25–30 Minuten backen, bis die Ränder goldbraun und knusprig sind.", "Warm servieren — als Beilage oder eigenständiges Gericht."],
       en: ["Preheat the oven to 200°C.", "Wash the sprouts, remove outer leaves and cut in half.", "Place cut-side down on a baking tray.", "Drizzle with olive oil and season generously with salt and paprika.", "Roast for 25–30 minutes until the edges are golden and crispy.", "Serve warm — as a side dish or a meal on its own."]
     },
@@ -1309,12 +1309,12 @@ const recipes = [
     number: "35",
     title: { sr: "Kraljevske bombice", de: "Königliche Dattel-Bällchen", en: "Royal Date Balls" },
     subtitle: {
-      sr: "Prirodna slatkoća za svaki časak mira i zadovoljstva.",
+      sr: "Prirodna poslastica za trenutke mira i uživanja.",
       de: "Natürliche Süße für jeden Moment der Ruhe und des Genusses.",
       en: "Natural sweetness for every moment of peace and pleasure."
     },
     author_comment: {
-      sr: "Nastale su iz čiste želje za nečim slatkim, a bez griže savesti. Volim ih jer ih mogu napraviti za pet minuta, a svaki zalogaj nosi osećaj raskoši.",
+      sr: "Nastale su iz čiste želje za nečim slatkim, a da pritom ne osetim grižu savesti. Volim ih jer ih napravim za pet minuta, a svaki zalogaj donosi osećaj uživanja.",
       de: "Entstanden aus dem puren Wunsch nach Süßem ohne schlechtes Gewissen. Ich liebe sie, weil ich sie in fünf Minuten machen kann — jeder Bissen fühlt sich luxuriös an.",
       en: "Born from a pure desire for something sweet without guilt. I love them because I can make them in five minutes, and every bite feels indulgent."
     },
@@ -1325,7 +1325,7 @@ const recipes = [
       en: ["6 Medjool dates", "2 handfuls of chopped walnuts", "1 tbsp tahini", "Unsweetened cocoa powder for rolling"]
     },
     instructions: {
-      sr: ["Urme oprati i potopiti u toploj vodi da omekšaju.", "Sitno iseckati orahe.", "Iseći urme, izvaditi koštice i zajedno sa orasima staviti u secka.", "Dodati tahini i kratko blendirati — samo koliko da se masa fino sjedini.", "Vaditi smesu kašičicom i rukama oblikovati male bombice.", "Po želji uvaljati u kakao, kokos ili mlevene pistaće."],
+      sr: ["Oprati urme i potopiti ih u toplu vodu da omekšaju.", "Sitno iseckati orahe.", "Iseći urme, izvaditi koštice i zajedno sa orasima staviti u secka.", "Dodati tahini i kratko blendirati — samo koliko da se masa fino sjedini.", "Vaditi smesu kašičicom i rukama oblikovati male bombice.", "Po želji uvaljati u kakao, kokos ili mlevene pistaće."],
       de: ["Datteln waschen und in warmem Wasser einweichen bis sie weich sind.", "Die Walnüsse fein hacken.", "Datteln aufschneiden, Kerne entfernen und mit den Walnüssen in den Zerkleinerer geben.", "Tahini hinzufügen und kurz mixen — nur bis die Masse sich verbindet.", "Mit einem Löffel etwas Masse entnehmen und mit den Händen zu kleinen Kugeln formen.", "Nach Belieben in Kakao, Kokos oder gemahlenen Pistazien wälzen."],
       en: ["Wash the dates and soak in warm water until soft.", "Finely chop the walnuts.", "Cut open the dates, remove the stones and place in a food processor with the walnuts.", "Add tahini and blend briefly — just until the mixture comes together.", "Scoop out with a spoon and roll into small balls with your hands.", "Roll in cocoa powder, coconut or ground pistachios as desired."]
     },
@@ -1365,12 +1365,12 @@ const recipes = [
     number: "37",
     title: { sr: "Brzinski banana kolačići", de: "Blitz-Bananenplätzchen", en: "Quick Banana Cookies" },
     subtitle: {
-      sr: "Slatkiš iz trenutka — hrskav spolja, a mekan iznutra.",
+      sr: "Spremni za čas — hrskavi spolja, a mekani iznutra.",
       de: "Süßigkeit aus dem Moment — außen knusprig, innen weich.",
       en: "A spur-of-the-moment treat — crispy outside, soft inside."
     },
     author_comment: {
-      sr: "Banane na stolu su menjale boju, rerna je već bila upaljena, a vreme je pozvalo na mali eksperiment. Tako su nastali ovi mekani i mirisni keksi — neplanirani, a savršeno jednostavni.",
+      sr: "Banane na stolu su već počele da menjaju boju, rerna je bila upaljena, a vreme je pozvalo na mali eksperiment. Tako su nastali ovi mekani i mirisni kolačići — neplanirani, ali savršeni.",
       de: "Die Bananen auf dem Tisch wurden reifer, der Ofen war schon an — und so entstand dieses kleine Experiment. Weich, duftend und wunderbar unkompliziert.",
       en: "The bananas on the counter were browning, the oven was already on — time for a little experiment. These soft, fragrant cookies were born unplanned and perfectly simple."
     },
@@ -1398,7 +1398,7 @@ const recipes = [
       en: "Warm orange magic for body and soul."
     },
     author_comment: {
-      sr: "Topla, mirisna i brza — ova supica je pravi zagrljaj u tanjiru! Nastala je bez mnogo planiranja, a ispala toliko dobra da odmah ide u riznicu.",
+      sr: "Topla, mirisna i brza — ova supica je pravi zagrljaj u tanjiru! Rođena je iz improvizacije, a ispala toliko ukusna da je odmah postala deo moje \"Riznice\".",
       de: "Warm, duftend und schnell — diese Suppe ist wie eine Umarmung in einer Schüssel! Ohne großes Planen entstanden, aber so gut, dass sie sofort in die Schatzkammer kam.",
       en: "Warm, fragrant and quick — this soup is a real hug in a bowl! It came together without much planning, yet turned out so good it went straight into the treasury."
     },
@@ -1409,7 +1409,7 @@ const recipes = [
       en: ["4 large carrots (or 6 small)", "2 medium potatoes", "2 celery stalks", "1 garlic clove", "A piece of fresh ginger (about 2–3 cm)", "1 tbsp olive oil", "750 ml vegetable stock or water", "Salt and pepper to taste", "A pinch of turmeric"]
     },
     instructions: {
-      sr: ["U šerpi zagrej maslinovo ulje i kratko prodinstaj sitno seckan luk.", "Dodaj iseckane šargarepe, krompir i celer, pa dinstaj par minuta da povrće pusti miris.", "Ubaci narendani đumbir i kurkumu, promešaj.", "Nalij povrtnim bujonom, posoli i pobiberi, pa kuvaj dok povrće ne omekša (20–25 minuta).", "Izblendiraj sve u glatku krem supu.", "Po želji ukrasi kapljicom maslinovog ulja, svežim peršunom ili semenkama bundeve."],
+      sr: ["U šerpi zagrej maslinovo ulje i kratko prodinstaj sitno seckan beli luk.", "Dodaj iseckane šargarepe, krompir i celer, pa dinstaj par minuta da povrće pusti miris.", "Ubaci narendani đumbir i kurkumu, promešaj.", "Dolij bujon od povrća, posoli i pobiberi, pa kuvaj dok povrće ne omekša (20–25 minuta).", "Izblendiraj sve u glatku krem supu.", "Po želji dodaj kap maslinovog ulja, ukrasi svežim peršunom ili semenkama bundeve."],
       de: ["Olivenöl in einem Topf erhitzen und den fein gehackten Knoblauch kurz andünsten.", "Karotten, Kartoffeln und Sellerie hinzufügen und einige Minuten dünsten bis das Gemüse duftet.", "Geriebenen Ingwer und Kurkuma einrühren.", "Mit Brühe aufgießen, salzen und pfeffern, dann kochen bis das Gemüse weich ist (20–25 Min.).", "Alles zu einer glatten Cremesuppe pürieren.", "Nach Belieben mit einem Tropfen Olivenöl, frischer Petersilie oder Kürbiskernen garnieren."],
       en: ["Heat the olive oil in a pot and briefly sauté the finely chopped garlic.", "Add the carrots, potatoes and celery and sauté for a few minutes until fragrant.", "Stir in the grated ginger and turmeric.", "Pour in the stock, season with salt and pepper, and cook until the vegetables are soft (20–25 minutes).", "Blend everything into a smooth cream soup.", "Garnish with a drizzle of olive oil, fresh parsley or pumpkin seeds if desired."]
     },
@@ -1538,9 +1538,9 @@ const recipes = [
       en: "Simple, fragrant and filling — a dish for every occasion."
     },
     author_comment: {
-      sr: "Ovo jelo je dokaz da i od najjednostavnijih sastojaka može da nastane prava gozba. Savršen izbor kada želiš nešto brzo, ukusno i zasitno.",
-      de: "Dieses Gericht ist der Beweis, dass selbst aus den einfachsten Zutaten ein echtes Festmahl entstehen kann. Die perfekte Wahl, wenn man etwas Schnelles, Leckeres und Sättigendes möchte.",
-      en: "This dish is proof that even the simplest ingredients can make a real feast. The perfect choice when you want something quick, tasty and filling."
+      sr: "Ovo jelo iz detinjstva je dokaz da i od najjednostavnijih sastojaka može da nastane prava čarolija. To je onaj ukus koji me odmah vrati kući — savršen izbor kada želiš nešto brzo, ukusno i nostalgično.",
+      de: "Dieses Gericht aus meiner Kindheit ist der Beweis, dass selbst aus den einfachsten Zutaten echte Magie entstehen kann. Es ist dieser Geschmack, der mich sofort nach Hause zurückversetzt — die perfekte Wahl, wenn man etwas Schnelles, Leckeres und Nostalgisches möchte.",
+      en: "This childhood dish is proof that even the simplest ingredients can create real magic. It's that flavour that takes me straight back home — the perfect choice when you want something quick, tasty and nostalgic."
     },
     prep_time: { sr: "oko 30 minuta", de: "ca. 30 Min.", en: "about 30 minutes" },
     ingredients: {
@@ -1549,7 +1549,7 @@ const recipes = [
       en: ["3–4 potatoes", "1 onion", "A little oil for frying", "Salt, pepper", "1 tsp paprika"]
     },
     instructions: {
-      sr: ["Krompir oljušti, iseci na kocke i skuvaj u vodi (pazi da ne prekuvaš!).", "Na malo ulja proprži sitno seckan crni luk dok ne postane staklast.", "Dodaj krompir, posoli, pobiberi i začini alevom paprikom.", "Sve dobro izmešaj i kratko proprži da se ukusi sjedine."],
+      sr: ["Oljušti krompir, iseci ga na kocke i skuvaj u vodi (pazi da ga ne prekuvaš).", "Na malo ulja proprži sitno seckan crni luk dok ne postane staklast.", "Dodaj krompir, posoli, pobiberi i začini alevom paprikom.", "Sve dobro izmešaj i kratko proprži da se ukusi sjedine."],
       de: ["Kartoffeln schälen, in Würfel schneiden und in Wasser kochen (nicht zu lange!).", "Die fein gehackte Zwiebel in etwas Öl glasig dünsten.", "Kartoffeln hinzufügen, mit Salz, Pfeffer und Paprika würzen.", "Alles gut vermischen und kurz anbraten damit sich die Aromen verbinden."],
       en: ["Peel the potatoes, cut into cubes and cook in water (don't overcook!).", "Sauté the finely chopped onion in a little oil until translucent.", "Add the potatoes, season with salt, pepper and paprika.", "Mix everything well and fry briefly to let the flavours come together."]
     },
@@ -1559,14 +1559,14 @@ const recipes = [
   },
   {
     number: "44",
-    title: { sr: "Voćna pita iz šume", de: "Waldfrüchtekuchen", en: "Forest Fruit Pie" },
+    title: { sr: "Voćna pita iz dubine šume", de: "Waldfrüchtekuchen", en: "Forest Fruit Pie" },
     subtitle: {
-      sr: "Hrskava, sočna i osvežavajuća — desert koji spaja kiselkaste note šumskog voća i prijatnu slatkoću.",
+      sr: "Hrskava, sočna i osvežavajuća — savršen spoj kiselkastog voća i blage slatkoće.",
       de: "Knusprig, saftig und erfrischend — ein Dessert das die sauren Noten von Waldfrüchten mit angenehmer Süße verbindet.",
       en: "Crispy, juicy and refreshing — a dessert that unites the tart notes of forest fruit with pleasant sweetness."
     },
     author_comment: {
-      sr: "Ova pita je moj tajni način da na brzinu napravim nešto što izgleda kao da sam ceo dan provela u kuhinji. U stvari — treba ti samo jedno testo, malo voća i puno ljubavi.",
+      sr: "Ovo je moje tajno oružje: izgleda kao da sam ceo dan u kuhinji, a zapravo je sprema za tili čas. Treba ti samo jedno testo, malo voća i puno ljubavi.",
       de: "Diese Torte ist mein Geheimtrick um schnell etwas zu zaubern, das aussieht als hätte ich den ganzen Tag in der Küche gestanden. In Wirklichkeit braucht man nur einen Teig, etwas Obst und viel Liebe.",
       en: "This pie is my secret way to quickly make something that looks like I spent all day in the kitchen. In reality — you just need pastry sheets, a little fruit and a lot of love."
     },
@@ -1589,9 +1589,9 @@ const recipes = [
     number: "45",
     title: { sr: "Salata sa rukolom, cveklom, fetom i orasima", de: "Rucola-Salat mit Rote Bete, Feta und Walnüssen", en: "Rocket Salad with Beetroot, Feta & Walnuts" },
     subtitle: {
-      sr: "Mala bomba osveženja i ukusa.",
-      de: "Eine kleine Geschmacksbombe voller Frische.",
-      en: "A little bomb of freshness and flavour."
+      sr: "Eksplozija svežine i teksture.",
+      de: "Eine Explosion aus Frische und Texturen.",
+      en: "An explosion of freshness and texture."
     },
     author_comment: {
       sr: "Ova salata je kao mali vatromet u tanjiru — slatka cvekla, pikantna rukola, kremasta feta i hrskavi orasi stvaraju skladnu igru ukusa.",
