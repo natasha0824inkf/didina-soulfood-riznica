@@ -484,7 +484,7 @@ function renderCategoriesGrid() {
   const catGrid = document.getElementById('categoriesGrid');
   if (!catGrid) return;
   const cats = [...new Set(recipes.map(r => r.category))];
-  const classMap = { morning: 'cat-card-morning', refreshing: 'cat-card-refreshing', coffee: 'cat-card-coffee', dunno: 'cat-card-dunno', oven: 'cat-card-oven' };
+  const classMap = { morning: 'cat-card-morning', refreshing: 'cat-card-refreshing', coffee: 'cat-card-coffee', dunno: 'cat-card-dunno', oven: 'cat-card-oven', cooked: 'cat-card-cooked' };
   catGrid.innerHTML = cats.map(cat => {
     const info  = getCategoryInfo(cat);
     const count = recipes.filter(r => r.category === cat).length;
