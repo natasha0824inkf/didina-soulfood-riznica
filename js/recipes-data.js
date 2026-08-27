@@ -201,9 +201,9 @@ const recipes = [
   {
     number: "6",
     title: {
-      sr: "Tople leblebije s jogurtom i tahinijem",
-      de: "Warme Kichererbsen mit Joghurt & Tahini",
-      en: "Warm Chickpeas with Yogurt & Tahini"
+      sr: "Tople leblebije sa jogurtom",
+      de: "Warme Kichererbsen mit Joghurt",
+      en: "Warm Chickpeas with Yogurt"
     },
     subtitle: {
       sr: "Topao, kremast, začinski — za lenja vikend jutra kada dan počinje bez žurbe.",
@@ -360,12 +360,12 @@ const recipes = [
       en: "Slow Gingerbreads from a Switched-Off Oven"
     },
     subtitle: {
-      sr: "Jer i kolači vole da odmore, a ne da izgore.",
-      de: "Denn auch Plätzchen wollen sich ausruhen, nicht verbrennen.",
-      en: "Because cookies love to rest too, not to burn."
+      sr: "Jer i kolači vole da odmore — ne proveravaš rernu, samo veruješ.",
+      de: "Denn auch Plätzchen wollen sich ausruhen — du schaust nicht in den Ofen, du vertraust.",
+      en: "Because cookies love to rest — you don't check the oven, you just trust."
     },
     author_comment: {
-      sr: "Ovi medenjaci se ne prave po pravilima, već po osećaju. Ne brojiš minute, ne proveriš rernu, ne juriš savršenstvo. Samo zamesiš rukama, zamirišeš kuhinju i veruješ procesu.",
+      sr: "Ovi medenjaci se ne prave po pravilima, već po osećaju. Ne brojiš minute, ne proveravaš rernu, ne juriš savršenstvo. Samo zamesiš rukama, zamirišeš kuhinju i veruješ.",
       de: "Diese Lebkuchen folgen keinen Regeln, sondern dem Gefühl. Du zählst keine Minuten, schaust nicht in den Ofen, jagst keine Perfektion. Du knetest einfach mit den Händen, riechst wie die Küche sich erwärmt, und vertraust.",
       en: "These gingerbreads don't follow rules — they follow feeling. You don't count minutes, you don't check the oven, you don't chase perfection. You just knead with your hands, smell the kitchen fill with warmth, and trust."
     },
@@ -675,49 +675,49 @@ const recipes = [
     ingredients: {
       sr: [
         "2 zrele banane", "2 jaja (belanca i žumanca odvojeno)",
-        "2 kašike meda ili šećera", "1 kesica vanile", "1 kesica praška za pecivo",
+        "2 kašike meda", "3 kašike ulja", "1 kesica vanile", "1 kesica praška za pecivo",
         "Prstohvat soli", "200 g integralnog ili ovsenog brašna",
         "šaka seckanih oraha", "šaka suvog grožđa", "kašičica cimeta"
       ],
       de: [
         "2 reife Bananen", "2 Eier (Eiweiß und Eigelb getrennt)",
-        "2 EL Honig oder Zucker", "1 Päckchen Vanille", "1 Päckchen Backpulver",
+        "2 EL Honig", "3 EL Öl", "1 Päckchen Vanille", "1 Päckchen Backpulver",
         "Eine Prise Salz", "200 g Vollkorn- oder Haferflockenmehl",
         "Eine Handvoll gehackte Walnüsse", "Eine Handvoll Rosinen", "1 TL Zimt"
       ],
       en: [
         "2 ripe bananas", "2 eggs (whites and yolks separated)",
-        "2 tbsp honey or sugar", "1 sachet vanilla", "1 sachet baking powder",
+        "2 tbsp honey", "3 tbsp oil", "1 sachet vanilla", "1 sachet baking powder",
         "A pinch of salt", "200 g wholegrain or oat flour",
         "A handful of chopped walnuts", "A handful of raisins", "1 tsp cinnamon"
       ]
     },
     instructions: {
       sr: [
-        "Banane izgnječi viljuškom i pomešaj ih sa žumancima, medom i vanilom.",
+        "Banane izgnječi viljuškom i pomešaj ih sa žumancima, medom, uljem i vanilom.",
         "Dodaj brašno, prašak za pecivo, prstohvat soli i po želji cimet.",
         "Umešaj orahe i suvo grožđe.",
         "Belanca posebno umuti dok ne postanu penasta, pa ih lagano dodaj u smesu.",
         "Sipaj smesu u kalup obložen papirom za pečenje.",
-        "Peci u prethodno zagrejanoj rerni na 180°C oko 30–35 minuta.",
+        "Peci u prethodno zagrejanoj rerni na 175°C oko 45 minuta.",
         "Ohladi, naseci, uživaj."
       ],
       de: [
-        "Bananen mit einer Gabel zerdrücken und mit Eigelb, Honig und Vanille vermischen.",
+        "Bananen mit einer Gabel zerdrücken und mit Eigelb, Honig, Öl und Vanille vermischen.",
         "Mehl, Backpulver, eine Prise Salz und nach Belieben Zimt hinzufügen.",
         "Walnüsse und Rosinen unterheben.",
         "Eiweiß steif schlagen und vorsichtig unter den Teig heben.",
         "In eine mit Backpapier ausgelegte Form füllen.",
-        "Im vorgeheizten Ofen bei 180°C ca. 30–35 Minuten backen.",
+        "Im vorgeheizten Ofen bei 175°C ca. 45 Minuten backen.",
         "Abkühlen lassen, aufschneiden, genießen."
       ],
       en: [
-        "Mash the bananas with a fork and mix with the egg yolks, honey and vanilla.",
+        "Mash the bananas with a fork and mix with the egg yolks, honey, oil and vanilla.",
         "Add flour, baking powder, a pinch of salt and cinnamon if you like.",
         "Fold in the walnuts and raisins.",
         "Beat the egg whites separately until fluffy, then gently fold into the batter.",
         "Pour into a lined baking tin.",
-        "Bake in a preheated oven at 180°C for 30–35 minutes.",
+        "Bake in a preheated oven at 175°C for 45 minutes.",
         "Cool, slice, enjoy."
       ]
     },
@@ -985,9 +985,9 @@ const recipes = [
   {
     number: "25",
     title: {
-      sr: "Integralni hleb sa semenkama",
-      de: "Vollkornbrot mit Samen",
-      en: "Wholegrain Seeded Bread"
+      sr: "Mirisni hleb sa semenkama",
+      de: "Duftendes Brot mit Samen",
+      en: "Fragrant Seeded Bread"
     },
     subtitle: {
       sr: "Tradicionalni recept kao malo umetničko delo.",
@@ -995,8 +995,8 @@ const recipes = [
       en: "A traditional recipe as a small work of art."
     },
     author_comment: {
-      sr: "Nema boljeg načina da započnete jutro nego svežim mirišnim hlebom iz svoje rerne. Potrebno je samo par sastojaka: dve vredne ruke, sunčano nedeljno jutro i malo ljubavi prema pecivima.",
-      de: "Es gibt keinen besseren Weg, den Morgen zu beginnen als mit frischem, duftendem Brot aus dem eigenen Ofen. Dafür braucht man nur wenige Zutaten: zwei eifrige Hände, einen sonnigen Sonntagmorgen und ein bisschen Liebe zum Backen.",
+      sr: "Nema boljeg načina da započnete jutro nego svežim mirisnim hlebom iz svoje rerne. Potrebno je samo par sastojaka: dve vredne ruke, sunčano nedeljno jutro i malo ljubavi prema pecivima.",
+      de: "Es gibt keinen besseren Weg, den Morgen zu beginnen als mit frischem, duftendem Brot aus dem eigenen Ofen. Dafür braucht man nur wenige Zutaten: zwei eifrige Hände, einen sonnigen Sonntagsmorgen und ein bisschen Liebe zum Backen.",
       en: "There is no better way to start the morning than with fresh, fragrant bread from your own oven. All you need is a few ingredients: two willing hands, a sunny Sunday morning and a little love for baking."
     },
     prep_time: { sr: "oko 2 h (sa narastanjem testa)", de: "ca. 2 Std. (mit Gehzeit)", en: "about 2 hours (including proving time)" },
@@ -1073,7 +1073,7 @@ const recipes = [
       en: ["4 tbsp quinoa flakes", "200 ml almond milk", "1 banana (sliced)", "A handful of frozen or fresh blueberries", "A handful of roasted, unsalted peanuts", "1 tsp honey (optional)", "1 tsp cinnamon"]
     },
     instructions: {
-      sr: ["U manjoj šerpici zagrej bademovo mleko i dodaj kinoa pahuljice.", "Pusti da lagano krčkaju 5–6 minuta uz povremeno mešanje.", "Dodaj izgnječenu bananu i cimet, pa kuvaj još minut-dva.", "Umešaj borovnice dok je kaša još topla.", "Pospi kikirikijem i po želji zasladi medom."],
+      sr: ["U manjoj šerpici zagrej bademovo mleko i dodaj kinoa pahuljice.", "Pusti da lagano krčkaju 5–6 minuta uz povremeno mešanje.", "Dodaj iseckanu bananu i cimet, pa kuvaj još minut-dva.", "Umešaj borovnice dok je kaša još topla.", "Pospi kikirikijem i po želji zasladi medom."],
       de: ["Mandelmilch in einem kleinen Topf erwärmen und Quinoa-Flocken hinzufügen.", "5–6 Minuten sanft köcheln lassen, gelegentlich umrühren.", "Zerdrückte Banane und Zimt hinzufügen und noch 1–2 Minuten kochen.", "Blaubeeren einrühren, solange der Brei noch warm ist.", "Mit Erdnüssen bestreuen und nach Belieben mit Honig süßen."],
       en: ["Warm the almond milk in a small pot and add the quinoa flakes.", "Let simmer gently for 5–6 minutes, stirring occasionally.", "Add the mashed banana and cinnamon and cook for another minute or two.", "Stir in the blueberries while the porridge is still warm.", "Top with peanuts and sweeten with honey if you like."]
     },
@@ -1083,7 +1083,7 @@ const recipes = [
   },
   {
     number: "27",
-    title: { sr: "Rovito kuvano jaje sa avokadom i tostom", de: "Wachsweiches Ei mit Avocado und Toast", en: "Soft-Boiled Egg with Avocado & Toast" },
+    title: { sr: "Rovito kuvano jaje sa avokadom i tostom", de: "Weich gekochtes Ei mit Avocado und Toast", en: "Soft-Boiled Egg with Avocado & Toast" },
     subtitle: {
       sr: "Dva minuta pažnje za sebe ujutru — i dan počinje kako treba.",
       de: "Zwei Minuten Fürsorge für dich am Morgen — und der Tag beginnt richtig.",
@@ -1241,7 +1241,7 @@ const recipes = [
       en: ["200 g pasta (penne, fusilli or whatever you have)", "200 g salmon fillet", "2–3 tbsp green pesto", "1 tbsp olive oil", "1 small garlic clove, finely chopped", "A few drops of lemon juice", "Salt and pepper to taste", "A handful of rocket or fresh basil"]
     },
     instructions: {
-      sr: ["Skuvaj pastu al dente prema uputstvima na pakovanju.", "Na maslinovom ulju proprži sitno naseckan beli luk minut-dva.", "Dodaj filete lososa i peci dok ne postane neproziran, oko 5–7 minuta. Rasparčaj ga viljuškom.", "Dodaj kuvanu pastu i pesto, promešaj sve zajedno.", "Dodaj nekoliko kapi limunovog soka, so i biber po ukusu.", "Serviraj sa šakom rukole ili svežeg bosiljka odozgo."],
+      sr: ["Skuvaj pastu al dente prema uputstvima na pakovanju.", "Na maslinovom ulju proprži sitno naseckan beli luk minut-dva.", "Dodaj filete lososa i peci po 5 minuta sa obe strane na srednjoj jačini. Rasparčaj ga viljuškom.", "Dodaj kuvanu pastu i pesto, promešaj sve zajedno.", "Dodaj nekoliko kapi limunovog soka, so i biber po ukusu.", "Serviraj sa šakom rukole ili svežeg bosiljka odozgo."],
       de: ["Pasta al dente nach Packungsanweisung kochen.", "Fein gehackten Knoblauch in Olivenöl ein bis zwei Minuten anschwitzen.", "Lachsfilet hinzufügen und ca. 5–7 Minuten braten, bis er undurchsichtig ist. Mit einer Gabel zerteilen.", "Gekochte Pasta und Pesto hinzufügen, alles gut vermischen.", "Einige Tropfen Zitronensaft, Salz und Pfeffer abschmecken.", "Mit Rucola oder frischem Basilikum garniert servieren."],
       en: ["Cook the pasta al dente according to packet instructions.", "Sauté the finely chopped garlic in olive oil for a minute or two.", "Add the salmon fillet and cook until opaque, about 5–7 minutes. Break it up with a fork.", "Add the cooked pasta and pesto, toss everything together.", "Add a few drops of lemon juice, salt and pepper to taste.", "Serve topped with a handful of rocket or fresh basil."]
     },
@@ -1426,9 +1426,9 @@ const recipes = [
       en: "Fragrant breakfast or snack that fills you with energy and delights the eye."
     },
     author_comment: {
-      sr: "Ovo je moj omiljeni humus sa šarenim povrćem — pravi mali ritual uživanja. Boje, mirisi i teksture čine da svaki zalogaj bude čista radost.",
-      de: "Das ist mein Lieblingshummus mit buntem Gemüse — ein kleines Ritual des Genießens. Farben, Düfte und Texturen machen jeden Bissen zur reinen Freude.",
-      en: "This is my favourite hummus with colourful vegetables — a little ritual of enjoyment. Colours, aromas and textures make every bite pure joy."
+      sr: "Ovo je moj omiljeni humus sa peršunom i limunom — pravi mali ritual uživanja.",
+      de: "Das ist mein Lieblingshummus mit Petersilie und Zitrone — ein kleines Ritual des Genießens.",
+      en: "This is my favourite hummus with parsley and lemon — a little ritual of enjoyment."
     },
     prep_time: { sr: "15–20 minuta", de: "15–20 Min.", en: "15–20 minutes" },
     ingredients: {
@@ -1810,8 +1810,78 @@ const recipes = [
     category: "Osvežavajući recepti"
   },
   {
+    number: "",
+    title: { sr: "Hrskava celer salata", de: "Knuspriger Sellerie-Salat", en: "Crunchy Celery Salad" },
+    subtitle: {
+      sr: "Osveženje posle posla – između ručka i večere",
+      de: "Erfrischung nach der Arbeit – zwischen Mittag- und Abendessen",
+      en: "Refreshment after work – between lunch and dinner"
+    },
+    author_comment: {
+      sr: "Ova salata mi je bila pravo otkriće! Savršena je kao prva pomoć, kad se vratiš umoran posle posla, napolju je vruće, a treba ti nešto lagano, hrskavo i hranljivo.",
+      de: "Dieser Salat war eine echte Entdeckung für mich! Ideal als schnelle Stärkung nach der Arbeit, wenn es draußen heiß ist und man etwas Leichtes, Knuspriges und Nahrhaftes braucht.",
+      en: "This salad was a real discovery for me! Perfect as a quick fix after work when it's hot outside and you need something light, crunchy, and nourishing."
+    },
+    prep_time: { sr: "10 minuta", de: "10 Minuten", en: "10 minutes" },
+    ingredients: {
+      sr: [
+        "2–3 štapića celera (sitno iseckana)",
+        "1 šargarepa (izrendana)",
+        "1 jabuka (sečena na kockice)",
+        "šaka semenki bundeve (blago prepečenih na suvom tiganju)",
+        "2 kašike grčkog jogurta",
+        "1 kašičica maslinovog ulja",
+        "malo limunovog soka",
+        "prstohvat soli"
+      ],
+      de: [
+        "2–3 Stangen Sellerie (fein gehackt)",
+        "1 Karotte (gerieben)",
+        "1 Apfel (gewürfelt)",
+        "eine Handvoll Kürbiskerne (leicht trocken geröstet)",
+        "2 EL griechischer Joghurt",
+        "1 TL Olivenöl",
+        "etwas Zitronensaft",
+        "eine Prise Salz"
+      ],
+      en: [
+        "2–3 celery stalks (finely chopped)",
+        "1 carrot (grated)",
+        "1 apple (diced)",
+        "a handful of pumpkin seeds (lightly dry-toasted)",
+        "2 tbsp Greek yogurt",
+        "1 tsp olive oil",
+        "a little lemon juice",
+        "a pinch of salt"
+      ]
+    },
+    instructions: {
+      sr: [
+        "Pomešaj celer, šargarepu i jabuku u činiji.",
+        "Dodaj semenke bundeve.",
+        "Umuti preliv od jogurta, ulja, limuna i soli.",
+        "Prelij salatu, promešaj i gotovo."
+      ],
+      de: [
+        "Gemüse und Apfel mischen.",
+        "Geröstete Kürbiskerne hinzufügen.",
+        "Cremiges Dressing aus Joghurt, Öl, Zitrone und Salz anrühren.",
+        "Alles vermengen und den Salat genießen."
+      ],
+      en: [
+        "Mix the vegetables and apple.",
+        "Add the toasted pumpkin seeds.",
+        "Whisk a creamy dressing from yogurt, oil, lemon, and salt.",
+        "Combine everything and enjoy."
+      ]
+    },
+    note: 'Za "jači" obrok, u salatu dodaj i malo humusa.',
+    image: "assets/images/hrskava-celer-salata.jpg",
+    category: "Osvežavajući recepti"
+  },
+  {
     number: "53",
-    title: { sr: "Prebranac sa slatkim krompirom", de: "Prebranac mit Süßkartoffeln", en: "Prebranac with Sweet Potato" },
+    title: { sr: "Prebranac sa slatkim krompirom", de: "Kidneybohnen mit Süßkartoffel", en: "Prebranac with Sweet Potato" },
     subtitle: {
       sr: "Tradicija u novom duhu.",
       de: "Tradition im neuen Geist.",
@@ -1835,7 +1905,7 @@ const recipes = [
     },
     note: "Prebranac je još ukusniji sutradan, kada se ukusi u potpunosti sjedine.",
     image: "assets/images/prebranac.png",
-    category: "Recepti koji mirišu iz rerne"
+    category: "Kuvana jela"
   },
   {
     number: "54",
@@ -1864,5 +1934,29 @@ const recipes = [
     note: "Ako voliš rustičniju teksturu, blendaj kraće. Odlično ide uz integralni hleb, krekere ili kao namaz za sendviče.",
     image: "assets/images/domaca-pasteta-od-tune.png",
     category: "Jutarnji recepti"
+  },
+  {
+    number: "55",
+    title: { sr: "Štapići sa ajvarom", de: "Ajvar-Stangen", en: "Ajvar Sticks" },
+    subtitle: { sr: "", de: "", en: "" },
+    author_comment: { sr: "", de: "", en: "" },
+    prep_time: { sr: "", de: "", en: "" },
+    ingredients: { sr: [], de: [], en: [] },
+    instructions: { sr: [], de: [], en: [] },
+    note: "",
+    image: "assets/images/stapici-sa-ajvarom.png",
+    category: "Recepti koji mirišu iz rerne"
+  },
+  {
+    number: "56",
+    title: { sr: "Burek sa gotovim korama", de: "Burek mit fertigem Teig", en: "Burek with Ready-Made Pastry" },
+    subtitle: { sr: "", de: "", en: "" },
+    author_comment: { sr: "", de: "", en: "" },
+    prep_time: { sr: "", de: "", en: "" },
+    ingredients: { sr: [], de: [], en: [] },
+    instructions: { sr: [], de: [], en: [] },
+    note: "",
+    image: "assets/images/burek-sa-gotovim-korama.png",
+    category: "Recepti koji mirišu iz rerne"
   }
 ];

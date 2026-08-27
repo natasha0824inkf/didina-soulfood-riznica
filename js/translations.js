@@ -38,6 +38,7 @@ const translations = {
     cat_coffee: 'Recepti uz kafu',
     cat_dunno: 'Kada ne znam šta da kuvam',
     cat_oven: 'Recepti koji mirišu iz rerne',
+    cat_cooked: 'Kuvana jela',
 
     favorites_title: 'Moji omiljeni recepti',
     favorites_empty: 'Još niste dodali omiljene recepte. Kliknite ❤ na receptu da ga sačuvate.',
@@ -153,13 +154,14 @@ const translations = {
     cat_coffee: 'Zum Kaffee',
     cat_dunno: 'Wenn der Kopf leer ist',
     cat_oven: 'Aus dem Ofen',
+    cat_cooked: 'Gekochte Gerichte',
 
     favorites_title: 'Meine Lieblingsrezepte',
     favorites_empty: 'Noch keine Favoriten. Klick auf ❤ bei einem Rezept, um es zu speichern.',
 
     about_title: 'Über Didi',
     about_subtitle: 'Köchin aus Leidenschaft, nicht aus Pflicht',
-    about_p1: 'Ich bin Didi. Ich koche gern — aber noch lieber bereite ich Essen zu, das die Seele nährt, das Herz wärmt und von innen zum Lächeln bringt. Diese Schatzkammer ist nicht über Nacht entstanden, sondern durch viele ruhige Sonntagmorgen, stille Abende mit einer Tasse Tee, Backduft aus dem Ofen und das ein oder andere Experiment, das nie wiederholt wurde.',
+    about_p1: 'Ich bin Didi. Ich koche gern — aber noch lieber bereite ich Essen zu, das die Seele nährt, das Herz wärmt und von innen zum Lächeln bringt. Diese Schatzkammer ist nicht über Nacht entstanden, sondern durch viele ruhige Sonntagsmorgen, stille Abende mit einer Tasse Tee, Backduft aus dem Ofen und das ein oder andere Experiment, das nie wiederholt wurde.',
     about_p2: 'Diese Rezepte sind nicht nur für den Hunger — sie sind für Tage, an denen du Stille brauchst, für schnelle Morgen, Kaffee-Momente oder die ewige Frage: Was koche ich bloß heute? Keine langen Listen, keine komplizierten Schritte. Echte Happen, geboren aus Sport, Yoga, Sommerferien, Meeresluft und dem unstillbaren Drang, allem eine Handvoll Nüsse hinzuzufügen.',
     about_p3: 'Das hier ist kein Kochbuch aus dem Fotostudio — es kommt aus dem echten Leben, aus meiner Küche. Ich hoffe, du liest es so gern, wie ich es geschrieben habe.',
     about_philosophy: 'Meine Kochphilosophie',
@@ -268,6 +270,7 @@ const translations = {
     cat_coffee: 'With your coffee',
     cat_dunno: "When you don't know what to make",
     cat_oven: 'From the oven',
+    cat_cooked: 'Cooked dishes',
 
     favorites_title: 'My Favorites',
     favorites_empty: "No favorites yet. Hit ❤ on any recipe to save it here.",

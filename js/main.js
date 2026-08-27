@@ -92,7 +92,8 @@ const CATEGORY_MAP = {
   'Osvežavajući recepti':                { emoji: '🌿', cls: 'refreshing', label_key: 'cat_refreshing' },
   'Recepti uz kafu':                     { emoji: '☕', cls: 'coffee',     label_key: 'cat_coffee' },
   'Recepti kada ne znam šta da kuvam':   { emoji: '🍳', cls: 'dunno',     label_key: 'cat_dunno' },
-  'Recepti koji mirišu iz rerne':        { emoji: '🥧', cls: 'oven',      label_key: 'cat_oven' }
+  'Recepti koji mirišu iz rerne':        { emoji: '🥧', cls: 'oven',      label_key: 'cat_oven' },
+  'Kuvana jela':                         { emoji: '🫕', cls: 'cooked',    label_key: 'cat_cooked' }
 };
 
 function getCategoryInfo(category) {
