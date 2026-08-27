@@ -1303,7 +1303,7 @@ const recipes = [
     },
     note: "",
     image: "assets/images/prokelj-iz-rerne.png",
-    category: "Recepti koji mirišu iz rerne"
+    category: "Recepti kada ne znam šta da kuvam"
   },
   {
     number: "35",
@@ -2037,6 +2037,55 @@ const recipes = [
     },
     note: "A onda samo preseci tu hrskavu koricu i slušaj zvuk. 😋",
     image: "assets/images/burek-sa-gotovim-korama.png",
+    category: "Recepti koji mirišu iz rerne"
+  },
+  {
+    number: "57",
+    title: { sr: "Slani krekeri sa semenkama", de: "Herzhafte Saatenkracker", en: "Savoury Seed Crackers" },
+    subtitle: {
+      sr: "Tanki, hrskavi i puni semenki",
+      de: "Dünn, knusprig und voller Saaten",
+      en: "Thin, crispy and full of seeds"
+    },
+    author_comment: {
+      sr: "Ako voliš grickalice, ali želiš nešto malo drugačije od klasičnih krekera, probaj ove sa semenkama. Hrskavi su, puni ukusa i odlični uz neki namaz, sir ili jednostavno sami. Najvažnije je samo da ih razvučeš dovoljno tanko — tada postaju baš fino hrskavi.",
+      de: "Wenn du Snacks magst, aber etwas anderes als klassische Cracker möchtest, probiere diese mit Saaten. Sie sind knusprig, voller Geschmack und toll zu einem Aufstrich, Käse oder einfach so. Das Wichtigste: Streiche die Masse dünn genug aus — dann werden sie wirklich schön knusprig.",
+      en: "If you love snacks but want something a little different from classic crackers, try these seed ones. They're crispy, full of flavour and great with a spread, cheese or just on their own. The key thing is to spread the mixture thin enough — that's when they get really nicely crispy."
+    },
+    prep_time: { sr: "oko 55 minuta", de: "ca. 55 Minuten", en: "about 55 minutes" },
+    ingredients: {
+      sr: ["50 g muslija", "3 supene kašike lana", "3 supene kašike čia semenki", "3 supene kašike susama", "3 supene kašike suncokretovih semenki", "3 supene kašike semenki bundeve", "1 kašičica soli", "1 kašičica aleve paprike", "1 kašičica belog luka u prahu", "1 kašičica kima, po ukusu", "150 ml tople vode"],
+      de: ["50 g Müsli", "3 EL Leinsamen", "3 EL Chiasamen", "3 EL Sesam", "3 EL Sonnenblumenkerne", "3 EL Kürbiskerne", "1 TL Salz", "1 TL Paprikapulver", "1 TL Knoblauchpulver", "1 TL Kreuzkümmel, nach Geschmack", "150 ml warmes Wasser"],
+      en: ["50 g muesli", "3 tbsp flaxseeds", "3 tbsp chia seeds", "3 tbsp sesame seeds", "3 tbsp sunflower seeds", "3 tbsp pumpkin seeds", "1 tsp salt", "1 tsp paprika", "1 tsp garlic powder", "1 tsp cumin, to taste", "150 ml warm water"]
+    },
+    instructions: {
+      sr: [
+        "Pomešaj musli, sve semenke i začine u jednoj posudi.",
+        "Prelij toplom vodom i sve dobro umešaj.",
+        "Ostavi masu da odstoji oko 15 minuta, kako bi semenke nabubrile i sve postalo fino lepljivo.",
+        "Prebaci smesu na papir za pečenje i razvuci je u veoma tanak sloj, debljine oko 5 mm.",
+        "Peci u prethodno zagrejanoj rerni na 160°C sa ventilatorom oko 40 minuta, odnosno dok krekeri ne postanu suvi i hrskavi.",
+        "Ostavi ih kratko da se ohlade, pa ih izlomi na komade."
+      ],
+      de: [
+        "Müsli, alle Saaten und Gewürze in einer Schüssel mischen.",
+        "Mit warmem Wasser übergießen und gut vermischen.",
+        "Die Masse ca. 15 Minuten quellen lassen, damit die Saaten aufquellen und alles schön klebrig wird.",
+        "Die Masse auf Backpapier verteilen und zu einer sehr dünnen Schicht von ca. 5 mm ausstreichen.",
+        "Im vorgeheizten Ofen mit Umluft bei 160°C ca. 40 Minuten backen, bis die Cracker trocken und knusprig sind.",
+        "Kurz abkühlen lassen und dann in Stücke brechen."
+      ],
+      en: [
+        "Mix the muesli, all seeds and spices in a bowl.",
+        "Pour over the warm water and mix well.",
+        "Leave the mixture to sit for about 15 minutes so the seeds swell and everything becomes nicely sticky.",
+        "Transfer the mixture onto baking paper and spread into a very thin layer, about 5 mm thick.",
+        "Bake in a preheated fan oven at 160°C for about 40 minutes, or until the crackers are dry and crispy.",
+        "Leave to cool briefly, then break into pieces."
+      ]
+    },
+    note: "I da — što tanje, to hrskavije. 😋",
+    image: "assets/images/slani-krekeri-sa-semenkama.jpg",
     category: "Recepti koji mirišu iz rerne"
   }
 ];
