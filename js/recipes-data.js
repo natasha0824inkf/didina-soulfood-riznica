@@ -1810,7 +1810,7 @@ const recipes = [
     category: "Osvežavajući recepti"
   },
   {
-    number: "",
+    number: "celer",
     title: { sr: "Hrskava celer salata", de: "Knuspriger Sellerie-Salat", en: "Crunchy Celery Salad" },
     subtitle: {
       sr: "Osveženje posle posla – između ručka i večere",
