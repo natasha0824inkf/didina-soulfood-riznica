@@ -1905,7 +1905,7 @@ const recipes = [
     },
     note: "Prebranac je još ukusniji sutradan, kada se ukusi u potpunosti sjedine.",
     image: "assets/images/prebranac.png",
-    category: "Kuvana jela"
+    category: "Recepti kada ne znam šta da kuvam"
   },
   {
     number: "54",
@@ -1938,24 +1938,104 @@ const recipes = [
   {
     number: "55",
     title: { sr: "Štapići sa ajvarom", de: "Ajvar-Stangen", en: "Ajvar Sticks" },
-    subtitle: { sr: "", de: "", en: "" },
-    author_comment: { sr: "", de: "", en: "" },
-    prep_time: { sr: "", de: "", en: "" },
-    ingredients: { sr: [], de: [], en: [] },
-    instructions: { sr: [], de: [], en: [] },
-    note: "",
+    subtitle: {
+      sr: "Hrskavi zalogaji od lisnatog testa sa ajvarom",
+      de: "Knusprige Blätterteig-Häppchen mit Ajvar",
+      en: "Crispy puff pastry bites with ajvar"
+    },
+    author_comment: {
+      sr: "Malo lisnatog testa, ajvara i susama, i već imaš grickalicu koja nestane sa stola brže nego što si planirala.",
+      de: "Ein bisschen Blätterteig, Ajvar und Sesam, und schon hast du einen Snack, der vom Tisch verschwindet, bevor du es geplant hast.",
+      en: "A little puff pastry, ajvar and sesame, and you've got a snack that disappears from the table faster than you planned."
+    },
+    prep_time: { sr: "oko 25 minuta", de: "ca. 25 Minuten", en: "about 25 minutes" },
+    ingredients: {
+      sr: ["2 pakovanja lisnatog testa", "2–3 kašike ajvara", "malo soli", "susam"],
+      de: ["2 Packungen Blätterteig", "2–3 EL Ajvar", "etwas Salz", "Sesam"],
+      en: ["2 packs of puff pastry", "2–3 tbsp ajvar", "a little salt", "sesame seeds"]
+    },
+    instructions: {
+      sr: [
+        "Razvuci prvo lisnato testo i premaži ga ajvarom preko cele površine, od ivice do ivice.",
+        "Prekrij ga drugim lisnatim testom i lagano pritisni da se slojevi lepo spoje.",
+        "Iseci testo na trakice širine oko 2–3 cm, pa svaku trakicu nekoliko puta uvij oko svoje ose.",
+        "Poređaj štapiće na pleh obložen papirom za pečenje, pospi ih sa malo soli i susamom.",
+        "Peci ih u prethodno zagrejanoj rerni na 180°C oko 20 minuta, odnosno dok lepo ne porumene i postanu hrskavi."
+      ],
+      de: [
+        "Den ersten Blätterteig ausrollen und vollständig mit Ajvar bestreichen, von Rand zu Rand.",
+        "Mit dem zweiten Blätterteig bedecken und leicht andrücken, damit sich die Schichten gut verbinden.",
+        "Den Teig in etwa 2–3 cm breite Streifen schneiden und jeden Streifen mehrmals um seine Achse drehen.",
+        "Die Stangen auf einem mit Backpapier belegten Blech anordnen, leicht salzen und mit Sesam bestreuen.",
+        "Im vorgeheizten Ofen bei 180°C ca. 20 Minuten backen, bis sie goldbraun und knusprig sind."
+      ],
+      en: [
+        "Roll out the first sheet of puff pastry and spread ajvar over the entire surface, edge to edge.",
+        "Cover with the second sheet and press lightly so the layers stick together.",
+        "Cut the pastry into strips about 2–3 cm wide, then twist each strip several times along its axis.",
+        "Arrange the sticks on a baking tray lined with baking paper, sprinkle with a little salt and sesame seeds.",
+        "Bake in a preheated oven at 180°C for about 20 minutes, or until golden brown and crispy."
+      ]
+    },
+    note: "Najbolji su dok su još malo topli — ako uspeš da ih ne pojedeš odmah. 😋",
     image: "assets/images/stapici-sa-ajvarom.png",
     category: "Recepti koji mirišu iz rerne"
   },
   {
     number: "56",
-    title: { sr: "Burek sa gotovim korama", de: "Burek mit fertigem Teig", en: "Burek with Ready-Made Pastry" },
-    subtitle: { sr: "", de: "", en: "" },
-    author_comment: { sr: "", de: "", en: "" },
-    prep_time: { sr: "", de: "", en: "" },
-    ingredients: { sr: [], de: [], en: [] },
-    instructions: { sr: [], de: [], en: [] },
-    note: "",
+    title: { sr: "Burek sa sirom", de: "Käse-Burek", en: "Cheese Burek" },
+    subtitle: {
+      sr: "Zvezda moje kuhinje i Instagrama",
+      de: "Der Star meiner Küche und meines Instagrams",
+      en: "The star of my kitchen and Instagram"
+    },
+    author_comment: {
+      sr: "Neki recepti su jednostavno rođeni da budu zvezde. Kod mene je već osvojio i kuhinju i Instagram, pa je bilo krajnje vreme da dobije svoje mesto i ovde.",
+      de: "Manche Rezepte sind einfach dazu geboren, Stars zu sein. Bei mir hat er schon die Küche und Instagram erobert — jetzt war es höchste Zeit, ihm auch hier seinen Platz zu geben.",
+      en: "Some recipes are simply born to be stars. In my home it's already won over both the kitchen and Instagram — so it was high time it got its place here too."
+    },
+    prep_time: { sr: "oko 30 minuta", de: "ca. 30 Minuten", en: "about 30 minutes" },
+    ingredients: {
+      sr: ["250 g tankih kora za pitu", "350 g sitnog sira", "2–3 kašike ulja", "50 ml tople vode"],
+      de: ["250 g dünne Filoteigblätter", "350 g krümeliger Weißkäse", "2–3 EL Öl", "50 ml warmes Wasser"],
+      en: ["250 g thin filo pastry sheets", "350 g crumbly white cheese", "2–3 tbsp oil", "50 ml warm water"]
+    },
+    instructions: {
+      sr: [
+        "Pomešaj ulje sa toplom vodom.",
+        "U okruglu tepsiju poređaj četiri kore sa četiri strane — gore, dole, levo i desno — tako da polovina svake kore ostane u tepsiji, a druga polovina visi preko ivice. Svaku koru premaži mešavinom ulja i vode.",
+        "Na dno tepsije zatim stavi još jednu koru, premaži je i preko nje rasporedi polovinu ukupne količine sira.",
+        "Preko sira poređaj tri kore, jednu preko druge. Svaku dobro premaži mešavinom ulja i vode kako bi fino omekšala.",
+        "Na treću koru rasporedi ostatak sira.",
+        "Prekrij ga preostalim korama i nastavi da svaku koru premazuješ uljem i vodom.",
+        "Na kraju burek lepo upakuj polovinama kora koje su ostale da vire preko ivice tepsije.",
+        "Još jednom sve fino premaži uljem kako bi se odozgo lepo zapeklo i dobilo onu hrskavu, zlatnu koricu.",
+        "Peci u prethodno zagrejanoj rerni na 180°C oko 25 minuta, odnosno dok burek lepo ne porumeni."
+      ],
+      de: [
+        "Öl mit warmem Wasser mischen.",
+        "In eine runde Form vier Teigblätter von allen vier Seiten legen — oben, unten, links und rechts — so dass die Hälfte jedes Blattes in der Form liegt, die andere Hälfte über den Rand hängt. Jedes Blatt mit der Öl-Wasser-Mischung bestreichen.",
+        "Ein weiteres Blatt auf den Boden legen, bestreichen und die Hälfte des Käses darüber verteilen.",
+        "Drei weitere Blätter übereinanderlegen und jedes gut mit der Öl-Wasser-Mischung bestreichen.",
+        "Den restlichen Käse auf dem dritten Blatt verteilen.",
+        "Mit den restlichen Blättern bedecken und weiter bestreichen.",
+        "Zum Schluss die herabhängenden Blatthälften über die Füllung falten.",
+        "Alles nochmal gut mit Öl bestreichen, damit es oben schön goldbraun und knusprig wird.",
+        "Im vorgeheizten Ofen bei 180°C ca. 25 Minuten backen, bis der Burek schön goldbraun ist."
+      ],
+      en: [
+        "Mix the oil with warm water.",
+        "In a round baking tin, lay four pastry sheets from four sides — top, bottom, left and right — so that half of each sheet sits in the tin and the other half hangs over the edge. Brush each sheet with the oil-water mixture.",
+        "Place one more sheet on the bottom of the tin, brush it, then spread half the cheese over it.",
+        "Layer three more sheets on top of the cheese, brushing each one well with the oil-water mixture.",
+        "Spread the remaining cheese over the third sheet.",
+        "Cover with the remaining sheets, continuing to brush each one with oil and water.",
+        "Finally, fold the overhanging sheet halves over the filling to wrap the burek.",
+        "Brush everything once more with oil so the top bakes up golden and crispy.",
+        "Bake in a preheated oven at 180°C for about 25 minutes, or until the burek is nicely golden."
+      ]
+    },
+    note: "A onda samo preseci tu hrskavu koricu i slušaj zvuk. 😋",
     image: "assets/images/burek-sa-gotovim-korama.png",
     category: "Recepti koji mirišu iz rerne"
   }
