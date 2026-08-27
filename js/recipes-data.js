@@ -1905,7 +1905,7 @@ const recipes = [
     },
     note: "Prebranac je još ukusniji sutradan, kada se ukusi u potpunosti sjedine.",
     image: "assets/images/prebranac.png",
-    category: "Kuvana jela"
+    category: "Recepti kada ne znam šta da kuvam"
   },
   {
     number: "54",
