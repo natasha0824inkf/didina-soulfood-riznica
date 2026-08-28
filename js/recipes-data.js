@@ -1303,7 +1303,7 @@ const recipes = [
     },
     note: "",
     image: "assets/images/prokelj-iz-rerne.png",
-    category: "Recepti koji mirišu iz rerne"
+    category: "Recepti kada ne znam šta da kuvam"
   },
   {
     number: "35",
@@ -1810,7 +1810,7 @@ const recipes = [
     category: "Osvežavajući recepti"
   },
   {
-    number: "",
+    number: "celer",
     title: { sr: "Hrskava celer salata", de: "Knuspriger Sellerie-Salat", en: "Crunchy Celery Salad" },
     subtitle: {
       sr: "Osveženje posle posla – između ručka i večere",
@@ -1905,7 +1905,7 @@ const recipes = [
     },
     note: "Prebranac je još ukusniji sutradan, kada se ukusi u potpunosti sjedine.",
     image: "assets/images/prebranac.png",
-    category: "Kuvana jela"
+    category: "Recepti kada ne znam šta da kuvam"
   },
   {
     number: "54",
@@ -1938,25 +1938,154 @@ const recipes = [
   {
     number: "55",
     title: { sr: "Štapići sa ajvarom", de: "Ajvar-Stangen", en: "Ajvar Sticks" },
-    subtitle: { sr: "", de: "", en: "" },
-    author_comment: { sr: "", de: "", en: "" },
-    prep_time: { sr: "", de: "", en: "" },
-    ingredients: { sr: [], de: [], en: [] },
-    instructions: { sr: [], de: [], en: [] },
-    note: "",
-    image: "assets/images/stapici-sa-ajvarom.png",
+    subtitle: {
+      sr: "Hrskavi zalogaji od lisnatog testa sa ajvarom",
+      de: "Knusprige Blätterteig-Häppchen mit Ajvar",
+      en: "Crispy puff pastry bites with ajvar"
+    },
+    author_comment: {
+      sr: "Malo lisnatog testa, ajvara i susama, i već imaš grickalicu koja nestane sa stola brže nego što si planirala.",
+      de: "Ein bisschen Blätterteig, Ajvar und Sesam, und schon hast du einen Snack, der vom Tisch verschwindet, bevor du es geplant hast.",
+      en: "A little puff pastry, ajvar and sesame, and you've got a snack that disappears from the table faster than you planned."
+    },
+    prep_time: { sr: "oko 25 minuta", de: "ca. 25 Minuten", en: "about 25 minutes" },
+    ingredients: {
+      sr: ["2 pakovanja lisnatog testa", "2–3 kašike ajvara", "malo soli", "susam"],
+      de: ["2 Packungen Blätterteig", "2–3 EL Ajvar", "etwas Salz", "Sesam"],
+      en: ["2 packs of puff pastry", "2–3 tbsp ajvar", "a little salt", "sesame seeds"]
+    },
+    instructions: {
+      sr: [
+        "Razvuci prvo lisnato testo i premaži ga ajvarom preko cele površine, od ivice do ivice.",
+        "Prekrij ga drugim lisnatim testom i lagano pritisni da se slojevi lepo spoje.",
+        "Iseci testo na trakice širine oko 2–3 cm, pa svaku trakicu nekoliko puta uvij oko svoje ose.",
+        "Poređaj štapiće na pleh obložen papirom za pečenje, pospi ih sa malo soli i susamom.",
+        "Peci ih u prethodno zagrejanoj rerni na 180°C oko 20 minuta, odnosno dok lepo ne porumene i postanu hrskavi."
+      ],
+      de: [
+        "Den ersten Blätterteig ausrollen und vollständig mit Ajvar bestreichen, von Rand zu Rand.",
+        "Mit dem zweiten Blätterteig bedecken und leicht andrücken, damit sich die Schichten gut verbinden.",
+        "Den Teig in etwa 2–3 cm breite Streifen schneiden und jeden Streifen mehrmals um seine Achse drehen.",
+        "Die Stangen auf einem mit Backpapier belegten Blech anordnen, leicht salzen und mit Sesam bestreuen.",
+        "Im vorgeheizten Ofen bei 180°C ca. 20 Minuten backen, bis sie goldbraun und knusprig sind."
+      ],
+      en: [
+        "Roll out the first sheet of puff pastry and spread ajvar over the entire surface, edge to edge.",
+        "Cover with the second sheet and press lightly so the layers stick together.",
+        "Cut the pastry into strips about 2–3 cm wide, then twist each strip several times along its axis.",
+        "Arrange the sticks on a baking tray lined with baking paper, sprinkle with a little salt and sesame seeds.",
+        "Bake in a preheated oven at 180°C for about 20 minutes, or until golden brown and crispy."
+      ]
+    },
+    note: "Najbolji su dok su još malo topli — ako uspeš da ih ne pojedeš odmah. 😋",
+    image: "assets/images/stapici-sa-ajvarom.jpg",
     category: "Recepti koji mirišu iz rerne"
   },
   {
     number: "56",
-    title: { sr: "Burek sa gotovim korama", de: "Burek mit fertigem Teig", en: "Burek with Ready-Made Pastry" },
-    subtitle: { sr: "", de: "", en: "" },
-    author_comment: { sr: "", de: "", en: "" },
-    prep_time: { sr: "", de: "", en: "" },
-    ingredients: { sr: [], de: [], en: [] },
-    instructions: { sr: [], de: [], en: [] },
-    note: "",
-    image: "assets/images/burek-sa-gotovim-korama.png",
+    title: { sr: "Burek sa sirom", de: "Käse-Burek", en: "Cheese Burek" },
+    subtitle: {
+      sr: "Zvezda moje kuhinje i Instagrama",
+      de: "Der Star meiner Küche und meines Instagrams",
+      en: "The star of my kitchen and Instagram"
+    },
+    author_comment: {
+      sr: "Neki recepti su jednostavno rođeni da budu zvezde. Kod mene je već osvojio i kuhinju i Instagram, pa je bilo krajnje vreme da dobije svoje mesto i ovde.",
+      de: "Manche Rezepte sind einfach dazu geboren, Stars zu sein. Bei mir hat er schon die Küche und Instagram erobert — jetzt war es höchste Zeit, ihm auch hier seinen Platz zu geben.",
+      en: "Some recipes are simply born to be stars. In my home it's already won over both the kitchen and Instagram — so it was high time it got its place here too."
+    },
+    prep_time: { sr: "oko 30 minuta", de: "ca. 30 Minuten", en: "about 30 minutes" },
+    ingredients: {
+      sr: ["250 g tankih kora za pitu", "350 g sitnog sira", "2–3 kašike ulja", "50 ml tople vode"],
+      de: ["250 g dünne Filoteigblätter", "350 g krümeliger Weißkäse", "2–3 EL Öl", "50 ml warmes Wasser"],
+      en: ["250 g thin filo pastry sheets", "350 g crumbly white cheese", "2–3 tbsp oil", "50 ml warm water"]
+    },
+    instructions: {
+      sr: [
+        "Pomešaj ulje sa toplom vodom.",
+        "U okruglu tepsiju poređaj četiri kore sa četiri strane — gore, dole, levo i desno — tako da polovina svake kore ostane u tepsiji, a druga polovina visi preko ivice. Svaku koru premaži mešavinom ulja i vode.",
+        "Na dno tepsije zatim stavi još jednu koru, premaži je i preko nje rasporedi polovinu ukupne količine sira.",
+        "Preko sira poređaj tri kore, jednu preko druge. Svaku dobro premaži mešavinom ulja i vode kako bi fino omekšala.",
+        "Na treću koru rasporedi ostatak sira.",
+        "Prekrij ga preostalim korama i nastavi da svaku koru premazuješ uljem i vodom.",
+        "Na kraju burek lepo upakuj polovinama kora koje su ostale da vire preko ivice tepsije.",
+        "Još jednom sve fino premaži uljem kako bi se odozgo lepo zapeklo i dobilo onu hrskavu, zlatnu koricu.",
+        "Peci u prethodno zagrejanoj rerni na 180°C oko 25 minuta, odnosno dok burek lepo ne porumeni."
+      ],
+      de: [
+        "Öl mit warmem Wasser mischen.",
+        "In eine runde Form vier Teigblätter von allen vier Seiten legen — oben, unten, links und rechts — so dass die Hälfte jedes Blattes in der Form liegt, die andere Hälfte über den Rand hängt. Jedes Blatt mit der Öl-Wasser-Mischung bestreichen.",
+        "Ein weiteres Blatt auf den Boden legen, bestreichen und die Hälfte des Käses darüber verteilen.",
+        "Drei weitere Blätter übereinanderlegen und jedes gut mit der Öl-Wasser-Mischung bestreichen.",
+        "Den restlichen Käse auf dem dritten Blatt verteilen.",
+        "Mit den restlichen Blättern bedecken und weiter bestreichen.",
+        "Zum Schluss die herabhängenden Blatthälften über die Füllung falten.",
+        "Alles nochmal gut mit Öl bestreichen, damit es oben schön goldbraun und knusprig wird.",
+        "Im vorgeheizten Ofen bei 180°C ca. 25 Minuten backen, bis der Burek schön goldbraun ist."
+      ],
+      en: [
+        "Mix the oil with warm water.",
+        "In a round baking tin, lay four pastry sheets from four sides — top, bottom, left and right — so that half of each sheet sits in the tin and the other half hangs over the edge. Brush each sheet with the oil-water mixture.",
+        "Place one more sheet on the bottom of the tin, brush it, then spread half the cheese over it.",
+        "Layer three more sheets on top of the cheese, brushing each one well with the oil-water mixture.",
+        "Spread the remaining cheese over the third sheet.",
+        "Cover with the remaining sheets, continuing to brush each one with oil and water.",
+        "Finally, fold the overhanging sheet halves over the filling to wrap the burek.",
+        "Brush everything once more with oil so the top bakes up golden and crispy.",
+        "Bake in a preheated oven at 180°C for about 25 minutes, or until the burek is nicely golden."
+      ]
+    },
+    note: "A onda samo preseci tu hrskavu koricu i slušaj zvuk. 😋",
+    image: "assets/images/burek-sa-sirom.jpg",
+    category: "Recepti koji mirišu iz rerne"
+  },
+  {
+    number: "57",
+    title: { sr: "Slani krekeri sa semenkama", de: "Herzhafte Saatenkracker", en: "Savoury Seed Crackers" },
+    subtitle: {
+      sr: "Tanki, hrskavi i puni semenki",
+      de: "Dünn, knusprig und voller Saaten",
+      en: "Thin, crispy and full of seeds"
+    },
+    author_comment: {
+      sr: "Ako voliš grickalice, ali želiš nešto malo drugačije od klasičnih krekera, probaj ove sa semenkama. Hrskavi su, puni ukusa i odlični uz neki namaz, sir ili jednostavno sami. Najvažnije je samo da ih razvučeš dovoljno tanko — tada postaju baš fino hrskavi.",
+      de: "Wenn du Snacks magst, aber etwas anderes als klassische Cracker möchtest, probiere diese mit Saaten. Sie sind knusprig, voller Geschmack und toll zu einem Aufstrich, Käse oder einfach so. Das Wichtigste: Streiche die Masse dünn genug aus — dann werden sie wirklich schön knusprig.",
+      en: "If you love snacks but want something a little different from classic crackers, try these seed ones. They're crispy, full of flavour and great with a spread, cheese or just on their own. The key thing is to spread the mixture thin enough — that's when they get really nicely crispy."
+    },
+    prep_time: { sr: "oko 55 minuta", de: "ca. 55 Minuten", en: "about 55 minutes" },
+    ingredients: {
+      sr: ["50 g muslija", "3 supene kašike lana", "3 supene kašike čia semenki", "3 supene kašike susama", "3 supene kašike suncokretovih semenki", "3 supene kašike semenki bundeve", "1 kašičica soli", "1 kašičica aleve paprike", "1 kašičica belog luka u prahu", "1 kašičica kima, po ukusu", "150 ml tople vode"],
+      de: ["50 g Müsli", "3 EL Leinsamen", "3 EL Chiasamen", "3 EL Sesam", "3 EL Sonnenblumenkerne", "3 EL Kürbiskerne", "1 TL Salz", "1 TL Paprikapulver", "1 TL Knoblauchpulver", "1 TL Kreuzkümmel, nach Geschmack", "150 ml warmes Wasser"],
+      en: ["50 g muesli", "3 tbsp flaxseeds", "3 tbsp chia seeds", "3 tbsp sesame seeds", "3 tbsp sunflower seeds", "3 tbsp pumpkin seeds", "1 tsp salt", "1 tsp paprika", "1 tsp garlic powder", "1 tsp cumin, to taste", "150 ml warm water"]
+    },
+    instructions: {
+      sr: [
+        "Pomešaj musli, sve semenke i začine u jednoj posudi.",
+        "Prelij toplom vodom i sve dobro umešaj.",
+        "Ostavi masu da odstoji oko 15 minuta, kako bi semenke nabubrile i sve postalo fino lepljivo.",
+        "Prebaci smesu na papir za pečenje i razvuci je u veoma tanak sloj, debljine oko 5 mm.",
+        "Peci u prethodno zagrejanoj rerni na 160°C sa ventilatorom oko 40 minuta, odnosno dok krekeri ne postanu suvi i hrskavi.",
+        "Ostavi ih kratko da se ohlade, pa ih izlomi na komade."
+      ],
+      de: [
+        "Müsli, alle Saaten und Gewürze in einer Schüssel mischen.",
+        "Mit warmem Wasser übergießen und gut vermischen.",
+        "Die Masse ca. 15 Minuten quellen lassen, damit die Saaten aufquellen und alles schön klebrig wird.",
+        "Die Masse auf Backpapier verteilen und zu einer sehr dünnen Schicht von ca. 5 mm ausstreichen.",
+        "Im vorgeheizten Ofen mit Umluft bei 160°C ca. 40 Minuten backen, bis die Cracker trocken und knusprig sind.",
+        "Kurz abkühlen lassen und dann in Stücke brechen."
+      ],
+      en: [
+        "Mix the muesli, all seeds and spices in a bowl.",
+        "Pour over the warm water and mix well.",
+        "Leave the mixture to sit for about 15 minutes so the seeds swell and everything becomes nicely sticky.",
+        "Transfer the mixture onto baking paper and spread into a very thin layer, about 5 mm thick.",
+        "Bake in a preheated fan oven at 160°C for about 40 minutes, or until the crackers are dry and crispy.",
+        "Leave to cool briefly, then break into pieces."
+      ]
+    },
+    note: "I da — što tanje, to hrskavije. 😋",
+    image: "assets/images/slani-krekeri-sa-semenkama.jpg",
     category: "Recepti koji mirišu iz rerne"
   }
 ];
