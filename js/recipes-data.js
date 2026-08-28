@@ -1978,7 +1978,7 @@ const recipes = [
       ]
     },
     note: "Najbolji su dok su još malo topli — ako uspeš da ih ne pojedeš odmah. 😋",
-    image: "assets/images/stapici-sa-ajvarom.png",
+    image: "assets/images/stapici-sa-ajvarom.jpg",
     category: "Recepti koji mirišu iz rerne"
   },
   {
@@ -2036,7 +2036,7 @@ const recipes = [
       ]
     },
     note: "A onda samo preseci tu hrskavu koricu i slušaj zvuk. 😋",
-    image: "assets/images/burek-sa-gotovim-korama.png",
+    image: "assets/images/burek-sa-sirom.jpg",
     category: "Recepti koji mirišu iz rerne"
   },
   {
