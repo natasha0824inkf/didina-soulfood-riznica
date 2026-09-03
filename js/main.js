@@ -488,7 +488,7 @@ function renderCategoriesGrid() {
   catGrid.innerHTML = cats.map(cat => {
     const info  = getCategoryInfo(cat);
     const count = recipes.filter(r => r.category === cat).length;
-    return `<a href="recipes.html" class="category-card ${classMap[info.cls] || ''}" data-filter="${cat}">
+    return `<a href="recipes.html?cat=${encodeURIComponent(cat)}" class="category-card ${classMap[info.cls] || ''}" data-filter="${cat}">
       <div class="category-card-emoji">${info.emoji}</div>
       <div class="category-card-name">${t(info.label_key)}</div>
       <div class="category-card-count">${count} ${t('results_count')}</div>
@@ -571,6 +571,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Recipes page
   if (document.getElementById('recipeGrid')) {
+    const catParam = new URLSearchParams(window.location.search).get('cat');
+    if (catParam && recipes.some(r => r.category === catParam)) activeFilter = catParam;
     renderFilterButtons();
     renderRecipes();
     const searchInput = document.getElementById('searchInput');
