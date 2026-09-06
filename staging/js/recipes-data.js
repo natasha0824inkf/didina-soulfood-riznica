@@ -350,6 +350,7 @@ const recipes = [
     },
     note: "",
     image: "assets/images/mini-pice-od-patlidzana.png",
+    imgPos: "center 45%",
     category: "Recepti kada ne znam šta da kuvam"
   },
   {
@@ -576,6 +577,7 @@ const recipes = [
     },
     note: "",
     image: "assets/images/tunin-bowl.png",
+    imgPos: "center 55%",
     category: "Osvežavajući recepti"
   },
   {
@@ -756,6 +758,7 @@ const recipes = [
     },
     note: "Ako želiš još više ukusa, možeš dodati i par listića peršuna ili sveže nane.",
     image: "assets/images/slani-dorucak.png",
+    imgPos: "center 55%",
     category: "Jutarnji recepti"
   },
   {
@@ -1108,6 +1111,7 @@ const recipes = [
     },
     note: "",
     image: "assets/images/rovito-jaje.png",
+    imgPos: "center 55%",
     category: "Jutarnji recepti"
   },
   {
@@ -1220,6 +1224,7 @@ const recipes = [
     },
     note: "Ako želiš još kremastiju teksturu, dodaj malo kokosovog mleka uz bademovo.",
     image: "assets/images/puding-od-vanile.png",
+    imgPos: "center 30%",
     category: "Recepti uz kafu"
   },
   {
@@ -1418,6 +1423,7 @@ const recipes = [
     },
     note: "Ako želiš kremastiju varijantu, dodaj malo kokosovog mleka ili grčkog jogurta pre blendanja. Kokosovo mleko je moj apsolutni favorit!",
     image: "assets/images/krem-supa-od-sargarepe.png",
+    imgPos: "center 55%",
     category: "Recepti kada ne znam šta da kuvam"
   },
   {
@@ -1530,6 +1536,7 @@ const recipes = [
     },
     note: "Po želji posuti semenkama (suncokret, lan, bundevu) za dodatnu hrskavost i hranljivost.",
     image: "assets/images/proteinski-namaz-od-jaja.png",
+    imgPos: "center 55%",
     category: "Jutarnji recepti"
   },
   {
@@ -1558,6 +1565,7 @@ const recipes = [
     },
     note: "Može se služiti kao prilog uz meso ili ribu, ili kao samostalno jelo uz parče sira i svež paradajz.",
     image: "assets/images/restovani-krompir.png",
+    imgPos: "center 70%",
     category: "Recepti kada ne znam šta da kuvam"
   },
   {
@@ -1614,6 +1622,7 @@ const recipes = [
     },
     note: "Ako voliš blaži ukus, umesto rukole koristi baby spanać. Možeš dodati i malo balzamiko sirćeta za dublji, aromatičniji šmek.",
     image: "assets/images/salata-sa-cveklom.png",
+    imgPos: "center 55%",
     category: "Osvežavajući recepti"
   },
   {
@@ -1642,6 +1651,7 @@ const recipes = [
     },
     note: "Za bogatiji miris dodaj list celera ili kašičicu senfa pred kraj. Gulaš se sutradan uvek slegne i bude još ukusniji.",
     image: "assets/images/juneci-gulas.png",
+    imgPos: "center 65%",
     category: "Recepti kada ne znam šta da kuvam"
   },
   {
