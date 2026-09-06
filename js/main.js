@@ -261,7 +261,7 @@ function populateModal(recipe) {
   const heroEl = overlay.querySelector('#modalHeroImage');
   if (heroEl) {
     if (recipe.image) {
-      heroEl.innerHTML = `<img src="${recipe.image}" alt="${tr(recipe.title)}" loading="lazy">`;
+      heroEl.innerHTML = `<img src="${recipe.image}" alt="${tr(recipe.title)}" loading="lazy"${recipe.imgPos ? ` style="object-position:${recipe.imgPos}"` : ''}>`;
       heroEl.hidden = false;
     } else {
       heroEl.innerHTML = '';
