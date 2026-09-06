@@ -433,6 +433,7 @@ const recipes = [
     },
     note: "",
     image: "assets/images/spori-medenjaci.jpeg",
+    imgPos: "center 38%",
     category: "Recepti uz kafu"
   },
   {
@@ -1247,6 +1248,7 @@ const recipes = [
     },
     note: "",
     image: "assets/images/pasta-sa-zelenim-pestom.png",
+    imgPos: "center 58%",
     category: "Recepti kada ne znam šta da kuvam"
   },
   {
@@ -1303,6 +1305,7 @@ const recipes = [
     },
     note: "",
     image: "assets/images/prokelj-iz-rerne.png",
+    imgPos: "center 52%",
     category: "Recepti kada ne znam šta da kuvam"
   },
   {
@@ -1695,6 +1698,7 @@ const recipes = [
     },
     note: "Uz ovaj kolač ne važi \"jedno parče je dovoljno\". PMS ne poznaje granice — i to je sasvim u redu.",
     image: "assets/images/najcokoladniji-brauni.png",
+    imgPos: "center 40%",
     category: "Recepti uz kafu"
   },
   {
@@ -1751,6 +1755,7 @@ const recipes = [
     },
     note: "Ako želiš jači kontrast ukusa, koristi tamnu čokoladu od 80% kakaa — dobićeš savršenu ravnotežu između gorčine i slatkoće.",
     image: "assets/images/kroasani-sa-cokoladom.png",
+    imgPos: "center 62%",
     category: "Recepti uz kafu"
   },
   {
@@ -1779,6 +1784,7 @@ const recipes = [
     },
     note: "Kolač je još ukusniji dan posle, kada se ukusi sjedine i tekstura postane savršeno sočna.",
     image: "assets/images/zimski-kolac-sa-bundevom.png",
+    imgPos: "center 60%",
     category: "Recepti koji mirišu iz rerne"
   },
   {
@@ -1807,6 +1813,7 @@ const recipes = [
     },
     note: "Uz komadić feta sira pretvara se u kompletan lagani obrok. Ako koristiš vakumiranu cveklu, salata je gotova za bukvalno pet minuta.",
     image: "assets/images/detoks-salata-od-cvekle.png",
+    imgPos: "center 65%",
     category: "Osvežavajući recepti"
   },
   {
@@ -1933,6 +1940,7 @@ const recipes = [
     },
     note: "Ako voliš rustičniju teksturu, blendaj kraće. Odlično ide uz integralni hleb, krekere ili kao namaz za sendviče.",
     image: "assets/images/domaca-pasteta-od-tune.png",
+    imgPos: "center 58%",
     category: "Jutarnji recepti"
   },
   {
@@ -2037,6 +2045,7 @@ const recipes = [
     },
     note: "A onda samo preseci tu hrskavu koricu i slušaj zvuk. 😋",
     image: "assets/images/burek-sa-sirom.jpg",
+    imgPos: "center 42%",
     category: "Recepti koji mirišu iz rerne"
   },
   {
@@ -2086,6 +2095,7 @@ const recipes = [
     },
     note: "I da — što tanje, to hrskavije. 😋",
     image: "assets/images/slani-krekeri-sa-semenkama.jpg",
+    imgPos: "center 33%",
     category: "Recepti koji mirišu iz rerne"
   }
 ];
