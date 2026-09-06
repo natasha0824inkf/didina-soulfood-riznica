@@ -707,10 +707,10 @@ ul,ol { list-style: none; }
 
 /* ---- MODAL HERO IMAGE ---- */
 .modal-hero-image {
-  width: 100%; max-height: 260px; overflow: hidden;
+  width: 100%;
 }
 .modal-hero-image img {
-  width: 100%; height: 260px; object-fit: cover; display: block;
+  width: 100%; height: auto; display: block;
 }
 
 /* ---- MODAL ACTIONS + NAV ---- */
@@ -735,6 +735,22 @@ ul,ol { list-style: none; }
 }
 .modal-nav-btn:hover:not(:disabled) { border-color: var(--amber); color: var(--amber); }
 .modal-nav-btn:disabled { opacity: .35; cursor: default; }
+
+/* ---- BOOK TEASER BAR ---- */
+.book-teaser-bar {
+  background: var(--coral);
+  color: #fff;
+  text-align: center;
+  padding: .6rem 1rem;
+  font-size: .92rem;
+  font-weight: 600;
+  letter-spacing: .025em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+}
+html.dark-mode .book-teaser-bar { background: #9b4e18; }
 
 /* ---- BOOK BANNER ---- */
 .book-banner {

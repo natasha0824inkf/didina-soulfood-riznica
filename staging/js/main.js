@@ -92,7 +92,8 @@ const CATEGORY_MAP = {
   'Osvežavajući recepti':                { emoji: '🌿', cls: 'refreshing', label_key: 'cat_refreshing' },
   'Recepti uz kafu':                     { emoji: '☕', cls: 'coffee',     label_key: 'cat_coffee' },
   'Recepti kada ne znam šta da kuvam':   { emoji: '🍳', cls: 'dunno',     label_key: 'cat_dunno' },
-  'Recepti koji mirišu iz rerne':        { emoji: '🥧', cls: 'oven',      label_key: 'cat_oven' }
+  'Recepti koji mirišu iz rerne':        { emoji: '🥧', cls: 'oven',      label_key: 'cat_oven' },
+  'Kuvana jela':                         { emoji: '🫕', cls: 'cooked',    label_key: 'cat_cooked' }
 };
 
 function getCategoryInfo(category) {
@@ -483,11 +484,11 @@ function renderCategoriesGrid() {
   const catGrid = document.getElementById('categoriesGrid');
   if (!catGrid) return;
   const cats = [...new Set(recipes.map(r => r.category))];
-  const classMap = { morning: 'cat-card-morning', refreshing: 'cat-card-refreshing', coffee: 'cat-card-coffee', dunno: 'cat-card-dunno', oven: 'cat-card-oven' };
+  const classMap = { morning: 'cat-card-morning', refreshing: 'cat-card-refreshing', coffee: 'cat-card-coffee', dunno: 'cat-card-dunno', oven: 'cat-card-oven', cooked: 'cat-card-cooked' };
   catGrid.innerHTML = cats.map(cat => {
     const info  = getCategoryInfo(cat);
     const count = recipes.filter(r => r.category === cat).length;
-    return `<a href="recipes.html" class="category-card ${classMap[info.cls] || ''}" data-filter="${cat}">
+    return `<a href="recipes.html?cat=${encodeURIComponent(cat)}" class="category-card ${classMap[info.cls] || ''}" data-filter="${cat}">
       <div class="category-card-emoji">${info.emoji}</div>
       <div class="category-card-name">${t(info.label_key)}</div>
       <div class="category-card-count">${count} ${t('results_count')}</div>
@@ -570,6 +571,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Recipes page
   if (document.getElementById('recipeGrid')) {
+    const catParam = new URLSearchParams(window.location.search).get('cat');
+    if (catParam && recipes.some(r => r.category === catParam)) activeFilter = catParam;
     renderFilterButtons();
     renderRecipes();
     const searchInput = document.getElementById('searchInput');

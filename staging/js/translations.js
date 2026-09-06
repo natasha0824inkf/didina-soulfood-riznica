@@ -11,6 +11,7 @@ const translations = {
     hero_subtitle: 'Mala riznica domaćih recepata i lepih trenutaka.',
     hero_cta: 'Istraži recepte',
     hero_scroll: 'Otkrij više',
+    book_teaser: 'Uskoro u elektronskom i štampanom obliku',
 
     featured_title: 'Izdvojeni recepti',
     categories_title: 'Kategorije recepata',
@@ -37,6 +38,7 @@ const translations = {
     cat_coffee: 'Recepti uz kafu',
     cat_dunno: 'Kada ne znam šta da kuvam',
     cat_oven: 'Recepti koji mirišu iz rerne',
+    cat_cooked: 'Kuvana jela',
 
     favorites_title: 'Moji omiljeni recepti',
     favorites_empty: 'Još niste dodali omiljene recepte. Kliknite ❤ na receptu da ga sačuvate.',
@@ -80,12 +82,9 @@ const translations = {
     newsletter_gdpr: 'Slažem se da primam newsletter i prihvatam politiku privatnosti.',
     book_coming: 'Uskoro',
     book_title: 'Didina SoulFood Riznica — knjiga',
-    book_desc: 'Svi ovi recepti, i još mnogo toga, uskoro u štampanom obliku. Prijavite se za newsletter da budete prvi koji saznaju.',
+    book_desc: 'Svi ovi recepti, i još mnogo toga, uskoro u elektronskom i štampanom obliku. Prijavite se za newsletter da budete prvi koji saznaju.',
     about_story: 'Moja priča',
     didi_motto: '„Ne brojite kalorije, brojite vaše osmehe i korake."',
-    epub_title: 'Preuzmite e-knjigu',
-    epub_desc: 'Svi recepti u džepu — besplatno, u tri jezička izdanja.',
-
     blog_title: 'Blog',
     blog_subtitle: 'Priče iz kuhinje',
     blog_read_more: 'Čitaj dalje',
@@ -125,6 +124,7 @@ const translations = {
     hero_subtitle: 'Eine kleine Schatzkiste mit Hausrezepten und schönen Momenten.',
     hero_cta: 'Rezepte entdecken',
     hero_scroll: 'Mehr entdecken',
+    book_teaser: 'Demnächst in elektronischer und gedruckter Form',
 
     featured_title: 'Ausgewählte Rezepte',
     categories_title: 'Rezeptkategorien',
@@ -151,13 +151,14 @@ const translations = {
     cat_coffee: 'Zum Kaffee',
     cat_dunno: 'Wenn der Kopf leer ist',
     cat_oven: 'Aus dem Ofen',
+    cat_cooked: 'Gekochte Gerichte',
 
     favorites_title: 'Meine Lieblingsrezepte',
     favorites_empty: 'Noch keine Favoriten. Klick auf ❤ bei einem Rezept, um es zu speichern.',
 
     about_title: 'Über Didi',
     about_subtitle: 'Köchin aus Leidenschaft, nicht aus Pflicht',
-    about_p1: 'Ich bin Didi. Ich koche gern — aber noch lieber bereite ich Essen zu, das die Seele nährt, das Herz wärmt und von innen zum Lächeln bringt. Diese Schatzkammer ist nicht über Nacht entstanden, sondern durch viele ruhige Sonntagmorgen, stille Abende mit einer Tasse Tee, Backduft aus dem Ofen und das ein oder andere Experiment, das nie wiederholt wurde.',
+    about_p1: 'Ich bin Didi. Ich koche gern — aber noch lieber bereite ich Essen zu, das die Seele nährt, das Herz wärmt und von innen zum Lächeln bringt. Diese Schatzkammer ist nicht über Nacht entstanden, sondern durch viele ruhige Sonntagsmorgen, stille Abende mit einer Tasse Tee, Backduft aus dem Ofen und das ein oder andere Experiment, das nie wiederholt wurde.',
     about_p2: 'Diese Rezepte sind nicht nur für den Hunger — sie sind für Tage, an denen du Stille brauchst, für schnelle Morgen, Kaffee-Momente oder die ewige Frage: Was koche ich bloß heute? Keine langen Listen, keine komplizierten Schritte. Echte Happen, geboren aus Sport, Yoga, Sommerferien, Meeresluft und dem unstillbaren Drang, allem eine Handvoll Nüsse hinzuzufügen.',
     about_p3: 'Das hier ist kein Kochbuch aus dem Fotostudio — es kommt aus dem echten Leben, aus meiner Küche. Ich hoffe, du liest es so gern, wie ich es geschrieben habe.',
     about_philosophy: 'Meine Kochphilosophie',
@@ -194,12 +195,9 @@ const translations = {
     newsletter_gdpr: 'Ich stimme zu, den Newsletter zu erhalten und akzeptiere die Datenschutzerklärung.',
     book_coming: 'Demnächst',
     book_title: 'Didis SoulFood-Schatzkammer — das Buch',
-    book_desc: 'All diese Rezepte und noch viele mehr — bald auch gedruckt. Meld dich für den Newsletter an, um als Erste davon zu erfahren.',
+    book_desc: 'All diese Rezepte und noch viele mehr — bald in elektronischer und gedruckter Form. Meld dich für den Newsletter an, um als Erste davon zu erfahren.',
     about_story: 'Meine Geschichte',
     didi_motto: '„Zählt keine Kalorien — zählt eure Lächeln und Schritte."',
-    epub_title: 'E-Buch herunterladen',
-    epub_desc: 'Alle Rezepte für unterwegs — kostenlos, in drei Sprachen.',
-
     blog_title: 'Blog',
     blog_subtitle: 'Geschichten aus der Küche',
     blog_read_more: 'Weiterlesen',
@@ -239,6 +237,7 @@ const translations = {
     hero_subtitle: 'A little treasury of home recipes and beautiful moments.',
     hero_cta: 'Explore Recipes',
     hero_scroll: 'Discover more',
+    book_teaser: 'Coming soon in electronic and printed form',
 
     featured_title: 'Featured Recipes',
     categories_title: 'Recipe Categories',
@@ -265,6 +264,7 @@ const translations = {
     cat_coffee: 'With your coffee',
     cat_dunno: "When you don't know what to make",
     cat_oven: 'From the oven',
+    cat_cooked: 'Cooked dishes',
 
     favorites_title: 'My Favorites',
     favorites_empty: "No favorites yet. Hit ❤ on any recipe to save it here.",
@@ -308,12 +308,9 @@ const translations = {
     newsletter_gdpr: 'I agree to receive the newsletter and accept the privacy policy.',
     book_coming: 'Coming soon',
     book_title: "Didi's SoulFood Treasury — the book",
-    book_desc: 'All these recipes and many more, soon in print. Subscribe to the newsletter to be the first to know.',
+    book_desc: 'All these recipes and many more, coming soon in electronic and printed form. Subscribe to the newsletter to be the first to know.',
     about_story: 'My story',
     didi_motto: '"Don\'t count calories — count your smiles and steps."',
-    epub_title: 'Download the e-book',
-    epub_desc: 'All recipes in your pocket — free, in three language editions.',
-
     blog_title: 'Blog',
     blog_subtitle: 'Stories from the kitchen',
     blog_read_more: 'Read more',
