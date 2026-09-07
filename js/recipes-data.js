@@ -434,7 +434,7 @@ const recipes = [
     },
     note: "",
     image: "assets/images/spori-medenjaci.jpeg",
-    imgPos: "center 38%",
+    imgPos: "center 45%",
     category: "Recepti uz kafu"
   },
   {
@@ -1764,7 +1764,7 @@ const recipes = [
     },
     note: "Ako želiš jači kontrast ukusa, koristi tamnu čokoladu od 80% kakaa — dobićeš savršenu ravnotežu između gorčine i slatkoće.",
     image: "assets/images/kroasani-sa-cokoladom.png",
-    imgPos: "center 55%",
+    imgPos: "center 60%",
     category: "Recepti uz kafu"
   },
   {
