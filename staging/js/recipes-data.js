@@ -1224,7 +1224,7 @@ const recipes = [
     },
     note: "Ako želiš još kremastiju teksturu, dodaj malo kokosovog mleka uz bademovo.",
     image: "assets/images/puding-od-vanile.png",
-    imgPos: "center 30%",
+    imgPos: "center 48%",
     category: "Recepti uz kafu"
   },
   {
@@ -1253,7 +1253,7 @@ const recipes = [
     },
     note: "",
     image: "assets/images/pasta-sa-zelenim-pestom.png",
-    imgPos: "center 58%",
+    imgPos: "center 52%",
     category: "Recepti kada ne znam šta da kuvam"
   },
   {
@@ -1310,7 +1310,7 @@ const recipes = [
     },
     note: "",
     image: "assets/images/prokelj-iz-rerne.png",
-    imgPos: "center 52%",
+    imgPos: "center 57%",
     category: "Recepti kada ne znam šta da kuvam"
   },
   {
@@ -1423,7 +1423,6 @@ const recipes = [
     },
     note: "Ako želiš kremastiju varijantu, dodaj malo kokosovog mleka ili grčkog jogurta pre blendanja. Kokosovo mleko je moj apsolutni favorit!",
     image: "assets/images/krem-supa-od-sargarepe.png",
-    imgPos: "center 55%",
     category: "Recepti kada ne znam šta da kuvam"
   },
   {
@@ -1565,7 +1564,7 @@ const recipes = [
     },
     note: "Može se služiti kao prilog uz meso ili ribu, ili kao samostalno jelo uz parče sira i svež paradajz.",
     image: "assets/images/restovani-krompir.png",
-    imgPos: "center 70%",
+    imgPos: "center 50%",
     category: "Recepti kada ne znam šta da kuvam"
   },
   {
@@ -1651,7 +1650,7 @@ const recipes = [
     },
     note: "Za bogatiji miris dodaj list celera ili kašičicu senfa pred kraj. Gulaš se sutradan uvek slegne i bude još ukusniji.",
     image: "assets/images/juneci-gulas.png",
-    imgPos: "center 65%",
+    imgPos: "center 48%",
     category: "Recepti kada ne znam šta da kuvam"
   },
   {
@@ -1765,7 +1764,7 @@ const recipes = [
     },
     note: "Ako želiš jači kontrast ukusa, koristi tamnu čokoladu od 80% kakaa — dobićeš savršenu ravnotežu između gorčine i slatkoće.",
     image: "assets/images/kroasani-sa-cokoladom.png",
-    imgPos: "center 62%",
+    imgPos: "center 55%",
     category: "Recepti uz kafu"
   },
   {
