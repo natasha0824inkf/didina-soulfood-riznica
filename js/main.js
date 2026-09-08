@@ -223,7 +223,7 @@ function createRecipeCardHTML(recipe) {
   const subtitle = tr(recipe.subtitle);
   const time = tr(recipe.prep_time);
   const thumbContent = recipe.image
-    ? `<img src="${recipe.image}" alt="${title}" class="card-img" loading="lazy">`
+    ? `<img src="${recipe.image}" alt="${title}" class="card-img" loading="lazy"${recipe.imgPos ? ` style="object-position:${recipe.imgPos}"` : ''}>`
     : `<span class="card-emoji">${cat.emoji}</span>`;
   return `<article class="recipe-card" data-recipe-number="${recipe.number}" tabindex="0" role="button" aria-label="${title}">
     <div class="recipe-card-thumb cat-thumb-${cat.cls}${recipe.image ? ' has-img' : ''}">
@@ -261,7 +261,7 @@ function populateModal(recipe) {
   const heroEl = overlay.querySelector('#modalHeroImage');
   if (heroEl) {
     if (recipe.image) {
-      heroEl.innerHTML = `<img src="${recipe.image}" alt="${tr(recipe.title)}" loading="lazy">`;
+      heroEl.innerHTML = `<img src="${recipe.image}" alt="${tr(recipe.title)}" loading="lazy"${recipe.imgPos ? ` style="object-position:${recipe.imgPos}"` : ''}>`;
       heroEl.hidden = false;
     } else {
       heroEl.innerHTML = '';
