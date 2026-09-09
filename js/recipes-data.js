@@ -350,7 +350,7 @@ const recipes = [
     },
     note: "",
     image: "assets/images/mini-pice-od-patlidzana.png",
-    imgPos: "center 45%",
+    imgPos: "center 55%",
     category: "Recepti kada ne znam šta da kuvam"
   },
   {
@@ -2054,7 +2054,7 @@ const recipes = [
     },
     note: "A onda samo preseci tu hrskavu koricu i slušaj zvuk. 😋",
     image: "assets/images/burek-sa-sirom.jpg",
-    imgPos: "center 42%",
+    imgPos: "center 25%",
     category: "Recepti koji mirišu iz rerne"
   },
   {
