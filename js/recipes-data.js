@@ -2157,6 +2157,6 @@ const recipes = [
     note: "Jednostavno, šareno i savršeno za laganu večeru. 😋",
     image: "assets/images/peceni-slatki-krompir-sa-fetom.jpg",
     imgPos: "center 45%",
-    category: "Recepti koji mirišu iz rerne"
+    category: "Recepti kada ne znam šta da kuvam"
   }
 ];
