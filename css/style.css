@@ -455,6 +455,12 @@ ul,ol { list-style: none; }
   display: flex; align-items: flex-start; gap: .45rem;
 }
 .ingredients-list li::before { content:'•'; color: var(--teal); font-weight: bold; flex-shrink: 0; }
+.ingredients-list li.ingr-section-title {
+  background: none; padding: .65rem .75rem .2rem; font-weight: 600;
+  font-size: .8rem; text-transform: uppercase; letter-spacing: .04em;
+  color: var(--teal); margin-top: .25rem;
+}
+.ingredients-list li.ingr-section-title::before { display: none; }
 
 .instructions-list { display: grid; gap: .65rem; }
 .instructions-list li {
