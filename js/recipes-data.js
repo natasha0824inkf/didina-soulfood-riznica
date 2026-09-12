@@ -2106,5 +2106,57 @@ const recipes = [
     image: "assets/images/slani-krekeri-sa-semenkama.jpg",
     imgPos: "center 33%",
     category: "Recepti koji mirišu iz rerne"
+  },
+  {
+    number: "58",
+    title: {
+      sr: "Pečeni slatki krompir sa fetom i povrćem",
+      de: "Gebackene Süßkartoffel mit Feta und Gemüse",
+      en: "Baked Sweet Potato with Feta and Vegetables"
+    },
+    subtitle: {
+      sr: "Jednostavan, topao i ukusan obrok koji se priprema gotovo bez truda. Odlično se slaže sa slanom fetom, svežim povrćem i maslinama.",
+      de: "Einfach, warm und köstlich – fast ohne Aufwand zubereitet. Perfekt mit salzigem Feta, frischem Gemüse und Oliven.",
+      en: "Simple, warm and delicious – made with almost no effort. Goes beautifully with salty feta, fresh vegetables and olives."
+    },
+    author_comment: {
+      sr: "Nekad je najjednostavnija stvar i najukusnija.",
+      de: "Manchmal ist das Einfachste auch das Köstlichste.",
+      en: "Sometimes the simplest thing is the most delicious."
+    },
+    prep_time: {
+      sr: "5 min priprema + 40 min pečenje",
+      de: "5 Min. Vorbereitung + 40 Min. Backen",
+      en: "5 min prep + 40 min baking"
+    },
+    ingredients: {
+      sr: ["1 slatki krompir", "malo ulja", "so po ukusu", "feta sir", "paradajz", "rukola", "masline"],
+      de: ["1 Süßkartoffel", "etwas Öl", "Salz nach Geschmack", "Feta-Käse", "Tomaten", "Rucola", "Oliven"],
+      en: ["1 sweet potato", "a little oil", "salt to taste", "feta cheese", "tomatoes", "rocket", "olives"]
+    },
+    instructions: {
+      sr: [
+        "Slatki krompir prepolovi po dužini, a zatim nožem napravi nekoliko plitkih rezova po dijagonali.",
+        "Premaži ga uljem sa obe strane i posoli po ukusu.",
+        "Stavi u zagrejanu rernu i peci oko 20 minuta sa jedne strane. Zatim ga okreni i peci još oko 20 minuta, dok lepo ne omekša i blago se zapeče.",
+        "Serviraj topao uz feta sir, paradajz, rukolu i masline."
+      ],
+      de: [
+        "Süßkartoffel der Länge nach halbieren, dann mit einem Messer diagonal einritzen.",
+        "Mit Öl von beiden Seiten bestreichen und nach Geschmack salzen.",
+        "Im vorgeheizten Ofen ca. 20 Minuten von einer Seite backen. Dann wenden und weitere ca. 20 Minuten backen, bis sie schön weich und leicht gebräunt ist.",
+        "Warm servieren mit Feta-Käse, Tomaten, Rucola und Oliven."
+      ],
+      en: [
+        "Halve the sweet potato lengthways, then score a few shallow diagonal cuts with a knife.",
+        "Brush with oil on both sides and season with salt to taste.",
+        "Bake in a preheated oven for about 20 minutes on one side. Flip and bake for another 20 minutes, until soft and lightly caramelised.",
+        "Serve warm with feta, tomatoes, rocket and olives."
+      ]
+    },
+    note: "Jednostavno, šareno i savršeno za laganu večeru. 😋",
+    image: "assets/images/peceni-slatki-krompir-sa-fetom.jpg",
+    imgPos: "center 45%",
+    category: "Recepti koji mirišu iz rerne"
   }
 ];
