@@ -2158,5 +2158,78 @@ const recipes = [
     image: "assets/images/peceni-slatki-krompir-sa-fetom.jpg",
     imgPos: "center 45%",
     category: "Recepti kada ne znam šta da kuvam"
+  },
+  {
+    number: "59",
+    title: {
+      sr: "Domaća pica sa pestom, paradajzom i sirom",
+      de: "Hausgemachte Pizza mit Pesto, Tomaten und Käse",
+      en: "Homemade Pizza with Pesto, Tomatoes and Cheese"
+    },
+    subtitle: {
+      sr: "Domaće testo, pesto, paradajz i feta — sve što treba.",
+      de: "Hausgemachter Teig, Pesto, Tomaten und Feta — alles, was man braucht.",
+      en: "Homemade dough, pesto, tomatoes and feta — everything you need."
+    },
+    author_comment: {
+      sr: "Malo šta se meri sa mirisom domaće pice iz rerne.",
+      de: "Wenig kommt an den Duft selbstgemachter Pizza aus dem Ofen heran.",
+      en: "Not much can match the smell of homemade pizza from the oven."
+    },
+    prep_time: {
+      sr: "30 min + 30–45 min dizanje + 10–15 min pečenje",
+      de: "30 Min. + 30–45 Min. Gehzeit + 10–15 Min. Backen",
+      en: "30 min + 30–45 min rising + 10–15 min baking"
+    },
+    ingredient_sections: {
+      sr: [
+        { title: "Za testo", items: ["300 g brašna", "150 ml mlake vode", "½ kesice suvog kvasca", "1 kašičica šećera", "½ kašičice soli", "1 kašika maslinovog ulja"] },
+        { title: "Za nadev", items: ["2–3 kašike pesta", "1 veći paradajz", "oko 150 g feta sira", "origano po ukusu"] }
+      ],
+      de: [
+        { title: "Für den Teig", items: ["300 g Mehl", "150 ml lauwarmes Wasser", "½ Päckchen Trockenhefe", "1 TL Zucker", "½ TL Salz", "1 EL Olivenöl"] },
+        { title: "Für den Belag", items: ["2–3 EL Pesto", "1 große Tomate", "ca. 150 g Feta-Käse", "Oregano nach Geschmack"] }
+      ],
+      en: [
+        { title: "For the dough", items: ["300 g flour", "150 ml lukewarm water", "½ sachet dry yeast", "1 tsp sugar", "½ tsp salt", "1 tbsp olive oil"] },
+        { title: "For the topping", items: ["2–3 tbsp pesto", "1 large tomato", "about 150 g feta cheese", "oregano to taste"] }
+      ]
+    },
+    instructions: {
+      sr: [
+        "U mlaku vodu dodaj kvasac i šećer, promešaj i ostavi nekoliko minuta.",
+        "Pomešaj brašno i so, dodaj vodu sa kvascem i ulje, pa umesi glatko testo. Pokrij i ostavi 30–45 minuta da naraste.",
+        "Rernu zagrej na 250°C.",
+        "Na blago pobrašnjenom papiru razvuci testo u željeni oblik.",
+        "Premaži pestom, ostavljajući 1–2 cm ivice.",
+        "Rasporedi kolutove paradajza i dodaj feta sir.",
+        "Peci na donjoj rešetki 10–15 minuta, dok ivice ne porumene.",
+        "Po želji, posle pečenja dodaj svež bosiljak ili rukolu."
+      ],
+      de: [
+        "Hefe und Zucker in lauwarmes Wasser geben, umrühren und einige Minuten stehen lassen.",
+        "Mehl und Salz mischen, Hefewasser und Öl hinzufügen, zu einem glatten Teig kneten. Abdecken und 30–45 Minuten gehen lassen.",
+        "Backofen auf 250°C vorheizen.",
+        "Den Teig auf leicht bemehltem Backpapier in die gewünschte Form ausrollen.",
+        "Mit Pesto bestreichen, dabei 1–2 cm Rand freilassen.",
+        "Tomatenscheiben verteilen und Feta-Käse darüber geben.",
+        "Im unteren Drittel des Ofens 10–15 Minuten backen, bis der Rand goldbraun ist.",
+        "Nach Belieben frisches Basilikum oder Rucola nach dem Backen hinzufügen."
+      ],
+      en: [
+        "Combine yeast and sugar in lukewarm water, stir and leave for a few minutes.",
+        "Mix flour and salt, add the yeast water and oil, knead into a smooth dough. Cover and leave to rise for 30–45 minutes.",
+        "Preheat oven to 250°C.",
+        "Roll out the dough on lightly floured baking paper into your desired shape.",
+        "Spread pesto over the dough, leaving a 1–2 cm border.",
+        "Arrange tomato slices and add feta cheese.",
+        "Bake on the lower rack for 10–15 minutes, until the edges are golden brown.",
+        "Add fresh basil or rocket after baking if desired."
+      ]
+    },
+    note: "Najbolje je jesti odmah — direktno iz rerne. 🍕",
+    image: "assets/images/domaca-pica-sa-pestom-1.jpg",
+    imgPos: "center 40%",
+    category: "Recepti koji mirišu iz rerne"
   }
 ];

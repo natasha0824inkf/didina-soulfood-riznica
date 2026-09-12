@@ -274,8 +274,15 @@ function populateModal(recipe) {
   if (comment) { commentEl.textContent = `„${comment}"`; commentEl.hidden = false; }
   else          { commentEl.hidden = true; }
 
-  overlay.querySelector('#modalIngredients').innerHTML =
-    trArr(recipe.ingredients).map(ing => `<li>${ing}</li>`).join('');
+  const ingrSections = recipe.ingredient_sections
+    ? (recipe.ingredient_sections[currentLang] || recipe.ingredient_sections.sr)
+    : null;
+  overlay.querySelector('#modalIngredients').innerHTML = ingrSections
+    ? ingrSections.map(s =>
+        `<li class="ingr-section-title">${s.title}</li>` +
+        s.items.map(i => `<li>${i}</li>`).join('')
+      ).join('')
+    : trArr(recipe.ingredients).map(ing => `<li>${ing}</li>`).join('');
 
   overlay.querySelector('#modalInstructions').innerHTML =
     trArr(recipe.instructions).map((step, i) =>
