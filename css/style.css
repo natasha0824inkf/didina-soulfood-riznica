@@ -238,20 +238,9 @@ html.dark-mode .a11y-switch { background: #5a4a34; }
 .a11y-panel-note { font-size: .58rem; text-align: center; margin-top: .85rem; line-height: 1.4; color: #7a6248; }
 html.dark-mode .a11y-panel-note { color: #a89070; }
 
-/* Colorblind mode — deuteranopia-safe: only fix green→blue-slate, keep warmth */
-html.colorblind-mode {
-  --teal:       #3A72B0;
-  --teal-light: #5A92D0;
-  --teal-dark:  #2A5288;
-  --teal-bg:    #D4E5F5;
-}
-html.dark-mode.colorblind-mode {
-  --teal:       #5A92D0;
-  --teal-light: #7AB2E8;
-  --teal-dark:  #3A72B0;
-  --teal-bg:    #0E1E32;
-}
-/* Thicker borders so shape distinguishes, not just color */
+/* Colorblind mode — grayscale + contrast, works for all colorblind types */
+html.colorblind-mode { filter: grayscale(1) contrast(1.15); }
+/* Thicker borders so shape carries what color no longer does */
 html.colorblind-mode .recipe-card { border-width: 2px; }
 html.colorblind-mode .filter-btn  { border-width: 1.5px; }
 /* Underline links so color isn't the only signal */
@@ -259,7 +248,7 @@ html.colorblind-mode a:not(.nav-logo):not(.nav-links a):not(.footer-nav a):not(.
   text-decoration: underline;
 }
 /* Active indicator on Aa button */
-html.colorblind-mode .a11y-btn { border-color: var(--teal); }
+html.colorblind-mode .a11y-btn { border-color: #555; }
 
 /* Fokus mod — real ADHD cognitive load reduction */
 html.fokus-mod *, html.fokus-mod *::before, html.fokus-mod *::after {
