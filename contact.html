@@ -44,6 +44,40 @@
         <button class="lang-btn"        data-lang="en"><span class="lang-flag">🌐</span>EN</button>
       </div>
       <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+      <div class="a11y-wrap">
+        <button class="a11y-btn" id="a11yBtn" aria-label="Accessibility options" aria-expanded="false" aria-controls="a11yPanel">
+          <span class="a11y-icon">Aa</span>
+          <span class="a11y-sub" data-i18n="a11y_btn_label">pristup</span>
+        </button>
+        <div class="a11y-panel" id="a11yPanel" role="dialog" aria-label="Accessibility options">
+          <div class="a11y-panel-title" data-i18n="a11y_panel_title">Pristupačnost</div>
+          <div class="a11y-font-row">
+            <span class="a11y-font-label" data-i18n="a11y_font_size">Veličina teksta</span>
+            <div class="a11y-font-pills">
+              <button class="a11y-font-pill sm" data-size="sm" aria-label="Small text">A</button>
+              <button class="a11y-font-pill md active" data-size="md" aria-label="Medium text">A</button>
+              <button class="a11y-font-pill lg" data-size="lg" aria-label="Large text">A</button>
+            </div>
+          </div>
+          <div class="a11y-toggle-row">
+            <span class="a11y-toggle-icon" aria-hidden="true">🎨</span>
+            <div class="a11y-toggle-text">
+              <div class="a11y-toggle-name" data-i18n="a11y_colorblind">Mod za daltoniste</div>
+              <div class="a11y-toggle-desc" data-i18n="a11y_colorblind_desc">Bez crveno-zelenih kontrasta</div>
+            </div>
+            <button class="a11y-switch" id="colorblindSwitch" role="switch" aria-checked="false"></button>
+          </div>
+          <div class="a11y-toggle-row">
+            <span class="a11y-toggle-icon" aria-hidden="true">🧘</span>
+            <div class="a11y-toggle-text">
+              <div class="a11y-toggle-name" data-i18n="a11y_focus">Fokus mod</div>
+              <div class="a11y-toggle-desc" data-i18n="a11y_focus_desc">Manje smetnji, lakše čitanje</div>
+            </div>
+            <button class="a11y-switch" id="fokusSwitch" role="switch" aria-checked="false"></button>
+          </div>
+          <div class="a11y-panel-note" data-i18n="a11y_saved">Podešavanja se čuvaju automatski.</div>
+        </div>
+      </div>
       <button class="favorites-btn">
         🤍 <span class="favorites-btn-label" data-i18n="nav_favorites">Omiljeni</span>
         <span class="fav-count">0</span>
