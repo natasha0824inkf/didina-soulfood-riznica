@@ -469,7 +469,7 @@ function renderRecipes() {
 function renderFeaturedGrid() {
   const grid = document.getElementById('featuredGrid');
   if (!grid) return;
-  grid.innerHTML = recipes.slice(0, 6).map(r => createRecipeCardHTML(r)).join('');
+  grid.innerHTML = recipes.slice(0, 8).map(r => createRecipeCardHTML(r)).join('');
   grid.querySelectorAll('.recipe-card').forEach(card => {
     card.addEventListener('click', function(e) {
       if (!e.target.classList.contains('fav-toggle')) openModal(this.dataset.recipeNumber);
