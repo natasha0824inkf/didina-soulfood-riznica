@@ -171,6 +171,94 @@ ul,ol { list-style: none; }
 .lang-btn:hover { color: #D8A14A; }
 .lang-btn.active { background: #D8A14A; color: #fff; border-bottom-color: rgba(216,161,74,.5); }
 
+/* Accessibility button & panel */
+.a11y-wrap { position: relative; }
+.a11y-btn {
+  background: none; border: 1px solid rgba(216,161,74,.28); cursor: pointer;
+  color: rgba(247,241,231,.88); padding: .26rem .5rem; border-radius: 6px;
+  font-size: .73rem; font-weight: 700; letter-spacing: .02em;
+  display: flex; flex-direction: column; align-items: center; gap: .04rem; line-height: 1;
+  transition: all var(--ease);
+}
+.a11y-btn .a11y-sub { font-size: .58rem; opacity: .78; letter-spacing: .04em; }
+.a11y-btn:hover, .a11y-btn[aria-expanded="true"] {
+  border-color: rgba(216,161,74,.7); background: rgba(216,161,74,.12); color: #D8A14A;
+}
+.a11y-panel {
+  display: none; position: absolute; top: calc(100% + .6rem); right: 0;
+  background: #fff8f0; border: 1px solid rgba(216,161,74,.3); border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.14); padding: 1.1rem 1.2rem 1.2rem;
+  width: 248px; z-index: 200;
+}
+.a11y-panel.open { display: block; }
+html.dark-mode .a11y-panel {
+  background: #231808; border-color: rgba(216,161,74,.22); box-shadow: 0 8px 32px rgba(0,0,0,.5);
+}
+.a11y-panel-title {
+  font-size: .65rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: .85rem;
+  display: flex; align-items: center; gap: .4rem;
+}
+.a11y-panel-title::after { content: ''; flex: 1; height: 1px; background: rgba(216,161,74,.3); }
+.a11y-font-row { display: flex; align-items: center; gap: .5rem; margin-bottom: .9rem; }
+.a11y-font-label { font-size: .7rem; font-weight: 600; flex: 1; color: #4a3520; }
+html.dark-mode .a11y-font-label { color: #f0e8d8; }
+.a11y-font-pills { display: flex; gap: .2rem; }
+.a11y-font-pill {
+  border: 1.5px solid rgba(216,161,74,.35); background: none; cursor: pointer;
+  border-radius: 5px; padding: .18rem .45rem; color: #4a3520; font-weight: 700; transition: all .15s;
+}
+html.dark-mode .a11y-font-pill { color: #f0e8d8; border-color: rgba(216,161,74,.25); }
+.a11y-font-pill.active { background: #D8A14A; border-color: #D8A14A; color: #fff; }
+.a11y-font-pill.sm { font-size: .6rem; }
+.a11y-font-pill.md { font-size: .73rem; }
+.a11y-font-pill.lg { font-size: .9rem; }
+.a11y-toggle-row {
+  display: flex; align-items: center; gap: .65rem;
+  padding: .6rem 0; border-top: 1px solid rgba(216,161,74,.2);
+}
+.a11y-toggle-icon { font-size: 1rem; flex-shrink: 0; }
+.a11y-toggle-text { flex: 1; }
+.a11y-toggle-name { font-size: .72rem; font-weight: 600; color: #4a3520; line-height: 1.2; }
+.a11y-toggle-desc { font-size: .6rem; color: #7a6248; line-height: 1.3; margin-top: .1rem; }
+html.dark-mode .a11y-toggle-name { color: #f0e8d8; }
+html.dark-mode .a11y-toggle-desc { color: #a89070; }
+.a11y-switch {
+  width: 34px; height: 19px; background: #c8b89a; border-radius: 10px;
+  flex-shrink: 0; cursor: pointer; position: relative; transition: background .2s; border: none;
+}
+html.dark-mode .a11y-switch { background: #5a4a34; }
+.a11y-switch::after {
+  content: ''; position: absolute; top: 2px; left: 2px;
+  width: 15px; height: 15px; border-radius: 50%; background: #fff;
+  transition: transform .2s; box-shadow: 0 1px 3px rgba(0,0,0,.25);
+}
+.a11y-switch.on { background: #D8A14A; }
+.a11y-switch.on::after { transform: translateX(15px); }
+.a11y-panel-note { font-size: .58rem; text-align: center; margin-top: .85rem; line-height: 1.4; color: #7a6248; }
+html.dark-mode .a11y-panel-note { color: #a89070; }
+
+/* Colorblind mode palette overrides */
+html.colorblind-mode {
+  --coral: #0072B2;
+  --teal: #E69F00;
+  --teal-dark: #CC8800;
+  --teal-bg: rgba(230,159,0,.12);
+}
+html.colorblind-mode .hero-cta,
+html.colorblind-mode .modal-fav-btn { background: #0072B2; }
+
+/* Focus (calm) mode */
+html.fokus-mod *, html.fokus-mod *::before, html.fokus-mod *::after {
+  animation-duration: .001ms !important; transition-duration: .001ms !important;
+}
+html.fokus-mod .book-teaser-bar { display: none; }
+html.fokus-mod .section { padding-block: 2.5rem; }
+
+/* Dynamic font size */
+html[data-font-size="sm"] { font-size: 14px; }
+html[data-font-size="lg"] { font-size: 19px; }
+
 /* Favorites button */
 .favorites-btn {
   display: flex; align-items: center; gap: .4rem;

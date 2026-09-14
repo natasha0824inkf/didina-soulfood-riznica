@@ -78,6 +78,78 @@ function toggleTheme() {
   updateThemeButton();
 }
 
+// ---- ACCESSIBILITY PANEL ----
+function initA11y() {
+  const html = document.documentElement;
+
+  // Restore saved settings
+  const savedFont = localStorage.getItem('didina-font-size') || 'md';
+  const savedColorblind = localStorage.getItem('didina-colorblind') === 'true';
+  const savedFokus = localStorage.getItem('didina-fokus') === 'true';
+
+  if (savedFont !== 'md') html.setAttribute('data-font-size', savedFont);
+  if (savedColorblind) html.classList.add('colorblind-mode');
+  if (savedFokus) html.classList.add('fokus-mod');
+
+  const btn = document.getElementById('a11yBtn');
+  const panel = document.getElementById('a11yPanel');
+  if (!btn || !panel) return;
+
+  // Sync switch states
+  const cbSwitch = document.getElementById('colorblindSwitch');
+  const fkSwitch = document.getElementById('fokusSwitch');
+  if (cbSwitch) { cbSwitch.classList.toggle('on', savedColorblind); cbSwitch.setAttribute('aria-checked', savedColorblind); }
+  if (fkSwitch) { fkSwitch.classList.toggle('on', savedFokus); fkSwitch.setAttribute('aria-checked', savedFokus); }
+
+  // Sync font pill
+  document.querySelectorAll('.a11y-font-pill').forEach(p => p.classList.toggle('active', p.dataset.size === savedFont));
+
+  // Open / close
+  btn.addEventListener('click', e => {
+    e.stopPropagation();
+    const isOpen = panel.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen);
+  });
+  document.addEventListener('click', e => {
+    if (!btn.contains(e.target) && !panel.contains(e.target)) {
+      panel.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // Font size
+  document.querySelectorAll('.a11y-font-pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      const size = pill.dataset.size;
+      document.querySelectorAll('.a11y-font-pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      if (size === 'md') html.removeAttribute('data-font-size');
+      else html.setAttribute('data-font-size', size);
+      localStorage.setItem('didina-font-size', size);
+    });
+  });
+
+  // Colorblind switch
+  if (cbSwitch) {
+    cbSwitch.addEventListener('click', () => {
+      const on = html.classList.toggle('colorblind-mode');
+      cbSwitch.classList.toggle('on', on);
+      cbSwitch.setAttribute('aria-checked', on);
+      localStorage.setItem('didina-colorblind', on);
+    });
+  }
+
+  // Fokus switch
+  if (fkSwitch) {
+    fkSwitch.addEventListener('click', () => {
+      const on = html.classList.toggle('fokus-mod');
+      fkSwitch.classList.toggle('on', on);
+      fkSwitch.setAttribute('aria-checked', on);
+      localStorage.setItem('didina-fokus', on);
+    });
+  }
+}
+
 function updateThemeButton() {
   const isDark = document.documentElement.classList.contains('dark-mode');
   document.querySelectorAll('.theme-toggle').forEach(btn => {
@@ -516,6 +588,9 @@ document.addEventListener('DOMContentLoaded', function () {
     btn.addEventListener('click', toggleTheme);
   });
   updateThemeButton();
+
+  // Accessibility panel
+  initA11y();
 
   // Language switcher
   document.querySelectorAll('.lang-btn').forEach(btn => {
