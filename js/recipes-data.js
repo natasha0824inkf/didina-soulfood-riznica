@@ -2231,5 +2231,69 @@ const recipes = [
     image: "assets/images/domaca-pica-sa-pestom-1.jpg",
     imgPos: "center 40%",
     category: "Recepti koji mirišu iz rerne"
+  },
+  {
+    number: "60",
+    title: {
+      sr: "Tart sa jabukom i marcipanom",
+      de: "Tarte mit Apfel und Marzipan",
+      en: "Apple and Marzipan Tart"
+    },
+    subtitle: {
+      sr: "Lisnato testo, jabuka, marcipan i cimet — za pola sata na stolu.",
+      de: "Blätterteig, Apfel, Marzipan und Zimt — in einer halben Stunde fertig.",
+      en: "Puff pastry, apple, marzipan and cinnamon — on the table in half an hour."
+    },
+    author_comment: {
+      sr: "Nekad je najlepša stvar ona koja se napravi gotovo bez truda.",
+      de: "Manchmal ist das Schönste das, was fast ohne Mühe entsteht.",
+      en: "Sometimes the loveliest things are the ones that come together with almost no effort."
+    },
+    prep_time: {
+      sr: "10 min + 20–25 min pečenje",
+      de: "10 Min. + 20–25 Min. Backen",
+      en: "10 min + 20–25 min baking"
+    },
+    ingredients: {
+      sr: ["1 pakovanje lisnatog testa", "1 jabuka", "100 g marcipana", "1 jaje za premazivanje", "malo cimeta"],
+      de: ["1 Packung Blätterteig", "1 Apfel", "100 g Marzipan", "1 Ei zum Bestreichen", "etwas Zimt"],
+      en: ["1 pack of puff pastry", "1 apple", "100 g marzipan", "1 egg for brushing", "a little cinnamon"]
+    },
+    instructions: {
+      sr: [
+        "Rernu zagrej na 200°C.",
+        "Lisnato testo razvuci na papiru za pečenje.",
+        "Marcipan rasporedi po sredini testa, ostavljajući oko 2 cm ivice.",
+        "Jabuku operi, očisti i iseci na tanke kriške. Rasporedi ih preko marcipana i pospi cimetom.",
+        "Ivice testa blago presavij ka unutra.",
+        "Umuti jaje i premaži ivice testa.",
+        "Peci 20–25 minuta, dok testo ne postane zlatno i hrskavo.",
+        "Ostavi da se malo prohladi i serviraj blago toplo."
+      ],
+      de: [
+        "Backofen auf 200°C vorheizen.",
+        "Blätterteig auf Backpapier ausrollen.",
+        "Marzipan auf der Mitte des Teigs verteilen, dabei ca. 2 cm Rand freilassen.",
+        "Apfel waschen, schälen und in dünne Scheiben schneiden. Über dem Marzipan verteilen und mit Zimt bestreuen.",
+        "Die freien Teigränder leicht nach innen falten.",
+        "Ei verquirlen und die Teigränder damit bestreichen.",
+        "Ca. 20–25 Minuten backen, bis der Teig goldbraun und knusprig ist.",
+        "Einige Minuten abkühlen lassen und noch leicht warm servieren."
+      ],
+      en: [
+        "Preheat oven to 200°C.",
+        "Roll out the puff pastry on baking paper.",
+        "Spread marzipan over the centre of the pastry, leaving about 2 cm free border.",
+        "Wash, peel and thinly slice the apple. Arrange over the marzipan and sprinkle with cinnamon.",
+        "Gently fold the free pastry edges inward.",
+        "Beat the egg and brush the pastry edges.",
+        "Bake for 20–25 minutes until golden and crisp.",
+        "Leave to cool for a few minutes and serve slightly warm."
+      ]
+    },
+    note: "Savršeno uz kafu. ☕",
+    image: "assets/images/tart-sa-jabukom-i-marcipanom.jpg",
+    imgPos: "center 50%",
+    category: "Recepti uz kafu"
   }
 ];
