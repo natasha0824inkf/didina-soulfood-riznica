@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css?v=14">
-  <link rel="stylesheet" href="css/responsive.css?v=792fe3b6f553d74601e03b2e3bef371e672fce91">
+  <link rel="stylesheet" href="css/responsive.css?v=75f3b1e2f9bdae185e13c8a9c745e6dd063bf686">
   <script>if(localStorage.getItem('didina-theme')==='dark'||(!localStorage.getItem('didina-theme')&&window.matchMedia('(prefers-color-scheme:dark)').matches))document.documentElement.classList.add('dark-mode');</script>
   <style>.site-header{background:#6B4F3A;border-bottom:2px solid #D8A14A;position:sticky;top:0;z-index:100}.nav-links a{color:rgba(247,241,231,.72);border-bottom:2px solid transparent}.nav-links a.active{color:#D8A14A;border-bottom-color:#D8A14A;font-weight:600}html.dark-mode .site-header{background:#1A1208}</style>
 </head>
@@ -19,7 +19,7 @@
 <header class="site-header">
   <nav class="nav-container">
     <a href="index.html" class="nav-logo" aria-label="Didina SoulFood Riznica">
-      <img src="assets/images/logo.svg?v=792fe3b6f553d74601e03b2e3bef371e672fce91" alt="" class="nav-logo-img" aria-hidden="true">
+      <img src="assets/images/logo.svg?v=75f3b1e2f9bdae185e13c8a9c745e6dd063bf686" alt="" class="nav-logo-img" aria-hidden="true">
       <span class="nav-logo-main">Didina SoulFood Riznica</span>
     </a>
 
@@ -44,6 +44,40 @@
         <button class="lang-btn"        data-lang="en"><span class="lang-flag">🌐</span>EN</button>
       </div>
       <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+      <div class="a11y-wrap">
+        <button class="a11y-btn" id="a11yBtn" aria-label="Accessibility options" aria-expanded="false" aria-controls="a11yPanel">
+          <span class="a11y-icon">Aa</span>
+          <span class="a11y-sub" data-i18n="a11y_btn_label">pristup</span>
+        </button>
+        <div class="a11y-panel" id="a11yPanel" role="dialog" aria-label="Accessibility options">
+          <div class="a11y-panel-title" data-i18n="a11y_panel_title">Pristupačnost</div>
+          <div class="a11y-font-row">
+            <span class="a11y-font-label" data-i18n="a11y_font_size">Veličina teksta</span>
+            <div class="a11y-font-pills">
+              <button class="a11y-font-pill sm" data-size="sm" aria-label="Small text">A</button>
+              <button class="a11y-font-pill md active" data-size="md" aria-label="Medium text">A</button>
+              <button class="a11y-font-pill lg" data-size="lg" aria-label="Large text">A</button>
+            </div>
+          </div>
+          <div class="a11y-toggle-row">
+            <span class="a11y-toggle-icon" aria-hidden="true">🎨</span>
+            <div class="a11y-toggle-text">
+              <div class="a11y-toggle-name" data-i18n="a11y_colorblind">Mod za daltoniste</div>
+              <div class="a11y-toggle-desc" data-i18n="a11y_colorblind_desc">Bez crveno-zelenih kontrasta</div>
+            </div>
+            <button class="a11y-switch" id="colorblindSwitch" role="switch" aria-checked="false"></button>
+          </div>
+          <div class="a11y-toggle-row">
+            <span class="a11y-toggle-icon" aria-hidden="true">🧘</span>
+            <div class="a11y-toggle-text">
+              <div class="a11y-toggle-name" data-i18n="a11y_focus">Fokus mod</div>
+              <div class="a11y-toggle-desc" data-i18n="a11y_focus_desc">Manje smetnji, lakše čitanje</div>
+            </div>
+            <button class="a11y-switch" id="fokusSwitch" role="switch" aria-checked="false"></button>
+          </div>
+          <div class="a11y-panel-note" data-i18n="a11y_saved">Podešavanja se čuvaju automatski.</div>
+        </div>
+      </div>
       <button class="favorites-btn" aria-label="Omiljeni recepti">
         🤍 <span class="favorites-btn-label" data-i18n="nav_favorites">Omiljeni</span>
         <span class="fav-count" aria-live="polite">0</span>

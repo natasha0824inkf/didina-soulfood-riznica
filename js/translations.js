@@ -93,6 +93,15 @@ const translations = {
     blog_by: 'Piše',
     blog_empty: 'Uskoro novi tekstovi.',
 
+    a11y_btn_label: 'pristup',
+    a11y_panel_title: 'Pristupačnost',
+    a11y_font_size: 'Veličina teksta',
+    a11y_colorblind: 'Mod za daltoniste',
+    a11y_colorblind_desc: 'Bez crveno-zelenih kontrasta',
+    a11y_focus: 'Fokus mod',
+    a11y_focus_desc: 'Manje smetnji, lakše čitanje',
+    a11y_saved: 'Podešavanja se čuvaju automatski.',
+
     nav_privacy: 'Privatnost',
     privacy_title: 'Politika privatnosti',
     privacy_updated: 'Poslednje ažuriranje: jun 2026.',
@@ -206,6 +215,15 @@ const translations = {
     blog_by: 'Von',
     blog_empty: 'Bald neue Texte.',
 
+    a11y_btn_label: 'Zugang',
+    a11y_panel_title: 'Barrierefreiheit',
+    a11y_font_size: 'Schriftgröße',
+    a11y_colorblind: 'Farbenblind-Modus',
+    a11y_colorblind_desc: 'Ohne Rot-Grün-Farbkonflikte',
+    a11y_focus: 'Ruhiger Modus',
+    a11y_focus_desc: 'Ohne Animationen und Ablenkungen',
+    a11y_saved: 'Einstellungen werden automatisch gespeichert.',
+
     nav_privacy: 'Datenschutz',
     privacy_title: 'Datenschutzerklärung',
     privacy_updated: 'Zuletzt aktualisiert: Juni 2026.',
@@ -318,6 +336,15 @@ const translations = {
     blog_published: 'Published on',
     blog_by: 'By',
     blog_empty: 'More posts coming soon.',
+
+    a11y_btn_label: 'access',
+    a11y_panel_title: 'Accessibility',
+    a11y_font_size: 'Text size',
+    a11y_colorblind: 'Colorblind mode',
+    a11y_colorblind_desc: 'Removes red-green color conflicts',
+    a11y_focus: 'Calm mode',
+    a11y_focus_desc: 'No animations or visual distractions',
+    a11y_saved: 'Settings are saved automatically.',
 
     nav_privacy: 'Privacy',
     privacy_title: 'Privacy Policy',
