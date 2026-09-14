@@ -238,26 +238,45 @@ html.dark-mode .a11y-switch { background: #5a4a34; }
 .a11y-panel-note { font-size: .58rem; text-align: center; margin-top: .85rem; line-height: 1.4; color: #7a6248; }
 html.dark-mode .a11y-panel-note { color: #a89070; }
 
-/* Colorblind mode palette overrides */
+/* Colorblind mode — deuteranopia-safe palette (blue/orange replaces red/green) */
 html.colorblind-mode {
-  --coral: #0072B2;
-  --teal: #E69F00;
-  --teal-dark: #CC8800;
-  --teal-bg: rgba(230,159,0,.12);
+  --coral: #0077BB;
+  --coral-light: #0077BB;
+  --teal: #EE7733;
+  --teal-dark: #CC5500;
+  --teal-bg: rgba(238,119,51,.12);
+  --gold: #DDAA33;
 }
-html.colorblind-mode .hero-cta,
-html.colorblind-mode .modal-fav-btn { background: #0072B2; }
+html.colorblind-mode .site-header { border-bottom-color: #DDAA33; }
+html.colorblind-mode .hero { background: linear-gradient(135deg, #003f6e 0%, #005f9e 50%, #004080 100%); }
+html.colorblind-mode .hero-cta { background: #EE7733; color: #fff; }
+html.colorblind-mode .recipe-card-category,
+html.colorblind-mode .modal-category-badge { background: #0077BB; }
+html.colorblind-mode .filter-btn.active,
+html.colorblind-mode .lang-btn.active { background: #DDAA33; }
+html.colorblind-mode .book-banner { background: linear-gradient(135deg, #003f6e, #005f9e); }
+html.colorblind-mode .modal-fav-btn { background: #0077BB; }
+/* Active indicator on Aa button when colorblind mode is on */
+html.colorblind-mode .a11y-btn { border-color: #0077BB; color: #0077BB; }
 
-/* Focus (calm) mode */
+/* Fokus mod — visible reading improvements */
 html.fokus-mod *, html.fokus-mod *::before, html.fokus-mod *::after {
   animation-duration: .001ms !important; transition-duration: .001ms !important;
 }
-html.fokus-mod .book-teaser-bar { display: none; }
-html.fokus-mod .section { padding-block: 2.5rem; }
+html.fokus-mod body { line-height: 1.9; letter-spacing: .012em; }
+html.fokus-mod .hero { min-height: 30vh; }
+html.fokus-mod .book-teaser-bar,
+html.fokus-mod .footer-social { display: none; }
+html.fokus-mod .container { max-width: 820px; }
+html.fokus-mod .recipe-grid { grid-template-columns: repeat(3, 1fr); }
+html.fokus-mod .section { padding-block: 1.5rem 3rem; }
+html.fokus-mod .site-header { border-bottom-width: 3px; }
+/* Active indicator on Aa button when fokus is on */
+html.fokus-mod .a11y-btn { border-color: var(--gold); color: var(--gold); }
 
 /* Dynamic font size */
-html[data-font-size="sm"] { font-size: 14px; }
-html[data-font-size="lg"] { font-size: 19px; }
+html[data-font-size="sm"] { font-size: 13px; }
+html[data-font-size="lg"] { font-size: 20px; }
 
 /* Favorites button */
 .favorites-btn {
