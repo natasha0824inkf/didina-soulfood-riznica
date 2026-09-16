@@ -88,7 +88,7 @@ function initA11y() {
   const savedFokus = localStorage.getItem('didina-fokus') === 'true';
 
   if (savedFont !== 'md') html.setAttribute('data-font-size', savedFont);
-  if (savedColorblind) html.classList.add('colorblind-mode');
+  if (savedColorblind) { html.classList.add('colorblind-mode'); html.style.filter = 'grayscale(1) contrast(1.15)'; }
   if (savedFokus) html.classList.add('fokus-mod');
 
   const btn = document.getElementById('a11yBtn');
@@ -133,6 +133,7 @@ function initA11y() {
   if (cbSwitch) {
     cbSwitch.addEventListener('click', () => {
       const on = html.classList.toggle('colorblind-mode');
+      html.style.filter = on ? 'grayscale(1) contrast(1.15)' : '';
       cbSwitch.classList.toggle('on', on);
       cbSwitch.setAttribute('aria-checked', on);
       localStorage.setItem('didina-colorblind', on);
