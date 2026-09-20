@@ -2000,7 +2000,7 @@ const recipes = [
   },
   {
     number: "56",
-    title: { sr: "Burek sa sirom", de: "Käse-Burek", en: "Cheese Burek" },
+    title: { sr: "Burek sa sirom i spanaćem", de: "Käse-Spinat-Burek", en: "Cheese and Spinach Burek" },
     subtitle: {
       sr: "Zvezda moje kuhinje i Instagrama",
       de: "Der Star meiner Küche und meines Instagrams",
@@ -2013,9 +2013,9 @@ const recipes = [
     },
     prep_time: { sr: "oko 30 minuta", de: "ca. 30 Minuten", en: "about 30 minutes" },
     ingredients: {
-      sr: ["250 g tankih kora za pitu", "350 g sitnog sira", "2–3 kašike ulja", "50 ml tople vode"],
-      de: ["250 g dünne Filoteigblätter", "350 g krümeliger Weißkäse", "2–3 EL Öl", "50 ml warmes Wasser"],
-      en: ["250 g thin filo pastry sheets", "350 g crumbly white cheese", "2–3 tbsp oil", "50 ml warm water"]
+      sr: ["250 g tankih kora za pitu", "350 g sitnog sira", "200 g svežeg ili smrznutog spanaća", "2–3 kašike ulja", "50 ml tople vode"],
+      de: ["250 g dünne Filoteigblätter", "350 g krümeliger Weißkäse", "200 g frischer oder gefrorener Spinat", "2–3 EL Öl", "50 ml warmes Wasser"],
+      en: ["250 g thin filo pastry sheets", "350 g crumbly white cheese", "200 g fresh or frozen spinach", "2–3 tbsp oil", "50 ml warm water"]
     },
     instructions: {
       sr: [
