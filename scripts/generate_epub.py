@@ -320,6 +320,7 @@ SECTIONS = [
             ('44',   'Šumska pita'),
             ('51',   None),
             ('31',   None),
+            ('56',   None),
         ],
     },
     {
