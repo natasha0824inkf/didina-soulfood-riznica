@@ -2295,5 +2295,100 @@ const recipes = [
     image: "assets/images/tart-sa-jabukom-i-marcipanom.jpg",
     imgPos: "center 50%",
     category: "Recepti uz kafu"
+  },
+  {
+    number: "61",
+    title: { sr: "Rustične ovsene zemičke sa semenkama i kimom", de: "Rustikale Hafer-Brötchen mit Kernen und Kümmel", en: "Rustic Oat Rolls with Seeds and Caraway" },
+    subtitle: {
+      sr: "Bez belog brašna · Bez kvasca · Bez čekanja",
+      de: "Ohne Weißmehl · Ohne Hefe · Ohne Wartezeit",
+      en: "No white flour · No yeast · No waiting"
+    },
+    author_comment: {
+      sr: "Nekad mi se ne da praviti klasičan hleb, ali bez peciva ipak ne mogu. Ove zemičke su moj kompromis — zdrave, srdačne i gotove za sat vremena.",
+      de: "Manchmal fehlt mir die Geduld für klassisches Brot, aber ohne Gebäck geht es bei mir nicht. Diese Brötchen sind mein Kompromiss — gesund, herzhaft und in einer Stunde fertig.",
+      en: "Sometimes I can't face making proper bread, but I can't go without something baked either. These rolls are my compromise — wholesome, hearty and ready in an hour."
+    },
+    prep_time: { sr: "oko 60 minuta", de: "ca. 60 Minuten", en: "about 60 minutes" },
+    ingredients: {
+      sr: [
+        "150 g grčkog jogurta",
+        "1 jaje",
+        "1 kašika maslinovog ulja",
+        "200 g samlevenih ovsenih pahuljica",
+        "1 kašika celih ovsenih pahuljica",
+        "1 kašičica praška za pecivo",
+        "½ kašičice soli",
+        "3 kašike samlevenih semenki suncokreta",
+        "1 kašika samlevenih semenki bundeve",
+        "1 kašika samlevenog lana",
+        "2 kašike čia semenki",
+        "1 ravna kašika kima (opcionalno)",
+        "malo susama i ½ kašike celih semenki bundeve za posipanje"
+      ],
+      de: [
+        "150 g griechischer Joghurt",
+        "1 Ei",
+        "1 EL Olivenöl",
+        "200 g gemahlene Haferflocken",
+        "1 EL ganze Haferflocken",
+        "1 TL Backpulver",
+        "½ TL Salz",
+        "3 EL gemahlene Sonnenblumenkerne",
+        "1 EL gemahlene Kürbiskerne",
+        "1 EL gemahlener Leinsamen",
+        "2 EL Chiasamen",
+        "1 gestr. EL Kümmel (optional)",
+        "etwas Sesam und ½ EL ganze Kürbiskerne zum Bestreuen"
+      ],
+      en: [
+        "150 g Greek yogurt",
+        "1 egg",
+        "1 tbsp olive oil",
+        "200 g ground rolled oats",
+        "1 tbsp whole rolled oats",
+        "1 tsp baking powder",
+        "½ tsp salt",
+        "3 tbsp ground sunflower seeds",
+        "1 tbsp ground pumpkin seeds",
+        "1 tbsp ground flaxseed",
+        "2 tbsp chia seeds",
+        "1 level tbsp caraway seeds (optional)",
+        "a little sesame and ½ tbsp whole pumpkin seeds for sprinkling"
+      ]
+    },
+    instructions: {
+      sr: [
+        "U većoj činiji pomešaj sve samlevene pahuljice, semenke, cele ovsene pahuljice, kim, so i prašak za pecivo.",
+        "Umešaj grčki jogurt, jaje i maslinovo ulje.",
+        "Sve dobro sjedini, pa ostavi smesu 10 minuta da semenke upiju vlagu.",
+        "Kašikom vadi smesu i vlažnim rukama oblikuj male zemičke.",
+        "Poređaj ih na pleh obložen papirom za pečenje, a zatim pospi semenkama bundeve i susama.",
+        "Peci u prethodno zagrejanoj rerni na 190 °C oko 40 minuta, dok zemičke ne dobiju lepu, tamnozlatnu koricu.",
+        "Ostavi da se prohlade."
+      ],
+      de: [
+        "In einer großen Schüssel alle gemahlenen Flocken, Kerne, ganze Haferflocken, Kümmel, Salz und Backpulver vermischen.",
+        "Griechischen Joghurt, Ei und Olivenöl untermischen.",
+        "Alles gut vermengen, dann die Masse 10 Minuten ruhen lassen, damit die Kerne die Feuchtigkeit aufnehmen.",
+        "Mit einem Löffel die Masse entnehmen und mit feuchten Händen kleine Brötchen formen.",
+        "Auf einem mit Backpapier ausgelegten Blech anrichten und mit Kürbiskernen und Sesam bestreuen.",
+        "Im vorgeheizten Ofen bei 190 °C ca. 40 Minuten backen, bis die Brötchen eine schöne, dunkelgoldene Kruste haben.",
+        "Etwas abkühlen lassen."
+      ],
+      en: [
+        "In a large bowl, mix all the ground oats, seeds, whole oats, caraway, salt and baking powder together.",
+        "Stir in the Greek yogurt, egg and olive oil.",
+        "Combine everything well, then leave the mixture to rest for 10 minutes so the seeds absorb the moisture.",
+        "Scoop the mixture with a spoon and shape small rolls with wet hands.",
+        "Place on a baking tray lined with parchment paper and sprinkle with pumpkin seeds and sesame.",
+        "Bake in a preheated oven at 190 °C for about 40 minutes, until the rolls develop a beautiful, dark golden crust.",
+        "Allow to cool."
+      ]
+    },
+    note: "Pre sečenja ih ostavi malo da se prohlade kako bi se unutrašnjost lepo stegla. Kim daje fin aromatičan ukus, ali ako nisi ljubitelj, slobodno ga izostavi.",
+    image: "assets/images/ovsene-zemicke-sa-semenkama.jpg",
+    imgPos: "center 50%",
+    category: "Recepti koji mirišu iz rerne"
   }
 ];
